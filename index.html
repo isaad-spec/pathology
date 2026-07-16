@@ -1,0 +1,2207 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pathology Pre-Read | Cell Injury, Death & Adaptation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F1EC;
+  --paper:#FFFFFF;
+  --ink:#211D2E;
+  --ink-soft:#5B5570;
+  --ink-faint:#8B85A0;
+  --line:#E4E0EA;
+  --line-strong:#CFC9DC;
+
+  --hema:#4C3F91;
+  --hema-soft:#EEEBFA;
+  --teal:#146B63;
+  --teal-soft:#E4F3F0;
+  --eosin:#B23D6B;
+  --eosin-soft:#FBEAF1;
+  --amber:#A96A1E;
+  --amber-soft:#FBF0DE;
+  --rust:#96382A;
+  --rust-soft:#F7E7E2;
+
+  --accent: var(--hema);
+  --accent-soft: var(--hema-soft);
+
+  --radius:14px;
+  --shadow: 0 1px 2px rgba(33,29,46,0.04), 0 8px 24px -12px rgba(33,29,46,0.18);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background-color:var(--bg);
+  background-image:
+    linear-gradient(rgba(33,29,46,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33,29,46,0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  font-family:'Fraunces',serif;
+  color:var(--ink);
+  font-weight:600;
+  margin:0 0 0.4em 0;
+  letter-spacing:-0.01em;
+}
+p{margin:0 0 0.9em 0;}
+.eng{font-style:italic;color:var(--ink-soft);}
+.mono{font-family:'JetBrains Mono',monospace;}
+
+.masthead{
+  border-bottom:1px solid var(--line-strong);
+  background:var(--paper);
+  padding:18px 28px 0 28px;
+  position:sticky; top:0; z-index:50;
+  box-shadow:var(--shadow);
+}
+.masthead-inner{
+  max-width:1180px;margin:0 auto;
+  display:flex; align-items:flex-end; justify-content:space-between; gap:24px;
+  flex-wrap:wrap;
+}
+.masthead-title{display:flex; align-items:center; gap:14px;}
+.masthead-badge{
+  width:44px;height:44px;border-radius:10px;
+  background:conic-gradient(from 220deg, var(--hema), var(--teal), var(--eosin), var(--hema));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-family:'Fraunces',serif;font-weight:700;font-size:15px;
+  box-shadow: inset 0 0 0 3px rgba(255,255,255,0.35);
+}
+.masthead h1{font-size:1.15rem; margin:0;}
+.masthead .sub{font-size:0.78rem;color:var(--ink-faint);margin-top:2px;font-family:'JetBrains Mono',monospace;}
+
+.tabnav{display:flex; gap:6px; padding-bottom:0; margin-top:10px; flex-wrap:wrap;}
+.tabnav button{
+  appearance:none;border:1px solid var(--line-strong);border-bottom:none;
+  background:#FBFAF8;
+  color:var(--ink-soft);
+  font-family:'Inter',sans-serif;font-weight:600;font-size:0.82rem;
+  padding:11px 18px 10px 18px;
+  border-radius:10px 10px 0 0;
+  cursor:pointer;
+  display:flex;flex-direction:column;align-items:flex-start;gap:2px;
+  transition:all .15s ease;
+  position:relative; top:1px;
+}
+.tabnav button .tab-eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.06em;opacity:0.7;text-transform:uppercase;}
+.tabnav button.active{
+  background:var(--paper);
+  color:var(--tabcolor,var(--hema));
+  border-color:var(--line-strong);
+  box-shadow:0 -2px 0 0 var(--tabcolor,var(--hema)) inset;
+}
+.tabnav button:hover{color:var(--tabcolor,var(--hema));}
+.tabnav button[data-tab="t1"]{--tabcolor:var(--hema);}
+.tabnav button[data-tab="t2"]{--tabcolor:var(--teal);}
+.tabnav button[data-tab="t3"]{--tabcolor:var(--eosin);}
+.tabnav button[data-tab="t4"]{--tabcolor:var(--rust);}
+.tabnav button[data-tab="review"]{--tabcolor:var(--amber);}
+
+.shell{max-width:1180px;margin:0 auto;padding:32px 28px 100px 28px; display:grid; grid-template-columns:240px 1fr; gap:36px;}
+@media (max-width:880px){.shell{grid-template-columns:1fr;} .toc{position:static !important; order:2;} }
+
+.toc{position:sticky; top:150px; align-self:start; max-height:calc(100vh - 180px); overflow-y:auto;}
+.toc-title{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px;}
+.toc a{
+  display:block; padding:7px 10px; margin-bottom:2px; border-radius:8px;
+  color:var(--ink-soft); text-decoration:none; font-size:0.85rem;
+  border-left:2px solid transparent;
+}
+.toc a:hover{background:var(--accent-soft); color:var(--accent); border-left-color:var(--accent);}
+
+.tabpanel{display:none;}
+.tabpanel.active{display:block;}
+
+.section{margin-bottom:56px;}
+.section-head{display:flex; align-items:baseline; gap:12px; margin-bottom:6px; flex-wrap:wrap;}
+.section-head h2{font-size:1.55rem;}
+.slide-ref{font-family:'JetBrains Mono',monospace; font-size:0.68rem; color:var(--ink-faint); background:var(--paper); border:1px solid var(--line); padding:2px 8px; border-radius:20px;}
+.section-lede{color:var(--ink-soft); font-size:0.95rem; max-width:70ch; margin-bottom:20px;}
+
+.card{
+  background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
+  padding:22px 24px; margin-bottom:16px; box-shadow:var(--shadow); position:relative;
+}
+.card h3{font-size:1.08rem; color:var(--accent); margin-bottom:10px;}
+.card h4{font-size:0.95rem; margin-top:14px; margin-bottom:6px; color:var(--ink);}
+.card-label{
+  position:absolute; top:0; right:22px; transform:translateY(-50%);
+  background:var(--accent); color:#fff; font-family:'JetBrains Mono',monospace;
+  font-size:0.62rem; letter-spacing:0.05em; padding:3px 10px; border-radius:20px;
+  text-transform:uppercase;
+}
+
+.examtip{
+  background:var(--amber-soft); border:1px solid #E9CE9E; border-left:4px solid var(--amber);
+  border-radius:10px; padding:14px 16px; margin:14px 0; font-size:0.88rem;
+}
+.examtip .tip-title{font-family:'JetBrains Mono',monospace; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--amber); font-weight:700; margin-bottom:5px; display:flex; align-items:center; gap:5px;}
+
+details.more{
+  background:var(--bg); border:1px solid var(--line); border-radius:10px;
+  padding:2px 16px; margin:10px 0;
+}
+details.more summary{
+  cursor:pointer; padding:10px 0; font-weight:600; font-size:0.88rem; color:var(--accent);
+  list-style:none; display:flex; align-items:center; gap:8px;
+}
+details.more summary::-webkit-details-marker{display:none;}
+details.more summary::before{content:"▸"; font-size:0.75rem; transition:transform .15s;}
+details.more[open] summary::before{transform:rotate(90deg);}
+details.more .more-body{padding-bottom:14px; font-size:0.9rem; color:var(--ink-soft);}
+
+.table-wrap{overflow-x:auto; margin:16px 0;}
+table.cmp{border-collapse:collapse; width:100%; font-size:0.87rem; min-width:520px;}
+table.cmp th{
+  background:var(--accent); color:#fff; text-align:left; padding:10px 14px; font-family:'Inter',sans-serif; font-weight:600;
+}
+table.cmp th:first-child{border-radius:8px 0 0 0;}
+table.cmp th:last-child{border-radius:0 8px 0 0;}
+table.cmp td{padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top;}
+table.cmp tr:nth-child(even) td{background:var(--bg);}
+table.cmp td:first-child{font-weight:600; color:var(--ink); white-space:nowrap;}
+
+.glossary{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;}
+.gterm{
+  background:var(--accent-soft); border:1px solid var(--line-strong); border-radius:8px;
+  padding:8px 12px; font-size:0.82rem; flex:1 1 220px; min-width:220px;
+}
+.gterm b{color:var(--accent); font-family:'JetBrains Mono',monospace; font-size:0.8rem; display:block; margin-bottom:2px;}
+
+.diagram-frame{
+  background:var(--bg); border:1px dashed var(--line-strong); border-radius:12px;
+  padding:14px; margin:14px 0; overflow-x:auto;
+}
+.diagram-cap{font-size:0.76rem; color:var(--ink-faint); margin-top:8px; text-align:center; font-family:'JetBrains Mono',monospace;}
+
+ul.plain{margin:6px 0 10px 0; padding-left:20px;}
+ul.plain li{margin-bottom:5px;}
+
+.section-divider{
+  display:flex; align-items:center; gap:12px; margin:44px 0 24px 0; color:var(--ink-faint);
+  font-family:'JetBrains Mono',monospace; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em;
+}
+.section-divider::before, .section-divider::after{content:""; flex:1; height:1px; background:var(--line-strong);}
+
+.badge-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;}
+.badge{font-size:0.7rem; padding:3px 9px; border-radius:20px; background:var(--bg); border:1px solid var(--line-strong); color:var(--ink-soft); font-family:'JetBrains Mono',monospace;}
+
+.tabhero{padding:26px 0 8px 0; margin-bottom:8px; border-bottom:1px solid var(--line);}
+.tabhero .kicker{font-family:'JetBrains Mono',monospace; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); margin-bottom:6px;}
+.tabhero h1{font-size:2rem;}
+.tabhero p{color:var(--ink-soft); max-width:65ch; font-size:0.95rem;}
+
+#panel-t1{--accent:var(--hema); --accent-soft:var(--hema-soft);}
+#panel-t2{--accent:var(--teal); --accent-soft:var(--teal-soft);}
+#panel-t3{--accent:var(--eosin); --accent-soft:var(--eosin-soft);}
+#panel-t4{--accent:var(--rust); --accent-soft:var(--rust-soft);}
+#panel-review{--accent:var(--amber); --accent-soft:var(--amber-soft);}
+
+footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); font-size:0.78rem; font-family:'JetBrains Mono',monospace;}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-title">
+      <div class="masthead-badge">P</div>
+      <div>
+        <h1>Pathology Pre-Read</h1>
+        <div class="sub">General Pathology · MSU Med Y2 · Pre-quiz จันทร์ที่ 13</div>
+      </div>
+    </div>
+    <nav class="tabnav" id="tabnav">
+      <button data-tab="t1" class="active" onclick="showTab('t1')"><span class="tab-eyebrow">Session 01</span>Introduction to Pathology</button>
+      <button data-tab="t2" onclick="showTab('t2')"><span class="tab-eyebrow">Session 02</span>Cell &amp; Tissue Injury</button>
+      <button data-tab="t3" onclick="showTab('t3')"><span class="tab-eyebrow">Session 03</span>Apoptosis &amp; Necrosis</button>
+      <button data-tab="t4" onclick="showTab('t4')"><span class="tab-eyebrow">Session 04</span>Hemodynamic Disorders</button>
+      <button data-tab="review" onclick="showTab('review')"><span class="tab-eyebrow">Session 05</span>Final Review</button>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="toc" id="toc"></aside>
+  <main id="maincontent">
+
+  <section class="tabpanel active" id="panel-t1">
+    <div class="tabhero">
+      <div class="kicker">T1 · Introduction to Pathology</div>
+      <h1>รู้จักพยาธิวิทยา ก่อนเข้าสู่กลไกโรค</h1>
+      <p>ปูพื้นฐาน: พยาธิวิทยาคืออะไร แบ่งสาขาอย่างไร และศัพท์ทางการแพทย์พื้นฐานที่ต้องคุ้นเคยตลอด block นี้</p>
+    </div>
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t1-history">1.1 ประวัติศาสตร์และรากฐานของพยาธิวิทยา</h2><span class="slide-ref">T1 · slide 4-6</span></div>
+      <p class="section-lede">ก่อนเข้าใจกลไกโรค ต้องรู้ก่อนว่า "พยาธิวิทยา" (Pathology) เกิดขึ้นมาจากแนวคิดอะไร เพราะแนวคิดนี้ยังเป็นรากฐานของการวินิจฉัยโรคในปัจจุบัน</p>
+
+      <div class="card">
+        <h3>Hippocrates (460–370 BC) — บิดาแห่งการแพทย์ตะวันตก</h3>
+        <p>แพทย์และนักปรัชญาชาวกรีกจากเกาะ Kos ผู้ปฏิวัติวงการแพทย์ครั้งใหญ่ที่สุด: เขาแยก<b>วิทยาศาสตร์การแพทย์ออกจากความเชื่อเรื่องไสยศาสตร์และการลงทัณฑ์ของเทพเจ้า</b> แล้วหันมาใช้การสังเกตอาการผู้ป่วยตามหลักเหตุและผล (<span class="eng">observation-based, rational medicine</span>) แทน</p>
+        <p>มรดกที่สำคัญที่สุดของเขาคือ <b>Hippocratic Oath</b> (คำปฏิญาณฮิปโปเครติส) ซึ่งเป็นจริยธรรมวิชาชีพแพทย์ที่ยังยึดถือมาจนถึงปัจจุบัน เช่น การรักษาความลับของผู้ป่วย (confidentiality) และหลักการไม่ทำอันตรายต่อผู้ป่วย (<i>primum non nocere</i>)</p>
+        <div class="examtip">
+          <div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>
+          ระวังสับสนระหว่าง Hippocrates (บิดาแห่งการแพทย์ / รากฐานจริยธรรม) กับ Virchow (บิดาแห่งพยาธิวิทยาเซลล์) — ข้อสอบมักถามว่าใครคือ "father of" อะไร ให้จับคู่ชื่อ-ตำแหน่งให้แม่น
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Rudolf Virchow (1821–1902) — บิดาแห่งพยาธิวิทยาเซลล์</h3>
+        <p>แพทย์และนักวิทยาศาสตร์ชาวเยอรมัน ได้รับการยกย่องเป็น <b>"the father of cellular pathology"</b> จากการค้นพบหลักการสำคัญว่า <b>โรคและความผิดปกติต่าง ๆ ในร่างกายเกิดขึ้นจากการเปลี่ยนแปลงในระดับเซลล์</b> (<span class="eng">"Omnis cellula e cellula" — all cells arise from pre-existing cells</span>) แนวคิดนี้เป็นรากฐานที่ทำให้พยาธิวิทยาสมัยใหม่มองโรคผ่านกล้องจุลทรรศน์ระดับเซลล์ ไม่ใช่แค่ระดับอวัยวะเหมือนในอดีต</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t1-definition">1.2 นิยามของพยาธิวิทยา (Definitions)</h2><span class="slide-ref">T1 · slide 7-8</span></div>
+      <div class="card">
+        <h3>รากศัพท์และความหมาย</h3>
+        <p><b class="mono">PATHOLOGY = PATHOS (suffering) + LOGOS (study)</b> — "การศึกษาเรื่องความทุกข์ทรมาน/โรค"</p>
+        <p><i>"Pathology is the study of abnormal or disease — tissues and organs (structural and functional changes) from molecular level to effects on individual"</i></p>
+        <p>อาจถูกเรียกด้วยชื่ออื่นที่ความหมายใกล้เคียงกัน: <b>Histopathology, Anatomical pathology, Morbid anatomy</b></p>
+        <p>อีกนิยามหนึ่งที่เน้นมุมห้องปฏิบัติการ: <i>"The science of the causes and effects of diseases, especially the branch of medicine that deals with the laboratory examination of samples of body tissue for diagnostic or forensic purposes."</i></p>
+        <h4>Disease คืออะไร</h4>
+        <p><b>'Disease' (dis-ease)</b>: ภาวะที่ร่างกายมีความผิดปกติ (abnormality) จนทำให้สูญเสียสุขภาวะปกติ (loss of normal health) กล่าวโดยง่าย <b>Disease = Ill health / illness</b></p>
+        <p>พยาธิวิทยาเป็นวิชาพื้นฐานที่ทำให้เกิดความรู้ความเข้าใจเรื่องโรคภัยไข้เจ็บต่าง ๆ โดยอาศัยวิชาวิทยาศาสตร์พื้นฐานหลายแขนง มีการปรับเปลี่ยนและทบทวนความรู้อยู่ตลอดเวลา และนำไปสู่การวินิจฉัยโรคที่แม่นยำ + ความสำเร็จในการดูแลรักษาผู้ป่วยอย่างมืออาชีพ</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t1-understanding">1.3 กรอบความเข้าใจโรคในเชิงพยาธิวิทยา</h2><span class="slide-ref">T1 · slide 9-10</span></div>
+      <p class="section-lede">โรคทุกโรคมีชุดลักษณะเฉพาะ (characteristic features) ที่สามารถทำความเข้าใจ จัดหมวดหมู่ และวินิจฉัยได้ ผ่านกรอบ 8 องค์ประกอบต่อไปนี้</p>
+
+      <div class="card">
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>องค์ประกอบ</th><th>ความหมาย</th></tr>
+            <tr><td>Epidemiology<br><span class="eng">ระบาดวิทยา</span></td><td>ความชุก การกระจายตัวของโรคในประชากร ปัจจัยเสี่ยง</td></tr>
+            <tr><td>Etiology<br><span class="eng">สาเหตุ</span></td><td>สาเหตุที่ทำให้เกิดโรค (เช่น เชื้อโรค พันธุกรรม สิ่งแวดล้อม)</td></tr>
+            <tr><td>Pathogenesis<br><span class="eng">กลไกการเกิดโรค</span></td><td>ลำดับขั้นตอนของกลไกที่นำไปสู่การเกิดพยาธิสภาพ ตั้งแต่ระดับโมเลกุลจนถึงอวัยวะ</td></tr>
+            <tr><td>Pathognomonic</td><td>ลักษณะเฉพาะที่จำเพาะต่อโรคนั้น ๆ จนสามารถวินิจฉัยโรคได้จากลักษณะนี้เพียงอย่างเดียว</td></tr>
+            <tr><td>Pathological features</td><td>ลักษณะการเปลี่ยนแปลงของเซลล์และอวัยวะที่เกิดจากโรคนั้น ๆ (สิ่งที่เห็นใต้กล้องจุลทรรศน์/ในชิ้นเนื้อ)</td></tr>
+            <tr><td>Clinical features</td><td><b>Signs</b> = สิ่งที่แพทย์ตรวจพบ vs <b>Symptoms</b> = อาการที่ผู้ป่วยบอกแพทย์เอง</td></tr>
+            <tr><td>Complications &amp; sequelae<br><span class="eng">ภาวะแทรกซ้อน</span></td><td>วัดผลด้วย <b>morbidity rate</b> (อัตราความพิการ/ทุพพลภาพ) และ <b>mortality rate</b> (อัตราการตาย)</td></tr>
+            <tr><td>Prognosis<br><span class="eng">พยากรณ์โรค</span></td><td>เช่น 5-year survival, 10-year survival rate, recurrence rate — บอกแนวโน้ม poor/good</td></tr>
+          </table>
+        </div>
+        <h4>แผนการรักษา (Treatment)</h4>
+        <ul class="plain">
+          <li><b>Medication</b> — รักษาด้วยยา</li>
+          <li><b>Surgery</b> — การผ่าตัด</li>
+          <li><b>Rehabilitation</b> — การฟื้นฟูสภาพ</li>
+          <li><b>Lifestyle modification</b> — การปรับพฤติกรรมสุขภาพ</li>
+        </ul>
+        <div class="examtip">
+          <div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>
+          Sign vs Symptom สับสนกันบ่อยมาก: <b>Sign = obj ective</b> (แพทย์ตรวจพบเอง เช่น ไข้ ผื่น) ส่วน <b>Symptom = subjective</b> (ผู้ป่วยรายงานเอง เช่น ปวดหัว เวียนหัว)
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t1-branches">1.4 สาขาของพยาธิวิทยา</h2><span class="slide-ref">T1 · slide 13-19</span></div>
+      <p class="section-lede">พยาธิวิทยาแบ่งออกเป็น 2 สาขาหลักตามวิธีการศึกษา ได้แก่ Anatomical Pathology และ Clinical Pathology</p>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+          <rect x="280" y="10" width="200" height="42" rx="10" fill="var(--hema)"/>
+          <text x="380" y="36" text-anchor="middle" fill="#fff" font-size="15" font-weight="600">PATHOLOGY</text>
+          <line x1="380" y1="52" x2="380" y2="75" stroke="var(--line-strong)" stroke-width="2"/>
+          <line x1="180" y1="75" x2="580" y2="75" stroke="var(--line-strong)" stroke-width="2"/>
+          <line x1="180" y1="75" x2="180" y2="95" stroke="var(--line-strong)" stroke-width="2"/>
+          <line x1="580" y1="75" x2="580" y2="95" stroke="var(--line-strong)" stroke-width="2"/>
+
+          <rect x="40" y="95" width="280" height="46" rx="10" fill="var(--hema-soft)" stroke="var(--hema)" stroke-width="1.5"/>
+          <text x="180" y="118" text-anchor="middle" fill="var(--hema)" font-size="13.5" font-weight="700">Anatomical Pathology</text>
+          <text x="180" y="134" text-anchor="middle" fill="var(--ink-soft)" font-size="10.5">พยาธิวิทยากายวิภาค</text>
+
+          <rect x="440" y="95" width="280" height="46" rx="10" fill="var(--eosin-soft)" stroke="var(--eosin)" stroke-width="1.5"/>
+          <text x="580" y="118" text-anchor="middle" fill="var(--eosin)" font-size="13.5" font-weight="700">Clinical Pathology</text>
+          <text x="580" y="134" text-anchor="middle" fill="var(--ink-soft)" font-size="10.5">Laboratory Medicine</text>
+
+          <line x1="180" y1="141" x2="180" y2="158" stroke="var(--line-strong)" stroke-width="1.5"/>
+          <rect x="40" y="158" width="130" height="38" rx="8" fill="#fff" stroke="var(--line-strong)"/>
+          <text x="105" y="180" text-anchor="middle" font-size="11.5" fill="var(--ink)">General Pathology</text>
+          <rect x="190" y="158" width="130" height="38" rx="8" fill="#fff" stroke="var(--line-strong)"/>
+          <text x="255" y="180" text-anchor="middle" font-size="11.5" fill="var(--ink)">Systematic Pathology</text>
+
+          <line x1="580" y1="141" x2="580" y2="152" stroke="var(--line-strong)" stroke-width="1.5"/>
+          <g font-size="9.8" fill="var(--ink-soft)">
+            <rect x="400" y="152" width="128" height="24" rx="6" fill="#fff" stroke="var(--line-strong)"/><text x="464" y="168" text-anchor="middle">Hematology</text>
+            <rect x="534" y="152" width="128" height="24" rx="6" fill="#fff" stroke="var(--line-strong)"/><text x="598" y="168" text-anchor="middle">Microscopy</text>
+            <rect x="400" y="180" width="128" height="24" rx="6" fill="#fff" stroke="var(--line-strong)"/><text x="464" y="196" text-anchor="middle">Microbiology</text>
+            <rect x="534" y="180" width="128" height="24" rx="6" fill="#fff" stroke="var(--line-strong)"/><text x="598" y="196" text-anchor="middle">Chem &amp; Toxicology</text>
+            <rect x="400" y="208" width="128" height="24" rx="6" fill="#fff" stroke="var(--line-strong)"/><text x="464" y="224" text-anchor="middle">Immunology</text>
+            <rect x="534" y="208" width="128" height="24" rx="6" fill="#fff" stroke="var(--line-strong)"/><text x="598" y="224" text-anchor="middle">Transfusion Med.</text>
+            <rect x="400" y="236" width="128" height="24" rx="6" fill="#fff" stroke="var(--line-strong)"/><text x="464" y="252" text-anchor="middle">Genetics</text>
+            <rect x="534" y="236" width="128" height="24" rx="6" fill="#fff" stroke="var(--line-strong)"/><text x="598" y="252" text-anchor="middle">Forensic Path.</text>
+            <rect x="400" y="264" width="128" height="24" rx="6" fill="#fff" stroke="var(--line-strong)"/><text x="464" y="280" text-anchor="middle">Histo/Cytopathology</text>
+            <rect x="534" y="264" width="128" height="24" rx="6" fill="#fff" stroke="var(--line-strong)"/><text x="598" y="280" text-anchor="middle">Precision Medicine</text>
+          </g>
+        </svg>
+        <div class="diagram-cap">Fig 1.1 — การแบ่งสาขาของพยาธิวิทยา</div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="cmp">
+          <tr><th>หัวข้อเปรียบเทียบ</th><th>Anatomical Pathology<br><span class="eng">(พยาธิวิทยากายวิภาค)</span></th><th>Clinical Pathology<br><span class="eng">(พยาธิวิทยาคลินิก / Laboratory Medicine)</span></th></tr>
+          <tr><td>นิยาม</td><td>สาขาที่เน้นศึกษาการเปลี่ยนแปลงโครงสร้าง รูปร่าง และลักษณะของเซลล์ เนื้อเยื่อ หรืออวัยวะที่เกิดจากโรคต่าง ๆ</td><td>สาขาที่เน้นวินิจฉัยโรคโดยการวิเคราะห์สารน้ำและสิ่งส่งตรวจจากร่างกาย</td></tr>
+          <tr><td>วิธีตรวจ</td><td>ตรวจด้วยตาเปล่า (gross) และกล้องจุลทรรศน์ (microscope)</td><td>ใช้เครื่องมือห้องปฏิบัติการวิเคราะห์ เลือด ปัสสาวะ อุจจาระ น้ำไขสันหลัง และสารน้ำต่าง ๆ</td></tr>
+          <tr><td>แบ่งย่อย</td><td>General pathology &amp; Systematic pathology</td><td>Hematology, Microscopy, Microbiology, Chemistry &amp; Toxicology, Immunology/Serology, Transfusion medicine, Genetics, Forensic pathology, Histopathology, Cytopathology, ART, Precision Medicine</td></tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>ภายใน Anatomical Pathology แบ่งเป็น 2 ระดับ</h3>
+        <h4>1. General Pathology</h4>
+        <p>เข้าใจสาเหตุ กลไก และลักษณะสำคัญ (major categories) ของโรค — เป็น<b>รากฐานความรู้ที่ต้องเรียนก่อน</b>ศึกษา systematic pathology (นี่คือเนื้อหาที่คุณกำลังเรียนอยู่ใน block นี้)</p>
+        <h4>2. Systematic Pathology</h4>
+        <p>ความรู้เฉพาะโรคที่ส่งผลต่ออวัยวะหรือระบบใดระบบหนึ่ง แต่ละโรคอาจมีสาเหตุและกลไกที่อ้างอิงจาก general pathology หนึ่งอย่างหรือมากกว่า เช่น <span class="eng">acute appendicitis, carcinoma of lung</span></p>
+      </div>
+
+      <div class="card">
+        <h3>Clinical Pathology มีสาขาย่อยครบ 12 แขนง</h3>
+        <div class="glossary">
+          <div class="gterm"><b>Clinical Hematology</b>ตรวจโรคทางโลหิตวิทยา</div>
+          <div class="gterm"><b>Clinical Microscopy</b>ตรวจด้วยกล้องจุลทรรศน์จากสิ่งส่งตรวจ</div>
+          <div class="gterm"><b>Clinical Microbiology</b>Bacteriology, Virology, Parasitology, Mycology</div>
+          <div class="gterm"><b>Clinical Chemistry &amp; Toxicology</b>ตรวจการทำงานตับ/ไต สารพิษ</div>
+          <div class="gterm"><b>Clinical Immunology / Serology</b>ตรวจภูมิคุ้มกันและปฏิกิริยาน้ำเหลือง</div>
+          <div class="gterm"><b>Transfusion Medicine</b>เวชศาสตร์การให้เลือด / Blood Bank</div>
+          <div class="gterm"><b>Genetics</b>ตรวจความผิดปกติทางพันธุกรรม</div>
+          <div class="gterm"><b>Forensic pathology</b>นิติพยาธิวิทยา</div>
+          <div class="gterm"><b>Histopathology</b>ตรวจชิ้นเนื้อ</div>
+          <div class="gterm"><b>Cytopathology</b>ตรวจเซลล์เดี่ยว</div>
+          <div class="gterm"><b>Assisted Reproductive Technology</b>เทคโนโลยีช่วยการเจริญพันธุ์</div>
+          <div class="gterm"><b>Precision Medicine</b>การแพทย์แม่นยำเฉพาะบุคคล</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t1-terms">1.5 ศัพท์ทางการแพทย์พื้นฐาน (Medical Terminology)</h2><span class="slide-ref">T1 · slide 21-28</span></div>
+      <p class="section-lede">โครงสร้างศัพท์ทางการแพทย์ประกอบด้วย 3 ส่วน: <b>รากศัพท์ (word root)</b> + <b>คำนำหน้า/อุปสรรค (prefix)</b> + <b>ปัจจัย (suffix)</b> การรู้ทั้ง 3 ส่วนช่วยให้แปลความหมายศัพท์ใหม่ ๆ ได้เองแม้ไม่เคยเจอมาก่อน</p>
+
+      <div class="card">
+        <h3>ตัวอย่างการแยกส่วนประกอบศัพท์: Cholecystitis</h3>
+        <p><span class="mono">Chole-</span> (น้ำดี) + <span class="mono">-cyst-</span> (ถุงหรือช่อง) → <b>Cholecyst</b> = ถุงน้ำดี, + <span class="mono">-itis</span> (อาการอักเสบ) → <b>Cholecystitis</b> = ถุงน้ำดีอักเสบ</p>
+        <ul class="plain">
+          <li><b>Cholecystitis</b> ถุงน้ำดีอักเสบ</li>
+          <li><b>Cholecystectomy</b> การตัดถุงน้ำดีออก (<span class="mono">-ectomy</span> = ตัดออก)</li>
+          <li><b>Cholecystolithiasis</b> นิ่วในถุงน้ำดี (<span class="mono">lith-</span> = หิน/นิ่ว)</li>
+        </ul>
+      </div>
+
+      <details class="more">
+        <summary>คลิกดู Prefix ทั้งหมด (root words บอกอวัยวะ/สาร)</summary>
+        <div class="more-body glossary">
+          <div class="gterm"><b>adipo-</b>fat เช่น adipocyte</div>
+          <div class="gterm"><b>blast-</b>sprout/immature เช่น erythroblast</div>
+          <div class="gterm"><b>chrome-</b>color เช่น chromosome</div>
+          <div class="gterm"><b>dacty-</b>finger เช่น syndactyly</div>
+          <div class="gterm"><b>iatro-</b>physician เช่น iatrogenic anemia</div>
+          <div class="gterm"><b>lith-</b>stone เช่น cholelithiasis</div>
+          <div class="gterm"><b>myelo-</b>bone marrow เช่น multiple myeloma</div>
+          <div class="gterm"><b>myo-</b>muscle เช่น rhabdomyoma</div>
+          <div class="gterm"><b>phlebo-</b>vein เช่น phlebotomy</div>
+          <div class="gterm"><b>soma/-somy</b>body เช่น chromosome</div>
+          <div class="gterm"><b>leuko-</b>white/clear เช่น leukocyte</div>
+          <div class="gterm"><b>erythro-</b>red เช่น erythrocyte</div>
+          <div class="gterm"><b>xantho-</b>yellow/golden เช่น xanthoderma</div>
+          <div class="gterm"><b>melano-</b>black เช่น melanocyte</div>
+          <div class="gterm"><b>coagul-</b>clot เช่น coagulopathy</div>
+          <div class="gterm"><b>myc(o)-</b>fungus เช่น mycosis</div>
+          <div class="gterm"><b>nephr-</b>kidney เช่น nephritis</div>
+          <div class="gterm"><b>ophth-</b>eye เช่น microphthalmia</div>
+          <div class="gterm"><b>phyllo-</b>leaf-like เช่น phyllode tumor</div>
+          <div class="gterm"><b>rhino-</b>nose เช่น rhinorrhea</div>
+        </div>
+      </details>
+
+      <details class="more">
+        <summary>คลิกดู Prefix บอกปริมาณ/ทิศทาง/ลักษณะ</summary>
+        <div class="more-body glossary">
+          <div class="gterm"><b>a-, an-, ana-</b>absence เช่น anaphylaxis</div>
+          <div class="gterm"><b>dys-</b>disordered เช่น dysplasia</div>
+          <div class="gterm"><b>micro-</b>small เช่น microcephaly</div>
+          <div class="gterm"><b>macro-</b>big เช่น macrosomia</div>
+          <div class="gterm"><b>hyper-</b>excess เช่น hyperthyroidism</div>
+          <div class="gterm"><b>hypo-</b>deficiency เช่น hypothyroidism</div>
+          <div class="gterm"><b>meta-</b>change เช่น metastasis</div>
+          <div class="gterm"><b>intra-</b>within เช่น intravascular</div>
+          <div class="gterm"><b>inter-</b>between เช่น interleukin</div>
+          <div class="gterm"><b>neo-</b>new เช่น neoangiogenesis</div>
+          <div class="gterm"><b>poly-</b>many เช่น polydactyly</div>
+          <div class="gterm"><b>pseudo-</b>false เช่น pseudogout</div>
+          <div class="gterm"><b>peri-</b>around เช่น periductal fibrosis</div>
+          <div class="gterm"><b>para-</b>beside/wrong เช่น paracentric</div>
+          <div class="gterm"><b>semi-</b>half เช่น semilunar valve</div>
+          <div class="gterm"><b>trans-</b>across เช่น transmigration</div>
+          <div class="gterm"><b>retro-</b>backward เช่น retroperitoneal</div>
+          <div class="gterm"><b>homo-</b>same เช่น homozygote</div>
+        </div>
+      </details>
+
+      <details class="more">
+        <summary>คลิกดู Suffix ทั้งหมด (บอกภาวะ/หัตถการ)</summary>
+        <div class="more-body glossary">
+          <div class="gterm"><b>-itis</b>inflammation เช่น appendicitis</div>
+          <div class="gterm"><b>-ectomy</b>surgical removal เช่น mastectomy</div>
+          <div class="gterm"><b>-oma</b>tumour เช่น papilloma</div>
+          <div class="gterm"><b>-osis</b>state/condition เช่น osteoarthrosis</div>
+          <div class="gterm"><b>-oid</b>resemblance เช่น leukemoid reaction</div>
+          <div class="gterm"><b>-ase</b>enzyme เช่น phospholipase</div>
+          <div class="gterm"><b>-penia</b>lack of เช่น thrombocytopenia</div>
+          <div class="gterm"><b>-cytosis</b>increased cell number เช่น thrombocytosis</div>
+          <div class="gterm"><b>-ectasis</b>dilatation เช่น bronchiectasis</div>
+          <div class="gterm"><b>-plasia</b>growth disorder เช่น hyperplasia</div>
+          <div class="gterm"><b>-opathy</b>abnormal state เช่น lymphadenopathy</div>
+          <div class="gterm"><b>-megaly</b>large เช่น hepatomegaly</div>
+          <div class="gterm"><b>-ogen</b>precursor เช่น carcinogen</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t1-terms2">1.6 ศัพท์คู่ตรงข้ามที่ใช้อธิบายลักษณะโรค</h2><span class="slide-ref">T1 · slide 21</span></div>
+      <div class="card">
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>คู่ศัพท์</th><th>มิติที่อธิบาย</th><th>ตัวอย่าง</th></tr>
+            <tr><td>Primary vs Secondary</td><td>สาเหตุของโรค (causation) — ใช้ในความหมายเดียวกับ essential/idiopathic/spontaneous/cryptogenic (ไม่ทราบสาเหตุ) vs iatrogenic (เกิดจากการรักษา); หรือระยะเริ่มต้น vs ระยะตามมา</td><td>Primary tumor vs Secondary tumor (metastasis)</td></tr>
+            <tr><td>Acute vs Chronic</td><td>พลวัตของโรค (dynamics) — บอกความเร็ว/ระยะเวลาของโรค</td><td>Acute pain, acute vs chronic inflammation</td></tr>
+            <tr><td>Benign vs Malignant</td><td>ผลลัพธ์ของโรค (outcome)</td><td>Benign tumor vs Malignant tumor</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t1-diagnosis">1.7 กระบวนการวินิจฉัยโรค (Making Diagnosis)</h2><span class="slide-ref">T1 · slide 29</span></div>
+      <div class="card">
+        <p><b>Making Diagnosis</b> = การให้การวินิจฉัย หมายถึง การระบุชื่อโรคในผู้ป่วยแต่ละราย (<span class="eng">the act of naming a disease in an individual patient</span>) ประกอบด้วย 3 ขั้นตอนหลักตามลำดับ:</p>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 760 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="30" width="170" height="60" rx="12" fill="var(--hema-soft)" stroke="var(--hema)" stroke-width="1.5"/>
+            <text x="95" y="55" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--hema)">1. History</text>
+            <text x="95" y="72" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">ซักประวัติ → Symptoms</text>
+
+            <path d="M180 60 L215 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#arrow1)"/>
+
+            <rect x="220" y="30" width="170" height="60" rx="12" fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.5"/>
+            <text x="305" y="55" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--teal)">2. Examination</text>
+            <text x="305" y="72" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">ตรวจร่างกาย → Signs</text>
+
+            <path d="M390 60 L425 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#arrow1)"/>
+
+            <rect x="430" y="30" width="170" height="60" rx="12" fill="var(--eosin-soft)" stroke="var(--eosin)" stroke-width="1.5"/>
+            <text x="515" y="50" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--eosin)">3. Investigation</text>
+            <text x="515" y="66" text-anchor="middle" font-size="10" fill="var(--ink-soft)">ตรวจ Lab ตาม</text>
+            <text x="515" y="79" text-anchor="middle" font-size="10" fill="var(--ink-soft)">provisional diagnosis</text>
+
+            <path d="M600 60 L635 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#arrow1)"/>
+
+            <rect x="640" y="30" width="115" height="60" rx="12" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
+            <text x="697" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="var(--amber)">Definite</text>
+            <text x="697" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="var(--amber)">Diagnosis</text>
+            <defs><marker id="arrow1" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 1.2 — กระบวนการวินิจฉัยโรค 3 ขั้นตอน</div>
+        </div>
+        <ul class="plain">
+          <li><b>1. Taking a clinical history</b> — ซักประวัติเพื่อบันทึก <b>Symptoms</b> (อาการที่ผู้ป่วยบอก)</li>
+          <li><b>2. Examining the patient</b> — ตรวจร่างกายเพื่อหา <b>Signs</b> (สิ่งที่แพทย์ตรวจพบทางคลินิก)</li>
+          <li><b>3. Performing investigations</b> (ถ้าจำเป็น) — ตรวจทางห้องปฏิบัติการ โดยมี provisional diagnosis จาก signs/symptoms เป็นตัวนำทาง → นำไปสู่ <b>Definite diagnosis</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-divider">คำศัพท์สำคัญประจำหัวข้อ</div>
+      <div class="card">
+        <div class="glossary">
+          <div class="gterm"><b>Pathology</b>การศึกษาโรค/ความผิดปกติของร่างกาย</div>
+          <div class="gterm"><b>Etiology</b>สาเหตุของโรค</div>
+          <div class="gterm"><b>Pathogenesis</b>กลไกการดำเนินโรค</div>
+          <div class="gterm"><b>Pathognomonic</b>ลักษณะเฉพาะที่วินิจฉัยได้ทันที</div>
+          <div class="gterm"><b>Sign</b>สิ่งที่แพทย์ตรวจพบ (objective)</div>
+          <div class="gterm"><b>Symptom</b>อาการที่ผู้ป่วยรายงาน (subjective)</div>
+          <div class="gterm"><b>Morbidity</b>อัตราความพิการ/ทุพพลภาพ</div>
+          <div class="gterm"><b>Mortality</b>อัตราการตาย</div>
+          <div class="gterm"><b>Prognosis</b>การพยากรณ์แนวโน้มของโรค</div>
+          <div class="gterm"><b>Anatomical pathology</b>ศึกษาโครงสร้างที่เปลี่ยนแปลงจากโรค</div>
+          <div class="gterm"><b>Clinical pathology</b>วินิจฉัยผ่านสิ่งส่งตรวจในห้องปฏิบัติการ</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="tabpanel" id="panel-t2">
+    <div class="tabhero">
+      <div class="kicker">T2 · Cell and Tissue Injury</div>
+      <h1>เมื่อเซลล์เผชิญความเครียด: บาดเจ็บ ปรับตัว หรือสะสมของเสีย</h1>
+      <p>สาเหตุและกลไกโมเลกุลของการบาดเจ็บของเซลล์ การปรับตัว (adaptation) และรูปแบบการสะสมสารผิดปกติภายในเซลล์</p>
+    </div>
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t2-overview">2.1 ภาพรวม: เซลล์ตอบสนองต่อความเครียดอย่างไร</h2><span class="slide-ref">T2 · slide 3-8</span></div>
+      <p class="section-lede">เซลล์ปกติดำรงอยู่ใน <b>steady state / homeostasis</b> เมื่อเผชิญกับ stress หรือ noxious stimuli เซลล์จะตอบสนองได้หลายแบบ ขึ้นกับ<b>ชนิด ความรุนแรง และระยะเวลา</b>ของสิ่งกระตุ้น</p>
+      <div class="diagram-frame">
+        <svg viewBox="0 0 780 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+          <rect x="10" y="80" width="130" height="50" rx="10" fill="var(--teal-soft)" stroke="var(--teal)" stroke-width="1.5"/>
+          <text x="75" y="110" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--teal)">Normal cell</text>
+          <path d="M140 105 L175 105" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a2)"/>
+          <text x="157" y="95" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)">stress</text>
+
+          <rect x="180" y="20" width="150" height="50" rx="10" fill="var(--hema-soft)" stroke="var(--hema)" stroke-width="1.5"/>
+          <text x="255" y="42" text-anchor="middle" font-size="12" font-weight="700" fill="var(--hema)">Adaptation</text>
+          <text x="255" y="58" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)">Hypertrophy/Hyperplasia/</text>
+          <text x="255" y="68" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)">Atrophy/Metaplasia</text>
+
+          <path d="M175 105 L255 75" stroke="var(--ink-faint)" stroke-width="1.5" fill="none" marker-end="url(#a2)"/>
+          <text x="195" y="80" font-size="9" fill="var(--ink-soft)">ปรับตัวได้ทัน</text>
+
+          <rect x="180" y="140" width="150" height="50" rx="10" fill="var(--eosin-soft)" stroke="var(--eosin)" stroke-width="1.5"/>
+          <text x="255" y="162" text-anchor="middle" font-size="12" font-weight="700" fill="var(--eosin)">Cell injury</text>
+          <text x="255" y="178" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)">รุนแรง/เฉียบพลันเกินปรับตัว</text>
+          <path d="M175 110 L255 148" stroke="var(--ink-faint)" stroke-width="1.5" fill="none" marker-end="url(#a2)"/>
+
+          <path d="M330 165 L365 165" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a2)"/>
+          <rect x="370" y="140" width="160" height="50" rx="10" fill="#fff" stroke="var(--line-strong)"/>
+          <text x="450" y="162" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">Reversible injury</text>
+          <text x="450" y="178" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)">stimulus หมด → กลับสู่ปกติ</text>
+
+          <path d="M450 190 Q450 205 400 205 Q350 205 320 130 Q310 100 255 78" stroke="var(--ink-faint)" stroke-width="1.3" fill="none" stroke-dasharray="3,3" marker-end="url(#a2)"/>
+
+          <path d="M530 165 L565 165" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a2)"/>
+          <rect x="570" y="140" width="90" height="50" rx="10" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
+          <text x="615" y="168" text-anchor="middle" font-size="11" font-weight="700" fill="var(--amber)">Point of</text>
+          <text x="615" y="180" text-anchor="middle" font-size="11" font-weight="700" fill="var(--amber)">no return</text>
+
+          <path d="M660 165 L695 165" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a2)"/>
+          <rect x="700" y="130" width="75" height="30" rx="8" fill="var(--eosin)" />
+          <text x="737" y="150" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Necrosis</text>
+          <rect x="700" y="170" width="75" height="30" rx="8" fill="var(--hema)" />
+          <text x="737" y="190" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Apoptosis</text>
+
+          <defs><marker id="a2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+        </svg>
+        <div class="diagram-cap">Fig 2.1 — Cellular response to stress: จาก adaptation ถึง cell death</div>
+      </div>
+      <div class="card">
+        <h3>ปัจจัยที่กำหนดว่าเซลล์จะ "ปรับตัว" หรือ "บาดเจ็บ"</h3>
+        <ul class="plain">
+          <li><b>ชนิด (type)</b> ของสิ่งกระตุ้น — physical, chemical, biological</li>
+          <li><b>ความรุนแรง (severity)</b> — ยิ่งรุนแรงมาก ยิ่งมีโอกาส irreversible</li>
+          <li><b>ระยะเวลา (duration)</b> — เฉียบพลัน (acute) vs เรื้อรัง (chronic)</li>
+          <li><b>ชนิดของเซลล์/เนื้อเยื่อที่ได้รับผลกระทบ</b> — เซลล์บางชนิดทนต่อ stress ได้ดีกว่า (เช่น fibroblast ทนต่อ hypoxia ได้ดีกว่า neuron)</li>
+        </ul>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>"Point of no return" คือจุดเปลี่ยนสำคัญที่ทำให้ reversible injury กลายเป็น irreversible injury — มักสัมพันธ์กับ<b>ความเสียหายของ mitochondria อย่างรุนแรง</b>และ<b>เยื่อหุ้มเซลล์ (plasma membrane) ถูกทำลาย</b> ทำให้ Ca²⁺ ไหลเข้าเซลล์อย่างควบคุมไม่ได้</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t2-causes">2.2 สาเหตุของการบาดเจ็บของเซลล์ (Causes of Cell Injury)</h2><span class="slide-ref">T2 · slide 9-11</span></div>
+      <div class="card">
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>สาเหตุ</th><th>ตัวอย่าง</th></tr>
+            <tr><td>1. Hypoxia / Ischemia</td><td>ขาดออกซิเจน (hypoxia) หรือเลือดไปเลี้ยงไม่พอ (ischemia) — สาเหตุที่พบบ่อยที่สุดของ cell injury ในทางคลินิก เช่น coronary artery occlusion</td></tr>
+            <tr><td>2. Physical agents</td><td>อุบัติเหตุ (trauma), ความร้อน/ความเย็นสุดขั้ว (thermal), รังสี (radiation), ไฟฟ้าช็อต (electric shock), การเปลี่ยนแปลงความดันอย่างรวดเร็ว</td></tr>
+            <tr><td>3. Chemical agents &amp; drugs</td><td>สารพิษ, ยาเกินขนาด, กลูโคส/เกลือความเข้มข้นสูง, ออกซิเจนความเข้มข้นสูง, มลพิษสิ่งแวดล้อม, สารเสพติด, แอลกอฮอล์</td></tr>
+            <tr><td>4. Infectious agents</td><td>ไวรัส แบคทีเรีย เชื้อรา ปรสิต และสารพิษที่เชื้อสร้างขึ้น</td></tr>
+            <tr><td>5. Immunologic reactions</td><td>ปฏิกิริยา autoimmune, hypersensitivity reaction ต่อสารก่อภูมิแพ้</td></tr>
+            <tr><td>6. Genetic derangements</td><td>ความผิดปกติทางพันธุกรรม เช่น sickle cell disease, enzyme deficiency</td></tr>
+            <tr><td>7. Nutritional imbalances</td><td>ภาวะขาดสารอาหาร (protein-calorie deficiency) หรือได้รับมากเกินไป (obesity, hypervitaminosis)</td></tr>
+            <tr><td>8. Aging</td><td>การเสื่อมสภาพของเซลล์ตามอายุ (cellular senescence)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t2-freeradical">2.3 อนุมูลอิสระ (Free Radicals) และระบบต้านอนุมูลอิสระ</h2><span class="slide-ref">T2 · slide 12-13 <span style="color:var(--teal)">+ เสริมจาก Robbins</span></span></div>
+      <div class="card">
+        <h3>Free radical คืออะไร</h3>
+        <p><b>Free radical (reactive oxygen species, ROS)</b> คือโมเลกุลหรืออะตอมที่มี <b>unpaired electron ในวงโคจรนอกสุด</b> ทำให้มีความไม่เสถียรสูงและว่องไวต่อการทำปฏิกิริยาเคมีกับโมเลกุลข้างเคียงอย่างรุนแรง (highly reactive) เมื่อทำปฏิกิริยากับโปรตีน ไขมัน และ DNA จะทำให้โครงสร้างเหล่านั้นเสียหาย</p>
+        <h4>แหล่งกำเนิดของ ROS ในเซลล์ (เสริมจาก Robbins)</h4>
+        <ul class="plain">
+          <li><b>Mitochondrial electron transport chain</b> — แหล่งหลักที่สุด: ระหว่างกระบวนการ oxidative phosphorylation จะมี O₂ รั่วไหลรับอิเล็กตรอนไม่ครบ เกิดเป็น <span class="mono">superoxide (O₂•⁻)</span> ขึ้นเองตามธรรมชาติ</li>
+          <li><b>Enzymatic production</b> — เอนไซม์ oxidase/oxygenase ระหว่าง metabolism ปกติ, เอนไซม์ในกระบวนการ inflammation เช่น NADPH oxidase ใน neutrophil/macrophage (ใช้ฆ่าเชื้อโรค — <i>respiratory burst</i>)</li>
+          <li><b>Fenton reaction</b> — โลหะทรานซิชัน (โดยเฉพาะ Fe²⁺, Cu⁺) ทำปฏิกิริยากับ H₂O₂ เกิดเป็น <span class="mono">hydroxyl radical (•OH)</span> ซึ่งเป็น ROS ที่อันตรายที่สุด เพราะทำปฏิกิริยากับโมเลกุลรอบข้างได้เกือบทันทีที่สัมผัส</li>
+          <li><b>Radiation (UV, X-ray, ionizing radiation)</b> — พลังงานรังสีสามารถแตกโมเลกุลน้ำ (radiolysis of water) กลายเป็น •OH และ H•</li>
+          <li><b>Nitric oxide (NO•)</b> — สร้างจาก endothelial cell, macrophage, neuron และสามารถรวมกับ superoxide กลายเป็น <span class="mono">peroxynitrite (ONOO⁻)</span> ซึ่งเป็น reactive nitrogen species ที่ทำลายเซลล์ได้เช่นกัน</li>
+        </ul>
+        <h4>กลไกการทำลายเซลล์ของ ROS</h4>
+        <ul class="plain">
+          <li><b>Lipid peroxidation</b> — ROS ทำปฏิกิริยากับ double bond ของ polyunsaturated fatty acid ใน membrane phospholipid เกิดเป็นปฏิกิริยาลูกโซ่ (autocatalytic chain reaction) ทำลายโครงสร้าง membrane</li>
+          <li><b>Protein modification</b> — เกิด cross-linking ของโปรตีน (เช่น sulfhydryl-mediated cross-linking) ทำให้ enzyme เสียการทำงาน โครงสร้างโปรตีนเปลี่ยนรูป</li>
+          <li><b>DNA damage</b> — ทำให้เกิด single/double strand break, base modification → นำไปสู่ mutation, aging, และ malignant transformation หากซ่อมแซมไม่ทัน</li>
+        </ul>
+        <h4>ระบบต้านอนุมูลอิสระของร่างกาย (Antioxidant defense)</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ระบบ</th><th>กลไก</th></tr>
+            <tr><td>Enzymatic</td><td><b>Superoxide dismutase (SOD)</b> เปลี่ยน O₂•⁻ → H₂O₂ · <b>Catalase</b> เปลี่ยน H₂O₂ → H₂O + O₂ (พบมากใน peroxisome) · <b>Glutathione peroxidase (GPx)</b> เปลี่ยน •OH → H₂O</td></tr>
+            <tr><td>Non-enzymatic / Vitamin</td><td>Vitamin E (lipid-soluble, ปกป้อง membrane), Vitamin C (water-soluble), Beta-carotene, Glutathione</td></tr>
+            <tr><td>Protein-binding</td><td>Transferrin, ferritin, ceruloplasmin — จับโลหะอิสระ (Fe, Cu) ไม่ให้เข้าไปเร่งปฏิกิริยา Fenton reaction</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Hydroxyl radical (•OH) เป็น ROS ที่<b>อันตรายที่สุด</b>เพราะเสถียรน้อยที่สุด/reactive มากที่สุด ในขณะที่ H₂O₂ เองไม่ใช่ free radical จริง ๆ (ไม่มี unpaired electron) แต่อันตรายเพราะเป็นสารตั้งต้นของ •OH ผ่าน Fenton reaction</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t2-mechanisms">2.4 กลไกหลักของการบาดเจ็บของเซลล์ (5 Mechanisms)</h2><span class="slide-ref">T2 · slide 12-16 <span style="color:var(--teal)">+ เสริมจาก Robbins</span></span></div>
+      <p class="section-lede">ไม่ว่าสาเหตุจะเป็นอะไร กลไกที่นำไปสู่ cell injury ล้วนมาบรรจบกันที่ 5 pathway หลักนี้ ซึ่งมักเกิดร่วมกันและเสริมฤทธิ์กันเอง (interconnected, not mutually exclusive)</p>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+          <rect x="300" y="10" width="160" height="40" rx="10" fill="var(--teal)"/>
+          <text x="380" y="35" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">Injurious stimulus</text>
+          <line x1="380" y1="50" x2="380" y2="65" stroke="var(--line-strong)" stroke-width="2"/>
+          <line x1="90" y1="65" x2="670" y2="65" stroke="var(--line-strong)" stroke-width="2"/>
+          <g font-size="10.5">
+            <line x1="90" y1="65" x2="90" y2="85" stroke="var(--line-strong)" stroke-width="1.5"/>
+            <rect x="15" y="85" width="150" height="55" rx="9" fill="var(--teal-soft)" stroke="var(--teal)"/>
+            <text x="90" y="106" text-anchor="middle" font-weight="700" fill="var(--teal)">① ATP depletion</text>
+            <text x="90" y="121" text-anchor="middle" font-size="9" fill="var(--ink-soft)">Mitochondrial /</text>
+            <text x="90" y="132" text-anchor="middle" font-size="9" fill="var(--ink-soft)">hypoxic damage</text>
+
+            <line x1="235" y1="65" x2="235" y2="85" stroke="var(--line-strong)" stroke-width="1.5"/>
+            <rect x="165" y="85" width="150" height="55" rx="9" fill="var(--teal-soft)" stroke="var(--teal)"/>
+            <text x="240" y="106" text-anchor="middle" font-weight="700" fill="var(--teal)">② Mitochondrial</text>
+            <text x="240" y="121" text-anchor="middle" font-size="9" fill="var(--ink-soft)">damage</text>
+            <text x="240" y="132" text-anchor="middle" font-size="9" fill="var(--ink-soft)">(MPT pore)</text>
+
+            <line x1="380" y1="65" x2="380" y2="85" stroke="var(--line-strong)" stroke-width="1.5"/>
+            <rect x="315" y="85" width="150" height="55" rx="9" fill="var(--teal-soft)" stroke="var(--teal)"/>
+            <text x="390" y="106" text-anchor="middle" font-weight="700" fill="var(--teal)">③ Ca²⁺ influx</text>
+            <text x="390" y="121" text-anchor="middle" font-size="9" fill="var(--ink-soft)">activates</text>
+            <text x="390" y="132" text-anchor="middle" font-size="9" fill="var(--ink-soft)">degradative enzymes</text>
+
+            <line x1="525" y1="65" x2="525" y2="85" stroke="var(--line-strong)" stroke-width="1.5"/>
+            <rect x="460" y="85" width="150" height="55" rx="9" fill="var(--teal-soft)" stroke="var(--teal)"/>
+            <text x="535" y="106" text-anchor="middle" font-weight="700" fill="var(--teal)">④ Oxidative stress</text>
+            <text x="535" y="121" text-anchor="middle" font-size="9" fill="var(--ink-soft)">ROS accumulation</text>
+
+            <line x1="670" y1="65" x2="670" y2="85" stroke="var(--line-strong)" stroke-width="1.5"/>
+            <rect x="605" y="85" width="150" height="55" rx="9" fill="var(--teal-soft)" stroke="var(--teal)"/>
+            <text x="680" y="106" text-anchor="middle" font-weight="700" fill="var(--teal)">⑤ Membrane</text>
+            <text x="680" y="121" text-anchor="middle" font-size="9" fill="var(--ink-soft)">permeability</text>
+            <text x="680" y="132" text-anchor="middle" font-size="9" fill="var(--ink-soft)">defects</text>
+          </g>
+          <line x1="90" y1="140" x2="380" y2="175" stroke="var(--line-strong)" stroke-width="1.3" stroke-dasharray="2,3"/>
+          <line x1="240" y1="140" x2="380" y2="175" stroke="var(--line-strong)" stroke-width="1.3" stroke-dasharray="2,3"/>
+          <line x1="390" y1="140" x2="380" y2="175" stroke="var(--line-strong)" stroke-width="1.3" stroke-dasharray="2,3"/>
+          <line x1="535" y1="140" x2="380" y2="175" stroke="var(--line-strong)" stroke-width="1.3" stroke-dasharray="2,3"/>
+          <line x1="680" y1="140" x2="380" y2="175" stroke="var(--line-strong)" stroke-width="1.3" stroke-dasharray="2,3"/>
+          <rect x="270" y="180" width="220" height="55" rx="10" fill="var(--eosin)"/>
+          <text x="380" y="203" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">Cell injury</text>
+          <text x="380" y="220" text-anchor="middle" fill="#fff" font-size="10">(reversible → irreversible)</text>
+        </svg>
+        <div class="diagram-cap">Fig 2.2 — กลไกหลัก 5 ประการที่นำไปสู่ cell injury (มักเกิดร่วมกันแบบ interconnected)</div>
+      </div>
+
+      <div class="card">
+        <h3>① ATP Depletion</h3>
+        <p><b>ATP</b> จำเป็นต่อกระบวนการสำคัญเกือบทั้งหมดของเซลล์ ได้แก่ membrane transport (Na⁺-K⁺ ATPase), protein synthesis, lipogenesis, และ deacylation-reacylation reaction ของ phospholipid — เมื่อ ATP ลดลง (จาก hypoxia, ischemia, สารพิษ mitochondrial) จะเกิดผลตามลำดับ:</p>
+        <ul class="plain">
+          <li><b>Na⁺-K⁺ ATPase pump ล้มเหลว</b> → Na⁺ คั่งในเซลล์, K⁺ ไหลออก → น้ำไหลตามเข้าเซลล์ (osmotic gain) → <b>cellular/mitochondrial swelling</b> (ลักษณะแรกสุดที่เห็นใน reversible injury)</li>
+          <li>เซลล์เปลี่ยนไปใช้ <b>anaerobic glycolysis</b> ทดแทน (compensatory) → สะสม lactic acid + inorganic phosphate → <b>intracellular pH ลดลง</b> → เอนไซม์และ chromatin clumping ผิดปกติ</li>
+          <li><b>Ribosome หลุดจาก rough ER</b> (detachment) → protein synthesis ลดลง → เกิดการสะสมของไขมัน (lipid deposition) เนื่องจาก apolipoprotein สร้างไม่พอ</li>
+          <li>เมื่อ ATP หมดมากพอ → <b>irreversible damage</b> ต่อ mitochondria และ lysosomal membrane</li>
+        </ul>
+
+        <h3>② Mitochondrial Damage</h3>
+        <p>Mitochondria ถูกทำลายได้จาก Ca²⁺ ที่เพิ่มขึ้น, oxidative stress, phospholipid breakdown, หรือ protein breakdown ผลลัพธ์สำคัญคือการเปิดของ <b>Mitochondrial Permeability Transition (MPT) pore</b> — รูขนาดใหญ่บน inner mitochondrial membrane ที่ปกติปิดอยู่ เมื่อเปิด จะทำให้:</p>
+        <ul class="plain">
+          <li>สูญเสีย <b>mitochondrial membrane potential</b> → oxidative phosphorylation ล้มเหลวโดยสมบูรณ์ → ATP หมดอย่างรวดเร็ว (เป็นวงจรอุบาทว์กับกลไกที่ ①)</li>
+          <li>ปล่อย <b>cytochrome c</b> เข้าสู่ cytosol → กระตุ้น intrinsic (mitochondrial) pathway ของ <b>apoptosis</b> (รายละเอียดในหัวข้อ Apoptosis)</li>
+        </ul>
+
+        <h3>③ Calcium influx และการสูญเสียสมดุล Calcium homeostasis</h3>
+        <p>ภาวะปกติ cytosolic Ca²⁺ จะต่ำมาก (เก็บสะสมส่วนใหญ่ไว้ใน mitochondria และ ER) เมื่อเซลล์บาดเจ็บ ischemia หรือสารพิษบางชนิด จะทำให้ Ca²⁺ ไหลเข้า cytosol เพิ่มขึ้น (จากทั้งภายนอกเซลล์และจากแหล่งสะสมภายใน) ซึ่งจะไปกระตุ้นเอนไซม์ทำลายเซลล์หลายชนิด:</p>
+        <ul class="plain">
+          <li><b>Phospholipases</b> → ทำลาย membrane phospholipid</li>
+          <li><b>Proteases</b> → ทำลาย membrane และ cytoskeletal protein</li>
+          <li><b>ATPases</b> → เร่งการใช้ ATP ที่เหลืออยู่ให้หมดเร็วขึ้น</li>
+          <li><b>Endonucleases</b> → ทำลาย DNA/chromatin</li>
+        </ul>
+        <p>Ca²⁺ ที่สูงยังไปกระตุ้นการเปิด MPT pore โดยตรง เชื่อมโยงกับกลไก ② ด้วย</p>
+
+        <h3>④ Oxidative Stress (Accumulation of ROS)</h3>
+        <p>ดังกล่าวในหัวข้อ 2.3 — เมื่อการสร้าง ROS มากกว่าความสามารถของระบบ antioxidant จะเกิด oxidative stress ทำลาย lipid, protein, DNA</p>
+
+        <h3>⑤ Defects in Membrane Permeability</h3>
+        <p>ความเสียหายของ membrane (plasma membrane, mitochondrial membrane, lysosomal membrane) เกิดได้จากหลายกลไกร่วมกัน: ROS, การลดลงของ phospholipid synthesis (จาก ATP หมด), Ca²⁺-activated phospholipase, cytoskeletal damage — ผลลัพธ์คือ</p>
+        <ul class="plain">
+          <li><b>Plasma membrane damage</b> → สูญเสีย ion gradient, สารภายในเซลล์ (เช่น cardiac enzyme, LDH) รั่วออกนอกเซลล์ — ใช้เป็น marker ทางคลินิกได้ (เช่น troponin ในกล้ามเนื้อหัวใจตาย)</li>
+          <li><b>Lysosomal membrane damage</b> → ปล่อย hydrolytic enzyme (proteases, nucleases, lipases) เข้าสู่ cytosol → ย่อยทำลายองค์ประกอบเซลล์เอง (autodigestion) — เป็นกลไกสำคัญของ irreversible injury</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t2-reversible">2.5 Reversible vs Irreversible Cell Injury</h2><span class="slide-ref">T2 · slide 17-20</span></div>
+      <div class="card">
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ลักษณะ</th><th>Reversible Injury</th><th>Irreversible Injury</th></tr>
+            <tr><td>คำจำกัดความ</td><td>เซลล์บาดเจ็บแต่ยังกลับสู่สภาพปกติได้เมื่อ stimulus หมดไป</td><td>เซลล์บาดเจ็บถึงจุดที่ไม่สามารถฟื้นตัวได้ ไม่ว่าจะเอา stimulus ออกหรือไม่</td></tr>
+            <tr><td>Ultrastructure — mitochondria</td><td>บวม (swelling), มี small amorphous density เล็กน้อย</td><td>บวมรุนแรง, มี large amorphous density, membrane แตก, เกิด calcification</td></tr>
+            <tr><td>Plasma membrane</td><td>บวม (cellular swelling), blebbing เล็กน้อย, microvilli หลุดลอก</td><td>เสียหายรุนแรง (membrane rupture) — จุดที่บ่งบอก irreversibility ชัดเจนที่สุด</td></tr>
+            <tr><td>ER</td><td>ขยาย/บวม, ribosome หลุดออก</td><td>แตกสลาย</td></tr>
+            <tr><td>Nucleus</td><td>chromatin clumping</td><td>Pyknosis → Karyorrhexis → Karyolysis (ตายสมบูรณ์)</td></tr>
+            <tr><td>Lysosome</td><td>ปกติ</td><td>membrane แตก ปล่อย hydrolytic enzyme</td></tr>
+            <tr><td>ผลลัพธ์</td><td>กลับสู่ normal function ได้</td><td>นำไปสู่ <b>Necrosis</b> หรือ <b>Apoptosis</b></td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Morphologic hallmark ที่ใช้แยก reversible กับ irreversible ที่ชัดเจนที่สุดคือ <b>ความสมบูรณ์ของ plasma membrane</b> — ถ้า membrane ยังคงสภาพอยู่ (แม้จะบวม) ยังถือว่า reversible ได้; นอกจากนี้ <b>severe mitochondrial vacuolization/swelling อย่างถาวร</b> ก็เป็นจุดสำคัญที่บ่งชี้ irreversibility เช่นกัน</div>
+      </div>
+    </div>
+
+    <div class="section-divider">Cellular Adaptation (จาก T3)</div>
+    <div class="section">
+      <div class="section-head"><h2 id="t2-adaptation">2.6 การปรับตัวของเซลล์ (Cellular Adaptation)</h2><span class="slide-ref">T3 · slide 5-30</span></div>
+      <p class="section-lede">เมื่อเซลล์เผชิญ stress ในระดับที่ไม่รุนแรงถึงขั้นทำลายเซลล์ แต่มากพอที่จะรบกวน homeostasis เซลล์จะ<b>ปรับตัว</b>เพื่ออยู่รอด แบ่งเป็น 4 รูปแบบหลัก โดยแต่ละแบบแบ่งย่อยเป็น <b>physiologic</b> (ปรับตัวตามภาวะปกติของร่างกาย) และ <b>pathologic</b> (ปรับตัวตอบสนองต่อโรค)</p>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 760 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+          <rect x="300" y="10" width="160" height="38" rx="10" fill="var(--teal)"/>
+          <text x="380" y="34" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="700">Cellular Adaptation</text>
+          <line x1="380" y1="48" x2="380" y2="62" stroke="var(--line-strong)" stroke-width="2"/>
+          <line x1="95" y1="62" x2="665" y2="62" stroke="var(--line-strong)" stroke-width="2"/>
+          <g font-size="11">
+            <line x1="95" y1="62" x2="95" y2="78" stroke="var(--line-strong)"/>
+            <rect x="20" y="78" width="150" height="42" rx="8" fill="var(--teal-soft)" stroke="var(--teal)"/>
+            <text x="95" y="103" text-anchor="middle" font-weight="700" fill="var(--teal)">Hypertrophy</text>
+            <line x1="255" y1="62" x2="255" y2="78" stroke="var(--line-strong)"/>
+            <rect x="180" y="78" width="150" height="42" rx="8" fill="var(--teal-soft)" stroke="var(--teal)"/>
+            <text x="255" y="103" text-anchor="middle" font-weight="700" fill="var(--teal)">Hyperplasia</text>
+            <line x1="420" y1="62" x2="420" y2="78" stroke="var(--line-strong)"/>
+            <rect x="345" y="78" width="150" height="42" rx="8" fill="var(--teal-soft)" stroke="var(--teal)"/>
+            <text x="420" y="103" text-anchor="middle" font-weight="700" fill="var(--teal)">Atrophy</text>
+            <line x1="585" y1="62" x2="585" y2="78" stroke="var(--line-strong)"/>
+            <rect x="510" y="78" width="150" height="42" rx="8" fill="var(--teal-soft)" stroke="var(--teal)"/>
+            <text x="585" y="103" text-anchor="middle" font-weight="700" fill="var(--teal)">Metaplasia</text>
+          </g>
+          <text x="95" y="135" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)">↑ ขนาดเซลล์</text>
+          <text x="255" y="135" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)">↑ จำนวนเซลล์</text>
+          <text x="420" y="135" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)">↓ ขนาด/จำนวน</text>
+          <text x="585" y="135" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)">เปลี่ยนชนิดเซลล์</text>
+        </svg>
+        <div class="diagram-cap">Fig 2.3 — 4 รูปแบบของ Cellular Adaptation</div>
+      </div>
+
+      <div class="card">
+        <h3>Hypertrophy — เซลล์ขนาดใหญ่ขึ้น</h3>
+        <p><b>นิยาม:</b> การเพิ่มขนาดของเซลล์ (ไม่ใช่จำนวน) ทำให้อวัยวะ/เนื้อเยื่อนั้นมีขนาดใหญ่ขึ้นตามไปด้วย เกิดจากการสร้าง organelle และ structural protein เพิ่มขึ้นภายในเซลล์เดิม มักเกิดในเซลล์ที่<b>แบ่งตัวไม่ได้หรือแบ่งตัวได้จำกัด</b> เช่น cardiac muscle, skeletal muscle</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Physiologic Hypertrophy</th><th>Pathologic Hypertrophy</th></tr>
+            <tr><td>ตัวกระตุ้น</td><td>Hormone หรือ mechanical demand ที่เพิ่มขึ้นตามปกติ</td><td>โรค/ภาวะผิดปกติที่เพิ่มภาระงานให้อวัยวะ</td></tr>
+            <tr><td>ตัวอย่าง</td><td>กล้ามเนื้อของนักกีฬายกน้ำหนัก (mechanical), มดลูกขณะตั้งครรภ์ (hormonal — estrogen)</td><td>Cardiac hypertrophy จาก hypertension หรือ valve disease (ภาระงานหัวใจเพิ่มขึ้นเรื้อรัง)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Hyperplasia — จำนวนเซลล์เพิ่มขึ้น</h3>
+        <p><b>นิยาม:</b> การเพิ่มจำนวนเซลล์ในเนื้อเยื่อ/อวัยวะ เกิดได้เฉพาะในเซลล์ที่<b>ยังแบ่งตัวได้ (labile หรือ stable cells)</b> มักเกิดร่วมกับ hypertrophy ได้ในบางเนื้อเยื่อ (เช่น มดลูกขณะตั้งครรภ์มีทั้ง hypertrophy และ hyperplasia ของ smooth muscle)</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Physiologic Hyperplasia</th><th>Pathologic Hyperplasia</th></tr>
+            <tr><td>ชนิดย่อย</td><td><b>Hormonal</b> เช่น เต้านม/มดลูกช่วงตั้งครรภ์ · <b>Compensatory</b> เช่น ตับงอกใหม่หลังตัดตับบางส่วนออก</td><td>เกิดจาก hormone หรือ growth factor ที่กระตุ้นมากเกินปกติ</td></tr>
+            <tr><td>ตัวอย่าง</td><td>Liver regeneration หลัง partial hepatectomy</td><td>Endometrial hyperplasia (excess estrogen), Benign Prostatic Hyperplasia (BPH)</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Pathologic hyperplasia เป็น<b>soil ที่เสี่ยงต่อการเกิด malignant transformation</b>ได้ในระยะยาว (เช่น endometrial hyperplasia เสี่ยงต่อ endometrial carcinoma) แต่ตัว hyperplasia เองยังถือเป็น <b>controlled process</b> ที่ตอบสนองต่อ stimulus — ถ้าเอา stimulus ออก hyperplasia จะหายไป (ต่างจาก neoplasia ที่ autonomous)</div>
+      </div>
+
+      <div class="card">
+        <h3>Atrophy — เซลล์/อวัยวะเล็กลง</h3>
+        <p><b>นิยาม:</b> การลดขนาดของเซลล์จากการสูญเสีย cell substance เกิดจากการลด organelle, protein, cytoplasm ผ่านกระบวนการ <b>ubiquitin-proteasome pathway</b> และ <b>autophagy</b> (เซลล์ "กินตัวเอง" ผ่าน autophagic vacuole เพื่อสลาย organelle ที่เสียหาย)</p>
+        <h4>สาเหตุของ Atrophy</h4>
+        <ul class="plain">
+          <li><b>Decreased workload</b> (disuse atrophy) — เช่น แขนขาที่ถูกเข้าเฝือกนาน ๆ</li>
+          <li><b>Loss of innervation</b> (denervation atrophy) — เส้นประสาทที่เลี้ยงกล้ามเนื้อถูกทำลาย</li>
+          <li><b>Diminished blood supply</b> (ischemia) — เลือดไปเลี้ยงลดลงเรื้อรัง</li>
+          <li><b>Inadequate nutrition</b> — ภาวะทุพโภชนาการ</li>
+          <li><b>Loss of hormonal stimulation</b> — เช่น endometrium หลังหมดประจำเดือน (estrogen ลดลง)</li>
+          <li><b>Aging</b> (senile atrophy) — เช่น สมองและอวัยวะต่าง ๆ เล็กลงตามวัย</li>
+          <li><b>Pressure</b> — เนื้องอกกดทับเนื้อเยื่อข้างเคียงเป็นเวลานาน</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Metaplasia — เปลี่ยนชนิดของเซลล์</h3>
+        <p><b>นิยาม:</b> การเปลี่ยนแปลงชนิดของเซลล์ที่โตเต็มที่แล้ว (differentiated cell) ชนิดหนึ่งไปเป็นเซลล์อีกชนิดหนึ่งที่ทนต่อสภาวะแวดล้อมใหม่ได้ดีกว่า เกิดจากการ<b>reprogramming ของ stem/reserve cell</b> ในเนื้อเยื่อนั้น ไม่ใช่การเปลี่ยนชนิดของเซลล์ที่โตเต็มที่แล้วโดยตรง</p>
+        <h4>ตัวอย่างสำคัญ</h4>
+        <ul class="plain">
+          <li><b>Squamous metaplasia ของทางเดินหายใจ</b> — เยื่อบุ respiratory epithelium ปกติเป็น ciliated columnar epithelium เปลี่ยนเป็น stratified squamous epithelium เพื่อทนต่อการระคายเคืองจากควันบุหรี่เรื้อรัง — แต่แลกมาด้วยการสูญเสียกลไก mucociliary clearance</li>
+          <li><b>Barrett esophagus</b> — squamous epithelium ของหลอดอาหารส่วนปลายเปลี่ยนเป็น columnar (intestinal-type) epithelium จาก chronic gastroesophageal reflux (GERD) — <b>เพิ่มความเสี่ยงต่อ adenocarcinoma</b></li>
+        </ul>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Metaplasia เป็น <b>reversible</b> หาก stimulus หมดไป แต่ถ้า stimulus ยังคงอยู่ต่อเนื่องเป็นเวลานาน เนื้อเยื่อที่ metaplastic อาจดำเนินไปสู่ <b>dysplasia</b> (ความผิดปกติของการเจริญเติบโตของเซลล์) และท้ายที่สุดอาจกลายเป็น <b>malignancy</b> ได้ — metaplasia เองไม่ใช่มะเร็ง แต่เป็น risk factor</div>
+      </div>
+    </div>
+
+    <div class="section-divider">Intracellular Accumulations (จาก T3)</div>
+    <div class="section">
+      <div class="section-head"><h2 id="t2-accumulation">2.7 การสะสมสารผิดปกติภายในเซลล์</h2><span class="slide-ref">T3 · slide 32-70</span></div>
+      <p class="section-lede">เซลล์สามารถสะสมสารได้หลายชนิด ไม่ว่าจะเป็นสารปกติที่สะสมมากผิดปกติ หรือสารผิดปกติที่ไม่ควรมีอยู่เลย ผ่าน 4 กลไกหลัก</p>
+
+      <div class="card">
+        <h3>4 กลไกของการสะสมสารในเซลล์</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>กลไก</th><th>คำอธิบาย</th><th>ตัวอย่าง</th></tr>
+            <tr><td>1. Inadequate removal</td><td>สร้างสารในอัตราปกติ แต่กำจัด/metabolize ไม่ทัน จากความผิดปกติของ enzyme หรือ transport mechanism</td><td>Fatty change ในตับ (จาก impaired lipid transport)</td></tr>
+            <tr><td>2. Abnormal protein folding/transport</td><td>เซลล์สร้างโปรตีนที่พับตัวผิดรูป (misfolded) ทำให้ขนส่งออกจากเซลล์ไม่ได้</td><td>Alpha-1-antitrypsin deficiency</td></tr>
+            <tr><td>3. Enzyme deficiency</td><td>ขาดเอนไซม์ที่ใช้สลายสารบางชนิด ทำให้สารตั้งต้นสะสมในเซลล์</td><td>Lysosomal storage disease</td></tr>
+            <tr><td>4. Ingestion of indigestible material</td><td>เซลล์ (โดยเฉพาะ macrophage) กลืนกินสารที่ไม่สามารถย่อยสลายได้</td><td>Carbon (anthracosis), exogenous pigments</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Fatty Change (Steatosis)</h3>
+        <p>การสะสม <b>triglyceride</b> ในไซโตพลาสซึมของ parenchymal cell (โดยเฉพาะ hepatocyte) พบบ่อยที่สุดที่<b>ตับ</b> เนื่องจากตับเป็นอวัยวะหลักในกระบวนการ fat metabolism</p>
+        <h4>สาเหตุ</h4>
+        <ul class="plain">
+          <li>Alcohol abuse (พบบ่อยที่สุด)</li>
+          <li>Obesity, Diabetes mellitus (non-alcoholic fatty liver disease)</li>
+          <li>Protein malnutrition (ลดการสร้าง apolipoprotein สำหรับขนส่งไขมันออกจากตับ)</li>
+          <li>Toxins, hypoxia</li>
+        </ul>
+        <p>ทางจุลพยาธิวิทยา (histology) เห็นเป็น <b>clear cytoplasmic vacuole</b> ภายใน hepatocyte (ไขมันถูกละลายออกไปในกระบวนการ processing ทำให้เห็นเป็นช่องว่าง)</p>
+      </div>
+
+      <div class="card">
+        <h3>Protein Accumulation</h3>
+        <ul class="plain">
+          <li><b>Russell bodies</b> — plasma cell ที่สร้าง immunoglobulin มากเกินไปจนสะสมเป็น eosinophilic globule ใน rough ER</li>
+          <li><b>Mallory-Denk bodies (Mallory body/alcoholic hyaline)</b> — การสะสมของ damaged keratin intermediate filament ใน hepatocyte พบใน alcoholic liver disease</li>
+          <li><b>Reabsorption droplets</b> ใน proximal renal tubule — เกิดในภาวะ proteinuria ที่ tubule ต้อง reabsorb โปรตีนที่รั่วออกมามากผิดปกติ</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Glycogen Accumulation</h3>
+        <p>พบในภาวะที่มีความผิดปกติของ glucose หรือ glycogen metabolism เช่น <b>Diabetes mellitus</b> (glycogen สะสมใน renal tubular epithelium, hepatocyte, cardiac muscle cell) และ <b>Glycogen storage diseases</b> (ความผิดปกติทาง genetic ของเอนไซม์สลาย glycogen)</p>
+      </div>
+
+      <div class="card">
+        <h3>Pigment Accumulation</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Pigment</th><th>ลักษณะ</th><th>สาเหตุ/ที่พบ</th></tr>
+            <tr><td>Carbon (Anthracosis)</td><td>Exogenous pigment สีดำ กลืนกินโดย alveolar macrophage</td><td>มลพิษทางอากาศ ควันบุหรี่ ฝุ่นถ่านหิน — สะสมในปอดและ hilar lymph node</td></tr>
+            <tr><td>Lipofuscin</td><td>"Wear-and-tear pigment" สีน้ำตาลเหลือง เกิดจาก lipid peroxidation ของ membrane ที่ไม่สามารถย่อยสลายได้สมบูรณ์</td><td>สะสมตามอายุ (aging) โดยเฉพาะใน cardiac muscle, liver, neuron — ไม่ทำอันตรายต่อเซลล์ (innocent bystander)</td></tr>
+            <tr><td>Hemosiderin</td><td>Golden-yellow to brown granular pigment ที่มาจากการสลายตัวของ hemoglobin สะสมในรูปแบบของ ferritin aggregate</td><td>เกิดเฉพาะที่ (local) เช่น รอยฟกช้ำ หรือทั่วร่างกาย (systemic) เช่น hemosiderosis/hemochromatosis</td></tr>
+            <tr><td>Melanin</td><td>Endogenous, brown-black pigment สร้างโดย melanocyte</td><td>ปกติที่ผิวหนัง/ตา — สร้างมากผิดปกติในบางภาวะเช่น nevus, melanoma</td></tr>
+            <tr><td>Bilirubin</td><td>Yellow pigment จาก heme breakdown</td><td>สะสมมากเกิดเป็น jaundice</td></tr>
+          </table>
+        </div>
+        <h4>Hemosiderosis vs Hemochromatosis</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Hemosiderosis</th><th>Hemochromatosis</th></tr>
+            <tr><td>นิยาม</td><td>ภาวะสะสม hemosiderin มากผิดปกติ โดยยังไม่ทำลายการทำงานของอวัยวะ</td><td>ภาวะสะสมธาตุเหล็กรุนแรงจนทำลายเนื้อเยื่อและการทำงานของอวัยวะ (organ damage)</td></tr>
+            <tr><td>สาเหตุ</td><td>Local hemorrhage, การได้รับเลือดซ้ำ ๆ (repeated transfusion), hemolysis</td><td>ส่วนใหญ่เป็น genetic (hereditary hemochromatosis — HFE gene mutation) ทำให้ดูดซึมเหล็กจากลำไส้มากเกินปกติ</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider">Pathologic Calcification (จาก T3)</div>
+    <div class="section">
+      <div class="section-head"><h2 id="t2-calcification">2.8 การสะสมแคลเซียมที่ผิดปกติ (Pathologic Calcification)</h2><span class="slide-ref">T3 · slide 72-84</span></div>
+      <div class="card">
+        <p><b>Pathologic calcification</b> คือการสะสมแคลเซียมนอกกระดูก/ฟันในตำแหน่งที่ไม่ควรมี แบ่งเป็น 2 ชนิดตามกลไก</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Dystrophic Calcification</th><th>Metastatic Calcification</th></tr>
+            <tr><td>ระดับ Calcium ในเลือด</td><td><b>ปกติ</b> (normocalcemia)</td><td><b>สูงกว่าปกติ</b> (hypercalcemia)</td></tr>
+            <tr><td>กลไก</td><td>เกิดในเนื้อเยื่อที่ตายหรือเสื่อมสภาพ (necrotic/degenerating tissue) — แคลเซียมมาเกาะบนเนื้อเยื่อที่เสียหายอยู่แล้ว</td><td>แคลเซียมในเลือดสูงมากจนตกตะกอนในเนื้อเยื่อปกติ ทั่วร่างกาย โดยเฉพาะเนื้อเยื่อที่มีสภาพเป็นด่าง (alkaline) เช่น ปอด ไต กระเพาะอาหาร</td></tr>
+            <tr><td>ตัวอย่าง</td><td>Atherosclerotic plaque, เนื้อเยื่อ tuberculosis ที่ตาย (caseous necrosis), ลิ้นหัวใจที่เสื่อม (calcific aortic stenosis)</td><td>Hyperparathyroidism, Vitamin D intoxication, Renal failure, มะเร็งที่ทำลายกระดูกและปล่อย Ca²⁺ ออกมา</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>คำถามข้อสอบมักถามตรง ๆ ว่า "serum calcium ปกติหรือไม่" เพื่อแยก 2 ชนิดนี้ — Dystrophic = serum Ca²⁺ ปกติ (ปัญหาอยู่ที่เนื้อเยื่อเฉพาะจุด), Metastatic = serum Ca²⁺ สูง (ปัญหาเป็นระบบทั้งร่างกาย)</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-divider">คำศัพท์สำคัญประจำหัวข้อ</div>
+      <div class="card">
+        <div class="glossary">
+          <div class="gterm"><b>Ischemia</b>เลือดไปเลี้ยงไม่พอ</div>
+          <div class="gterm"><b>Hypoxia</b>ภาวะพร่องออกซิเจน</div>
+          <div class="gterm"><b>Free radical / ROS</b>อนุมูลอิสระที่มี unpaired electron</div>
+          <div class="gterm"><b>Fenton reaction</b>ปฏิกิริยาสร้าง hydroxyl radical จากเหล็ก+H₂O₂</div>
+          <div class="gterm"><b>MPT pore</b>รูเปิดผิดปกติบน inner mitochondrial membrane</div>
+          <div class="gterm"><b>Hypertrophy</b>เซลล์ขนาดใหญ่ขึ้น (จำนวนเท่าเดิม)</div>
+          <div class="gterm"><b>Hyperplasia</b>จำนวนเซลล์เพิ่มขึ้น</div>
+          <div class="gterm"><b>Atrophy</b>เซลล์/อวัยวะเล็กลง</div>
+          <div class="gterm"><b>Metaplasia</b>เปลี่ยนชนิดเซลล์ที่โตเต็มที่แล้ว</div>
+          <div class="gterm"><b>Steatosis</b>การสะสมไขมันในเซลล์ (มักที่ตับ)</div>
+          <div class="gterm"><b>Lipofuscin</b>Wear-and-tear pigment สะสมตามอายุ</div>
+          <div class="gterm"><b>Hemosiderin</b>Pigment จากการสลายตัวของ hemoglobin</div>
+          <div class="gterm"><b>Dystrophic calcification</b>สะสม Ca ในเนื้อตาย, serum Ca ปกติ</div>
+          <div class="gterm"><b>Metastatic calcification</b>สะสม Ca ทั่วร่างกาย, serum Ca สูง</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="tabpanel" id="panel-t3">
+    <div class="tabhero">
+      <div class="kicker">T3 · Apoptosis and Necrosis</div>
+      <h1>เมื่อเซลล์ไปต่อไม่ได้: กลไกการตายของเซลล์สองรูปแบบ</h1>
+      <p>Necrosis vs Apoptosis ทั้ง morphology และกลไกโมเลกุลระดับ pathway ที่ข้อสอบชอบถาม</p>
+    </div>
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t3-overview">3.1 Necrosis vs Apoptosis: ภาพรวมการตายของเซลล์</h2><span class="slide-ref">T2 · slide 21-25</span></div>
+      <p class="section-lede">Cell death มี 2 รูปแบบหลักที่มีลักษณะทาง morphology และกลไกโมเลกุลแตกต่างกันโดยสิ้นเชิง แม้บางครั้งอาจเกิดร่วมกันในเนื้อเยื่อเดียวกันได้ (เช่นในภาวะ ischemia รุนแรง)</p>
+      <div class="card">
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>หัวข้อเปรียบเทียบ</th><th>Necrosis</th><th>Apoptosis</th></tr>
+            <tr><td>ลักษณะ</td><td>Passive, accidental, uncontrolled — เกิดจากการบาดเจ็บรุนแรงจากภายนอก</td><td>Active, programmed, controlled — เซลล์ "ฆ่าตัวตาย" อย่างเป็นระบบผ่าน gene-directed pathway</td></tr>
+            <tr><td>สาเหตุ</td><td>Injury รุนแรง เช่น ischemia, toxin, trauma, infection</td><td>Physiologic (development, immune regulation) หรือ pathologic (DNA damage, viral infection)</td></tr>
+            <tr><td>พลังงาน (ATP)</td><td>ไม่ต้องการ ATP (เกิดได้แม้ ATP หมด)</td><td>ต้องการ ATP (เป็น active process)</td></tr>
+            <tr><td>ขนาดเซลล์</td><td>บวมขึ้น (swelling)</td><td>หดเล็กลง (shrinkage)</td></tr>
+            <tr><td>Plasma membrane</td><td>แตก (rupture) ตั้งแต่ต้น</td><td>คงสภาพอยู่จนถึงระยะท้าย (intact จนสร้าง apoptotic body)</td></tr>
+            <tr><td>Nucleus</td><td>Pyknosis → Karyorrhexis → Karyolysis (random DNA breakdown)</td><td>Chromatin condensation ตามขอบ nucleus + DNA fragmentation แบบเป็นระเบียบ (internucleosomal, "DNA laddering")</td></tr>
+            <tr><td>Inflammation</td><td><b>มี</b> — สารภายในเซลล์รั่วออกกระตุ้น inflammatory response</td><td><b>ไม่มี</b> — เซลล์ถูกห่อหุ้มเป็น apoptotic body และถูก phagocyte กำจัดอย่างเป็นระเบียบโดยไม่ปล่อยสารกระตุ้นการอักเสบ</td></tr>
+            <tr><td>ผลต่อเนื้อเยื่อข้างเคียง</td><td>ทำลายเนื้อเยื่อข้างเคียง</td><td>ไม่กระทบเซลล์ข้างเคียง (เซลล์เดี่ยว ๆ ถูกกำจัดอย่างเป็นระเบียบ)</td></tr>
+            <tr><td>ตัวอย่าง</td><td>Myocardial infarction, gangrene</td><td>Embryogenesis (การสลาย webbing ระหว่างนิ้ว), การกำจัด autoreactive lymphocyte, endometrial shedding</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>คำถามยอดฮิตคือ "กระบวนการใดไม่กระตุ้น inflammation" → คำตอบคือ Apoptosis เพราะ membrane ไม่แตกและสารภายในเซลล์ไม่รั่วออกมา ต่างจาก Necrosis ที่ปล่อยสาร intracellular content (DAMPs) กระตุ้น inflammatory cascade เสมอ</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t3-necrosistypes">3.2 ชนิดของ Necrosis (6 แบบ)</h2><span class="slide-ref">T2 · slide 26-40</span></div>
+      <p class="section-lede">Necrosis แบ่งย่อยได้ 6 ชนิดตามลักษณะ morphology ที่เห็นได้ ซึ่งบ่งบอกถึงชนิดของเนื้อเยื่อและสาเหตุการตายได้ — ข้อสอบชอบให้ match ภาพ/บริบทคลินิกกับชื่อชนิด necrosis</p>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 760 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+          <rect x="310" y="8" width="140" height="34" rx="9" fill="var(--eosin)"/>
+          <text x="380" y="30" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Necrosis</text>
+          <line x1="380" y1="42" x2="380" y2="55" stroke="var(--line-strong)" stroke-width="2"/>
+          <line x1="60" y1="55" x2="700" y2="55" stroke="var(--line-strong)" stroke-width="2"/>
+          <g font-size="10">
+            <line x1="60" y1="55" x2="60" y2="70" stroke="var(--line-strong)"/><rect x="10" y="70" width="100" height="60" rx="8" fill="var(--eosin-soft)" stroke="var(--eosin)"/><text x="60" y="93" text-anchor="middle" font-weight="700" fill="var(--eosin)">Coagulative</text><text x="60" y="110" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Solid organ</text><text x="60" y="121" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">infarct</text>
+
+            <line x1="188" y1="55" x2="188" y2="70" stroke="var(--line-strong)"/><rect x="138" y="70" width="100" height="60" rx="8" fill="var(--eosin-soft)" stroke="var(--eosin)"/><text x="188" y="93" text-anchor="middle" font-weight="700" fill="var(--eosin)">Liquefactive</text><text x="188" y="110" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Brain / abscess</text>
+
+            <line x1="316" y1="55" x2="316" y2="70" stroke="var(--line-strong)"/><rect x="266" y="70" width="100" height="60" rx="8" fill="var(--eosin-soft)" stroke="var(--eosin)"/><text x="316" y="93" text-anchor="middle" font-weight="700" fill="var(--eosin)">Caseous</text><text x="316" y="110" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">TB granuloma</text>
+
+            <line x1="444" y1="55" x2="444" y2="70" stroke="var(--line-strong)"/><rect x="394" y="70" width="100" height="60" rx="8" fill="var(--eosin-soft)" stroke="var(--eosin)"/><text x="444" y="93" text-anchor="middle" font-weight="700" fill="var(--eosin)">Fat necrosis</text><text x="444" y="110" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Pancreas /</text><text x="444" y="121" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">breast trauma</text>
+
+            <line x1="572" y1="55" x2="572" y2="70" stroke="var(--line-strong)"/><rect x="522" y="70" width="100" height="60" rx="8" fill="var(--eosin-soft)" stroke="var(--eosin)"/><text x="572" y="93" text-anchor="middle" font-weight="700" fill="var(--eosin)">Fibrinoid</text><text x="572" y="110" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Vessel wall /</text><text x="572" y="121" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">immune complex</text>
+
+            <line x1="700" y1="55" x2="700" y2="70" stroke="var(--line-strong)"/><rect x="650" y="70" width="100" height="60" rx="8" fill="var(--eosin-soft)" stroke="var(--eosin)"/><text x="700" y="93" text-anchor="middle" font-weight="700" fill="var(--eosin)">Gangrenous</text><text x="700" y="110" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Dry/Wet/Gas</text><text x="700" y="121" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">limb/bowel</text>
+          </g>
+        </svg>
+        <div class="diagram-cap">Fig 3.1 — Necrosis 6 ชนิดตาม morphology</div>
+      </div>
+
+      <div class="card">
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ชนิด</th><th>Mechanism</th><th>ตำแหน่ง/บริบทคลินิก</th></tr>
+            <tr><td>Coagulative</td><td>Protein denaturation เด่นกว่า enzymatic digestion — โครงร่างเซลล์ (cell outline/architecture) ยังคงอยู่ได้นานหลายวันแม้ nucleus จะตายแล้ว (<i>"tombstone" architecture</i>) เพราะเอนไซม์ที่จะย่อยสลายโปรตีนถูก denature ไปด้วย</td><td>พบใน <b>solid organ infarction</b> ทุกอวัยวะยกเว้นสมอง (เช่น หัวใจ, ไต, ม้าม)</td></tr>
+            <tr><td>Liquefactive</td><td>Enzymatic digestion เด่นกว่า protein denaturation — เนื้อเยื่อถูกย่อยจนเหลวเป็นของเหลวหนืด (viscous liquid mass)</td><td><b>สมอง</b> (เนื้อเยื่อไขมันสูง เอนไซม์ย่อยไขมันได้ง่าย) และบริเวณที่มี <b>bacterial/fungal infection</b> (leukocyte ปล่อยเอนไซม์ย่อยสลายจำนวนมาก) → เกิดเป็น <b>abscess</b> (หนอง)</td></tr>
+            <tr><td>Caseous</td><td>ลักษณะผสมระหว่าง coagulative และ liquefactive — เนื้อเยื่อตายกลายเป็นก้อนคล้าย <i>"cheese-like"</i> สีขาวเหลือง ไม่คงรูปโครงสร้างเซลล์เดิม (structureless) ล้อมรอบด้วย granulomatous inflammation</td><td>Classic finding ใน <b>Tuberculosis</b> (TB granuloma)</td></tr>
+            <tr><td>Fat necrosis</td><td>เกิดจาก lipase ที่ถูกปล่อยออกมาย่อยสลาย triglyceride ในเนื้อเยื่อไขมัน แตกเป็น free fatty acid ซึ่งจะไปจับกับ calcium เกิดเป็น <b>saponification</b> (chalky white deposit)</td><td><b>Acute pancreatitis</b> (lipase จากตับอ่อนรั่วออกมาย่อยไขมันรอบตับอ่อน), traumatic fat necrosis ที่เต้านม</td></tr>
+            <tr><td>Fibrinoid</td><td>Immune complex สะสมร่วมกับ fibrin ในผนังหลอดเลือด ทำให้ผนังหลอดเลือดมีลักษณะเป็นสีชมพูสด (bright pink, amorphous) ใต้กล้องจุลทรรศน์</td><td>โรค <b>autoimmune/vasculitis</b> เช่น Polyarteritis nodosa, malignant hypertension</td></tr>
+            <tr><td>Gangrenous</td><td>ไม่ใช่ pattern เฉพาะทาง histology แต่เป็น<b>คำเรียกทางคลินิก</b>ของ coagulative necrosis ที่เกิดกับแขนขา (extremity) จาก ischemia รุนแรง แบ่งเป็น 3 แบบตามการติดเชื้อ (ดูตารางถัดไป)</td><td>แขนขาที่ขาดเลือด (peripheral vascular disease, diabetic foot)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Gangrenous Necrosis: Dry vs Wet vs Gas Gangrene</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Dry Gangrene</th><th>Wet Gangrene</th><th>Gas Gangrene</th></tr>
+            <tr><td>พื้นฐาน</td><td>Coagulative necrosis ล้วน ๆ จาก ischemia</td><td>Coagulative necrosis + bacterial superinfection (liquefactive component เพิ่มเข้ามา)</td><td>Coagulative necrosis + infection โดยเชื้อ <b><i>Clostridium perfringens</i></b> ที่สร้างแก๊ส</td></tr>
+            <tr><td>ลักษณะ</td><td>เนื้อเยื่อแห้ง เหี่ยว สีดำคล้ำ (mummified) ขอบเขตชัดเจน</td><td>เนื้อเยื่อบวม เปียกชื้น มีกลิ่นเหม็น ขอบเขตไม่ชัดเจน แพร่กระจายเร็ว</td><td>มีฟองแก๊สในเนื้อเยื่อ (crepitus เมื่อคลำ) อันตรายถึงชีวิตอย่างรวดเร็ว</td></tr>
+            <tr><td>Prognosis</td><td>ดีกว่า (ลุกลามช้า)</td><td>แย่กว่า (ลุกลามเร็ว เสี่ยง sepsis)</td><td>แย่ที่สุด (emergency, ต้องผ่าตัดด่วน)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t3-apoptosis-overview">3.3 Apoptosis: ภาพรวมและ Morphology</h2><span class="slide-ref">T2 · slide 41-48</span></div>
+      <div class="card">
+        <h3>Physiologic vs Pathologic Apoptosis</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Physiologic Apoptosis</th><th>Pathologic Apoptosis</th></tr>
+            <tr><td>บทบาท</td><td>กระบวนการปกติที่จำเป็นต่อการพัฒนาและรักษาสมดุลร่างกาย</td><td>ตอบสนองต่อความเสียหายที่ซ่อมแซมไม่ได้</td></tr>
+            <tr><td>ตัวอย่าง</td><td>Embryogenesis (สลาย webbing ระหว่างนิ้วมือ), การกำจัด self-reactive lymphocyte ใน thymus (negative selection), endometrial shedding รอบเดือน, การตายของเซลล์ที่ทำหน้าที่เสร็จสิ้นแล้วใน immune response</td><td>DNA damage ที่ซ่อมแซมไม่ได้ (จาก radiation, chemotherapy), การสะสม misfolded protein, viral infection (เซลล์ฆ่าตัวตายเพื่อจำกัดการแพร่ของไวรัส), cell injury ระดับ moderate ที่ไม่รุนแรงถึงขั้น necrosis</td></tr>
+          </table>
+        </div>
+        <h3>Morphology ของ Apoptosis</h3>
+        <ul class="plain">
+          <li><b>Cell shrinkage</b> — เซลล์หดตัวเล็กลง cytoplasm หนาแน่นขึ้น (dense eosinophilic)</li>
+          <li><b>Chromatin condensation</b> — ลักษณะเด่นที่สุด: chromatin จับตัวหนาแน่นเรียงตัวตามขอบ nuclear membrane (peripheral condensation)</li>
+          <li><b>Membrane blebbing</b> — plasma membrane โป่งพองเป็นตุ่มเล็ก ๆ แต่ยังไม่แตก</li>
+          <li><b>Formation of apoptotic bodies</b> — เซลล์แตกตัวเป็นชิ้นเล็ก ๆ ที่มี membrane ห่อหุ้มสมบูรณ์ (membrane-bound fragments) บรรจุ organelle และชิ้นส่วน nucleus</li>
+          <li><b>Phagocytosis</b> — apoptotic body ถูก macrophage หรือเซลล์ข้างเคียงกลืนกินอย่างรวดเร็วโดยไม่กระตุ้น inflammation — สัญญาณสำคัญคือการแสดง <b>phosphatidylserine</b> ที่ผิวนอกของ membrane (ปกติอยู่ด้านในเท่านั้น) เป็นสัญญาณ "eat me" ให้ phagocyte จดจำ</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t3-apoptosis-mechanism">3.4 กลไกโมเลกุลของ Apoptosis: Intrinsic vs Extrinsic Pathway</h2><span class="slide-ref">T2 · slide 49-58</span></div>
+      <p class="section-lede">Apoptosis ถูกควบคุมผ่าน 2 pathway หลักที่มาบรรจบกันที่จุดเดียวกัน คือการกระตุ้น <b>executioner caspase</b></p>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 780 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+          <text x="190" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="var(--teal)">INTRINSIC (Mitochondrial) Pathway</text>
+          <rect x="90" y="34" width="200" height="34" rx="8" fill="var(--teal-soft)" stroke="var(--teal)"/>
+          <text x="190" y="56" text-anchor="middle" font-size="10.5" fill="var(--teal)" font-weight="600">DNA damage / ER stress / growth factor withdrawal</text>
+          <line x1="190" y1="68" x2="190" y2="82" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="90" y="82" width="200" height="34" rx="8" fill="#fff" stroke="var(--line-strong)"/>
+          <text x="190" y="103" text-anchor="middle" font-size="10.5">p53 activation</text>
+          <line x1="190" y1="116" x2="190" y2="130" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="90" y="130" width="200" height="40" rx="8" fill="#fff" stroke="var(--line-strong)"/>
+          <text x="190" y="148" text-anchor="middle" font-size="10.5">↑ Bax, Bak (pro-apoptotic)</text>
+          <text x="190" y="162" text-anchor="middle" font-size="10.5">↓ Bcl-2, Bcl-XL (anti-apoptotic)</text>
+          <line x1="190" y1="170" x2="190" y2="184" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="90" y="184" width="200" height="40" rx="8" fill="var(--teal-soft)" stroke="var(--teal)"/>
+          <text x="190" y="203" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--teal)">Mitochondrial outer membrane</text>
+          <text x="190" y="217" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--teal)">permeabilization (MOMP)</text>
+          <line x1="190" y1="224" x2="190" y2="238" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="90" y="238" width="200" height="34" rx="8" fill="var(--hema-soft)" stroke="var(--hema)"/>
+          <text x="190" y="259" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--hema)">Cytochrome c release</text>
+
+          <text x="590" y="22" text-anchor="middle" font-size="13" font-weight="700" fill="var(--eosin)">EXTRINSIC (Death Receptor) Pathway</text>
+          <rect x="490" y="34" width="200" height="34" rx="8" fill="var(--eosin-soft)" stroke="var(--eosin)"/>
+          <text x="590" y="56" text-anchor="middle" font-size="10.5" fill="var(--eosin)" font-weight="600">FasL binds Fas / TNF binds TNFR1</text>
+          <line x1="590" y1="68" x2="590" y2="82" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="490" y="82" width="200" height="34" rx="8" fill="#fff" stroke="var(--line-strong)"/>
+          <text x="590" y="103" text-anchor="middle" font-size="10.5">Adaptor protein: FADD</text>
+          <line x1="590" y1="116" x2="590" y2="130" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="490" y="130" width="200" height="34" rx="8" fill="#fff" stroke="var(--line-strong)"/>
+          <text x="590" y="151" text-anchor="middle" font-size="10.5">DISC formation</text>
+          <line x1="590" y1="164" x2="590" y2="178" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="490" y="178" width="200" height="34" rx="8" fill="var(--eosin-soft)" stroke="var(--eosin)"/>
+          <text x="590" y="199" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--eosin)">Caspase-8 activation</text>
+          <line x1="590" y1="212" x2="590" y2="226" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="3,3" marker-end="url(#a3)"/>
+          <text x="700" y="222" font-size="9" fill="var(--ink-soft)">BID→tBID</text>
+          <text x="700" y="234" font-size="9" fill="var(--ink-soft)">(cross-talk)</text>
+
+          <line x1="290" y1="255" x2="480" y2="255" stroke="var(--ink-faint)" stroke-width="1.3" stroke-dasharray="3,3"/>
+
+          <line x1="190" y1="272" x2="190" y2="284" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a3)"/>
+          <line x1="590" y1="212" x2="440" y2="284" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a3)"/>
+          <rect x="290" y="284" width="200" height="30" rx="8" fill="var(--amber)"/>
+          <text x="390" y="304" text-anchor="middle" fill="#fff" font-size="11.5" font-weight="700">Caspase-9 → Apoptosome</text>
+
+          <defs><marker id="a3" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+        </svg>
+        <div class="diagram-cap">Fig 3.2 — Intrinsic vs Extrinsic apoptosis pathway และจุดเชื่อมต่อ (cross-talk ผ่าน BID)</div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="cmp">
+          <tr><th>หัวข้อ</th><th>Intrinsic (Mitochondrial) Pathway</th><th>Extrinsic (Death Receptor) Pathway</th></tr>
+          <tr><td>ตัวกระตุ้น</td><td>ความเสียหายภายในเซลล์: DNA damage, ER stress, growth factor withdrawal, hypoxia</td><td>สัญญาณจากภายนอกเซลล์ผ่าน death receptor: <b>Fas-FasL</b>, <b>TNF-TNFR1</b></td></tr>
+          <tr><td>ตัวควบคุมหลัก</td><td>Bcl-2 family proteins (สมดุลระหว่าง pro- และ anti-apoptotic)</td><td>Death receptor + adaptor protein (FADD)</td></tr>
+          <tr><td>ขั้นตอนสำคัญ</td><td>Mitochondrial outer membrane permeabilization → cytochrome c release → apoptosome formation</td><td>Death-inducing signaling complex (DISC) formation → caspase-8 activation</td></tr>
+          <tr><td>Initiator caspase</td><td>Caspase-9</td><td>Caspase-8 (และ caspase-10)</td></tr>
+          <tr><td>บทบาททางสรีรวิทยา</td><td>สำคัญในการกำจัดเซลล์ที่เสียหาย/ผิดปกติ, DNA repair ไม่ได้</td><td>สำคัญในการควบคุมระบบภูมิคุ้มกัน (immune homeostasis) เช่น กำจัด activated lymphocyte หลังจบภารกิจ (AICD)</td></tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <h4>จุดเชื่อมต่อระหว่าง 2 pathway (Cross-talk)</h4>
+        <p>Caspase-8 จาก extrinsic pathway สามารถตัด (cleave) โปรตีน <b>BID</b> ให้กลายเป็น <b>tBID (truncated BID)</b> ซึ่งจะไปกระตุ้น intrinsic pathway ต่อผ่าน mitochondria ได้ — ทำให้ extrinsic pathway สามารถขยายสัญญาณ (amplify) ผ่าน mitochondrial pathway ได้ในบางชนิดเซลล์ (type II cells)</p>
+      </div>
+
+      <div class="card">
+        <h3>Bcl-2 Family: Pro-apoptotic vs Anti-apoptotic</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Anti-apoptotic (ปกป้องเซลล์)</th><th>Pro-apoptotic (ส่งเสริมการตาย)</th></tr>
+            <tr><td>สมาชิก</td><td><b>Bcl-2, Bcl-XL, Mcl-1</b></td><td><b>Effector: Bax, Bak</b> (ทำรูบน mitochondrial membrane โดยตรง) · <b>BH3-only sensor: Bid, Bad, Bim, Puma, Noxa</b> (ตรวจจับสัญญาณความเสียหายแล้วกระตุ้น Bax/Bak)</td></tr>
+            <tr><td>กลไก</td><td>ยึดเกาะ/ยับยั้ง Bax และ Bak ไม่ให้ทำรูบน mitochondrial membrane</td><td>ยับยั้งฤทธิ์ของ anti-apoptotic protein หรือกระตุ้น Bax/Bak โดยตรง ทำให้เกิด MOMP</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>PUMA และ Noxa</b> เป็น BH3-only protein ที่ถูกกระตุ้นโดย <b>p53</b> โดยตรง — เชื่อมโยงระหว่าง DNA damage response (p53) กับ intrinsic apoptosis pathway; นักศึกษามักสับสนระหว่าง Bax/Bak (effector, ทำรูบน membrane) กับ BH3-only protein (sensor, ไม่ได้ทำรูเอง แต่กระตุ้น Bax/Bak)</div>
+      </div>
+
+      <div class="card">
+        <h3>Caspase Family: Initiator vs Effector</h3>
+        <p><b>Caspase (Cysteine-ASPartate-specific proteASE)</b> เป็นกลุ่มเอนไซม์หลักที่ทำหน้าที่ "executioner" ของ apoptosis อยู่ในรูป inactive precursor (procaspase/zymogen) และถูกกระตุ้นผ่านการตัดสาย (proteolytic cleavage)</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Initiator Caspase</th><th>Effector (Executioner) Caspase</th></tr>
+            <tr><td>สมาชิก</td><td>Caspase-8, Caspase-9, Caspase-10</td><td>Caspase-3, Caspase-6, Caspase-7</td></tr>
+            <tr><td>หน้าที่</td><td>ถูกกระตุ้นก่อนโดย pathway ต้นทาง (apoptosome หรือ DISC) แล้วไปกระตุ้น effector caspase ต่อ (caspase cascade)</td><td>ลงมือย่อยสลายโครงสร้างเซลล์จริง: cleave nuclear matrix protein, cytoskeletal protein, cross-linking protein → ทำให้เกิด DNA fragmentation และ morphologic change ของ apoptosis</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t3-p53">3.5 p53, FAS-FASL/TNF และ PI3K/Akt Survival Pathway</h2><span class="slide-ref">T2 · slide 58-62</span></div>
+
+      <div class="card">
+        <h3>p53 — "Guardian of the genome"</h3>
+        <p><b>p53</b> เป็น tumor suppressor gene ที่ถูกกระตุ้นเมื่อ DNA เสียหาย (เช่นจากรังสี, สารเคมี, oxidative stress) ทำหน้าที่เป็นจุดตัดสินใจสำคัญของเซลล์:</p>
+        <ul class="plain">
+          <li>หาก DNA เสียหาย<b>เล็กน้อยและซ่อมแซมได้</b> → p53 กระตุ้นให้เซลล์หยุดวงจรชีวิต (cell cycle arrest ที่ G1) ผ่านการกระตุ้น <b>p21</b> เพื่อให้เวลาเซลล์ซ่อมแซม DNA</li>
+          <li>หาก DNA เสียหาย<b>รุนแรงเกินซ่อมแซม</b> → p53 กระตุ้นยีน pro-apoptotic กลุ่ม BH3-only ได้แก่ <b>PUMA และ Noxa</b> → นำไปสู่ intrinsic apoptosis pathway</li>
+          <li><b>MDM2</b> เป็นโปรตีนที่ควบคุม p53 ให้อยู่ในระดับต่ำในภาวะปกติ (negative regulator) โดยการนำ p53 ไปสลายผ่าน ubiquitin-proteasome pathway</li>
+        </ul>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Mutation ของยีน <b>p53</b> พบได้ใน<b>มะเร็งมนุษย์มากกว่า 50%</b> เพราะเมื่อ p53 เสียหน้าที่ เซลล์ที่มี DNA ผิดปกติจะไม่ถูกกำจัดด้วย apoptosis ทำให้ mutation สะสมต่อไปได้ — เป็นกลไกสำคัญของ carcinogenesis</div>
+      </div>
+
+      <div class="card">
+        <h3>FAS-FASL และ TNF Signaling (รายละเอียดเพิ่มเติม)</h3>
+        <p><b>FAS (CD95)</b> เป็น death receptor บนผิวเซลล์เป้าหมาย เมื่อจับกับ <b>FasL (Fas Ligand)</b> ที่แสดงออกบน cytotoxic T lymphocyte หรือ NK cell จะกระตุ้นให้เซลล์เป้าหมายเข้าสู่ apoptosis — เป็นกลไกสำคัญที่ระบบภูมิคุ้มกันใช้กำจัดเซลล์ติดเชื้อไวรัสหรือเซลล์มะเร็ง</p>
+        <p><b>TNF (Tumor Necrosis Factor)</b> จับกับ TNFR1 สามารถนำไปสู่ผลลัพธ์ได้ 2 ทาง ขึ้นกับโปรตีน adaptor ที่ถูกเรียกมา: หากกระตุ้น <b>NF-κB pathway</b> จะนำไปสู่ <b>cell survival และ inflammation</b> แต่หากกระตุ้น <b>FADD-caspase-8</b> จะนำไปสู่ <b>apoptosis</b></p>
+      </div>
+
+      <div class="card">
+        <h3>PI3K/Akt Pathway — Survival Signaling (ยับยั้ง Apoptosis)</h3>
+        <p>ทางตรงข้ามกับ pathway ที่กระตุ้น apoptosis คือ <b>PI3K/Akt pathway</b> ซึ่งถูกกระตุ้นโดย growth factor (เช่น insulin, IGF-1) ผ่าน receptor tyrosine kinase — เมื่อกระตุ้นแล้ว <b>Akt (Protein Kinase B)</b> จะทำหน้าที่ "ปกป้องเซลล์" จากการตายผ่านกลไกหลายทาง:</p>
+        <ul class="plain">
+          <li>Phosphorylate และยับยั้งการทำงานของ pro-apoptotic protein <b>BAD</b> (BH3-only)</li>
+          <li>ยับยั้ง Forkhead transcription factor ไม่ให้กระตุ้นยีน pro-apoptotic</li>
+          <li>กระตุ้น <b>NF-κB</b> ซึ่งเพิ่มการสร้างโปรตีน anti-apoptotic</li>
+        </ul>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>PI3K/Akt เป็น survival pathway ที่มักถูกกระตุ้นผิดปกติ (overactive) ใน<b>มะเร็ง</b> ทำให้เซลล์มะเร็งหลบเลี่ยง apoptosis ได้ — เป็นเป้าหมายสำคัญของยา targeted therapy หลายชนิด</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t3-detection">3.6 วิธีตรวจจับ Apoptosis ในห้องปฏิบัติการ</h2><span class="slide-ref">T2 · slide 63 <span style="color:var(--eosin)">+ เสริมจาก Robbins</span></span></div>
+      <div class="card">
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>วิธี</th><th>หลักการ</th></tr>
+            <tr><td>DNA Laddering (Gel electrophoresis)</td><td>DNA ที่ถูกตัดโดย endonuclease ใน apoptosis จะถูกตัดเป็นชิ้นขนาดเท่า ๆ กัน (multiples of ~180-200 bp, internucleosomal cleavage) เมื่อรันบน gel electrophoresis จะเห็นเป็นแถบขั้นบันได ("ladder pattern") ต่างจาก necrosis ที่ DNA ถูกย่อยแบบสุ่ม (random smear)</td></tr>
+            <tr><td>TUNEL assay</td><td><span class="eng">Terminal deoxynucleotidyl transferase dUTP nick end labeling</span> — ตรวจจับปลายสาย DNA ที่ขาด (free 3'-OH ends) ซึ่งมีจำนวนมากในเซลล์ apoptotic โดยใช้เอนไซม์ติดฉลากปลายสาย DNA ที่ขาด</td></tr>
+            <tr><td>Flow cytometry (Annexin V / PI staining)</td><td><b>Annexin V</b> จับกับ phosphatidylserine ที่ย้ายมาอยู่ผิวนอก membrane ในระยะต้นของ apoptosis (early apoptosis marker) ในขณะที่ <b>Propidium Iodide (PI)</b> จะย้อมติดเฉพาะเซลล์ที่ membrane แตกแล้ว (necrosis หรือ late apoptosis) — การใช้ทั้งสองร่วมกันช่วยแยกระยะของเซลล์ได้: Annexin V⁺/PI⁻ = early apoptosis, Annexin V⁺/PI⁺ = late apoptosis/secondary necrosis</td></tr>
+            <tr><td>Morphology (Light/Electron microscopy)</td><td>สังเกต chromatin condensation, apoptotic body โดยตรงด้วยกล้องจุลทรรศน์</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-divider">คำศัพท์สำคัญประจำหัวข้อ</div>
+      <div class="card">
+        <div class="glossary">
+          <div class="gterm"><b>Pyknosis</b>Nucleus หดตัวหนาแน่นในระยะแรกของ necrosis</div>
+          <div class="gterm"><b>Karyorrhexis</b>Nucleus แตกเป็นชิ้นเล็ก ๆ</div>
+          <div class="gterm"><b>Karyolysis</b>Nucleus ละลายหายไป (ตายสมบูรณ์)</div>
+          <div class="gterm"><b>Saponification</b>ปฏิกิริยา fatty acid + calcium เกิดใน fat necrosis</div>
+          <div class="gterm"><b>Apoptotic body</b>ชิ้นส่วนเซลล์ apoptotic ที่มี membrane ห่อหุ้ม</div>
+          <div class="gterm"><b>MOMP</b>Mitochondrial outer membrane permeabilization</div>
+          <div class="gterm"><b>DISC</b>Death-inducing signaling complex</div>
+          <div class="gterm"><b>Apoptosome</b>Complex ที่กระตุ้น caspase-9</div>
+          <div class="gterm"><b>BH3-only protein</b>Sensor protein กระตุ้น Bax/Bak</div>
+          <div class="gterm"><b>p53</b>Guardian of the genome, tumor suppressor</div>
+          <div class="gterm"><b>TUNEL assay</b>ตรวจ DNA fragmentation ใน apoptosis</div>
+          <div class="gterm"><b>Annexin V</b>จับ phosphatidylserine บ่งชี้ early apoptosis</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="tabpanel" id="panel-t4">
+    <div class="tabhero">
+      <div class="kicker">T4 · Hemodynamic Disorders, Thrombosis and Shock</div>
+      <h1>เมื่อระบบไหลเวียนเลือดเสียสมดุล: น้ำ เลือด ลิ่มเลือด และภาวะช็อก</h1>
+      <p>จากแรงดันในหลอดเลือดฝอย สู่ edema, hemorrhage, thrombosis, embolism, infarction จนถึง shock — ห่วงโซ่พยาธิสรีรวิทยาที่เชื่อมโยงกันทั้งหมด</p>
+    </div>
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t4-microcirc">4.1 Microcirculation และ Starling Forces</h2><span class="slide-ref">T4 · slide 4-8 <span style="color:var(--rust)">+ เสริมจาก Robbins</span></span></div>
+      <p class="section-lede">ก่อนเข้าใจ edema ต้องเข้าใจก่อนว่าของเหลวเคลื่อนที่ผ่านผนังหลอดเลือดฝอยได้อย่างไร — นี่คือกลไกพื้นฐานที่สุดของ hemodynamics ทั้งบท</p>
+
+      <div class="card">
+        <h3>Microcirculation คืออะไร</h3>
+        <p><b>Microcirculation</b> คือเครือข่ายหลอดเลือดปลายทางของระบบไหลเวียนเลือด (terminal vascular network) ประกอบด้วยหลอดเลือดขนาดเล็กที่มีเส้นผ่านศูนย์กลาง <b>&lt;20 µm</b> ได้แก่ arteriole, capillary, และ post-capillary venule</p>
+        <h4>หน้าที่หลัก</h4>
+        <ul class="plain">
+          <li>ลำเลียงออกซิเจนจาก RBC ในหลอดเลือดฝอยไปสู่ parenchymal cell</li>
+          <li>ควบคุมการแลกเปลี่ยนสาร (solute exchange) ระหว่าง intravascular และ tissue space</li>
+          <li>ลำเลียงฮอร์โมนและสารอาหารที่มากับกระแสเลือดไปสู่เซลล์เนื้อเยื่อ</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>แรงดัน 3 ชนิดที่ควบคุมการเคลื่อนที่ของของเหลว</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ชนิดแรงดัน</th><th>นิยาม</th></tr>
+            <tr><td>Hydrostatic pressure<br><span class="eng">แรงดันเชิงกล</span></td><td>แรงดันที่ของเหลวกระทำ ณ จุดหนึ่งภายในของเหลวที่ภาวะสมดุล — เป็นแรง "ดัน" ของเหลวออกจากหลอดเลือด</td></tr>
+            <tr><td>Osmotic pressure<br><span class="eng">แรงดันออสโมติก</span></td><td>แรงดันที่ต้องใช้กระทำฝั่งสารละลาย เพื่อหยุดการเคลื่อนที่ของน้ำผ่าน semipermeable membrane ที่กั้นระหว่างสารละลายกับน้ำบริสุทธิ์</td></tr>
+            <tr><td>Oncotic pressure<br><span class="eng">แรงดันคอลลอยด์</span></td><td>เป็น subset ของ osmotic pressure ที่เกิดจากสารโมเลกุลใหญ่ (colloid) โดยเฉพาะ <b>albumin</b> ในพลาสมา — เป็นแรง "ดึง" น้ำกลับเข้าหลอดเลือด</td></tr>
+          </table>
+        </div>
+        <p>ข้อสังเกตสำคัญ: <b>oncotic pressure ที่ปลาย venule จะสูงกว่าที่ปลาย arteriole</b> เนื่องจากเมื่อของเหลวถูกกรองออกจากหลอดเลือดไปตลอดความยาวของ capillary โปรตีนในพลาสมาจะยิ่งเข้มข้นขึ้นเรื่อย ๆ (hemoconcentration) ทำให้ oncotic pressure เพิ่มขึ้นตามลำดับจาก arteriole ไปยัง venule end</p>
+      </div>
+
+      <div class="card">
+        <h3>Starling Equation — สมการที่อธิบายทุกอย่าง (เสริมจาก Robbins)</h3>
+        <p>Ernest Starling อธิบายการเคลื่อนที่สุทธิของของเหลวผ่านผนังหลอดเลือดฝอย (<b>net filtration, Jv</b>) ด้วยสมการ:</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th colspan="2" style="text-align:center;">J<sub>v</sub> = K<sub>f</sub> [ (P<sub>c</sub> − P<sub>i</sub>) − σ(π<sub>c</sub> − π<sub>i</sub>) ]</th></tr>
+            <tr><td>K<sub>f</sub></td><td>Filtration coefficient — ค่าความสามารถในการซึมผ่านของผนังหลอดเลือด (permeability)</td></tr>
+            <tr><td>P<sub>c</sub></td><td>Capillary hydrostatic pressure — แรงดันเลือดในหลอดเลือดฝอย (ดันน้ำออก)</td></tr>
+            <tr><td>P<sub>i</sub></td><td>Interstitial hydrostatic pressure — แรงดันของเหลวในเนื้อเยื่อ (ดันน้ำกลับเข้า)</td></tr>
+            <tr><td>π<sub>c</sub></td><td>Capillary oncotic pressure — แรงดันจาก plasma protein (ดึงน้ำเข้า)</td></tr>
+            <tr><td>π<sub>i</sub></td><td>Interstitial oncotic pressure — แรงดันจากโปรตีนที่รั่วอยู่ในเนื้อเยื่อ (ดึงน้ำออก)</td></tr>
+            <tr><td>σ</td><td>Reflection coefficient — ค่าสะท้อนกลับของโปรตีนต่อ membrane (0-1)</td></tr>
+          </table>
+        </div>
+        <p>สรุปโดยง่าย: <b>แรงที่ดันน้ำออกจากหลอดเลือด = capillary hydrostatic pressure</b> ในขณะที่ <b>แรงที่ดึงน้ำกลับเข้าหลอดเลือด = plasma oncotic pressure</b> — ในภาวะปกติ 2 แรงนี้เกือบสมดุลกันตลอดความยาวของ capillary (net filtration ที่ arteriole end เล็กน้อย และ net reabsorption ที่ venule end เล็กน้อย) ทำให้มีการเคลื่อนที่สุทธิของของเหลวออกจากหลอดเลือดน้อยมาก</p>
+      </div>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 760 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+          <path d="M40 110 Q380 40 720 110" stroke="var(--rust)" stroke-width="10" fill="none" stroke-linecap="round"/>
+          <text x="60" y="70" font-size="11" font-weight="700" fill="var(--rust)">Arteriole end</text>
+          <text x="620" y="70" font-size="11" font-weight="700" fill="var(--rust)">Venule end</text>
+
+          <g font-size="10">
+            <line x1="110" y1="98" x2="110" y2="60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a4)"/>
+            <text x="110" y="52" text-anchor="middle" fill="var(--ink)">Hydrostatic P (Pc)</text>
+            <text x="110" y="40" text-anchor="middle" fill="var(--ink-soft)" font-size="9">สูง → ดันน้ำออก</text>
+
+            <line x1="110" y1="122" x2="110" y2="160" stroke="var(--teal)" stroke-width="2" marker-end="url(#a4t)"/>
+            <text x="110" y="175" text-anchor="middle" fill="var(--teal)" font-size="9">Oncotic P (πc) ต่ำ</text>
+
+            <line x1="650" y1="122" x2="650" y2="160" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a4)"/>
+            <text x="650" y="175" text-anchor="middle" fill="var(--ink)">Hydrostatic P (Pc) ต่ำ</text>
+
+            <line x1="650" y1="98" x2="650" y2="60" stroke="var(--teal)" stroke-width="2" marker-end="url(#a4t)"/>
+            <text x="650" y="52" text-anchor="middle" fill="var(--teal)">Oncotic P (πc)</text>
+            <text x="650" y="40" text-anchor="middle" fill="var(--ink-soft)" font-size="9">สูง → ดึงน้ำกลับเข้า</text>
+          </g>
+
+          <rect x="30" y="190" width="14" height="14" fill="var(--rust)"/><text x="50" y="201" font-size="10" fill="var(--ink-soft)">Net filtration (arteriole end)</text>
+          <rect x="330" y="190" width="14" height="14" fill="var(--teal)"/><text x="350" y="201" font-size="10" fill="var(--ink-soft)">Net reabsorption (venule end)</text>
+
+          <defs>
+            <marker id="a4" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker>
+            <marker id="a4t" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--teal)"/></marker>
+          </defs>
+        </svg>
+        <div class="diagram-cap">Fig 4.1 — Starling forces ตลอดความยาวของ capillary: arteriole end (net filtration) vs venule end (net reabsorption)</div>
+      </div>
+
+      <div class="card">
+        <h3>บทบาทของระบบน้ำเหลือง (Lymphatic Drainage)</h3>
+        <p>ของเหลวส่วนน้อยที่ถูกกรองออกจากหลอดเลือดฝอยแล้วไม่ถูกดูดกลับที่ venule end (ประมาณ 10% ของของเหลวที่กรองออกทั้งหมด) จะถูกระบายออกทาง <b>lymphatic vessel</b> กลับเข้าสู่ระบบไหลเวียนเลือดผ่าน thoracic duct — ระบบนี้ทำหน้าที่เป็น "ทางระบายฉุกเฉิน" ที่ช่วยรักษาสมดุลของเหลวในเนื้อเยื่อ</p>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>Edema จะเกิดขึ้นก็ต่อเมื่อ</b> (1) มีการเปลี่ยนแปลงของ Starling forces มากผิดปกติ (↑hydrostatic หรือ ↓oncotic) <b>และ</b> (2) ความสามารถในการระบายของระบบน้ำเหลือง (lymphatic drainage capacity) ถูกใช้จนเกินขีดจำกัด — ถ้า lymphatic ยังระบายทันอยู่ จะไม่เกิด edema แม้ Starling forces จะเปลี่ยนไปบ้าง</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t4-edema">4.2 Edema</h2><span class="slide-ref">T4 · slide 9-27</span></div>
+      <div class="card">
+        <h3>นิยาม</h3>
+        <p><b>Edema (อาการบวม)</b> คือภาวะที่มีการสะสมของเหลวมากผิดปกติใน <b>interstitium</b> (ช่องว่างระหว่างเซลล์) และ/หรือใน <b>potential space</b> (ช่องว่างที่มีอยู่ตามธรรมชาติแต่ปกติมีของเหลวน้อยมาก เช่น pleural cavity, pericardial cavity, peritoneal cavity)</p>
+      </div>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 760 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+          <rect x="290" y="8" width="180" height="36" rx="9" fill="var(--rust)"/>
+          <text x="380" y="31" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="700">Edema — 2 กลไกหลัก</text>
+          <line x1="380" y1="44" x2="380" y2="58" stroke="var(--line-strong)" stroke-width="2"/>
+          <line x1="190" y1="58" x2="570" y2="58" stroke="var(--line-strong)" stroke-width="2"/>
+
+          <line x1="190" y1="58" x2="190" y2="72" stroke="var(--line-strong)"/>
+          <rect x="90" y="72" width="200" height="50" rx="9" fill="var(--rust-soft)" stroke="var(--rust)"/>
+          <text x="190" y="93" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--rust)">↑ Hydrostatic pressure</text>
+          <text x="190" y="109" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)">Volume overload, venous obstruction</text>
+
+          <line x1="570" y1="58" x2="570" y2="72" stroke="var(--line-strong)"/>
+          <rect x="470" y="72" width="200" height="50" rx="9" fill="var(--teal-soft)" stroke="var(--teal)"/>
+          <text x="570" y="93" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--teal)">↓ Plasma oncotic pressure</text>
+          <text x="570" y="109" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)">Hypoalbuminemia</text>
+
+          <line x1="190" y1="122" x2="330" y2="150" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#a4b)"/>
+          <line x1="570" y1="122" x2="430" y2="150" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#a4b)"/>
+          <rect x="270" y="150" width="220" height="34" rx="8" fill="var(--amber)"/>
+          <text x="380" y="171" text-anchor="middle" fill="#fff" font-size="11.5" font-weight="700">Lymphatic drainage เกินขีดจำกัด</text>
+          <defs><marker id="a4b" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+        </svg>
+        <div class="diagram-cap">Fig 4.2 — 2 กลไกหลักของ edema ที่นำไปสู่การสะสมของเหลวในเนื้อเยื่อ</div>
+      </div>
+
+      <div class="card">
+        <h3>Transudate vs Exudate</h3>
+        <p>ของเหลวที่สะสมใน edema แบ่งได้ 2 ชนิดตามกลไกการเกิดและปริมาณโปรตีน</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Transudate</th><th>Exudate</th></tr>
+            <tr><td>ปริมาณโปรตีน</td><td><b>ต่ำ</b> (low protein content)</td><td><b>สูง</b> (high protein content)</td></tr>
+            <tr><td>กลไก</td><td>ความผิดปกติของ Starling forces (obstruction, compression, volume overload) — ผนังหลอดเลือดยังปกติ</td><td>ผนังหลอดเลือดถูกทำลาย/ซึมผ่านได้มากขึ้นจาก inflammation หรือ vascular injury</td></tr>
+            <tr><td>สาเหตุ</td><td>Volume overload (sodium retention จาก heart/kidney failure), Hypoproteinemia/hypoalbuminemia (liver failure, malnutrition, protein wasting)</td><td>Inflammation, Vascular injury, Abnormal vessel ภายในเนื้องอก</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>พยาธิสรีรวิทยาของ Edema แยกตามสาเหตุ</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>สาเหตุ</th><th>กลไกหลัก</th><th>ลักษณะเฉพาะ</th></tr>
+            <tr><td>Heart Failure</td><td>↑hydrostatic pressure เป็นหลัก (venous congestion จากหัวใจสูบฉีดไม่พอ)</td><td>Anasarca (บวมทั้งตัว), บวมมากที่ dependent portion และย้ายตำแหน่งตามท่าทาง — ยืน: pitting edema หลังเท้า, นอนนาน: sacrum/scrotum; ฟังปอดได้ยิน rales/crackles จาก pulmonary edema</td></tr>
+            <tr><td>Cirrhosis (ตับแข็ง)</td><td>Portal hypertension (จาก scarring กั้นทางเดินเลือด) + ตับสร้าง albumin ไม่พอ (↓oncotic) + ตับสลาย aldosterone ไม่ได้ (↑Na retention)</td><td>นำไปสู่ ascites เด่นชัด</td></tr>
+            <tr><td>Nephrotic Syndrome</td><td>Glomerulus รั่วให้ albumin หลุดออกทางปัสสาวะ (proteinuria) → ↓oncotic pressure → blood volume ต่ำลง → ไตชดเชยด้วยการเก็บ sodium เพิ่ม (secondary hyperaldosteronism)</td><td>บวมทั่วตัว โดยเฉพาะรอบดวงตา</td></tr>
+            <tr><td>Renal Failure</td><td>Fluid overload และ/หรือ hypoproteinemia ร่วมกัน</td><td>บวมทั้งตัว + บวมที่ eyelids ตอนตื่นนอน + ควรฟังปอดหา rales ด้วย</td></tr>
+            <tr><td>Brain Edema</td><td>ของเหลวสะสมทำให้สมองขยายใหญ่ขึ้นและถูกกดกับกะโหลกศีรษะ</td><td>สมองหนักขึ้น, gyri แบนราบจากแรงกด, อาจเกิด brain herniation (สมองถูกดันออกจากตำแหน่งผ่านรูของกะโหลก) — อันตรายถึงชีวิต</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Nephrotic syndrome vs Heart failure มักถูกเปรียบเทียบ: Heart failure เริ่มจาก <b>↑hydrostatic pressure</b> เป็นหลัก (ตัวขับเคลื่อนหลักคือหัวใจ) ในขณะที่ nephrotic syndrome เริ่มจาก <b>↓oncotic pressure</b> เป็นหลัก (ตัวขับเคลื่อนหลักคือการรั่วของโปรตีนที่ไต) — ทั้งสองภาวะจบลงด้วยกลไกร่วมคือ renal sodium retention</div>
+      </div>
+
+      <div class="card">
+        <h3>Localized Edema — Fluid in Potential Spaces</h3>
+        <p>ปกติ potential space จะมีของเหลว &lt;50 mL เมื่อมีของเหลวสะสมมากผิดปกติจะเรียกชื่อเฉพาะตามตำแหน่ง:</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ศัพท์</th><th>ความหมาย</th></tr>
+            <tr><td>Ascites (ท้องมาน)</td><td>มีน้ำสะสมใน peritoneal cavity</td></tr>
+            <tr><td>Pleural effusion / Hydrothorax</td><td>มีน้ำสะสมใน pleural cavity — ถ้ามีหนอง เรียก <b>empyema/pyothorax</b></td></tr>
+            <tr><td>Pericardial effusion</td><td>มีน้ำสะสมใน pericardial cavity — ถ้ามีเลือด เรียก <b>hemopericardium</b></td></tr>
+            <tr><td>Anasarca</td><td>บวมทั้งตัว (severe generalized edema)</td></tr>
+            <tr><td>Hydrocephalus</td><td>มี cerebrospinal fluid สะสมเกิน ทำให้ cerebral ventricle ขยายตัว</td></tr>
+            <tr><td>Hydrocele</td><td>มีของเหลวสะสมเกินรอบ ๆ testis</td></tr>
+            <tr><td>Hydrosalpinx</td><td>มีของเหลวสะสมเกินใน fallopian tube</td></tr>
+            <tr><td>Ileus</td><td>มีของเหลวสะสมเกินใน small bowel ทำให้ bowel segment พองตัว</td></tr>
+            <tr><td>Loculated effusion</td><td>Effusion ที่ถูกแบ่งเป็นห้อง ๆ ด้วยพังผืด (fibrous septa)</td></tr>
+            <tr><td>Blister</td><td>มีของเหลวสะสมใน epidermis หรือระหว่าง epidermis กับ dermis — ขนาดเล็ก = <b>vesicle</b>, ขนาดใหญ่ = <b>bulla</b></td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Angioedema</h3>
+        <p>อาการบวมของผิวหนังและเยื่อบุแบบเฉียบพลันและอยู่ช่วงสั้น ๆ (abrupt and short-lived swelling) มักเกิดรอบดวงตาและริมฝีปาก ในรายที่รุนแรงอาจลามไปถึง<b>เยื่อบุทางเดินหายใจส่วนบน กล่องเสียง และลำไส้</b> ซึ่งเป็นอันตรายถึงชีวิตได้หากทำให้ทางเดินหายใจตีบแคบ (laryngeal edema)</p>
+        <p><b>สาเหตุ:</b> อาจสัมพันธ์กับภาวะพร่องเอนไซม์ <b>C1 esterase deficiency</b></p>
+      </div>
+
+      <div class="card">
+        <h3>Lymphedema — การคั่งของสารน้ำในท่อน้ำเหลือง</h3>
+        <p>เกิดจากการอุดตันของ lymphatic vessel ทำให้ของเหลวที่ควรถูกระบายผ่านทางน้ำเหลืองคั่งอยู่ในเนื้อเยื่อ ตัวอย่างสำคัญ:</p>
+        <ul class="plain">
+          <li>Obstruction ของ <b>pulmonary lymphatics</b> จาก cancer — เป็นกลไกการเสียชีวิตที่พบบ่อยใน cancer patients</li>
+          <li>Obstruction ของ lymphatics ใน<b>เต้านม</b>จากมะเร็ง ทำให้เกิดลักษณะที่เรียกว่า <b>"orange peel skin" (peau d'orange)</b></li>
+          <li><b>Elephantiasis (โรคเท้าช้าง)</b> — เกิดจากพยาธิ filaria อุดตัน lymphatic vessel เรื้อรัง</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t4-hyperemia">4.3 Hyperemia vs Congestion</h2><span class="slide-ref">T4 · slide 28-33</span></div>
+      <div class="card">
+        <p>ทั้งสองภาวะเป็น <b>การเพิ่มขึ้นของปริมาตรเลือดในหลอดเลือด (increased blood volume)</b> ในอวัยวะหรือเนื้อเยื่อหนึ่ง ๆ เหมือนกัน แต่ต่างกันที่กลไก</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Hyperemia</th><th>Congestion</th></tr>
+            <tr><td>กลไก</td><td><b>Active process</b> — เกิดจากสารสื่อการอักเสบ (inflammatory mediator) กระตุ้นให้ arteriole ขยายตัว</td><td><b>Passive process</b> — เกิดจากการคั่งค้าง (stagnation) จาก venous drainage ที่ถูกรบกวน</td></tr>
+            <tr><td>หลอดเลือดที่เกี่ยวข้อง</td><td>Arterial side — arteriole ขยายตัวมากกว่า venule</td><td>Venous side</td></tr>
+            <tr><td>สี</td><td>แดงสด (bright red) เนื่องจากเลือดแดงมีออกซิเจนสูงไหลเข้ามามาก</td><td>แดงคล้ำ/ม่วงคล้ำ (blue-red) เนื่องจากเลือดดำที่ deoxygenated คั่งอยู่</td></tr>
+            <tr><td>ตำแหน่ง</td><td>มักเป็น local</td><td>เป็นได้ทั้ง local และ systemic</td></tr>
+            <tr><td>ตัวอย่าง</td><td>Blushing (หน้าแดง), erection, ผิวหนังแดงเพื่อระบายความร้อน, "rubor" ของ acute inflammation</td><td>Chronic passive congestion ของตับ (จาก tricuspid regurgitation หรือ right heart failure เรื้อรัง)</td></tr>
+          </table>
+        </div>
+        <div class="card" style="background:var(--bg); box-shadow:none; margin-top:14px;">
+          <h4>ตัวอย่างเชิงลึก: Chronic Passive Congestion ของตับ</h4>
+          <p>พบในผู้ป่วยที่มี extreme hepatic congestion เป็นเวลานาน เช่น ผู้ป่วยที่มีการรั่วของ tricuspid valve หรือภาวะหัวใจซีกขวาวายเรื้อรัง — เนื้อตับจะมีลักษณะเป็นสีแดงเข้มบริเวณ <b>centrilobular area</b> (เลือดคั่ง) สลับกับบริเวณสีซีดของ <b>portal area</b> (necrosis) ทำให้เห็นลวดลายคล้ายผลลูกจันทน์เทศตัดขวาง เรียกว่า <b>"nutmeg liver"</b></p>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>คำถามยอดฮิต: "Rubor ของ acute inflammation คือ hyperemia หรือ congestion?" → คำตอบคือ <b>Hyperemia</b> เพราะเกิดจาก vasodilation ของ arteriole ที่ถูกกระตุ้นโดย inflammatory mediator (active process) ไม่ใช่การคั่งค้างแบบ passive</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t4-hemorrhage">4.4 Hemorrhage</h2><span class="slide-ref">T4 · slide 35-46</span></div>
+      <div class="card">
+        <h3>นิยาม</h3>
+        <p><b>Hemorrhage (เลือดออก)</b> คือภาวะที่เม็ดเลือดแดงออกนอกหลอดเลือด (<span class="eng">extravasation of red blood cell</span>) มีความรุนแรงตั้งแต่เล็กน้อยจนถึงออกจนหมดตัว</p>
+        <h4>สาเหตุ</h4>
+        <ul class="plain">
+          <li>Trauma (อุบัติเหตุ)</li>
+          <li>โรคของหลอดเลือด และโรคที่เกิดรอบ ๆ หลอดเลือด (infections, cancers)</li>
+          <li>ขาด clotting factor (congenital หรือ acquired เช่น DIC)</li>
+          <li>ขาด platelet (thrombocytopenia)</li>
+          <li>Hypertension</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>ศัพท์ที่ใช้เรียก Hemorrhage ตามตำแหน่ง</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ศัพท์</th><th>ความหมาย</th></tr>
+            <tr><td>Hematoma</td><td>เลือดออกจนเกิดเป็นก้อนขึ้นในเนื้อเยื่อ</td></tr>
+            <tr><td>Hemothorax</td><td>เลือดออกในช่องเยื่อหุ้มปอด</td></tr>
+            <tr><td>Hemopericardium</td><td>เลือดออกในช่องเยื่อหุ้มหัวใจ</td></tr>
+            <tr><td>Hemoperitoneum</td><td>เลือดออกในช่องท้อง</td></tr>
+            <tr><td>Hemarthrosis</td><td>เลือดออกในข้อกระดูก</td></tr>
+            <tr><td>Hemoptysis</td><td>ไอเป็นเลือด — เลือดออกจาก trachea</td></tr>
+            <tr><td>Hematemesis</td><td>อาเจียนเป็นเลือด — จากหลอดอาหาร/กระเพาะอาหาร</td></tr>
+            <tr><td>Hematochezia</td><td>ถ่ายเป็นเลือดสด ๆ — จาก lower GI bleeding (เช่น ริดสีดวงทวารแตก, มะเร็งลำไส้)</td></tr>
+            <tr><td>Melena</td><td>ถ่ายเหลวสีดำเหมือนยางมะตอย (black, tarry) — จาก upper GI bleeding</td></tr>
+            <tr><td>Serosanguineous</td><td>ใช้เรียก watery effusion ที่มีเลือดปนอยู่</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Hemorrhagic Lesions ตามขนาด</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ชนิด</th><th>ขนาด</th><th>สาเหตุ</th></tr>
+            <tr><td>Petechiae</td><td>&lt; 3 mm (pinpoint hemorrhage)</td><td rowspan="2">Nontrauma หรือ trauma</td></tr>
+            <tr><td>Purpura</td><td>3-10 mm</td></tr>
+            <tr><td>Ecchymosis</td><td>&gt; 10 mm</td><td rowspan="2">Trauma*</td></tr>
+            <tr><td>Contusion (Bruise)</td><td>&gt; 10 mm</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>ความสำคัญของ Hemorrhage ขึ้นกับอะไร</h3>
+        <h4>1. Location</h4>
+        <ul class="plain">
+          <li>เลือดออกในสมอง (intracerebral/subarachnoid hemorrhage) — ร้ายแรงมาก</li>
+          <li>เลือดออกในถุงเยื่อหุ้มหัวใจเพียงไม่กี่ cc ภายใต้แรงดัน left-heart ก็ทำให้เสียชีวิตทันทีได้ (occlude venous return เข้าสู่หัวใจซีกขวา) — เรียกภาวะนี้ว่า <b>cardiac tamponade</b></li>
+          <li>เลือดออกใน vitreous (posterior chamber ของลูกตา) → ทำให้ตาบอด</li>
+        </ul>
+        <h4>2. Volume loss (ปริมาตรเลือดในร่างกาย ~5 ลิตร)</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>% เลือดที่เสีย</th><th>ผลลัพธ์</th></tr>
+            <tr><td>10%</td><td>ปริมาณเลือดในการบริจาคโลหิตแต่ละครั้ง (ไม่มีอาการ)</td></tr>
+            <tr><td>20%</td><td>เริ่มรู้สึกไม่สบายตัว</td></tr>
+            <tr><td>40%</td><td>อาจเข้าสู่ภาวะ <b>hypovolemic shock</b></td></tr>
+          </table>
+        </div>
+        <p>การสูญเสียเลือดครั้งละน้อย ๆ แต่เป็นอยู่นาน (chronic blood loss) อาจทำให้เกิดภาวะ<b>โลหิตจาง (anemia)</b> ได้ แทนที่จะเป็น shock เฉียบพลัน</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t4-hemostasis">4.5 Hemostasis (การหยุดเลือด)</h2><span class="slide-ref">T4 · slide 47-56</span></div>
+      <p class="section-lede">Hemostasis คือกระบวนการทางสรีรวิทยาที่ร่างกายใช้หยุดเลือดหลังหลอดเลือดฉีกขาด ประกอบด้วย 4 ขั้นตอนต่อเนื่องกัน หากผิดปกติจะนำไปสู่ภาวะ<b>เลือดออกไม่หยุด</b> (ถ้าน้อยไป) หรือ <b>thrombosis</b> (ถ้ามากไป)</p>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 780 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+          <rect x="10" y="30" width="175" height="60" rx="10" fill="var(--rust-soft)" stroke="var(--rust)" stroke-width="1.5"/>
+          <text x="97" y="55" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--rust)">① Arteriolar</text>
+          <text x="97" y="70" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--rust)">vasoconstriction</text>
+          <path d="M187 60 L215 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a4c)"/>
+
+          <rect x="220" y="30" width="175" height="60" rx="10" fill="var(--rust-soft)" stroke="var(--rust)" stroke-width="1.5"/>
+          <text x="307" y="50" text-anchor="middle" font-size="11" font-weight="700" fill="var(--rust)">② Primary hemostasis</text>
+          <text x="307" y="66" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)">Platelet plug formation</text>
+          <path d="M397 60 L425 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a4c)"/>
+
+          <rect x="430" y="30" width="175" height="60" rx="10" fill="var(--rust-soft)" stroke="var(--rust)" stroke-width="1.5"/>
+          <text x="517" y="50" text-anchor="middle" font-size="11" font-weight="700" fill="var(--rust)">③ Secondary hemostasis</text>
+          <text x="517" y="66" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)">Fibrin deposition</text>
+          <path d="M607 60 L635 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a4c)"/>
+
+          <rect x="640" y="30" width="140" height="60" rx="10" fill="var(--rust-soft)" stroke="var(--rust)" stroke-width="1.5"/>
+          <text x="710" y="50" text-anchor="middle" font-size="11" font-weight="700" fill="var(--rust)">④ Clot stabilization</text>
+          <text x="710" y="66" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)">&amp; resorption</text>
+          <defs><marker id="a4c" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+        </svg>
+        <div class="diagram-cap">Fig 4.3 — Normal hemostasis 4 ขั้นตอน</div>
+      </div>
+
+      <div class="card">
+        <h3>① Arteriolar Vasoconstriction</h3>
+        <p>เกิดขึ้นทันทีหลังหลอดเลือดฉีกขาด ลดปริมาณเลือดที่ไหลไปยังบริเวณบาดเจ็บอย่างมาก ควบคุมผ่าน <b>reflex neurogenic mechanism</b> และเสริมฤทธิ์ด้วยการหลั่ง <b>endothelin</b> จากเซลล์บุผนังหลอดเลือดบริเวณนั้น</p>
+
+        <h3>② Primary Hemostasis: การสร้าง Platelet Plug</h3>
+        <p>เมื่อ endothelium ถูกทำลาย จะเผยให้เห็น <b>subendothelial von Willebrand factor (vWF)</b> และ <b>collagen</b> ซึ่งกระตุ้นให้ platelet มายึดเกาะและถูกกระตุ้น (adherence + activation) พร้อมปล่อย secretory granule ออกมา นำไปสู่การรวมตัวของ platelet (aggregation) เป็น primary hemostatic plug</p>
+        <h4>ลำดับขั้นตอนการสร้าง platelet plug</h4>
+        <ul class="plain">
+          <li><b>vWF จับกับ subendothelial collagen</b> ก่อน</li>
+          <li><b>Platelet ยึดเกาะกับ subendothelial collagen ผ่าน receptor GPIb</b> (จับกับ vWF)</li>
+          <li>Platelet ที่ถูกกระตุ้นจะปล่อย <b>ADP</b> ออกมาเพื่อดึงดูด platelet ตัวอื่นมาเพิ่ม (platelet recruitment)</li>
+          <li>Platelet เชื่อมต่อกันเองผ่าน <b>receptor GPIIb-IIIa</b> (จับกับ fibrinogen เป็นสะพานเชื่อม platelet-platelet)</li>
+        </ul>
+
+        <h3>③ Secondary Hemostasis: การสะสม Fibrin ("Consolidation of platelet plug")</h3>
+        <p><b>Tissue factor</b> ซึ่งเป็น membrane-bound procoagulant glycoprotein ที่ถูกแสดงออกปกติโดย subendothelial cell (smooth muscle cell, fibroblast) จะถูกเผยให้เห็นที่บริเวณบาดเจ็บเช่นกัน — Tissue factor จะจับและกระตุ้น <b>Factor VII</b> นำไปสู่การสร้าง <b>thrombin</b> ซึ่งเปลี่ยน fibrinogen เป็น <b>fibrin</b> ที่มาเสริมความแข็งแรงให้ platelet plug</p>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 90" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="28" width="140" height="34" rx="8" fill="#fff" stroke="var(--line-strong)"/><text x="80" y="49" text-anchor="middle" font-size="10.5">Vessel severed</text>
+            <path d="M150 45 L180 45" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a4d)"/>
+            <rect x="185" y="28" width="150" height="34" rx="8" fill="#fff" stroke="var(--line-strong)"/><text x="260" y="49" text-anchor="middle" font-size="10.5">Plasma contacts TF</text>
+            <path d="M335 45 L365 45" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a4d)"/>
+            <rect x="370" y="28" width="150" height="34" rx="8" fill="#fff" stroke="var(--line-strong)"/><text x="445" y="49" text-anchor="middle" font-size="10.5">TF binds VII/VIIa</text>
+            <path d="M520 45 L550 45" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a4d)"/>
+            <rect x="555" y="20" width="140" height="50" rx="8" fill="var(--rust-soft)" stroke="var(--rust)"/><text x="625" y="41" text-anchor="middle" font-size="10" fill="var(--rust)" font-weight="700">Activates IX, X</text><text x="625" y="55" text-anchor="middle" font-size="10" fill="var(--rust)" font-weight="700">→ Clot formation</text>
+            <defs><marker id="a4d" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 4.4 — Tissue factor pathway สู่ clot formation</div>
+        </div>
+
+        <h3>④ Clot Stabilization และ Resorption</h3>
+        <p>Fibrin ที่ polymerize แล้วรวมกับ platelet aggregate จะหดตัว (contraction) กลายเป็น solid permanent plug ที่ป้องกันเลือดออกเพิ่ม ในขั้นตอนนี้ระบบ <b>counter-regulatory mechanism</b> จะเริ่มทำงาน เช่น <b>tissue plasminogen activator (t-PA)</b> ที่ควบคุมไม่ให้ clot ลุกลามเกินบริเวณบาดเจ็บ และนำไปสู่การสลาย clot (resorption) พร้อมการซ่อมแซมเนื้อเยื่อในที่สุด</p>
+      </div>
+
+      <div class="card">
+        <h3>ความผิดปกติของ Hemostasis</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Inadequate (น้อยเกินไป)</th><th>Too much (มากเกินไป)</th></tr>
+            <tr><td>ผลลัพธ์</td><td>เลือดออกไม่หยุด → Hemorrhagic shock, anemia of chronic disease</td><td>Thrombosis</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Receptor สำคัญที่ต้องจำคู่กันให้แม่น: <b>GPIb</b> = platelet-collagen adhesion (ผ่าน vWF) ในขณะที่ <b>GPIIb-IIIa</b> = platelet-platelet aggregation (ผ่าน fibrinogen) — ยากลุ่ม antiplatelet บางชนิด (เช่น abciximab) ออกฤทธิ์ยับยั้ง GPIIb-IIIa โดยตรง</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t4-thrombosis">4.6 Thrombosis</h2><span class="slide-ref">T4 · slide 57-72</span></div>
+      <div class="card">
+        <h3>นิยาม</h3>
+        <p><b>Thrombosis</b> คือภาวะที่มีการแข็งตัวของเลือด (blood clot) เกิดขึ้นภายในรูของหลอดเลือด (lumen) หรือช่องภายในหัวใจ ในขณะที่หลอดเลือด/หัวใจยังคงสภาพปกติ (ไม่ใช่การแข็งตัวนอกร่างกายแบบหลอดทดลอง)</p>
+      </div>
+
+      <div class="card">
+        <h3>Virchow's Triad — 3 สาเหตุหลักของ Thrombosis</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <circle cx="260" cy="110" r="105" fill="var(--rust)" fill-opacity="0.16" stroke="var(--rust)" stroke-width="1.5"/>
+            <circle cx="440" cy="110" r="105" fill="var(--teal)" fill-opacity="0.16" stroke="var(--teal)" stroke-width="1.5"/>
+            <circle cx="350" cy="200" r="105" fill="var(--hema)" fill-opacity="0.16" stroke="var(--hema)" stroke-width="1.5"/>
+            <text x="200" y="80" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--rust)">Endothelial</text>
+            <text x="200" y="96" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--rust)">injury</text>
+            <text x="500" y="80" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--teal)">Altered</text>
+            <text x="500" y="96" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--teal)">blood flow</text>
+            <text x="350" y="245" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--hema)">Hypercoagulable</text>
+            <text x="350" y="261" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--hema)">blood</text>
+            <text x="350" y="150" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">Thrombosis</text>
+          </svg>
+          <div class="diagram-cap">Fig 4.5 — Virchow's Triad: 3 สาเหตุหลักที่นำไปสู่ thrombosis</div>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>ในบรรดา 3 สาเหตุหลัก <b>Altered blood flow (โดยเฉพาะ turbulence flow)</b> ถือเป็นตัวการสำคัญที่สุด เพราะ:<br>• ภาวะปกติ platelet จะถูกกันออกจากผนังหลอดเลือดด้วย laminar flow (การไหลแบบแยกชั้น) แต่เมื่อเกิด <b>turbulence flow</b> โดยเฉพาะตรงจุดแยกหรือจุดตีบของหลอดเลือด platelet จะมีโอกาสสัมผัสผนังหลอดเลือดได้มากขึ้น<br>• Activated coagulation factor ปกติจะถูกกันออกด้วย laminar flow เช่นกัน แต่จะสะสมมากใน "pockets of turbulence" ในขณะที่ anti-clotting protein เข้าไม่ถึง pocket นี้<br>• Turbulence flow เองยังอาจเป็นตัวการทำให้เกิดการบาดเจ็บของเยื่อบุหลอดเลือด (endothelial injury) ต่อเนื่องได้อีกด้วย — เชื่อมโยงกับสาเหตุแรก</div>
+      </div>
+
+      <div class="card">
+        <h3>สาเหตุของ Thrombosis จัดกลุ่มตาม Virchow's Triad</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>กลุ่ม 1: Endothelial (Injured) Injury</th><th></th></tr>
+            <tr><td>Cardiac/vascular injury</td><td>Myocardial infarct, Myocarditis, Cardiac jet lesion (abnormal flow), Inflamed/prosthetic cardiac valve, Ruptured atherosclerotic plaque, Vasculitis syndrome</td></tr>
+            <tr><td>Physical/chemical injury</td><td>Radiation injury, High blood pressure (?), Cigarette smoke (?)</td></tr>
+            <tr><td>Invasion &amp; iatrogenic</td><td>Tumor invasion (renal cell, hepatocellular, adrenocortical, follicular thyroid carcinoma), Sclerotherapy สำหรับ varicose vein, Indwelling line ต่าง ๆ</td></tr>
+          </table>
+        </div>
+        <div class="table-wrap" style="margin-top:14px;">
+          <table class="cmp">
+            <tr><th>กลุ่ม 2: Altered Blood Flow ("Turbulence and Stasis")</th><th></th></tr>
+            <tr><td>Cardiac causes</td><td>Myocardial infarct (dead wall balloons out), Quivering/fibrillating cardiac atria, Dilated cardiac chamber (valve/muscle disease)</td></tr>
+            <tr><td>Vascular causes</td><td>Over big ruptured atherosclerotic plaque, Weakened artery ที่โป่งพอง (aneurysm)</td></tr>
+          </table>
+        </div>
+        <div class="table-wrap" style="margin-top:14px;">
+          <table class="cmp">
+            <tr><th>กลุ่ม 3: Hypercoagulable Blood</th><th></th></tr>
+            <tr><td>Hyperviscosity state</td><td>Sickle cell disease, Polycythemia (too much RBC mass), Cryoglobulins, Macroglobulinemia (too much IgM), Vascular malformation, Prolonged bed-rest/immobilization</td></tr>
+            <tr><td>1. Congenital factor deficiency</td><td>ขาด Antithrombin III, ขาด Protein S, ขาด Protein C (แม้ heterozygote), Factor V-Leiden (ตอบสนองต่อ Protein C ได้ไม่ดี), High blood homocysteine</td></tr>
+            <tr><td>2. Pregnancy &amp; หลังคลอด</td><td>Hypercoagulability เพิ่มขึ้นเพื่อป้องกันเลือดออกจากการแท้ง/คลอดบุตร</td></tr>
+            <tr><td>2. Tissue damage</td><td>หลัง severe trauma/burns, หลัง surgery</td></tr>
+            <tr><td>3. Nephrotic syndrome</td><td>Glomerular leakage ของโปรตีน — anticoagulant protein ขนาดเล็ก เช่น Protein S ถูกกรองออกทางปัสสาวะไปด้วย</td></tr>
+            <tr><td>5. Tumor secretion</td><td>เนื้องอกหลั่ง thrombogenic factor (โดยเฉพาะ adenocarcinoma ของตับอ่อน)</td></tr>
+            <tr><td>6. Lupus anticoagulant (paradoxical)</td><td>Antibody ต่อ placental anticoagulant protein (annexin V) และต่อ clotting factor II</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Morphology ของ Thrombus</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Ante-mortem thrombus</th><th>Postmortem clot</th></tr>
+            <tr><td>ลักษณะ</td><td>เห็นลายเส้นบนหน้าตัดขวาง เรียกว่า <b>Line of Zahn</b> — เกิดจากการสลับชั้นของ platelet/fibrin (ชั้นสีซีด) กับ RBC (ชั้นสีแดง) มักมี RBC/platelet อยู่เพียงเล็กน้อย</td><td>ก้อนเลือดที่เกิดหลังตาย ตามหลังการตกตะกอนของ RBC มีส่วนที่เรียกว่า <b>chicken fat</b> (erythrocyte-poor) และ <b>currant jelly</b> (erythrocyte-rich) — ลักษณะนุ่มคล้ายเยลลี่และไม่ติดกับผนังหลอดเลือด</td></tr>
+          </table>
+        </div>
+        <h4>ชนิดของ Thrombus ตามตำแหน่ง</h4>
+        <ul class="plain">
+          <li><b>Mural thrombus</b> — เกิดในผนัง ("mur-") ของหัวใจหรือหลอดเลือดแดง aorta มักไม่ทำให้เกิดการอุดตันสมบูรณ์ (เนื่องจากติดอยู่กับผนัง ไม่ได้กั้นขวาง lumen ทั้งหมด)</li>
+          <li><b>Arterial thrombus</b> — มักเกิดบน ruptured atherosclerotic plaque อาจพบในบริเวณที่มี vascular disease หรือ old surgery</li>
+          <li><b>Venous thrombosis (Phlebothrombosis)</b> — พบบ่อยจากภาวะ immobilization → deep vein thrombosis → propagation → pulmonary embolism (saddle embolism ที่ pulmonary trunk) → เสียชีวิต</li>
+        </ul>
+        <h4>Vegetation — Thrombi บน Cardiac Valve</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Infective (Bacterial) Endocarditis</th><th>Marantic Endocarditis</th></tr>
+            <tr><td>ลักษณะ</td><td>Vegetation ที่มีการติดเชื้อ bacteria ร่วมด้วย</td><td>Vegetation ที่ปลอดเชื้อ ("bland", "verrucous") พบใน <b>acute rheumatic fever</b></td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>ชะตากรรมของ Thrombus (Fates of Thrombus)</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 760 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="310" y="8" width="140" height="36" rx="9" fill="var(--rust)"/>
+            <text x="380" y="30" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Thrombus</text>
+            <line x1="380" y1="44" x2="380" y2="58" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="90" y1="58" x2="670" y2="58" stroke="var(--line-strong)" stroke-width="2"/>
+            <g font-size="10.5">
+              <line x1="90" y1="58" x2="90" y2="72" stroke="var(--line-strong)"/>
+              <rect x="20" y="72" width="140" height="70" rx="8" fill="var(--rust-soft)" stroke="var(--rust)"/>
+              <text x="90" y="94" text-anchor="middle" font-weight="700" fill="var(--rust)">① Propagate</text>
+              <text x="90" y="112" text-anchor="middle" font-size="9" fill="var(--ink-soft)">ขยายตามทิศทาง</text>
+              <text x="90" y="124" text-anchor="middle" font-size="9" fill="var(--ink-soft)">blood flow → อุดตัน</text>
+
+              <line x1="255" y1="58" x2="255" y2="72" stroke="var(--line-strong)"/>
+              <rect x="185" y="72" width="140" height="70" rx="8" fill="var(--rust-soft)" stroke="var(--rust)"/>
+              <text x="255" y="94" text-anchor="middle" font-weight="700" fill="var(--rust)">② Embolize</text>
+              <text x="255" y="112" text-anchor="middle" font-size="9" fill="var(--ink-soft)">แตกเป็นชิ้น</text>
+              <text x="255" y="124" text-anchor="middle" font-size="9" fill="var(--ink-soft)">ลอยในกระแสเลือด</text>
+
+              <line x1="420" y1="58" x2="420" y2="72" stroke="var(--line-strong)"/>
+              <rect x="350" y="72" width="140" height="70" rx="8" fill="var(--rust-soft)" stroke="var(--rust)"/>
+              <text x="420" y="94" text-anchor="middle" font-weight="700" fill="var(--rust)">③ Organize</text>
+              <text x="420" y="112" text-anchor="middle" font-size="9" fill="var(--ink-soft)">Plasmin ย่อย +</text>
+              <text x="420" y="124" text-anchor="middle" font-size="9" fill="var(--ink-soft)">fibroblast แทรกซึม → scar</text>
+
+              <line x1="595" y1="58" x2="595" y2="72" stroke="var(--line-strong)"/>
+              <rect x="525" y="72" width="140" height="70" rx="8" fill="var(--rust-soft)" stroke="var(--rust)"/>
+              <text x="595" y="94" text-anchor="middle" font-weight="700" fill="var(--rust)">④ Recanalize</text>
+              <text x="595" y="112" text-anchor="middle" font-size="9" fill="var(--ink-soft)">ก้อนใหญ่ plasmin</text>
+              <text x="595" y="124" text-anchor="middle" font-size="9" fill="var(--ink-soft)">ย่อยไม่ทัน → เกิดรูพรุน</text>
+            </g>
+          </svg>
+          <div class="diagram-cap">Fig 4.6 — 4 ชะตากรรมที่เป็นไปได้ของ thrombus</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>ภาวะแทรกซ้อนของ Thrombus</h3>
+        <p>บริบท: Obstetrics, malignancy, sepsis, trauma, intravascular coagulation</p>
+        <ol style="padding-left:20px;">
+          <li><b>Infection at thrombi</b> → เกิด pus formation</li>
+          <li><b>Disseminated Intravascular Coagulation (DIC)</b> — ภาวะที่มีก้อนเลือดเกิดขึ้นใน microcirculation หลายตำแหน่งทั่วร่างกาย</li>
+        </ol>
+        <h4>สาเหตุของ DIC — จัดกลุ่มตามกลไก</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>กลุ่ม</th><th>สาเหตุ</th></tr>
+            <tr><td>มี Thromboplastin จำนวนมาก (massive tissue injury/vascular injury)</td><td>Large infarcts, Massive intravascular hemolysis (เช่น malaria รุนแรง), Acute promyelocytic leukemia, Obstetrical catastrophe, Disseminated cancer, Snakebite</td></tr>
+            <tr><td>Endothelial injury (นำไปสู่ DIC)</td><td>Rickettsial disease, Meningococcemia, Infection อื่น ๆ, Vasculitis syndrome, Toxemia of pregnancy (fibrin thrombi ในรก), Shock/Gram-negative sepsis, Major surgery, Burns, Massive trauma, Heatstroke</td></tr>
+          </table>
+        </div>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="270" y="8" width="160" height="36" rx="9" fill="var(--rust)"/>
+            <text x="350" y="30" text-anchor="middle" fill="#fff" font-size="11.5" font-weight="700">Widespread endothelial injury</text>
+            <line x1="350" y1="44" x2="350" y2="58" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a4e)"/>
+            <rect x="230" y="58" width="240" height="34" rx="8" fill="#fff" stroke="var(--line-strong)"/>
+            <text x="350" y="79" text-anchor="middle" font-size="10.5">เผยให้เห็น subendothelial collagen</text>
+            <line x1="350" y1="92" x2="350" y2="106" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a4e)"/>
+            <rect x="180" y="106" width="340" height="40" rx="8" fill="var(--rust-soft)" stroke="var(--rust)"/>
+            <text x="350" y="125" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--rust)">Platelet สร้าง TNF ++ Tissue factor</text>
+            <text x="350" y="139" text-anchor="middle" font-size="9.5" fill="var(--ink-soft)">+ ↓thrombomodulin (anticoagulant)</text>
+            <line x1="350" y1="146" x2="350" y2="160" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a4e)"/>
+            <rect x="230" y="160" width="240" height="26" rx="8" fill="var(--amber)"/>
+            <text x="350" y="178" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">More clot → DIC vicious cycle</text>
+            <defs><marker id="a4e" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 4.7 — วงจรอุบาทว์ของ DIC จาก widespread endothelial injury</div>
+        </div>
+        <p style="margin-top:10px;">กลไกเสริม: TNF กระตุ้นการแสดงออกของ adhesion molecule บน endothelial cell → WBC มายึดเกาะ → ปล่อย ROS/protease ทำลาย endothelium เพิ่ม; Immune complex ก็ทำลาย endothelial cell เพิ่มการแข็งตัวของเลือดเช่นกัน</p>
+      </div>
+
+      <div class="card">
+        <h3>ผลกระทบของ Thrombus (Effects of Clot)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>กลไก</th><th>ผลลัพธ์</th></tr>
+            <tr><td>Narrowing of vessel</td><td>RBC แตกขณะผ่านจุดตีบ → intravascular hemolysis → <b>Microangiopathic Hemolytic Anemia (MAHA)</b> — พบ <b>schistocytes</b> (fragmented RBC) ในเลือด</td></tr>
+            <tr><td>Rupture / dislodge</td><td>เกิด emboli → obstruction ใน microvasculature → tissue hypoxia/ischemia → tissue necrosis</td></tr>
+            <tr><td>Consumption of coagulation factor &amp; platelet</td><td>ไม่พอสร้าง clot ใหม่สำหรับเหตุการณ์เลือดออกครั้งใหม่ → BLEEDING</td></tr>
+            <tr><td>Activates plasmin</td><td>ย่อยสลาย fibrin และทำลาย clotting factor → BLEEDING</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>DIC เป็นภาวะที่ paradox มาก: ผู้ป่วยมีทั้ง <b>thrombosis</b> (จากการแข็งตัวเลือดกระจายทั่วไป) <b>และ bleeding</b> (จากการที่ clotting factor/platelet ถูกใช้จนหมด — consumption coagulopathy) ในเวลาเดียวกัน — คำถามข้อสอบมักถามหา schistocyte ใน peripheral blood smear เป็นตัวชี้บ่ง MAHA/DIC</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t4-embolism">4.7 Embolism</h2><span class="slide-ref">T4 · slide 73-90</span></div>
+      <div class="card">
+        <h3>ศัพท์พื้นฐาน</h3>
+        <ul class="plain">
+          <li><b>Embolism</b> = ภาวะที่มี solid, liquid หรือ gaseous mass ล่องลอยอยู่ในกระแสเลือด</li>
+          <li><b>Embolus (เอกพจน์) / Emboli (พหูพจน์)</b> = สิ่งที่ลอยอยู่ในกระแสเลือด</li>
+          <li><b>Thromboembolus/Thromboemboli</b> = Emboli ที่มาจากการฉีกขาดของก้อน thrombus</li>
+        </ul>
+      </div>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 760 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+          <rect x="310" y="8" width="140" height="34" rx="9" fill="var(--rust)"/>
+          <text x="380" y="30" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Embolism</text>
+          <line x1="380" y1="42" x2="380" y2="55" stroke="var(--line-strong)" stroke-width="2"/>
+          <line x1="130" y1="55" x2="630" y2="55" stroke="var(--line-strong)" stroke-width="2"/>
+          <g font-size="10.5">
+            <line x1="130" y1="55" x2="130" y2="68" stroke="var(--line-strong)"/>
+            <rect x="60" y="68" width="140" height="50" rx="8" fill="var(--rust-soft)" stroke="var(--rust)"/>
+            <text x="130" y="90" text-anchor="middle" font-weight="700" fill="var(--rust)">Solid</text>
+            <text x="130" y="105" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Thrombus, tumor,</text>
+            <text x="130" y="115" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">atheroma, bone marrow</text>
+
+            <line x1="380" y1="55" x2="380" y2="68" stroke="var(--line-strong)"/>
+            <rect x="310" y="68" width="140" height="50" rx="8" fill="var(--rust-soft)" stroke="var(--rust)"/>
+            <text x="380" y="90" text-anchor="middle" font-weight="700" fill="var(--rust)">Liquid</text>
+            <text x="380" y="105" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Fat, amniotic fluid</text>
+
+            <line x1="630" y1="55" x2="630" y2="68" stroke="var(--line-strong)"/>
+            <rect x="560" y="68" width="140" height="50" rx="8" fill="var(--rust-soft)" stroke="var(--rust)"/>
+            <text x="630" y="90" text-anchor="middle" font-weight="700" fill="var(--rust)">Gas</text>
+            <text x="630" y="105" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Air, nitrogen (caisson)</text>
+          </g>
+        </svg>
+        <div class="diagram-cap">Fig 4.8 — Classification ของ Embolism ตามสถานะของสาร</div>
+      </div>
+
+      <div class="card">
+        <h3>Pulmonary Embolism</h3>
+        <p>Pulmonary emboli ส่วนใหญ่มีแหล่งกำเนิดจาก <b>deep leg vein</b> (DVT) — เป็นสาเหตุการตายที่พบบ่อยของ hospitalized patient และวินิจฉัยขณะมีชีวิตยังคงทำได้ยากแม้ในปัจจุบัน (ส่วนใหญ่ตรวจพบตอนชันสูตรศพ)</p>
+        <h4>Clinical Features</h4>
+        <ul class="plain">
+          <li>อาการของผู้ป่วยที่มี infarction คือ <b>hemoptysis</b> (ไอเป็นเลือด)</li>
+          <li>บางครั้งอาจทำให้เกิด pulmonary infarction จากการ occlusion หรือเกิด systemic hypotension ร่วมกับภาวะ poor perfusion ของ bronchial artery</li>
+          <li><b>Bronchoconstriction</b> เกิดจากการหลั่ง serotonin จาก platelet หรือ vagal reflex ที่ถูกกระตุ้นจากสารจาก pulmonary artery</li>
+          <li>ผู้ป่วยที่มี embolization หลายครั้งอาจเกิดภาวะ <b>permanent high pulmonary vascular resistance</b></li>
+        </ul>
+        <h4>สาเหตุการเสียชีวิตจาก Pulmonary Embolism</h4>
+        <ul class="plain">
+          <li><b>Saddle embolization</b> — อุดตัน main pulmonary artery ทั้งสองข้าง (ตรงจุดแยกของ pulmonary trunk) ทำให้เสียชีวิตทันที</li>
+          <li><b>Acute right heart failure</b> — เกิดได้แม้จะมี occlusion เพียง 60% ของ pulmonary arterial bed</li>
+          <li><b>Rhythm disturbance</b> — จากความเครียดของ right ventricle</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Paradoxical Embolus</h3>
+        <p>Venous embolus ที่ผ่านทาง <b>ASD (Atrial Septal Defect), VSD (Ventricular Septal Defect)</b> หรือ <b>Patent Foramen Ovale</b> เข้าสู่ระบบไหลเวียนเลือดแดง (systemic arterial circulation) โดยตรง — อาจทำให้เกิด <b>stroke</b> ได้ เพราะ embolus ที่ควรจะไปอุดตันที่ปอดกลับ "ลัด" ผ่านรูรั่วในหัวใจไปยังสมองแทน</p>
+      </div>
+
+      <div class="card">
+        <h3>Systemic Embolism</h3>
+        <p>ส่วนใหญ่มีต้นกำเนิดจาก<b>หัวใจ</b> (ต่างจาก pulmonary embolism ที่มาจากขา)</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>สัดส่วน</th><th>แหล่งกำเนิด</th></tr>
+            <tr><td>60%</td><td>Mural thrombi จาก myocardial infarct</td></tr>
+            <tr><td>10%</td><td>Atrial thrombi (valve disease, fibrillation)</td></tr>
+            <tr><td>5%</td><td>Cardiomyopathy</td></tr>
+            <tr><td>25%</td><td>อื่น ๆ: aortic aneurysm, left-sided endocarditis, prosthetic valve, paradoxical emboli, ulcerated atherosclerotic plaque, origin unknown</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>ตัวอย่างของ Embolism ชนิดพิเศษ (Solid / Liquid / Gas)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ชนิด</th><th>รายละเอียด</th></tr>
+            <tr><td>1. Amniotic fluid embolism</td><td>พบได้ 1:50,000 ของการคลอด อันตรายถึงชีวิต สาเหตุ: mechanical obstruction ของ pulmonary vessel โดย fetal squamous cell และ lanugo hair ร่วมกับ diffuse intravascular coagulation → coagulopathy Risk factor: tumultuous labor, reduced uterine tone, premature placental separation, ประวัติ allergy/atopy</td></tr>
+            <tr><td>2. Air embolism</td><td>สาเหตุ: ruptured uterine vein (delivery, abortion), ruptured chest vein (trauma), iatrogenic (พบบ่อย) หรือ homicidal (มักไม่สำเร็จ), decompression sickness ("caisson disease") — กลไก: ฟองแก๊สหยุดที่ใดก็ขัดขวาง blood flow ที่นั่น หากมีแก๊สจำนวนมากใน heart จะทำให้การทำงานของหัวใจแย่ลง ต้องมีแก๊สประมาณ 100 mL จึงจะเป็นอันตรายต่อผู้ใหญ่ (การให้สารน้ำทางหลอดเลือดที่มีฟองอากาศเล็กน้อยมักไม่เป็นอันตราย)</td></tr>
+            <tr><td>3. Fat embolism</td><td>พบ 3-4% ใน isolated long bone trauma, 10-15% ใน polytrauma สาเหตุ: ไขมันและ marrow element หลุดเข้าสู่กระแสเลือดระหว่าง long bone fracture เฉียบพลันหรือ intramedullary instrumentation/nailing, hip &amp; knee arthroplasty, liposuction — 2 ทฤษฎี: <b>Mechanical</b> (ไขมันจาก bone marrow หลุดเข้าหลอดเลือดดำโดยตรง) และ <b>Biochemical</b> (lipoprotein lipase กระตุ้นการสร้าง free fatty acid นำไปสู่ hyperinflammatory response คล้าย ARDS) — ผู้ป่วยมักเสียชีวิตจาก pulmonary edema และ generalized lung damage, มักพบ petechiae ตามผิวหนัง ตา และ white matter ของสมอง</td></tr>
+            <tr><td>4. Atheroemboli</td><td>มาจาก atherosclerotic plaque มักลอยไปติดที่ kidney, toes, male genitals</td></tr>
+            <tr><td>5. Bone marrow emboli</td><td>มักพบเสมอเมื่อทำ autopsy ในผู้ป่วยที่ได้รับ cardiopulmonary resuscitation แล้วมี rib fracture</td></tr>
+            <tr><td>6. Tumor emboli</td><td>เกิดเมื่อมีการฉีกขาดของ cancer ที่ invasion เข้า vein พบบ่อยเช่น Renal cell carcinoma</td></tr>
+            <tr><td>7. Therapeutic embolization</td><td>กระทำโดยตั้งใจโดยแพทย์เพื่อการรักษา ใช้ gelatin foam ("Gel-foam"), silicone หรือสารอื่น ๆ</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Fat embolism มี 2 ทฤษฎีที่มักถูกถามแยกกัน: <b>Mechanical theory</b> (เชิงกล — droplet ไขมันหลุดเข้าหลอดเลือดโดยตรง) vs <b>Biochemical theory</b> (ชีวเคมี — lipoprotein lipase กระตุ้นสร้าง free fatty acid ก่อความเสียหาย) — สังเกตว่า fat embolism, amniotic fluid embolism และ air embolism ล้วนทำให้เกิด <b>pulmonary damage/ARDS-like picture</b> ร่วมกันได้</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t4-infarction">4.8 Infarction</h2><span class="slide-ref">T4 · slide 91-100</span></div>
+      <div class="card">
+        <h3>นิยาม</h3>
+        <p><b>Infarction</b> คือการตายจากการขาดเลือด (<span class="eng">localized area of necrosis due to ischemia</span>)</p>
+        <h4>สาเหตุ</h4>
+        <ul class="plain">
+          <li><b>#1 พบบ่อยที่สุด: Arterial infarct</b> — ส่วนใหญ่เกิดจาก thromboemboli หรือ in-situ thrombus formation</li>
+          <li><b>#2: Vessel spasm</b> — เช่น Prinzmetal's angina, migraine ที่นำไปสู่ stroke, ergotism, หรือ Raynaud's phenomenon ที่นำไปสู่การสูญเสียนิ้ว</li>
+        </ul>
+        <h4>สาเหตุอื่น ๆ</h4>
+        <ul class="plain">
+          <li><b>Extrinsic compression</b> จาก adhesion หรือ tumor</li>
+          <li><b>Venous infarct</b> — เกิดจากการอุดตันของ vein ทำให้ deoxygenated blood ไม่สามารถไหลออกจากอวัยวะได้ ตัวอย่างคลาสสิก: bowel (strangulated hernia, adhesion), testis (torsion of testis)</li>
+          <li><b>Compartment syndrome</b> — การบวมภายใน limb ทำให้ venous drainage ภายใน closed anatomic compartment ไม่ดี นำไปสู่ muscle necrosis</li>
+          <li><b>Tumor หรือ extrinsic pressure</b> (pressure neuropathy)</li>
+          <li>การตายจาก suicidal hanging เป็นผลจาก <b>venous ischemia ของสมอง</b> เช่นกัน</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Subtypes ของ Infarction</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Septic Infarct</th><th>Bland Infarct</th></tr>
+            <tr><td>นิยาม</td><td>เกิดเมื่อมีการติดเชื้อ bacteria ในบริเวณที่มีการตาย (เช่น ผู้ป่วยมี infection ที่ site ของ infarct หรือมี infected blood) หรือเกิดจาก infected embolus (จาก heart valve infection หรืออื่น ๆ)</td><td>ไม่มีการติดเชื้อ</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Gross Morphology: White vs Red Infarct</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>White Infarct ("Anemic infarct")</th><th>Red Infarct ("Hemorrhagic infarct")</th></tr>
+            <tr><td>รากศัพท์</td><td>"an-" (ไม่มี) + "-eme" (เลือด)</td><td>-</td></tr>
+            <tr><td>กลไก</td><td>Occlusion ของ <b>artery</b> ใน <b>solid organ</b></td><td>Occlusion ของ <b>vein</b>, หรือ occlusion ของ artery ในอวัยวะที่เป็น <b>loose tissue</b> (เช่น bowel) หรือมี <b>dual blood supply</b> หรือเมื่ออวัยวะมีภาวะ congestion มากอยู่ก่อนแล้ว</td></tr>
+            <tr><td>ตัวอย่าง</td><td>Kidney, spleen, heart infarct</td><td>Bowel infarct (gangrene), lung infarct</td></tr>
+          </table>
+        </div>
+        <h4>รูปทรงของ Infarct</h4>
+        <p>Infarct ส่วนใหญ่มีรูปแบบค่อนข้างจำเพาะคือ <b>wedge-shaped</b> (จริง ๆ แล้วเป็นทรง pyramidal) โดยมีปลายแหลม (apex) ชี้ไปที่จุดที่หลอดเลือดแดงอุดตัน — ใช้ได้กับ infarction ของ <b>lung, spleen, kidney</b> แต่<b>ใช้ไม่ได้กับ venous infarct, cerebral infarct หรือ myocardial infarction</b> (ซึ่งมีรูปแบบไม่สม่ำเสมอ)</p>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>คำถามยอดฮิต: "ทำไม lung infarct จึงเป็น red infarct ทั้งที่ปอดมีเส้นเลือดแดงมาเลี้ยง (pulmonary artery)?" → เพราะปอดมี <b>dual blood supply</b> (ทั้ง pulmonary artery และ bronchial artery) ทำให้เลือดยังไหลเข้ามาในบริเวณที่ตายได้บางส่วน เกิดเป็นเลือดออกร่วมกับเนื้อตาย (hemorrhagic infarct)</div>
+      </div>
+
+      <div class="card">
+        <h3>Microscopic Findings ของ Infarction</h3>
+        <ul class="plain">
+          <li>เกิด <b>Coagulative necrosis</b> (หรือ liquefactive necrosis ในกรณีของสมอง)</li>
+          <li>มี <b>Inflammatory cell</b> อยู่ในบริเวณ infarct ตั้งแต่วันแรก และจะมากขึ้นเรื่อย ๆ ในวันถัดไป</li>
+          <li>การซ่อมแซมจะมีการแทนที่ด้วย <b>scar</b> ในเวลาประมาณ <b>6 เดือน</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t4-shock">4.9 Shock</h2><span class="slide-ref">T4 · slide 101-115</span></div>
+      <div class="card">
+        <h3>นิยาม</h3>
+        <p><b>Shock</b> คือภาวะ <b>systemic hypoperfusion of tissues</b> (เลือดไปเลี้ยงเนื้อเยื่อทั่วร่างกายไม่พอ) เกิดจาก:</p>
+        <ol style="padding-left:20px;">
+          <li>Cardiac output ลดลง (diminished cardiac output) หรือ</li>
+          <li>Effective circulating blood volume ลดลง (reduced effective circulating blood volume)</li>
+        </ol>
+        <p>ผลที่ตามมาคือ <b>impaired tissue perfusion และ cellular hypoxia</b> — Shock เป็น final common pathway ของหลายภาวะที่อันตรายถึงชีวิต เช่น hemorrhage (external/internal), extensive trauma/burns, myocardial infarction, pulmonary embolism, sepsis — แม้ในระยะแรก shock จะยัง <b>reversible</b> ได้ แต่ถ้าปล่อยไว้นาน (prolonged shock) จะนำไปสู่ <b>irreversible tissue injury</b> ที่มักทำให้เสียชีวิต</p>
+      </div>
+
+      <div class="card">
+        <h3>ชนิดของ Shock (4 ชนิดหลัก)</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 760 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="300" y="8" width="160" height="34" rx="9" fill="var(--rust)"/>
+            <text x="380" y="30" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Shock</text>
+            <line x1="380" y1="42" x2="380" y2="55" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="95" y1="55" x2="665" y2="55" stroke="var(--line-strong)" stroke-width="2"/>
+            <g font-size="10.5">
+              <line x1="95" y1="55" x2="95" y2="68" stroke="var(--line-strong)"/>
+              <rect x="20" y="68" width="150" height="70" rx="8" fill="var(--rust-soft)" stroke="var(--rust)"/>
+              <text x="95" y="88" text-anchor="middle" font-weight="700" fill="var(--rust)">Cardiogenic</text>
+              <text x="95" y="105" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Myocardial pump</text>
+              <text x="95" y="117" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">failure</text>
+
+              <line x1="250" y1="55" x2="250" y2="68" stroke="var(--line-strong)"/>
+              <rect x="180" y="68" width="150" height="70" rx="8" fill="var(--rust-soft)" stroke="var(--rust)"/>
+              <text x="250" y="88" text-anchor="middle" font-weight="700" fill="var(--rust)">Hypovolemic</text>
+              <text x="250" y="105" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Loss of blood/</text>
+              <text x="250" y="117" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">plasma volume</text>
+
+              <line x1="410" y1="55" x2="410" y2="68" stroke="var(--line-strong)"/>
+              <rect x="340" y="68" width="150" height="70" rx="8" fill="var(--rust-soft)" stroke="var(--rust)"/>
+              <text x="410" y="88" text-anchor="middle" font-weight="700" fill="var(--rust)">Septic</text>
+              <text x="410" y="105" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Arterial vasodilation</text>
+              <text x="410" y="117" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">from infection</text>
+
+              <line x1="565" y1="55" x2="565" y2="68" stroke="var(--line-strong)"/>
+              <rect x="495" y="68" width="170" height="70" rx="8" fill="var(--rust-soft)" stroke="var(--rust)"/>
+              <text x="580" y="88" text-anchor="middle" font-weight="700" fill="var(--rust)">Distributive</text>
+              <text x="580" y="105" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Neurogenic /</text>
+              <text x="580" y="117" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Anaphylactic</text>
+            </g>
+          </svg>
+          <div class="diagram-cap">Fig 4.9 — 4 ชนิดหลักของ shock</div>
+        </div>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ชนิด</th><th>กลไก</th><th>ตัวอย่าง/สาเหตุ</th></tr>
+            <tr><td>1. Cardiogenic shock</td><td>Cardiac output ต่ำจาก myocardial pump failure</td><td>Myocardial damage/infarction, ventricular arrhythmia, extrinsic compression (cardiac tamponade), outflow obstruction (เช่น pulmonary embolism)</td></tr>
+            <tr><td>2. Hypovolemic shock</td><td>Cardiac output ต่ำจากการสูญเสียปริมาตรเลือด/พลาสมา</td><td>Hemorrhage, fluid loss จาก severe burns</td></tr>
+            <tr><td>3. Septic shock</td><td>Arterial vasodilation + venous blood pooling จาก systemic immune response ต่อ microbial infection</td><td>Gram-negative sepsis เป็นตัวอย่างคลาสสิก</td></tr>
+            <tr><td>4. Distributive shock (2 subtypes)</td><td>สูญเสีย vascular tone</td><td><b>Neurogenic shock</b> — จาก anesthesia หรือ spinal cord injury · <b>Anaphylactic shock</b> — systemic vasodilation + เพิ่ม vascular permeability จาก IgE-mediated hypersensitivity reaction</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>ระยะของ Shock (Stages)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ระยะ</th><th>ลักษณะ</th></tr>
+            <tr><td>1. Nonprogressive stage</td><td>Reflex compensatory mechanism ถูกกระตุ้น และ vital organ perfusion ยังคงรักษาไว้ได้</td></tr>
+            <tr><td>2. Progressive stage</td><td>เริ่มมี tissue hypoperfusion และ circulatory/metabolic derangement แย่ลง รวมถึง acidosis</td></tr>
+            <tr><td>3. Irreversible stage</td><td>Cellular และ tissue injury รุนแรงมากจนแม้จะแก้ไข hemodynamic defect แล้ว ผู้ป่วยก็ไม่สามารถรอดชีวิตได้</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Morphology of Shock</h3>
+        <ul class="plain">
+          <li><b>Hypoperfusion และ microvascular thrombosis</b> — เกิดได้ในทุกอวัยวะ แต่พบบ่อยที่สุดใน brain, heart, kidney, adrenal, GI tract; Fibrin thrombi เห็นได้ชัดที่สุดใน <b>kidney glomeruli</b></li>
+          <li><b>Adrenal cortical cell lipid depletion</b> — สะท้อนการใช้ stored lipid เพื่อสร้าง steroid เพิ่มขึ้น (พบใน stress ทุกรูปแบบ)</li>
+          <li><b>Shock lung</b> — ใน sepsis หรือ trauma จะเกิด diffuse alveolar damage ลักษณะ: congestion, interstitial/alveolar edema, interstitial lymphocytic infiltration, alveolar hyaline membrane</li>
+          <li>ยกเว้น <b>neuronal และ cardiomyocyte loss</b> เนื้อเยื่อที่ได้รับผลกระทบส่วนใหญ่สามารถฟื้นตัวได้สมบูรณ์หากผู้ป่วยรอดชีวิต</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Clinical Manifestations ของ Shock</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Hypovolemic &amp; Cardiogenic Shock</th><th>Septic Shock</th></tr>
+            <tr><td>Blood pressure</td><td>Hypotension</td><td>อาจปกติในช่วงแรก (warm shock)</td></tr>
+            <tr><td>Pulse</td><td>Weak, rapid pulse</td><td>-</td></tr>
+            <tr><td>Breathing</td><td>Tachypnea</td><td>-</td></tr>
+            <tr><td>ผิวหนัง</td><td><b>Cool, clammy, cyanotic</b> (จาก peripheral vasoconstriction เพื่อชดเชย)</td><td><b>Warm, flushed</b> (จาก peripheral vasodilation)</td></tr>
+          </table>
+        </div>
+        <p>ภัยคุกคามต่อชีวิตหลักคือ <b>เหตุการณ์ตั้งต้น</b> (เช่น myocardial infarction, severe hemorrhage, bacterial infection) แต่การเปลี่ยนแปลงทางหัวใจ สมอง และปอดจะยิ่งทำให้สถานการณ์แย่ลงอย่างรวดเร็ว — หากผู้ป่วยรอดในช่วงแรก การทำงานของไตที่แย่ลงอาจนำไปสู่ระยะที่มี <b>progressive oliguria, acidosis, และ electrolyte imbalance</b></p>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>จุดแยกสำคัญ: Hypovolemic/Cardiogenic shock → ผิวหนัง <b>เย็นชื้น (cold &amp; clammy)</b> จาก compensatory vasoconstriction ในขณะที่ Septic shock ระยะแรก → ผิวหนัง <b>อุ่นแดง (warm &amp; flushed)</b> จาก vasodilation — เป็นจุดที่ข้อสอบชอบเอาไปทายชนิด shock จากลักษณะทางคลินิก</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-divider">คำศัพท์สำคัญประจำหัวข้อ</div>
+      <div class="card">
+        <div class="glossary">
+          <div class="gterm"><b>Hydrostatic pressure</b>แรงดันเลือดที่ดันน้ำออกจากหลอดเลือด</div>
+          <div class="gterm"><b>Oncotic pressure</b>แรงดันจากโปรตีนที่ดึงน้ำกลับเข้าหลอดเลือด</div>
+          <div class="gterm"><b>Transudate</b>ของเหลว protein ต่ำ จาก Starling force ผิดปกติ</div>
+          <div class="gterm"><b>Exudate</b>ของเหลว protein สูง จาก inflammation/vascular injury</div>
+          <div class="gterm"><b>Anasarca</b>บวมทั้งตัวรุนแรง</div>
+          <div class="gterm"><b>Hyperemia</b>Active process ↑blood flow ฝั่ง arterial</div>
+          <div class="gterm"><b>Congestion</b>Passive process เลือดคั่งฝั่ง venous</div>
+          <div class="gterm"><b>Nutmeg liver</b>ตับลาย จาก chronic passive congestion</div>
+          <div class="gterm"><b>Petechiae/Purpura/Ecchymosis</b>เลือดออกตามขนาด &lt;3/3-10/&gt;10 mm</div>
+          <div class="gterm"><b>Virchow's triad</b>3 สาเหตุหลักของ thrombosis</div>
+          <div class="gterm"><b>Line of Zahn</b>ลายชั้นของ ante-mortem thrombus</div>
+          <div class="gterm"><b>DIC</b>Disseminated intravascular coagulation</div>
+          <div class="gterm"><b>MAHA</b>Microangiopathic hemolytic anemia</div>
+          <div class="gterm"><b>Schistocyte</b>RBC ที่แตกจากการเสียดสีกับ fibrin/thrombus</div>
+          <div class="gterm"><b>Saddle embolism</b>Embolus อุดตัน pulmonary trunk ทั้งสองข้าง</div>
+          <div class="gterm"><b>Paradoxical embolus</b>Embolus ผ่าน ASD/VSD/PFO เข้า systemic circulation</div>
+          <div class="gterm"><b>White infarct</b>Anemic infarct จาก arterial occlusion ใน solid organ</div>
+          <div class="gterm"><b>Red infarct</b>Hemorrhagic infarct จาก venous occlusion/loose tissue/dual supply</div>
+          <div class="gterm"><b>Shock</b>Systemic hypoperfusion of tissue</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="tabpanel" id="panel-review">
+    <div class="tabhero">
+      <div class="kicker">Final Review</div>
+      <h1>สรุป High-Yield ก่อนเข้าคาบ Quiz/Game</h1>
+      <p>รวมตารางเปรียบเทียบและคำศัพท์ทั้งหมดไว้ในที่เดียว สำหรับทบทวนรอบสุดท้าย</p>
+    </div>
+    
+    <div class="section">
+      <div class="section-head"><h2 id="rv-tables">4.1 ตารางเปรียบเทียบรวม (High-Yield Comparison)</h2></div>
+      <p class="section-lede">รวมตารางเปรียบเทียบทั้งหมดจาก T1-T3 ไว้ในที่เดียว สำหรับทบทวนรอบสุดท้ายก่อนเข้าคาบ Quiz</p>
+
+      <div class="card">
+        <h3>Reversible vs Irreversible Cell Injury</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th>ลักษณะ</th><th>Reversible</th><th>Irreversible</th></tr>
+          <tr><td>Plasma membrane</td><td>บวม แต่ยังคงสภาพ (intact)</td><td>แตก (rupture)</td></tr>
+          <tr><td>Mitochondria</td><td>บวมเล็กน้อย</td><td>บวมรุนแรง + calcification</td></tr>
+          <tr><td>Nucleus</td><td>chromatin clumping</td><td>Pyknosis→Karyorrhexis→Karyolysis</td></tr>
+          <tr><td>ผลลัพธ์</td><td>กลับปกติได้</td><td>Necrosis/Apoptosis</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Apoptosis vs Necrosis</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Apoptosis</th><th>Necrosis</th></tr>
+          <tr><td>ลักษณะ</td><td>Active, programmed, ATP-dependent</td><td>Passive, accidental, ATP-independent</td></tr>
+          <tr><td>ขนาดเซลล์</td><td>หดเล็กลง</td><td>บวมขึ้น</td></tr>
+          <tr><td>Membrane</td><td>คงสภาพจนสร้าง apoptotic body</td><td>แตกตั้งแต่ต้น</td></tr>
+          <tr><td>DNA</td><td>ตัดเป็นชิ้นเท่า ๆ กัน (laddering)</td><td>ย่อยแบบสุ่ม (smear)</td></tr>
+          <tr><td>Inflammation</td><td>ไม่มี</td><td>มี</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Intrinsic vs Extrinsic Apoptosis Pathway</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Intrinsic</th><th>Extrinsic</th></tr>
+          <tr><td>ตัวกระตุ้น</td><td>DNA damage, ER stress ภายในเซลล์</td><td>Fas-FasL, TNF-TNFR1 จากภายนอก</td></tr>
+          <tr><td>ตัวควบคุม</td><td>Bcl-2 family</td><td>Death receptor + FADD</td></tr>
+          <tr><td>Initiator caspase</td><td>Caspase-9 (ผ่าน apoptosome)</td><td>Caspase-8 (ผ่าน DISC)</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>6 ชนิดของ Necrosis (สรุปย่อ)</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th>ชนิด</th><th>Key feature</th><th>ตัวอย่าง</th></tr>
+          <tr><td>Coagulative</td><td>Protein denaturation เด่น, โครงร่างเซลล์คงอยู่</td><td>Solid organ infarct (ยกเว้นสมอง)</td></tr>
+          <tr><td>Liquefactive</td><td>Enzymatic digestion เด่น, เนื้อเยื่อเหลว</td><td>สมอง, abscess</td></tr>
+          <tr><td>Caseous</td><td>Cheese-like, structureless</td><td>Tuberculosis</td></tr>
+          <tr><td>Fat necrosis</td><td>Saponification (Ca + fatty acid)</td><td>Acute pancreatitis</td></tr>
+          <tr><td>Fibrinoid</td><td>Immune complex + fibrin ในผนังหลอดเลือด</td><td>Vasculitis, malignant hypertension</td></tr>
+          <tr><td>Gangrenous</td><td>Dry (ischemia ล้วน) / Wet (+bacteria) / Gas (Clostridium)</td><td>แขนขาขาดเลือด</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Hypertrophy vs Hyperplasia vs Atrophy vs Metaplasia</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th>ชนิด</th><th>นิยาม</th><th>Reversible?</th></tr>
+          <tr><td>Hypertrophy</td><td>เซลล์ขนาดใหญ่ขึ้น (จำนวนเท่าเดิม) — เกิดในเซลล์แบ่งตัวไม่ได้/จำกัด</td><td>ใช่ ถ้าลด stimulus</td></tr>
+          <tr><td>Hyperplasia</td><td>จำนวนเซลล์เพิ่มขึ้น — เกิดในเซลล์ที่ยังแบ่งตัวได้</td><td>ใช่</td></tr>
+          <tr><td>Atrophy</td><td>เซลล์/อวัยวะเล็กลง จากการลด workload/innervation/blood supply/hormone</td><td>ใช่ ในระยะแรก</td></tr>
+          <tr><td>Metaplasia</td><td>เปลี่ยนชนิดเซลล์ที่โตเต็มที่แล้วให้ทนต่อสิ่งแวดล้อมใหม่</td><td>ใช่ แต่เสี่ยง dysplasia หากเรื้อรัง</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Dystrophic vs Metastatic Calcification</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Dystrophic</th><th>Metastatic</th></tr>
+          <tr><td>Serum Ca²⁺</td><td>ปกติ</td><td>สูง (hypercalcemia)</td></tr>
+          <tr><td>ตำแหน่ง</td><td>เนื้อเยื่อที่ตาย/เสื่อม</td><td>เนื้อเยื่อปกติทั่วร่างกาย</td></tr>
+          <tr><td>ตัวอย่าง</td><td>Atherosclerotic plaque, TB caseous necrosis</td><td>Hyperparathyroidism, Vitamin D intoxication</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Hemosiderosis vs Hemochromatosis</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Hemosiderosis</th><th>Hemochromatosis</th></tr>
+          <tr><td>ความรุนแรง</td><td>สะสม hemosiderin โดยยังไม่ทำลายอวัยวะ</td><td>สะสมเหล็กรุนแรงจนทำลายอวัยวะ</td></tr>
+          <tr><td>สาเหตุ</td><td>Local hemorrhage, repeated transfusion</td><td>ส่วนใหญ่ genetic (HFE mutation)</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Anatomical vs Clinical Pathology</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Anatomical Pathology</th><th>Clinical Pathology</th></tr>
+          <tr><td>เน้น</td><td>โครงสร้างเซลล์/เนื้อเยื่อที่เปลี่ยนแปลง</td><td>วิเคราะห์สารน้ำ/สิ่งส่งตรวจ</td></tr>
+          <tr><td>วิธี</td><td>Gross + Microscope</td><td>Laboratory instrument</td></tr>
+        </table></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="rv-glossary">4.2 คำศัพท์รวมทั้งหมด (Master Glossary)</h2></div>
+      <div class="card">
+        <div class="glossary">
+          <div class="gterm"><b>Etiology</b>สาเหตุของโรค</div>
+          <div class="gterm"><b>Pathogenesis</b>กลไกการดำเนินโรค</div>
+          <div class="gterm"><b>Pathognomonic</b>ลักษณะเฉพาะวินิจฉัยได้ทันที</div>
+          <div class="gterm"><b>Ischemia/Hypoxia</b>เลือด/ออกซิเจนไปเลี้ยงไม่พอ</div>
+          <div class="gterm"><b>Free radical (ROS)</b>โมเลกุลมี unpaired electron</div>
+          <div class="gterm"><b>Fenton reaction</b>สร้าง hydroxyl radical จากเหล็ก</div>
+          <div class="gterm"><b>MPT pore</b>รูผิดปกติบน mitochondrial membrane</div>
+          <div class="gterm"><b>Hypertrophy/Hyperplasia/Atrophy/Metaplasia</b>4 รูปแบบ cellular adaptation</div>
+          <div class="gterm"><b>Steatosis</b>สะสมไขมันในเซลล์</div>
+          <div class="gterm"><b>Lipofuscin</b>Wear-and-tear pigment</div>
+          <div class="gterm"><b>Hemosiderin</b>Pigment จาก Hb breakdown</div>
+          <div class="gterm"><b>Pyknosis/Karyorrhexis/Karyolysis</b>ลำดับการตายของ nucleus</div>
+          <div class="gterm"><b>Saponification</b>Ca + fatty acid ใน fat necrosis</div>
+          <div class="gterm"><b>Apoptotic body</b>ชิ้นส่วนเซลล์ apoptotic ที่มี membrane</div>
+          <div class="gterm"><b>MOMP</b>Mitochondrial outer membrane permeabilization</div>
+          <div class="gterm"><b>DISC</b>Death-inducing signaling complex</div>
+          <div class="gterm"><b>p53</b>Guardian of the genome</div>
+          <div class="gterm"><b>PI3K/Akt</b>Survival pathway ยับยั้ง apoptosis</div>
+          <div class="gterm"><b>TUNEL assay</b>ตรวจ DNA fragmentation</div>
+          <div class="gterm"><b>Annexin V</b>Marker ของ early apoptosis</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="rv-checklist">4.3 Checklist ก่อนเข้าห้อง Quiz</h2></div>
+      <div class="card">
+        <ul class="plain">
+          <li>☐ แยก Sign vs Symptom, Anatomical vs Clinical pathology ได้</li>
+          <li>☐ อธิบาย 5 กลไกของ cell injury ได้ครบ (ATP depletion → mitochondrial damage → Ca²⁺ influx → oxidative stress → membrane defect)</li>
+          <li>☐ บอกจุดต่างของ reversible vs irreversible injury ได้ (โดยเฉพาะ plasma membrane)</li>
+          <li>☐ แยก Hypertrophy/Hyperplasia/Atrophy/Metaplasia พร้อมยกตัวอย่างได้</li>
+          <li>☐ จำ necrosis 6 ชนิด พร้อม match กับอวัยวะ/บริบทคลินิกได้</li>
+          <li>☐ วาด/อธิบาย intrinsic vs extrinsic apoptosis pathway พร้อมชื่อโปรตีนสำคัญได้ (Bax/Bak, Bcl-2, caspase-8/9, FADD, cytochrome c)</li>
+          <li>☐ อธิบายบทบาทของ p53 ใน apoptosis ได้</li>
+          <li>☐ แยก dystrophic vs metastatic calcification ผ่าน serum Ca²⁺ ได้</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  </main>
+</div>
+
+<footer class="credit">อ้างอิง: Robbins &amp; Cotran Pathologic Basis of Disease 11th ed. · BRS Pathology 5th ed. · สไลด์ T1/T2/T3 คณะแพทยศาสตร์ มมส.</footer>
+
+<script>
+function showTab(name){
+  document.querySelectorAll('.tabpanel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tabnav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+name).classList.add('active');
+  document.querySelector('.tabnav button[data-tab="'+name+'"]').classList.add('active');
+  buildTOC(name);
+  window.scrollTo({top:0, behavior:'instant'});
+}
+function buildTOC(name){
+  const panel = document.getElementById('panel-'+name);
+  const toc = document.getElementById('toc');
+  const heads = panel.querySelectorAll('h2[id]');
+  let html = '<div class="toc-title">ในหน้านี้</div>';
+  heads.forEach(h=>{ html += '<a href="#'+h.id+'">'+h.textContent+'</a>'; });
+  toc.innerHTML = html;
+}
+document.addEventListener('DOMContentLoaded', ()=>buildTOC('t1'));
+</script>
+</body>
+</html>
