@@ -26,6 +26,10 @@
   --amber-soft:#FBF0DE;
   --rust:#96382A;
   --rust-soft:#F7E7E2;
+  --flame:#BF5B1E;
+  --flame-soft:#FBEBDC;
+  --moss:#4A6741;
+  --moss-soft:#E9EFE6;
 
   --accent: var(--hema);
   --accent-soft: var(--hema-soft);
@@ -107,6 +111,8 @@ p{margin:0 0 0.9em 0;}
 .tabnav button[data-tab="t2"]{--tabcolor:var(--teal);}
 .tabnav button[data-tab="t3"]{--tabcolor:var(--eosin);}
 .tabnav button[data-tab="t4"]{--tabcolor:var(--rust);}
+.tabnav button[data-tab="t5"]{--tabcolor:var(--flame);}
+.tabnav button[data-tab="t67"]{--tabcolor:var(--moss);}
 .tabnav button[data-tab="review"]{--tabcolor:var(--amber);}
 
 .shell{max-width:1180px;margin:0 auto;padding:32px 28px 100px 28px; display:grid; grid-template-columns:240px 1fr; gap:36px;}
@@ -207,6 +213,8 @@ ul.plain li{margin-bottom:5px;}
 #panel-t2{--accent:var(--teal); --accent-soft:var(--teal-soft);}
 #panel-t3{--accent:var(--eosin); --accent-soft:var(--eosin-soft);}
 #panel-t4{--accent:var(--rust); --accent-soft:var(--rust-soft);}
+#panel-t5{--accent:var(--flame); --accent-soft:var(--flame-soft);}
+#panel-t67{--accent:var(--moss); --accent-soft:var(--moss-soft);}
 #panel-review{--accent:var(--amber); --accent-soft:var(--amber-soft);}
 
 footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); font-size:0.78rem; font-family:'JetBrains Mono',monospace;}
@@ -228,7 +236,9 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
       <button data-tab="t2" onclick="showTab('t2')"><span class="tab-eyebrow">Session 02</span>Cell &amp; Tissue Injury</button>
       <button data-tab="t3" onclick="showTab('t3')"><span class="tab-eyebrow">Session 03</span>Apoptosis &amp; Necrosis</button>
       <button data-tab="t4" onclick="showTab('t4')"><span class="tab-eyebrow">Session 04</span>Hemodynamic Disorders</button>
-      <button data-tab="review" onclick="showTab('review')"><span class="tab-eyebrow">Session 05</span>Final Review</button>
+      <button data-tab="t5" onclick="showTab('t5')"><span class="tab-eyebrow">Session 05</span>Acute Inflammation</button>
+      <button data-tab="t67" onclick="showTab('t67')"><span class="tab-eyebrow">Session 06</span>Chronic Inflammation &amp; Repair</button>
+      <button data-tab="review" onclick="showTab('review')"><span class="tab-eyebrow">Session 07</span>Final Review</button>
     </nav>
   </div>
 </header>
@@ -2036,16 +2046,1634 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
 
   </section>
 
+  <section class="tabpanel" id="panel-t5">
+    <div class="tabhero">
+      <div class="kicker">T5 · Acute Inflammation and Mediator System</div>
+      <h1>เมื่อร่างกาย "ตั้งไฟ" ตอบโต้สิ่งแปลกปลอม</h1>
+      <p>จาก cardinal signs สู่กลไกโมเลกุลของ mediator, การเคลื่อนที่ของ leukocyte จนถึง fever และ septic shock — ห่วงโซ่การอักเสบที่เชื่อมทุกระบบเข้าด้วยกัน</p>
+    </div>
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t5-definition">5.1 นิยามและธรรมชาติของการอักเสบ</h2><span class="slide-ref">T5 · slide 7-11</span></div>
+      <div class="card">
+        <h3>รากศัพท์และนิยาม</h3>
+        <p><b class="mono">INFLAMMATION</b> มาจากภาษาละติน <i>inflammare</i> = "to set on fire" (ตั้งไฟ) — สื่อถึงลักษณะร้อนแดงของเนื้อเยื่อที่อักเสบ</p>
+        <p><b>Inflammation</b> = ปฏิกิริยาป้องกันตัวของร่างกายที่เกิดเฉพาะที่ (<span class="eng">localized protective response</span>) ซึ่งถูกกระตุ้นโดยการบาดเจ็บหรือการทำลายเนื้อเยื่อ มีหน้าที่<b>ทำลาย เจือจาง หรือกั้นแยก (sequester)</b> ทั้งตัวการที่ก่อความเสียหาย (injurious agent) และเนื้อเยื่อที่บาดเจ็บออกจากส่วนอื่นของร่างกาย</p>
+        <h4>ลักษณะสำคัญ</h4>
+        <ul class="plain">
+          <li><b>เกิดเฉพาะในเนื้อเยื่อที่มีหลอดเลือดมาเลี้ยง (vascularized tissue)</b> เท่านั้น — เนื้อเยื่อที่ไม่มีหลอดเลือด เช่น cartilage จึงไม่สามารถเกิด inflammation แบบคลาสสิกได้</li>
+          <li>แม้จะเป็นปฏิกิริยาเฉพาะที่ (localized) แต่<b>สามารถแสดงผลเป็นระบบ (systemic) ได้</b> ผ่านทาง cytokine และสารเคมีที่หลั่งเข้าสู่กระแสเลือด (intravascular signal) เช่น Fever, SIRS, Septic shock</li>
+          <li>การทำลายทั้งตัวการที่ก่อโรคและเซลล์ที่ตายแล้ว ทำโดย <b>PMN (Polymorphonuclear neutrophil)</b> เป็นหลัก ผ่านเอนไซม์และ extracellular trap แล้วถูกกวาดล้าง (scavenge) โดย macrophage ต่อ</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>ลำดับเหตุการณ์ทาง Histology ของการอักเสบ</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 760 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="30" width="165" height="60" rx="10" fill="var(--flame-soft)" stroke="var(--flame)" stroke-width="1.5"/>
+            <text x="92" y="55" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--flame)">① Vasodilation</text>
+            <text x="92" y="72" text-anchor="middle" font-size="9" fill="var(--ink-soft)">arteriole/capillary/venule</text>
+            <path d="M177 60 L205 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5)"/>
+
+            <rect x="210" y="30" width="165" height="60" rx="10" fill="var(--flame-soft)" stroke="var(--flame)" stroke-width="1.5"/>
+            <text x="292" y="52" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--flame)">② ↑Permeability</text>
+            <text x="292" y="68" text-anchor="middle" font-size="9" fill="var(--ink-soft)">+ ↑blood flow</text>
+            <text x="292" y="80" text-anchor="middle" font-size="9" fill="var(--ink-soft)">(hyperemia)</text>
+            <path d="M377 60 L405 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5)"/>
+
+            <rect x="410" y="30" width="165" height="60" rx="10" fill="var(--flame-soft)" stroke="var(--flame)" stroke-width="1.5"/>
+            <text x="492" y="52" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--flame)">③ Exudation</text>
+            <text x="492" y="68" text-anchor="middle" font-size="9" fill="var(--ink-soft)">ของเหลว+plasma protein</text>
+            <text x="492" y="80" text-anchor="middle" font-size="9" fill="var(--ink-soft)">(albumin) รั่วออก</text>
+            <path d="M577 60 L605 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5)"/>
+
+            <rect x="610" y="30" width="145" height="60" rx="10" fill="var(--flame-soft)" stroke="var(--flame)" stroke-width="1.5"/>
+            <text x="682" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="var(--flame)">④ Leukocyte</text>
+            <text x="682" y="68" text-anchor="middle" font-size="9" fill="var(--ink-soft)">migration เข้าสู่</text>
+            <text x="682" y="80" text-anchor="middle" font-size="9" fill="var(--ink-soft)">inflammatory focus</text>
+            <defs><marker id="a5" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 5.1 — ลำดับเหตุการณ์หลักของ acute inflammation ที่ระดับเนื้อเยื่อ</div>
+        </div>
+        <h4>ศัพท์ที่มักสับสน</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>คู่ศัพท์</th><th>ความแตกต่าง</th></tr>
+            <tr><td>Congestion vs Hyperemia</td><td><b>Congestion</b> = การอุดตันของการไหลย้อนกลับ (obstruction of downflow, passive) ในขณะที่ <b>Hyperemia</b> = ต้องการ cytokine/cell เพิ่มขึ้นเพื่อไปยังจุดอักเสบ (active)</td></tr>
+            <tr><td>Transudate vs Exudate</td><td><b>Transudate</b> = เกิดจากความไม่สมดุลของ osmotic/oncotic pressure (ผนังหลอดเลือดปกติ) ในขณะที่ <b>Exudate</b> = เกิดจากผนังหลอดเลือด (endothelium) ถูกทำลาย</td></tr>
+          </table>
+        </div>
+        <p>กลไก leukocyte recruitment (4 ขั้นตอน): <b>Margination – Rolling – Adhesion – Transmigration</b> (รายละเอียดในหัวข้อ 5.8)</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t5-cardinal">5.2 Cardinal Signs — 5 อาการหลักของ Acute Inflammation</h2><span class="slide-ref">T5 · slide 12-13</span></div>
+      <div class="card">
+        <p>Acute inflammation มีลักษณะเฉพาะแบบคลาสสิก (classic signs) 5 อาการ ซึ่งแต่ละอาการมี mediator ที่ทำให้เกิดอาการนั้น ๆ ชัดเจน — เป็นหัวข้อพื้นฐานที่สุดที่ข้อสอบมักถามจับคู่</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>อาการ (ไทย/อังกฤษ/ละติน)</th><th>กลไก</th><th>Mediator หลัก</th></tr>
+            <tr><td>ปวด (Pain) — <i>Dolor</i></td><td>Cytokine/chemokine ในกระแสเลือด (จากเซลล์ที่บาดเจ็บ) กระตุ้นตัวรับความเจ็บปวด</td><td>Bradykinin, Substance P, PGE2</td></tr>
+            <tr><td>บวม (Swelling/Edema) — <i>Tumor</i></td><td>ของเหลวใน intravascular รั่ว (exudate) เข้าสู่ interstitium</td><td>Histamine และสารที่เพิ่ม vascular permeability (endothelial contraction/damage)</td></tr>
+            <tr><td>แดง (Redness) — <i>Rubor</i></td><td>Hyperemia — เลือดไหลเข้ามามากขึ้นเพื่อกำจัดตัวการก่อโรค</td><td>สารที่ทำให้ vasodilation เช่น PGE2, histamine</td></tr>
+            <tr><td>ร้อน (Heat) — <i>Calor</i></td><td>ผลจาก hyperemia เช่นเดียวกับ rubor (local hyperthermia)</td><td>สารที่ทำให้ vasodilation</td></tr>
+            <tr><td>เสียการทำงาน (Loss of function) — <i>Functio laesa</i></td><td>ผลรวมจาก pain และ edema ที่ขัดขวางการทำงานปกติของอวัยวะ</td><td>-</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Rubor และ Calor เกิดจากกลไกเดียวกันคือ <b>hyperemia (vasodilation)</b> ในขณะที่ Tumor (edema) เกิดจาก <b>increased vascular permeability</b> — ข้อสอบมักแยกว่า mediator ตัวไหนทำให้เกิด vasodilation (เช่น PGE2, histamine) กับตัวไหนทำให้เกิด permeability เพิ่ม (เช่น histamine ผ่าน endothelial contraction) ซึ่ง <b>histamine ทำได้ทั้งสองอย่าง</b></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t5-phases">5.3 ระยะของการอักเสบและเซลล์ที่เกี่ยวข้อง</h2><span class="slide-ref">T5 · slide 15-19</span></div>
+      <div class="card">
+        <h3>3 ระยะของการอักเสบ (ตามระยะเวลา)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ระยะ</th><th>ระยะเวลา</th><th>ลักษณะ</th></tr>
+            <tr><td>Acute<br><span class="eng">อักเสบเฉียบพลัน</span></td><td>เริ่มทันที อยู่นานเป็นนาที/ชั่วโมง ไม่เกิน 1-3 วัน</td><td>Neutrophil เด่น</td></tr>
+            <tr><td>Subacute</td><td>ระหว่าง acute กับ chronic ตั้งแต่วันที่ 3-4 จนถึง 1 เดือน (ขึ้นกับโรค)</td><td>ระยะเปลี่ยนผ่าน</td></tr>
+            <tr><td>Chronic<br><span class="eng">อักเสบเรื้อรัง</span></td><td>ตามหลัง acute อยู่นานตั้งแต่ 1 เดือนขึ้นไป (หรือเร็วกว่านั้นขึ้นกับโรค) เป็นหลักเดือนถึงหลักปี</td><td>Lymphocyte, plasma cell เด่น มักคาบเกี่ยวกับ tissue repair</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Acute vs Chronic Inflammation (ตารางเปรียบเทียบเต็มรูปแบบ)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>หัวข้อ</th><th>Acute Inflammation</th><th>Chronic Inflammation</th></tr>
+            <tr><td>Duration</td><td>สั้น (วัน)</td><td>ยาว (สัปดาห์–เดือน–ปี)</td></tr>
+            <tr><td>Specificity</td><td>Nonspecific</td><td>Specific เช่น Granulomatous inflammation</td></tr>
+            <tr><td>Inflammatory cells</td><td>Neutrophil, macrophage</td><td>Lymphocyte, plasma cell, macrophage, fibroblast</td></tr>
+            <tr><td>Vascular changes</td><td>Vasodilation, hyperemia, ↑vascular permeability, tissue edema</td><td>Angiogenesis (สร้างหลอดเลือดใหม่เป็นส่วนหนึ่งของ granulation tissue)</td></tr>
+            <tr><td>Cardinal signs</td><td>มี (+)</td><td>ไม่มี (−) — มักคาบเกี่ยวกับ repair process</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>เซลล์ในการอักเสบ (Inflammatory Cells)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ระยะ</th><th>เซลล์</th><th>ลักษณะทาง cytology</th></tr>
+            <tr><td rowspan="3">Acute inflammation</td><td>Neutrophil (PMN)</td><td>Nucleus แบ่งเป็นหลายพู (multilobated)</td></tr>
+            <tr><td>Mast cell</td><td>-</td></tr>
+            <tr><td>Macrophage (histiocyte)</td><td>เซลล์ขนาดใหญ่ ขอบเขตเยื่อหุ้มเซลล์ไม่ชัดเจน cytoplasm เป็นฟอง (foamy)</td></tr>
+            <tr><td rowspan="3">Chronic inflammation</td><td>Lymphocyte</td><td>Cytoplasm น้อย nucleus กลมอยู่กลาง</td></tr>
+            <tr><td>Plasma cell</td><td>Nucleus อยู่เยื้องขอบเซลล์ (eccentric) มี chromatin pattern แบบ "clock-face"</td></tr>
+            <tr><td>Macrophage (histiocyte)</td><td>เช่นเดียวกับใน acute</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>Macrophage เป็นเซลล์เดียวที่พบได้ทั้งใน acute และ chronic inflammation</b> — มักถูกใช้เป็นตัวลวงในข้อสอบที่ถามหาเซลล์ที่ "จำเพาะ" ต่อ acute หรือ chronic อย่างใดอย่างหนึ่ง</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t5-causes">5.4 สาเหตุของการอักเสบ (Causes of Inflammation)</h2><span class="slide-ref">T5 · slide 27-29</span></div>
+      <div class="card">
+        <p>หลักการรวม: สิ่งใดก็ตามที่ทำให้เกิด<b>cell injury และ/หรือ necrosis</b> สามารถกระตุ้นการอักเสบได้ทั้งสิ้น</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>กลุ่มสาเหตุ</th><th>ตัวอย่าง</th></tr>
+            <tr><td>Physical agents</td><td>ความร้อน-เย็น (heat-cold injury), สารเคมี, รังสี, การบาดเจ็บทางกล (mechanical trauma), การสูญเสียเกราะป้องกันตามธรรมชาติจนเกิดการระคายเคือง (เช่น peptic ulcer จาก H. pylori)</td></tr>
+            <tr><td>Infection</td><td>แบคทีเรียและสารพิษของมัน, ไวรัส, เชื้อรา, ปรสิต, การสูญเสีย normal flora จนเชื้อแปลกปลอมเติบโตมากผิดปกติ (เช่น bacterial vaginosis)</td></tr>
+            <tr><td>Tissue hypoxia</td><td>ภาวะขาดออกซิเจน → infarction → cell death</td></tr>
+            <tr><td>Immunologic agents</td><td>ปฏิกิริยา Cell-mediated และ Ab-Ag, autoimmune disease, graft rejection, hypersensitivity</td></tr>
+            <tr><td>Inert foreign bodies</td><td>เศษไหมเย็บแผลที่คงค้าง (retained suture material), เสี้ยน (splinter)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>DAMP vs PAMP</h3>
+        <p>สัญญาณที่กระตุ้นให้เกิด inflammation ทั้งหมดสามารถแบ่งกลุ่มใหญ่ตามแหล่งกำเนิดได้เป็น 2 กลุ่ม</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>DAMP<br><span class="eng">Damage-Associated Molecular Pattern</span></th><th>PAMP<br><span class="eng">Pathogen-Associated Molecular Pattern</span></th></tr>
+            <tr><td>แหล่งกำเนิด</td><td>ปล่อยจากเซลล์ของร่างกายเองที่บาดเจ็บ/ตาย (sterile injury)</td><td>มาจากโครงสร้างของเชื้อโรค (จำเพาะต่อจุลชีพ)</td></tr>
+            <tr><td>ตัวอย่างสาเหตุ</td><td>Burns, Trauma, Surgical procedure-related trauma, Acute aspiration, Acute pancreatitis, สารเสพติดและพิษที่เกี่ยวข้อง, Acute end-organ ischemia, Acute exacerbation of autoimmune vasculitis, Medication adverse reaction, Intestinal ischemia/perforation, Hematologic malignancy, Erythema multiforme</td><td>Bacterial infection, Viral syndrome (เช่น influenza), Disseminated fungal infection ในผู้ป่วยภูมิคุ้มกันต่ำ, Toxic shock syndrome (จากทั้ง exotoxin และ endotoxin)</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Acute pancreatitis และ burns เป็นตัวอย่างคลาสสิกของภาวะที่กระตุ้น <b>sterile inflammation ผ่าน DAMP</b> โดยไม่มีการติดเชื้อร่วมด้วย — มักเป็นจุดที่ข้อสอบใช้ทดสอบว่านักศึกษาเข้าใจว่า inflammation ไม่จำเป็นต้องมีเชื้อโรคเสมอไป</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t5-cytokines">5.5 Cytokines และ Chemokines</h2><span class="slide-ref">T5 · slide 31-44</span></div>
+      <div class="card">
+        <h3>นิยามพื้นฐาน</h3>
+        <ul class="plain">
+          <li><b>Cytokine</b> — ศัพท์รวมสำหรับโปรตีนที่ไม่ใช่ antibody (non-antibody protein) ที่หลั่งจากประชากรเซลล์กลุ่มหนึ่ง (เช่น T cell) เมื่อสัมผัสกับ antigen จำเพาะ ทำหน้าที่เป็น intercellular mediator — แบ่งย่อยตามแหล่งกำเนิด: <b>Lymphokine</b> (จาก lymphocyte), <b>Monokine</b> (จาก monocyte/macrophage)</li>
+          <li><b>Chemokine</b> — cytokine ชนิดใดก็ตามที่กระตุ้น chemotaxis</li>
+          <li><b>Chemotaxis</b> — การเคลื่อนที่ของเซลล์ (inflammatory cell) แบบมีทิศทางตามความเข้มข้นของสารเคมี (chemical concentration gradient)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>ประเภทของ Cytokine ตามเซลล์ที่หลั่ง</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ชนิด</th><th>เซลล์ที่หลั่ง</th><th>หน้าที่</th></tr>
+            <tr><td>Lymphokines</td><td>Lymphocyte</td><td>-</td></tr>
+            <tr><td>Monokines</td><td>Monocyte และ macrophage</td><td>-</td></tr>
+            <tr><td>Interleukins (IL)</td><td>WBC หลายชนิด</td><td>ออกฤทธิ์ต่อ WBC</td></tr>
+            <tr><td>Interferons (IFN-γ)</td><td>Th-1</td><td>ตอบสนองต่อการติดเชื้อไวรัสหรือสิ่งกระตุ้นอื่น</td></tr>
+            <tr><td>Tumor Necrosis Factor (TNF)</td><td>Macrophage</td><td>ทำให้เกิด necrosis ของเซลล์มะเร็ง + pro-inflammatory action</td></tr>
+            <tr><td>Chemokine</td><td>Macrophage</td><td>ควบคุม chemotaxis และพฤติกรรมอื่น ๆ ของ WBC</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>IL-1 vs TNF — 2 Cytokine หลักที่ต้องจำให้แม่น</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>หน้าที่</th><th>IL-1</th><th>TNF</th></tr>
+            <tr><td>Endothelial activation — expression E-, P-selectin, ligand สำหรับ L-selectin</td><td>✓</td><td>✓</td></tr>
+            <tr><td>เพิ่ม vascular permeability</td><td>✓</td><td>✓</td></tr>
+            <tr><td>กระตุ้นการสร้าง mediator อื่น (cytokine, chemokine, growth factor)</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Procoagulant</td><td>✓</td><td>✓</td></tr>
+            <tr><td>PMN augmentation (กระตุ้นการสร้าง NO)</td><td>✓</td><td>−</td></tr>
+            <tr><td>กระตุ้น fibroblast, synoviocyte, mesenchymal cell</td><td>✓</td><td>−</td></tr>
+            <tr><td>กระตุ้น TH17</td><td>−</td><td>✓</td></tr>
+            <tr><td>Systemic: Fever (ร่วมกับ IL-6), sepsis</td><td>✓</td><td>✓</td></tr>
+            <tr><td>Cachexia (ในโรคติดเชื้อเรื้อรัง/มะเร็ง)</td><td>−</td><td>✓</td></tr>
+          </table>
+        </div>
+        <p>ทั้งสองมีฤทธิ์ทับซ้อนกันมาก (overlapping function) — ในทางคลินิก ยากลุ่ม <b>Anti-TNF</b> มีประสิทธิภาพโดดเด่นในการรักษา chronic inflammatory disease</p>
+      </div>
+
+      <div class="card">
+        <h3>Cytokines จาก Macrophage (สรุปครบ)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Cytokine</th><th>หน้าที่</th></tr>
+            <tr><td>IL-1 (endogenous pyrogen)</td><td>ทำให้เกิดไข้และ acute inflammation, กระตุ้น endothelium ให้แสดง adhesion molecule, กระตุ้นการหลั่ง chemokine เพื่อดึง lymphocyte</td></tr>
+            <tr><td>IL-6 (endogenous pyrogen)</td><td>ทำให้เกิดไข้และกระตุ้นการสร้าง acute-phase protein</td></tr>
+            <tr><td>IL-8</td><td>Chemotactic factor หลักสำหรับ PMN</td></tr>
+            <tr><td>IL-12</td><td>กระตุ้นการเปลี่ยน T-cell เป็น Th1, กระตุ้น NK cell</td></tr>
+            <tr><td>TNF-α</td><td>ทำให้เกิด septic shock, กระตุ้น endothelium, ทำให้เกิด leukocyte recruitment และ vascular leakage</td></tr>
+          </table>
+        </div>
+        <h4>Cytokine จาก Th-1</h4>
+        <p><b>IFN-γ</b> — กระตุ้น macrophage และ Th1 cell, กด (suppress) Th2, มีฤทธิ์ antiviral และ anti-tumoral</p>
+      </div>
+
+      <div class="card">
+        <h3>Th1 vs Th2 Cytokines</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Cytokine</th><th>หน้าที่</th></tr>
+            <tr><td>IL-4 (Th2)</td><td>กระตุ้นการเปลี่ยนเป็น Th2 class, ส่งเสริมการเติบโตของ B-cell, เพิ่ม class switching เป็น IgE, IgG</td></tr>
+            <tr><td>IL-5 (Th2)</td><td>กระตุ้นการเติบโตและ differentiation ของ eosinophil, ส่งเสริม differentiation ของ B-cell, เพิ่ม class switching เป็น IgA</td></tr>
+            <tr><td>IL-10 (Th2/Treg)</td><td>ปรับ (modulate) การตอบสนองของการอักเสบ, ยับยั้งฤทธิ์ของ activated T-cell และ Th-1, หลั่งจาก T regulatory cell (Treg) ด้วย</td></tr>
+          </table>
+        </div>
+        <h4>Mnemonic (USMLE): "HOT T-Bone StEAk"</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>IL</th><th>หน้าที่ (ตัวช่วยจำ)</th></tr>
+            <tr><td>IL-1</td><td><b>HOT</b> — ทำให้เกิดไข้ (fever)</td></tr>
+            <tr><td>IL-2</td><td><b>T</b> — กระตุ้น T cell</td></tr>
+            <tr><td>IL-3</td><td><b>Bone</b> — กระตุ้น bone marrow</td></tr>
+            <tr><td>IL-4</td><td><b>St(E)</b> — กระตุ้นการสร้าง IgE</td></tr>
+            <tr><td>IL-5</td><td><b>(E)Ak</b> — กระตุ้นการสร้าง IgA</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Macrophage Activation — Pro- vs Anti-inflammatory Cytokines</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Pro-inflammatory</th><th>Anti-inflammatory</th></tr>
+            <tr><td>IL-1, 6, 8, 12, 18</td><td>IL-4, 10, 11, 13</td></tr>
+            <tr><td>IFN-γ</td><td>TGF-β</td></tr>
+            <tr><td>TNF (tumor necrosis factor)</td><td>Receptor antagonists ของ IL-1 และ TNF-α</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Chemokines: หน้าที่และการจำแนกโครงสร้าง</h3>
+        <p>Chemokine มี &gt; 40 ชนิด แบ่งตามตำแหน่งของ cysteine (C) residue ในโครงสร้างโปรตีน</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>หน้าที่</th><th>รายละเอียด</th></tr>
+            <tr><td>Inflammatory chemokine</td><td>เป็น chemoattractant ใน acute inflammation, สร้างจากเชื้อจุลชีพและสิ่งกระตุ้นอื่น, เพิ่มการยึดเกาะและการเคลื่อนที่ของ leukocyte (chemotaxis)</td></tr>
+            <tr><td>Homeostatic chemokine</td><td>รักษาโครงสร้างของเนื้อเยื่อ (tissue architecture) เช่น การจัดตำแหน่ง T และ B cell ใน spleen และ lymph node</td></tr>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>โครงสร้าง</th><th>ตัวอย่าง</th><th>Chemotaxis สำหรับ</th></tr>
+            <tr><td>CXC</td><td>IL-8</td><td>PMN (ถูกกระตุ้นโดย IL-1, TNF)</td></tr>
+            <tr><td>C</td><td>Lymphotactin</td><td>Lymphocyte</td></tr>
+            <tr><td>CC</td><td>MCP-1, MIP-1α, RANTES</td><td>Monocyte, Eosinophil, Basophil, Lymphocyte</td></tr>
+            <tr><td>CC</td><td>Eotaxin</td><td>Eosinophil</td></tr>
+            <tr><td>CX3C</td><td>Fractalkine</td><td>T-Lymphocyte</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t5-vasoactive">5.6 Vasoactive Amines, Lipid Mediators และ Complement System</h2><span class="slide-ref">T5 · slide 46-56</span></div>
+
+      <div class="card">
+        <h3>Histamine vs Serotonin</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Histamine</th><th>Serotonin (5-HT)</th></tr>
+            <tr><td>แหล่งเก็บ</td><td>Circulation: basophil · Tissue: mast cell (มากที่สุดที่ผิวหนัง, bronchial mucosa, intestinal mucosa) — ต่ำในซีรั่ม สูงใน CSF</td><td>CNS (neurotransmitter), Circulation: platelet (Plt aggregation), GI: enterochromaffin cell</td></tr>
+            <tr><td>ตัวกระตุ้นการหลั่ง (degranulation)</td><td>Cell injury, IgE จับกับผิวเซลล์ mast cell, Anaphylatoxin (C3a, C5a)</td><td>-</td></tr>
+            <tr><td>กลไก</td><td>จับกับ H1 receptor*** → allergic response, potent vasodilator + เพิ่ม vascular permeability ของ postcapillary venule</td><td>Vasoconstrictor (แต่ก็ทำให้เกิด vasodilation ทางอ้อมได้เช่นกัน) — กระตุ้น nitric oxide synthetase จาก arginine</td></tr>
+          </table>
+        </div>
+        <p><b>Wheal and flare</b> และ <b>Dermatographism</b> เป็นตัวอย่างของปฏิกิริยาที่เกิดจาก histamine โดยตรง</p>
+      </div>
+
+      <div class="card">
+        <h3>Lipid Metabolites: Arachidonic Acid Cascade</h3>
+        <p>เมื่อเยื่อหุ้มเซลล์ถูกทำลาย <b>arachidonic acid</b> จะถูกปลดปล่อยออกมาจาก membrane phospholipid แล้วถูกเปลี่ยนต่อผ่าน 2 pathway หลัก</p>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="270" y="8" width="160" height="34" rx="9" fill="var(--flame)"/>
+            <text x="350" y="30" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Arachidonic Acid</text>
+            <line x1="350" y1="42" x2="350" y2="56" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="170" y1="56" x2="530" y2="56" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="170" y1="56" x2="170" y2="70" stroke="var(--line-strong)"/>
+            <rect x="100" y="70" width="140" height="30" rx="8" fill="var(--flame-soft)" stroke="var(--flame)"/>
+            <text x="170" y="90" text-anchor="middle" font-size="11" font-weight="700" fill="var(--flame)">COX pathway</text>
+            <line x1="530" y1="56" x2="530" y2="70" stroke="var(--line-strong)"/>
+            <rect x="460" y="70" width="140" height="30" rx="8" fill="var(--teal-soft)" stroke="var(--teal)"/>
+            <text x="530" y="90" text-anchor="middle" font-size="11" font-weight="700" fill="var(--teal)">LOX pathway</text>
+
+            <line x1="170" y1="100" x2="170" y2="114" stroke="var(--line-strong)"/>
+            <rect x="30" y="114" width="120" height="50" rx="7" fill="#fff" stroke="var(--line-strong)"/>
+            <text x="90" y="134" text-anchor="middle" font-size="9.5">Prostaglandins</text>
+            <text x="90" y="148" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">(PGE2, PGD2, PGI2)</text>
+
+            <rect x="160" y="114" width="120" height="50" rx="7" fill="#fff" stroke="var(--line-strong)"/>
+            <text x="220" y="134" text-anchor="middle" font-size="9.5">Thromboxane</text>
+            <text x="220" y="148" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">(TXA2)</text>
+
+            <line x1="530" y1="100" x2="530" y2="114" stroke="var(--line-strong)"/>
+            <rect x="430" y="114" width="120" height="50" rx="7" fill="#fff" stroke="var(--line-strong)"/>
+            <text x="490" y="134" text-anchor="middle" font-size="9.5">Leukotrienes (LT)</text>
+            <text x="490" y="148" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Bronchospasm</text>
+
+            <rect x="560" y="114" width="120" height="50" rx="7" fill="#fff" stroke="var(--line-strong)"/>
+            <text x="620" y="134" text-anchor="middle" font-size="9.5">Lipoxins</text>
+            <text x="620" y="148" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Anti-inflammatory</text>
+          </svg>
+          <div class="diagram-cap">Fig 5.2 — Arachidonic acid cascade: COX pathway (Prostaglandins/Thromboxane) vs LOX pathway (Leukotrienes/Lipoxins)</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Complement System</h3>
+        <p>Complement protein เป็น plasma mediator ที่ผลิตจาก<b>ตับ</b> มีบทบาทสำคัญใน endothelial activation และ leukocyte recruitment</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Fragment</th><th>หน้าที่</th></tr>
+            <tr><td>C3a, C5a</td><td>Anaphylatoxin — เป็น chemoattractant และเพิ่ม vascular permeability, กระตุ้นให้ mast cell degranulate หลั่ง histamine</td></tr>
+            <tr><td>C3b</td><td><b>Opsonization</b> — เคลือบผิวเชื้อโรค (pathogen) ให้ macrophage ตรวจจับและกลืนกินได้ง่ายขึ้น</td></tr>
+            <tr><td>MAC (Membrane Attack Complex)</td><td>ทำให้เกิด pathogen lysis โดยตรง</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>สรุปแหล่งกำเนิดของ Mediator ทั้งหมด</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>กลุ่ม Mediator</th><th>แหล่งกำเนิด</th><th>ตัวอย่าง</th></tr>
+            <tr><td>Cytokines</td><td>เซลล์หลายชนิด</td><td>Interleukin, TNF, IFN-γ</td></tr>
+            <tr><td>Vasoactive amines</td><td>Mast cell, basophil, platelet</td><td>Histamine, Serotonin</td></tr>
+            <tr><td>Lipid metabolites</td><td>Damaged cell membrane, mast cell, WBC</td><td>Arachidonic acid products: PG, LT, Lipoxin</td></tr>
+            <tr><td>Complements</td><td>ตับ</td><td>C3a, C5a, C3b, MAC</td></tr>
+            <tr><td>Other mediators</td><td>ตับ, endothelium, macrophage</td><td>PAF, Coagulation factors, Kinins (Bradykinin), Neuropeptides (Substance P, Neurokinin A)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>สรุปฤทธิ์ของ Mediator ต่อการเปลี่ยนแปลงของหลอดเลือด</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Mediator</th><th>Vasodilation</th><th>↑Permeability</th><th>หน้าที่อื่น</th></tr>
+            <tr><td>Histamine</td><td>+</td><td>+</td><td>Rearrangement ของ E-selectin, Hypersensitivity type I</td></tr>
+            <tr><td>Bradykinin</td><td>+</td><td>+</td><td>Pain</td></tr>
+            <tr><td>Leukotriene (LT)</td><td>− (vasoconstrictor)</td><td>-</td><td>Bronchospasm</td></tr>
+            <tr><td>PGD2</td><td>+</td><td>+</td><td>Chemoattractant ของ PMN</td></tr>
+            <tr><td>PGI2</td><td>+</td><td>+</td><td>-</td></tr>
+            <tr><td>PAF</td><td>− (vasoconstrictor) / + (dilator ในขนาดต่ำ)</td><td>+ (ในขนาดต่ำ)</td><td>Platelet aggregation, Bronchospasm</td></tr>
+          </table>
+        </div>
+        <h4>Mediator ที่มีผลต่อ Pain, Coagulation และ Chemotaxis</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Mediator</th><th>Pain</th><th>Plt aggregation</th><th>↑Permeability</th><th>Vasodilation</th><th>Vasoconstriction</th><th>Chemotaxis</th></tr>
+            <tr><td>PAF</td><td>+</td><td>+</td><td>+ (low dose)</td><td>+ (low dose)</td><td>+</td><td>-</td></tr>
+            <tr><td>Bradykinin</td><td>+</td><td>-</td><td>+</td><td>+</td><td>-</td><td>-</td></tr>
+            <tr><td>Substance P</td><td>+</td><td>-</td><td>+</td><td>-</td><td>-</td><td>+</td></tr>
+            <tr><td>Proteases (coagulation)</td><td>+</td><td>-</td><td>+</td><td>-</td><td>-</td><td>+</td></tr>
+            <tr><td>Nitric oxide</td><td>-</td><td>-</td><td>-</td><td>+</td><td>-</td><td>-</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>Leukotriene เป็นตัวเดียวในกลุ่มที่ทำให้เกิด vasoconstriction</b> (ไม่ใช่ vasodilation เหมือน mediator ตัวอื่นส่วนใหญ่) และมีฤทธิ์เด่นที่ <b>bronchospasm</b> — เป็นเหตุผลที่ยา leukotriene receptor antagonist (เช่น montelukast) ใช้รักษาโรคหอบหืด</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t5-5r">5.7 กรอบภาพรวม: 5R ของ Acute Inflammation</h2><span class="slide-ref">T5 · slide 66</span></div>
+      <div class="card">
+        <p>Acute inflammation ดำเนินผ่าน 3 เหตุการณ์หลักที่ระดับเนื้อเยื่อ: <b>(1) Hemodynamic changes, (2) Increased vascular permeability, (3) Emigration of WBC จากหลอดเลือดเข้าสู่เนื้อเยื่อ</b> — ซึ่งสามารถแตกเป็นขั้นตอนย่อยเชิงกลไกได้ 5 ขั้นตอน เรียกว่า <b>"5R"</b></p>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 780 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="30" width="140" height="65" rx="10" fill="var(--flame-soft)" stroke="var(--flame)" stroke-width="1.5"/>
+            <text x="80" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="var(--flame)">① Recognition</text>
+            <text x="80" y="68" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Macrophage/DC</text>
+            <text x="80" y="79" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">surveillance</text>
+            <path d="M152 62 L178 62" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5r)"/>
+
+            <rect x="182" y="30" width="140" height="65" rx="10" fill="var(--flame-soft)" stroke="var(--flame)" stroke-width="1.5"/>
+            <text x="252" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="var(--flame)">② Recruitment</text>
+            <text x="252" y="68" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Homing PMN via</text>
+            <text x="252" y="79" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">IL-8, chemotaxis</text>
+            <path d="M324 62 L350 62" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5r)"/>
+
+            <rect x="354" y="30" width="140" height="65" rx="10" fill="var(--flame-soft)" stroke="var(--flame)" stroke-width="1.5"/>
+            <text x="424" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="var(--flame)">③ Remove</text>
+            <text x="424" y="68" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Activate PMN/</text>
+            <text x="424" y="79" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">macrophage ingest+lyse</text>
+            <path d="M496 62 L522 62" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5r)"/>
+
+            <rect x="526" y="30" width="120" height="65" rx="10" fill="var(--flame-soft)" stroke="var(--flame)" stroke-width="1.5"/>
+            <text x="586" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="var(--flame)">④ Regulation</text>
+            <text x="586" y="68" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Terminate,</text>
+            <text x="586" y="79" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">*self-limited*</text>
+            <path d="M648 62 L674 62" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5r)"/>
+
+            <rect x="678" y="30" width="95" height="65" rx="10" fill="var(--flame-soft)" stroke="var(--flame)" stroke-width="1.5"/>
+            <text x="725" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="var(--flame)">⑤ Repair</text>
+            <text x="725" y="68" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">กรณีมี</text>
+            <text x="725" y="79" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">tissue damage</text>
+            <defs><marker id="a5r" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 5.3 — 5R Framework ของ acute inflammation</div>
+        </div>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ขั้นตอน</th><th>คำอธิบาย</th></tr>
+            <tr><td>1. Recognition</td><td>โดย surveillance cell ของ innate immunity: <b>Macrophage*</b>, Dendritic cell — ทำหน้าที่ antigen presentation และหลั่ง inflammatory mediator</td></tr>
+            <tr><td>2. Recruitment</td><td>การ homing ของ PMN ไปยังเนื้อเยื่อ ถูกกระตุ้นด้วย inflammatory mediator และ chemotaxis agent โดยเฉพาะ <b>IL-8*</b> ผ่านขั้นตอน Margination – Rolling – Adhesion – Transmigration/Diapedesis</td></tr>
+            <tr><td>3. Remove</td><td>การกระตุ้น PMN และ macrophage เพื่อกลืนกินและย่อยสลายเชื้อโรคผ่านกระบวนการทางเอนไซม์</td></tr>
+            <tr><td>4. Regulation</td><td>การยุติการอักเสบและกลับสู่ homeostasis — <b>*self-limited*</b> คือคุณสมบัติสำคัญของ acute inflammation ปกติ</td></tr>
+            <tr><td>5. Repair</td><td>ในกรณีที่มีการทำลายเนื้อเยื่อ โดยเฉพาะเมื่อการอักเสบยืดเยื้อ (prolong inflammation) หรือเป็น suppurative inflammation</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t5-recognition">5.8 Recognition และ Leukocyte Recruitment</h2><span class="slide-ref">T5 · slide 79-95</span></div>
+
+      <div class="card">
+        <h3>Recognition — Receptors ที่ตรวจจับเชื้อโรคและความเสียหาย</h3>
+        <h4>1. Receptor สำหรับตรวจจับจุลชีพ (Microbe-sensing receptors)</h4>
+        <p>Microbe ถูกตรวจจับผ่าน receptor ที่กระจายอยู่หลายตำแหน่งของเซลล์: <b>plasma membrane, endosome, cytosol</b> — ตัวแทนสำคัญคือ <b>Toll-like receptor (TLR)</b></p>
+        <h4>2. Receptor สำหรับตรวจจับความเสียหายของเซลล์ (Cytosolic damage-sensing receptors)</h4>
+        <p>ทุกเซลล์มี cytosolic receptor ที่ตรวจจับองค์ประกอบที่เปลี่ยนแปลงไปอันเป็นผลจาก cell damage — เมื่อเซลล์ตายแบบ necrotic จะกระตุ้น <b>inflammasome</b> ซึ่งนำไปสู่การผลิต <b>IL-1</b> โดย receptor เหล่านี้ตรวจจับ:</p>
+        <ul class="plain">
+          <li>Uric acid (จากการสลาย DNA)</li>
+          <li>ATP ที่หลุดออกมา (จาก mitochondria ที่เสียการทำงาน)</li>
+          <li>การลดลงของ intracellular K⁺</li>
+        </ul>
+        <p>นอกจากนี้ยังมีสารอื่น ๆ ที่กระตุ้น inflammation ได้ในโรคระบบ (systemic diseases) เช่น urate crystal, lipids, cholesterol crystal, amyloid protein</p>
+        <h4>3. Receptor อื่น ๆ</h4>
+        <ul class="plain">
+          <li><b>Fc receptor</b> — สำหรับ antigen และ opsonin</li>
+          <li><b>Circulating protein receptor</b> — สำหรับ complement, mannose-binding lectin</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Changes After Recognition — ลำดับเหตุการณ์เชิงลึก</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ขั้นตอน</th><th>เหตุการณ์</th></tr>
+            <tr><td>#1</td><td>Mast cell degranulate หลั่ง histamine + activation ของ plasma bradykinin + release leukotriene</td></tr>
+            <tr><td>#2</td><td>Vasodilation → hyperemia + stasis; Endothelial contraction (immediate transient response) เริ่มเกิดที่ 15-30 นาทีหลังสัมผัสเชื้อโรค และมีระยะเวลาสั้น (short-lived) → นำไปสู่ increased vascular permeability → edema</td></tr>
+            <tr><td>#3</td><td>Leakage ของ serum และ plasma protein (albumin) จาก intravascular space ไปยัง interstitium (= Exudate) → "Edema"</td></tr>
+            <tr><td>#4</td><td>Margination ของ WBC โดยเฉพาะ PMN — RBC จะรวมตัวอยู่ตรงกลางกระแสเลือด (central) ในขณะที่ WBC เคลื่อนไปอยู่ริมกระแสเลือด (peripheral)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Leukocyte Recruitment: 4 ขั้นตอนหลัก (แบบละเอียด)</h3>
+        <p><b>วัตถุประสงค์ของการ recruit leukocyte:</b> กลืนกินและทำลายแบคทีเรีย เชื้อโรค เนื้อตาย และสิ่งแปลกปลอม, สร้าง growth factor ช่วยการซ่อมแซม (แต่ก็อาจทำลายเนื้อเยื่อปกติได้หากถูกกระตุ้นรุนแรงเกินไป)</p>
+        <p><b>ลำดับการมาถึงของ phagocyte:</b> Neutrophil (6-24 ชั่วโมงแรก) → Macrophage (24-48 ชั่วโมง)</p>
+
+        <div class="diagram-frame">
+          <svg viewBox="0 0 760 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="20" y="70" width="700" height="60" rx="8" fill="none" stroke="var(--line-strong)" stroke-width="1.5"/>
+            <text x="30" y="65" font-size="10" fill="var(--ink-faint)">Endothelium (blood vessel wall)</text>
+            <circle cx="80" cy="100" r="14" fill="var(--flame)" opacity="0.8"/>
+            <text x="80" y="150" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--flame)">① Margination</text>
+            <text x="80" y="164" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">WBC เคลื่อนสู่ขอบ</text>
+
+            <circle cx="260" cy="100" r="14" fill="var(--flame)" opacity="0.8"/>
+            <path d="M260 86 Q300 70 330 86" stroke="var(--ink-faint)" stroke-width="1.3" fill="none" stroke-dasharray="2,2"/>
+            <text x="280" y="150" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--flame)">② Rolling</text>
+            <text x="280" y="164" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Selectin-mediated</text>
+            <text x="280" y="176" text-anchor="middle" font-size="8" fill="var(--ink-soft)">(weak, transient bond)</text>
+
+            <circle cx="450" cy="100" r="14" fill="var(--flame)"/>
+            <text x="450" y="150" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--flame)">③ Adhesion</text>
+            <text x="450" y="164" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Integrin-mediated</text>
+            <text x="450" y="176" text-anchor="middle" font-size="8" fill="var(--ink-soft)">(firm, stable bond)</text>
+
+            <circle cx="620" cy="100" r="12" fill="var(--flame)"/>
+            <path d="M620 112 L620 140" stroke="var(--flame)" stroke-width="2" stroke-dasharray="2,2" marker-end="url(#a5m)"/>
+            <circle cx="620" cy="150" r="10" fill="var(--flame)" opacity="0.6"/>
+            <text x="620" y="180" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--flame)">④ Transmigration</text>
+            <text x="620" y="194" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Diapedesis ผ่าน</text>
+            <text x="620" y="206" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">endothelial junction</text>
+            <defs><marker id="a5m" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="var(--flame)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 5.4 — 4 ขั้นตอนของ leukocyte recruitment: Margination → Rolling → Adhesion → Transmigration/Diapedesis</div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ขั้นตอน</th><th>คำอธิบาย</th></tr>
+            <tr><td>① Margination</td><td>เมื่อเกิด stasis (เลือดไหลช้าลงจาก vasodilation) WBC ซึ่งปกติไหลอยู่กลางกระแสเลือดจะเคลื่อนไปอยู่ที่ขอบของ blood vessel (periphery) ใกล้ endothelium มากขึ้น</td></tr>
+            <tr><td>② Rolling</td><td>WBC ยึดเกาะกับ endothelium แบบหลวม ๆ ชั่วคราว (weak, transient bond) ทำให้ "กลิ้ง" ไปตามผนังหลอดเลือด ควบคุมโดยกลุ่มโปรตีน <b>selectin</b> (E-selectin, P-selectin บน endothelium และ L-selectin บน leukocyte)</td></tr>
+            <tr><td>③ Adhesion</td><td>WBC ยึดเกาะกับ endothelium แน่นขึ้น (firm adhesion) ควบคุมโดยกลุ่มโปรตีน <b>integrin</b> บน leukocyte ที่จับกับ <b>ICAM-1/VCAM-1</b> บน endothelium ซึ่งถูกกระตุ้นให้แสดงออกมากขึ้นโดย cytokine (TNF, IL-1)</td></tr>
+            <tr><td>④ Transmigration (Diapedesis)</td><td>WBC เคลื่อนผ่านช่องว่างระหว่างเซลล์ endothelial (intercellular junction) ออกจากหลอดเลือดเข้าสู่เนื้อเยื่อ โดยอาศัย <b>PECAM-1 (CD31)</b> เป็นตัวช่วยนำทาง</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>คู่โมเลกุลสำคัญที่ต้องจำ: <b>Selectin = Rolling</b> (bond อ่อน) vs <b>Integrin = Adhesion</b> (bond แน่น) — ข้อสอบมักถามว่าถ้าขาด selectin หรือ integrin จะเกิดอะไรขึ้น (เช่น Leukocyte Adhesion Deficiency ซึ่งเป็นโรคทาง genetic ที่ integrin บกพร่อง ทำให้ WBC ไม่สามารถยึดเกาะแน่นและ transmigrate ได้ ผู้ป่วยจึงติดเชื้อซ้ำ ๆ)</div>
+      </div>
+
+      <div class="card">
+        <h3>ชนิดของ Leukocyte ที่ Infiltrate ขึ้นกับปัจจัย</h3>
+        <ul class="plain">
+          <li><b>ระยะของการตอบสนอง (Acute vs Chronic)</b></li>
+          <li><b>ชนิดของสิ่งกระตุ้น (Type of stimulus)</b></li>
+        </ul>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>สาเหตุ</th><th>เซลล์ที่ Infiltrate เด่น</th></tr>
+            <tr><td>Bacterial infection</td><td>Neutrophil (PMN)</td></tr>
+            <tr><td>Viral infection/Autoimmune</td><td>Lymphocyte</td></tr>
+            <tr><td>Allergy/Parasite</td><td>Eosinophil</td></tr>
+            <tr><td>Prolonged inflammatory response</td><td>Macrophage, lymphocyte, plasma cell (chronic pattern)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t5-activation">5.9 Leukocyte Activation, Killing และการยุติการอักเสบ</h2><span class="slide-ref">T5 · slide 97-125 <span style="color:var(--flame)">+ เสริมจาก Robbins</span></span></div>
+
+      <div class="card">
+        <h3>3 รูปแบบของ Leukocyte Activation</h3>
+        <ol style="padding-left:20px;">
+          <li><b>Phagocyte activation และการกลืนกิน (Engulfment)</b> + การทำลายเชื้อโรคภายในเซลล์ (Intracellular destruction)</li>
+          <li><b>Neutrophil Extracellular Traps (NETs)</b></li>
+          <li><b>Leukocyte-mediated tissue injury</b></li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h3>① Engulfment: Receptor บน Leukocyte ที่กระตุ้นการกลืนกิน</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Receptor</th><th>Ligand/สิ่งกระตุ้น</th><th>ผลลัพธ์</th></tr>
+            <tr><td>Toll-like receptor (TLR)</td><td>LPS, bacterial peptidoglycan, bacterial DNA</td><td>ผลิต pro-inflammatory cytokine (IL-1, TNF) และ chemoattractant (IL-8)</td></tr>
+            <tr><td>Chemokine receptor</td><td>IFN-γ จาก TH-cell</td><td>กระตุ้นการสร้าง MHC class II → เพิ่มประสิทธิภาพ antigen-presenting function</td></tr>
+            <tr><td>Phagocytic receptor (3 ชนิดย่อย)</td><td>ถูกเสริมฤทธิ์โดย opsonin (IgG, C3b breakdown product, lectin จาก plasma) — ได้แก่ Mannose receptor, Scavenger receptor, Integrin (Mac-1)</td><td>เพิ่มประสิทธิภาพการกลืนกิน (engulfment)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>② Intracellular Destruction of Microbes</h3>
+        <p>หลังกลืนกินเชื้อโรคเข้าสู่ phagosome แล้ว เซลล์จะทำลายด้วยกลไก 4 ทาง: <b>Reactive Oxygen Species (ROS), Reactive Nitrogen Species (NOS/RNS), Lysosomal enzyme, Neutrophil Extracellular Traps (NETs)</b></p>
+
+        <h4>Reactive Oxygen Species (ROS) — Respiratory Burst</h4>
+        <p><b>Homeostasis ของ ROS ปกติ</b> เริ่มจาก mitochondria ที่มีการรั่วของอิเล็กตรอนไปยังออกซิเจน เกิดเป็น superoxide (O₂•⁻) แล้วถูกเปลี่ยนโดย superoxide dismutase (SOD2) เป็น H₂O₂ ซึ่งถูกกำจัดต่อด้วย catalase, glutathione peroxidase, peroxiredoxins</p>
+        <p>ใน neutrophil ที่กำลังฆ่าเชื้อโรค (respiratory burst) จะมีกระบวนการเสริม:</p>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="40" width="130" height="50" rx="8" fill="var(--flame-soft)" stroke="var(--flame)"/>
+            <text x="75" y="62" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--flame)">O₂•⁻</text>
+            <text x="75" y="77" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Superoxide</text>
+            <path d="M143 65 L173 65" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5f)"/>
+            <text x="158" y="58" text-anchor="middle" font-size="7.5" fill="var(--ink-soft)">spontaneous</text>
+
+            <rect x="178" y="40" width="130" height="50" rx="8" fill="var(--flame-soft)" stroke="var(--flame)"/>
+            <text x="243" y="62" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--flame)">H₂O₂</text>
+            <text x="243" y="77" text-anchor="middle" font-size="8" fill="var(--ink-soft)">(ยังไม่แรงพอฆ่าเชื้อ)</text>
+            <path d="M311 65 L360 65" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5f)"/>
+            <text x="335" y="55" text-anchor="middle" font-size="7.5" fill="var(--ink-soft)">MPO + Cl⁻</text>
+
+            <rect x="365" y="40" width="150" height="50" rx="8" fill="var(--eosin-soft)" stroke="var(--eosin)"/>
+            <text x="440" y="60" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--eosin)">Hypochlorite (OCl⁻)</text>
+            <text x="440" y="76" text-anchor="middle" font-size="8" fill="var(--ink-soft)">ระบบฆ่าเชื้อทรงพลังสุด</text>
+
+            <rect x="365" y="100" width="150" height="26" rx="6" fill="var(--eosin-soft)" stroke="var(--eosin)"/>
+            <text x="440" y="118" text-anchor="middle" font-size="9" font-weight="700" fill="var(--eosin)">Fenton → •OH (แรงมาก)</text>
+            <path d="M243 90 L440 100" stroke="var(--ink-faint)" stroke-width="1.3" stroke-dasharray="2,2"/>
+          </svg>
+          <defs><marker id="a5f" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          <div class="diagram-cap">Fig 5.5 — H₂O₂-MPO-halide system: ระบบฆ่าเชื้อโรคที่ทรงพลังที่สุดของ PMN</div>
+        </div>
+        <p><b>Myeloperoxidase (MPO)</b> ที่มีอยู่ใน PMN ทำปฏิกิริยาร่วมกับ halide (โดยเฉพาะ Cl⁻) เปลี่ยน H₂O₂ ให้เป็น <b>Hypochlorite (OCl⁻)</b> ผ่านกระบวนการ <b>halogenation</b> — ระบบ H₂O₂-MPO-halide นี้ถือเป็น<b>ระบบฆ่าเชื้อแบคทีเรียที่ทรงพลังที่สุดของ PMN</b> นอกจากนี้ H₂O₂ ยังสามารถถูกเปลี่ยนเป็น <b>hydroxyl radical (•OH)</b> ที่มีฤทธิ์รุนแรงผ่าน Fenton reaction ได้เช่นกัน</p>
+
+        <h4>Reactive Nitrogen Species (NOS)</h4>
+        <p>Nitric oxide (NO•) มี 3 isoform:</p>
+        <ul class="plain">
+          <li><b>Endothelial NOS (eNOS)</b> — รักษา vascular tone โดยเปลี่ยน L-arginine + O₂ เป็น L-citrulline และ NO (potent vasodilator)</li>
+          <li><b>Neuronal NOS (nNOS)</b> — ทำหน้าที่เป็น neurotransmitter</li>
+          <li><b>Inducible NOS (iNOS)</b> — ใช้สำหรับการฆ่าเชื้อจุลชีพ (microbial killing) โดยเฉพาะใน macrophage ที่ถูกกระตุ้น</li>
+        </ul>
+        <p>ROS และ NOS มีฤทธิ์เสริมกัน (overlapping action): superoxide + NO → <b>peroxynitrite</b> ซึ่งเป็นสารทำลายเชื้อโรคที่ทรงพลังอีกชนิดหนึ่ง (ถูกกำจัดต่อด้วย superoxide dismutase)</p>
+
+        <h4>Lysosomal Enzymes ของ PMN</h4>
+        <p>Granule ของ PMN สามารถ fuse กับ phagocytic vacuole ที่บรรจุเชื้อโรค หรือปล่อยเนื้อหาออกสู่ extracellular space ได้โดยตรง</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Primary (Azurophilic/Nonspecific) Granule</th><th>Secondary (Specific) Granule</th></tr>
+            <tr><td>Myeloperoxidase (MPO)</td><td>Lactoferrin, Lysozyme</td></tr>
+            <tr><td>Lysozyme (ฆ่าแบคทีเรีย)</td><td>Alkaline Phosphatase</td></tr>
+            <tr><td>Acid Hydrolases</td><td>Collagenase</td></tr>
+          </table>
+        </div>
+        <p><b>Proteases</b> ที่หลั่งออกมามี 2 ชนิด: <b>Acid protease</b> (ทำงานเฉพาะภายใน phagolysosome ที่มี pH ต่ำ) และ <b>Neutral protease</b> (ย่อยสลาย extracellular component เช่น collagen, basement membrane, fibrin, elastin, cartilage — ผลลัพธ์คือทั้ง tissue destruction และการอักเสบเพิ่มขึ้น)</p>
+      </div>
+
+      <div class="card">
+        <h3>② Neutrophil Extracellular Traps (NETs)</h3>
+        <p>เครือข่ายเส้นใย (fibrillar network) นอกเซลล์ที่มีความเข้มข้นสูงของสารต้านจุลชีพ (antimicrobial substance) พบได้ใน <b>sepsis</b> และ <b>SLE (Systemic Lupus Erythematosus)</b></p>
+
+        <h3>③ Leukocyte-mediated Tissue Injury (การทำลายเนื้อเยื่อของโฮสต์เอง)</h3>
+        <p>การตอบสนองต่อเชื้อโรคที่ยืดเยื้อ (prolonged host response) สามารถทำลายเนื้อเยื่อโฮสต์เองได้มากขึ้น พบใน <i>Mycobacterium</i> infection, viral infection, autoimmune disease (ตอบสนองผิดเป้าต่อเนื้อเยื่อตัวเอง), และ allergy (ตอบสนองมากเกินไป)</p>
+      </div>
+
+      <div class="card">
+        <h3>การยุติการอักเสบ (Termination of Acute Inflammatory Response)</h3>
+        <p>Inflammation จะสงบลง (decline) หลังจากตัวการก่อโรคถูกกำจัดออก ด้วยกลไก 2 กลุ่ม:</p>
+        <h4>1. Passive mechanism</h4>
+        <ul class="plain">
+          <li>Mediator ที่มีครึ่งชีวิตสั้น (short half-life mediators)</li>
+          <li>Neutrophil มีครึ่งชีวิตสั้น (6-12 ชั่วโมง) และเข้าสู่ apoptosis ภายใน 24 ชั่วโมง</li>
+        </ul>
+        <h4>2. Active mechanism ("terminators")</h4>
+        <ul class="plain">
+          <li>เปลี่ยนจากสาร pro-inflammatory ไปเป็น anti-inflammatory (เช่น <b>Lipoxin</b>)</li>
+          <li>หลั่ง anti-inflammatory cytokine จาก <b>Macrophage M2</b> (TGF-β, IL-10)</li>
+          <li>ยับยั้ง TNF ใน macrophage</li>
+        </ul>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Acute inflammation ปกติเป็นกระบวนการ <b>self-limited</b> เสมอ — หากไม่มีกลไกยุติที่มีประสิทธิภาพ หรือตัวการก่อโรคยังคงอยู่ต่อเนื่อง จะดำเนินต่อไปเป็น <b>chronic inflammation</b> แทน (ตามที่ระบุใน lecture scope)</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t5-outcomes">5.10 ผลลัพธ์และรูปแบบพิเศษของ Acute Inflammation</h2><span class="slide-ref">T5 · slide 172-193</span></div>
+      <div class="card">
+        <p>เมื่อ acute inflammation มีการทำลายเนื้อเยื่ออย่างมาก จะเกิดรูปแบบทาง morphology ที่จำเพาะ ขึ้นกับชนิดของสารที่รั่วออกจากหลอดเลือดและปริมาณ tissue destruction</p>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 760 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="290" y="8" width="180" height="34" rx="9" fill="var(--flame)"/>
+            <text x="380" y="30" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Acute Inflammation Outcomes</text>
+            <line x1="380" y1="42" x2="380" y2="55" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="100" y1="55" x2="660" y2="55" stroke="var(--line-strong)" stroke-width="2"/>
+            <g font-size="10">
+              <line x1="100" y1="55" x2="100" y2="68" stroke="var(--line-strong)"/>
+              <rect x="20" y="68" width="160" height="60" rx="8" fill="var(--flame-soft)" stroke="var(--flame)"/>
+              <text x="100" y="90" text-anchor="middle" font-weight="700" fill="var(--flame)">Purulent</text>
+              <text x="100" y="105" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">(Suppurative)</text>
+              <text x="100" y="117" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Pus / Abscess</text>
+
+              <line x1="380" y1="55" x2="380" y2="68" stroke="var(--line-strong)"/>
+              <rect x="300" y="68" width="160" height="60" rx="8" fill="var(--flame-soft)" stroke="var(--flame)"/>
+              <text x="380" y="90" text-anchor="middle" font-weight="700" fill="var(--flame)">Serous</text>
+              <text x="380" y="105" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Blister / Effusion</text>
+
+              <line x1="660" y1="55" x2="660" y2="68" stroke="var(--line-strong)"/>
+              <rect x="580" y="68" width="160" height="60" rx="8" fill="var(--flame-soft)" stroke="var(--flame)"/>
+              <text x="660" y="90" text-anchor="middle" font-weight="700" fill="var(--flame)">Fibrinous</text>
+              <text x="660" y="105" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Fibrin coating</text>
+              <text x="660" y="117" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">on organ</text>
+            </g>
+          </svg>
+          <div class="diagram-cap">Fig 5.6 — Special morphologies ของ acute inflammation ที่มี extensive tissue damage</div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Purulent (Suppurative)</th><th>Serous</th><th>Fibrinous</th></tr>
+            <tr><td>ลักษณะของเหลว</td><td>Pus (หนอง) — aggregation ของ neutrophil ล้วน ๆ</td><td>Exudate ที่มี serum และ protein แต่ไม่มี fibrin coating บนอวัยวะ</td><td>Exudate ที่มี fibrin protein coating บนอวัยวะชัดเจน</td></tr>
+            <tr><td>สาเหตุที่พบบ่อย</td><td>Pyogenic bacterial infection</td><td>Thermal burn, poison, contact dermatitis (hypersensitivity type IV), การบาดเจ็บของ mesothelial lining</td><td>สาเหตุคล้าย serous แต่มีเหตุการณ์พิเศษเพิ่ม</td></tr>
+            <tr><td>ตัวอย่างทางคลินิก</td><td><b>Abscess</b> (aggregation ของ neutrophil + tissue debris จาก liquefactive necrosis — histology: liquefied debris + edema fluid)</td><td><b>Blister</b> (ในผิวหนัง) หรือ <b>Effusion</b> (ในช่องว่างตามธรรมชาติ เช่น pleural, pericardial effusion)</td><td><b>Fibrinous pericarditis</b>, <b>Hyaline membrane</b> ใน ARDS หรือ pneumonia</td></tr>
+            <tr><td>Gross appearance</td><td>หนองสีเหลืองข้น</td><td>ของเหลวใส สีชมพูอ่อน</td><td>สารคัดหลั่งขุ่น มี fibrin เกาะ (turbid secretion with fibrin deposition)</td></tr>
+          </table>
+        </div>
+
+        <h4>ประเภทเพิ่มเติม</h4>
+        <ul class="plain">
+          <li><b>Mixed acute and chronic inflammation</b></li>
+          <li><b>Ulcer</b> (แผลเป็นหลุม) — มักมีการอักเสบของชั้นตื้นสุดของแผลซ้ำ ตัวอย่าง: peptic ulcer</li>
+        </ul>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>Abscess</b> ต่างจาก pus ธรรมดาตรงที่ abscess มี <b>tissue destruction ร่วมด้วย</b> (liquefactive necrosis จาก myeloperoxidase ของ neutrophil) ในขณะที่ pus/purulent inflammation ทั่วไปเป็นแค่ aggregation ของ neutrophil โดยไม่มี tissue destruction</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t5-fever">5.11 Clinical Correlation: Fever</h2><span class="slide-ref">T5 · slide 197-210</span></div>
+      <div class="card">
+        <h3>Pathogenesis of Fever</h3>
+        <p>ไข้เกิดจากปฏิสัมพันธ์ระหว่างสารก่อไข้ (pyrogen) กับ <b>organum vasculosum ของ lamina terminalis (OVLT)</b> ซึ่งอยู่บริเวณ anterior hypothalamus — OVLT เป็น <b>circumventricular organ</b> ที่มีหลอดเลือดมาเลี้ยงมากและ<b>ไม่มี blood-brain barrier (BBB)</b> ทำให้สาร pyrogen ในกระแสเลือดสามารถกระตุ้นบริเวณนี้ได้โดยตรง</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ชนิด Pyrogen</th><th>ตัวอย่าง</th><th>กลไก</th></tr>
+            <tr><td>Exogenous pyrogen</td><td>LPS ของจุลชีพ</td><td>กระตุ้นการสร้าง cytokine หรือกระตุ้น OVLT โดยตรง</td></tr>
+            <tr><td>Endogenous pyrogen</td><td>IL-1, IL-6, TNF-α</td><td>กระตุ้น OVLT โดยตรง (เพราะไม่มี BBB กั้น)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+          <rect x="20" y="20" width="150" height="40" rx="9" fill="var(--flame-soft)" stroke="var(--flame)"/>
+          <text x="95" y="45" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--flame)">Exogenous pyrogen</text>
+          <rect x="20" y="72" width="150" height="40" rx="9" fill="var(--flame-soft)" stroke="var(--flame)"/>
+          <text x="95" y="97" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--flame)">Endogenous pyrogen</text>
+          <path d="M175 40 L235 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5g)"/>
+          <path d="M175 92 L235 65" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5g)"/>
+
+          <rect x="240" y="40" width="120" height="45" rx="9" fill="var(--amber)"/>
+          <text x="300" y="60" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">OVLT</text>
+          <text x="300" y="74" text-anchor="middle" fill="#fff" font-size="8.5">(no BBB)</text>
+          <path d="M362 62 L410 62" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5g)"/>
+
+          <rect x="415" y="40" width="120" height="45" rx="9" fill="var(--flame-soft)" stroke="var(--flame)"/>
+          <text x="475" y="62" text-anchor="middle" font-size="10" font-weight="700" fill="var(--flame)">↑COX → PGE2</text>
+          <path d="M537 62 L585 62" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5g)"/>
+
+          <rect x="590" y="40" width="100" height="45" rx="9" fill="var(--eosin-soft)" stroke="var(--eosin)"/>
+          <text x="640" y="58" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--eosin)">Pre-optic</text>
+          <text x="640" y="70" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--eosin)">nucleus</text>
+
+          <rect x="240" y="130" width="450" height="40" rx="9" fill="var(--eosin)"/>
+          <text x="465" y="154" text-anchor="middle" fill="#fff" font-size="11.5" font-weight="700">↓ Firing rate ของ warm-sensitive neuron → FEVER</text>
+          <path d="M640 85 L465 128" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5g)"/>
+          <defs><marker id="a5g" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+        </svg>
+        <div class="diagram-cap">Fig 5.7 — Pathogenesis of fever: จาก pyrogen สู่การเพิ่มขึ้นของ body temperature</div>
+      </div>
+
+      <div class="card">
+        <h3>รายละเอียดเพิ่มเติมของกลไกไข้</h3>
+        <ul class="plain">
+          <li>การกระตุ้น OVLT นำไปสู่การสร้าง <b>Prostaglandin E2 (PGE2)</b> เพิ่มขึ้น ผ่านเอนไซม์ <b>COX (cyclooxygenase)</b> — PGE2 ออกฤทธิ์ที่ <b>pre-optic nucleus ของ hypothalamus</b> ทำให้การยิงสัญญาณของ warm-sensitive neuron ช้าลง (slowing the firing rate) ส่งผลให้ body temperature เพิ่มสูงขึ้น</li>
+          <li><b>Ceramide</b> — lipid derivative ที่มีบทบาททั้งเป็น proapoptotic และเป็น second messenger อิสระจาก PGE2 มีความสำคัญโดยเฉพาะในระยะแรกของการเกิดไข้ (early stage of fever generation)</li>
+          <li>LPS จากแบคทีเรียแกรมลบสามารถกระตุ้นการสร้าง PGE2 ที่ตับผ่าน <b>Kupffer cell</b> ได้โดยตรง (peripheral production) นอกเหนือจากที่สมอง และยังสามารถกระตุ้นไข้ผ่าน <b>neural pathway</b> ได้ด้วย</li>
+          <li><b>Neural pathway</b> อธิบายการเกิดไข้แบบรวดเร็ว (rapid onset) ในขณะที่ <b>cytokine production</b> รับผิดชอบการคงอยู่ของไข้ (maintenance) มากกว่าการเริ่มต้น (initiation)</li>
+          <li>การเกิดไข้ยังสามารถเกิดผ่าน <b>Toll-like receptor cascade</b> ซึ่งอาจเป็นอิสระ (independent) จาก cytokine cascade</li>
+        </ul>
+        <h4>ผลกระทบของไข้ต่อระบบภูมิคุ้มกันและการอักเสบ</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Immune response</th><th>Inflammatory response</th></tr>
+            <tr><td>Leukocytosis, ↑WBC adhesion, ↑procoagulant, T cell proliferation, B cell activation, NK cell killing</td><td>↑Acute phase reactant, Negative nitrogen balance, ↑Collagen synthesis, ↑Muscle proteolysis</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>OVLT ตอบสนองต่อ pyrogen ได้โดยตรงเพราะ<b>ไม่มี blood-brain barrier</b> — เป็นจุดสำคัญที่อธิบายว่าทำไมสารในกระแสเลือด (peripheral) ถึงส่งผลต่อสมองส่วนควบคุมอุณหภูมิได้ทั้งที่ BBB ควรจะกันสารเหล่านี้ไว้</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t5-sirs">5.12 Clinical Correlation: SIRS → Sepsis → Septic Shock → MODS</h2><span class="slide-ref">T5 · scope only (ไม่มีเนื้อหาในสไลด์) <span style="color:var(--flame)">— เสริมเต็มจาก Robbins</span></span></div>
+      <p class="section-lede">หัวข้อนี้ไม่มีเนื้อหาปรากฏในสไลด์ต้นฉบับ แต่เป็นหัวข้อที่ออกสอบบ่อยมากและเป็น natural progression ของ acute inflammation ที่ควบคุมไม่ได้ — เขียนเสริมเต็มรูปแบบจาก Robbins</p>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 760 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+          <rect x="10" y="30" width="160" height="60" rx="10" fill="var(--flame-soft)" stroke="var(--flame)" stroke-width="1.5"/>
+          <text x="90" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="var(--flame)">SIRS</text>
+          <text x="90" y="72" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Systemic inflammatory</text>
+          <text x="90" y="83" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">response (infectious/not)</text>
+          <path d="M172 60 L200 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5s)"/>
+
+          <rect x="205" y="30" width="160" height="60" rx="10" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
+          <text x="285" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="var(--amber)">Sepsis</text>
+          <text x="285" y="69" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">SIRS + confirmed/</text>
+          <text x="285" y="80" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">suspected infection</text>
+          <path d="M367 60 L395 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5s)"/>
+
+          <rect x="400" y="30" width="160" height="60" rx="10" fill="var(--rust-soft)" stroke="var(--rust)" stroke-width="1.5"/>
+          <text x="480" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="var(--rust)">Septic Shock</text>
+          <text x="480" y="69" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Sepsis + persistent</text>
+          <text x="480" y="80" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">hypotension</text>
+          <path d="M562 60 L590 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a5s)"/>
+
+          <rect x="595" y="30" width="155" height="60" rx="10" fill="var(--eosin-soft)" stroke="var(--eosin)" stroke-width="1.5"/>
+          <text x="672" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="var(--eosin)">MODS</text>
+          <text x="672" y="69" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Multiple Organ</text>
+          <text x="672" y="80" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Dysfunction Syndrome</text>
+          <defs><marker id="a5s" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+        </svg>
+        <div class="diagram-cap">Fig 5.8 — Spectrum ของการอักเสบระบบที่ควบคุมไม่ได้: SIRS → Sepsis → Septic Shock → MODS</div>
+      </div>
+
+      <div class="card">
+        <h3>SIRS (Systemic Inflammatory Response Syndrome)</h3>
+        <p><b>นิยาม:</b> ภาวะที่ร่างกายมีการตอบสนองต่อการอักเสบแบบเป็นระบบ (systemic) ซึ่ง<b>อาจเกิดจากการติดเชื้อหรือไม่ติดเชื้อก็ได้</b> (เช่น trauma, burns, pancreatitis, autoimmune disease) — เป็นแนวคิดที่สะท้อนว่าร่างกายสามารถ "อักเสบทั้งระบบ" ได้แม้ไม่มีเชื้อโรค</p>
+        <h4>เกณฑ์วินิจฉัย SIRS (ต้องมีอย่างน้อย 2 ใน 4 ข้อ)</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Parameter</th><th>เกณฑ์</th></tr>
+            <tr><td>Temperature</td><td>&gt; 38°C หรือ &lt; 36°C</td></tr>
+            <tr><td>Heart rate</td><td>&gt; 90 ครั้ง/นาที</td></tr>
+            <tr><td>Respiratory rate</td><td>&gt; 20 ครั้ง/นาที หรือ PaCO₂ &lt; 32 mmHg</td></tr>
+            <tr><td>WBC count</td><td>&gt; 12,000/µL หรือ &lt; 4,000/µL หรือมี band form &gt; 10%</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>SIRS <b>ไม่จำเป็นต้องมีการติดเชื้อ</b> — ถ้ามี SIRS ร่วมกับหลักฐานการติดเชื้อ (confirmed หรือ suspected infection) เท่านั้นจึงจะเรียกว่า <b>Sepsis</b>; SIRS ที่ไม่มีการติดเชื้อ เช่น จาก severe trauma, burns, acute pancreatitis ยังคงเรียกว่า SIRS เฉย ๆ</div>
+      </div>
+
+      <div class="card">
+        <h3>Sepsis — นิยามตาม Sepsis-3 (2016)</h3>
+        <p>คำนิยามของ Sepsis มีการปรับปรุงจาก concept เดิม (SIRS + infection) มาเป็นนิยามใหม่ที่เรียกว่า <b>Sepsis-3</b> ซึ่งเน้นย้ำถึงการทำงานผิดปกติของอวัยวะ (organ dysfunction) มากกว่าการอักเสบเพียงอย่างเดียว:</p>
+        <div class="card" style="background:var(--bg); box-shadow:none; margin-top:10px;">
+          <p style="margin:0;"><b>Sepsis (Sepsis-3)</b> = <span class="eng">"life-threatening organ dysfunction caused by a dysregulated host response to infection"</span></p>
+          <p style="margin-top:8px; margin-bottom:0;">กล่าวคือ Sepsis ไม่ใช่แค่ "การติดเชื้อที่มี SIRS ร่วมด้วย" อีกต่อไป แต่ต้องมี<b>อวัยวะทำงานผิดปกติที่คุกคามชีวิต</b>เป็นผลจากการตอบสนองของร่างกายต่อการติดเชื้อที่ผิดเพี้ยนไป (dysregulated)</p>
+        </div>
+        <h4>เครื่องมือประเมิน Organ Dysfunction: SOFA และ qSOFA</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>SOFA (Sequential Organ Failure Assessment)</th><th>qSOFA (quick SOFA)</th></tr>
+            <tr><td>วัตถุประสงค์</td><td>ประเมิน organ dysfunction อย่างละเอียดใน ICU setting</td><td>คัดกรองผู้ป่วยที่มีความเสี่ยงสูงอย่างรวดเร็ว นอก ICU (เช่น ER, ward ทั่วไป)</td></tr>
+            <tr><td>องค์ประกอบ</td><td>ประเมิน 6 ระบบ: Respiration (PaO₂/FiO₂), Coagulation (platelet), Liver (bilirubin), Cardiovascular (MAP/vasopressor), CNS (Glasgow Coma Scale), Renal (creatinine/urine output)</td><td>3 ข้อ ง่ายและรวดเร็ว: <b>(1)</b> Respiratory rate ≥ 22/min <b>(2)</b> Altered mentation (GCS &lt; 15) <b>(3)</b> Systolic BP ≤ 100 mmHg</td></tr>
+            <tr><td>เกณฑ์บ่งชี้ Sepsis</td><td>SOFA score เพิ่มขึ้น ≥ 2 จาก baseline ร่วมกับสงสัยการติดเชื้อ</td><td>qSOFA ≥ 2 ข้อ บ่งชี้ความเสี่ยงสูงต่อ poor outcome ควรได้รับการประเมิน SOFA อย่างละเอียดต่อ</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Septic Shock</h3>
+        <p><b>นิยาม:</b> Subset ของ sepsis ที่มีความผิดปกติของระบบไหลเวียนโลหิตและ cellular/metabolic รุนแรงมากพอที่จะเพิ่มอัตราการเสียชีวิตอย่างมีนัยสำคัญ</p>
+        <h4>เกณฑ์วินิจฉัย (ตาม Sepsis-3)</h4>
+        <p>ผู้ป่วย Sepsis ที่มีลักษณะ<b>ทั้ง 2 ข้อ</b>ต่อไปนี้ แม้จะได้รับการให้สารน้ำอย่างเพียงพอแล้ว (adequate fluid resuscitation):</p>
+        <ul class="plain">
+          <li>ต้องใช้ <b>vasopressor</b> เพื่อรักษา Mean Arterial Pressure (MAP) ≥ 65 mmHg</li>
+          <li>มีระดับ <b>serum lactate &gt; 2 mmol/L</b> (บ่งชี้ tissue hypoperfusion/anaerobic metabolism)</li>
+        </ul>
+        <h4>พยาธิสรีรวิทยาของ Septic Shock</h4>
+        <p>เกิดจาก PAMP ของเชื้อโรค (โดยเฉพาะ LPS ของแบคทีเรียแกรมลบ) กระตุ้น TLR บน macrophage/endothelium อย่างรุนแรง นำไปสู่:</p>
+        <ul class="plain">
+          <li>การหลั่ง pro-inflammatory cytokine จำนวนมาก (<b>"cytokine storm"</b>) — โดยเฉพาะ TNF-α, IL-1, IL-6</li>
+          <li><b>Profound vasodilation</b> จาก nitric oxide (iNOS) ที่ถูกกระตุ้นมากผิดปกติ → hypotension รุนแรง</li>
+          <li><b>Endothelial injury</b> อย่างกว้างขวาง → เพิ่ม vascular permeability + กระตุ้นการแข็งตัวของเลือด → เสี่ยงต่อ <b>DIC</b> (เชื่อมโยงกับหัวข้อ Thrombosis ใน T4)</li>
+          <li><b>Myocardial depression</b> จาก circulating cytokine (แม้ cardiac output อาจสูงในระยะแรกจาก compensatory tachycardia + vasodilation — เรียกว่า "warm shock")</li>
+          <li>เมื่อดำเนินไปนานขึ้น จะเปลี่ยนเป็น hypodynamic phase ("cold shock") ที่มี cardiac output ลดลง</li>
+        </ul>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Septic shock เป็นตัวอย่างคลาสสิกของ <b>Distributive shock</b> (จาก T4) — เชื่อมโยงกับลักษณะทางคลินิก "ผิวหนังอุ่นแดง (warm, flushed)" ในระยะแรก ต่างจาก hypovolemic/cardiogenic shock ที่ผิวหนังเย็นชื้น</div>
+      </div>
+
+      <div class="card">
+        <h3>MODS (Multiple Organ Dysfunction Syndrome)</h3>
+        <p><b>นิยาม:</b> ภาวะที่มีการทำงานผิดปกติของอวัยวะตั้งแต่ 2 ระบบขึ้นไป <b>พร้อมกัน</b> ในผู้ป่วยที่ป่วยหนักเฉียบพลัน (acutely ill) จน homeostasis ไม่สามารถรักษาไว้ได้โดยไม่มีการช่วยเหลือทางการแพทย์ — เป็น<b>จุดสุดท้าย (end-stage)</b> ของ spectrum การอักเสบระบบที่ควบคุมไม่ได้</p>
+        <h4>กลไกพยาธิสรีรวิทยา</h4>
+        <ul class="plain">
+          <li><b>Microvascular thrombosis</b> ทั่วร่างกาย (มักร่วมกับ DIC) → tissue hypoperfusion หลายอวัยวะพร้อมกัน</li>
+          <li><b>Persistent hypotension</b> จาก septic/distributive shock ที่ไม่ได้รับการแก้ไขทันเวลา</li>
+          <li><b>Direct cytotoxic effect</b> ของ cytokine และ ROS/NOS ต่อเซลล์ของอวัยวะต่าง ๆ</li>
+          <li><b>Mitochondrial dysfunction</b> ในระดับเซลล์ ทำให้แม้ perfusion จะกลับมาปกติ เซลล์ก็ยังไม่สามารถใช้ออกซิเจนได้อย่างมีประสิทธิภาพ (เรียกว่า "cytopathic hypoxia")</li>
+        </ul>
+        <h4>อวัยวะที่มักได้รับผลกระทบ (เรียงตามที่พบบ่อย)</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>อวัยวะ</th><th>ลักษณะที่พบ</th></tr>
+            <tr><td>ปอด</td><td>Acute Respiratory Distress Syndrome (ARDS) — diffuse alveolar damage, hyaline membrane</td></tr>
+            <tr><td>ไต</td><td>Acute Kidney Injury (AKI) — acute tubular necrosis จาก hypoperfusion</td></tr>
+            <tr><td>ตับ</td><td>Hepatic dysfunction — เพิ่ม bilirubin, transaminase</td></tr>
+            <tr><td>หัวใจและหลอดเลือด</td><td>Myocardial depression, refractory hypotension</td></tr>
+            <tr><td>ระบบเลือด</td><td>DIC, thrombocytopenia</td></tr>
+            <tr><td>ระบบประสาท</td><td>Encephalopathy, altered mentation</td></tr>
+            <tr><td>ระบบทางเดินอาหาร</td><td>Ileus, mucosal ischemia, stress ulcer</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>MODS เป็นสาเหตุการเสียชีวิตอันดับต้น ๆ ใน ICU — จุดสำคัญคือ MODS <b>ไม่จำเป็นต้องมีสาเหตุจากการติดเชื้อเท่านั้น</b> (แม้ septic shock จะเป็นสาเหตุที่พบบ่อยที่สุด) แต่ยังเกิดจาก severe trauma, major surgery, หรือ pancreatitis รุนแรงได้เช่นกัน — สอดคล้องกับหลักที่ว่า SIRS (จุดเริ่มต้นของ spectrum นี้) ก็ไม่จำเป็นต้องมีการติดเชื้อเช่นกัน</div>
+      </div>
+
+      <div class="card">
+        <h3>สรุปเปรียบเทียบ SIRS → Sepsis → Septic Shock → MODS</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ภาวะ</th><th>นิยามหลัก</th><th>ต้องมีการติดเชื้อหรือไม่</th></tr>
+            <tr><td>SIRS</td><td>Systemic inflammatory response (≥2/4 criteria)</td><td>ไม่จำเป็น</td></tr>
+            <tr><td>Sepsis</td><td>Life-threatening organ dysfunction จาก dysregulated host response ต่อการติดเชื้อ</td><td><b>ต้องมี</b> (confirmed/suspected)</td></tr>
+            <tr><td>Septic Shock</td><td>Sepsis + ต้องใช้ vasopressor รักษา MAP≥65 + lactate&gt;2 mmol/L แม้ fluid resuscitation เพียงพอแล้ว</td><td>ต้องมี (subset ของ sepsis)</td></tr>
+            <tr><td>MODS</td><td>Organ dysfunction ≥2 ระบบพร้อมกัน ที่ homeostasis รักษาไม่ได้เอง</td><td>ไม่จำเป็น (แต่ septic shock เป็นสาเหตุพบบ่อยที่สุด)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-divider">คำศัพท์สำคัญประจำหัวข้อ</div>
+      <div class="card">
+        <div class="glossary">
+          <div class="gterm"><b>Cardinal signs</b>5 อาการหลักของ acute inflammation</div>
+          <div class="gterm"><b>DAMP</b>Damage-associated molecular pattern</div>
+          <div class="gterm"><b>PAMP</b>Pathogen-associated molecular pattern</div>
+          <div class="gterm"><b>Chemotaxis</b>การเคลื่อนที่ตาม chemical gradient</div>
+          <div class="gterm"><b>Opsonization</b>การเคลือบผิวเชื้อโรคให้กลืนกินง่ายขึ้น</div>
+          <div class="gterm"><b>Selectin</b>โปรตีนควบคุม rolling (bond อ่อน)</div>
+          <div class="gterm"><b>Integrin</b>โปรตีนควบคุม adhesion (bond แน่น)</div>
+          <div class="gterm"><b>Diapedesis</b>การเคลื่อนผ่านผนังหลอดเลือดของ WBC</div>
+          <div class="gterm"><b>Respiratory burst</b>การสร้าง ROS อย่างรวดเร็วเพื่อฆ่าเชื้อ</div>
+          <div class="gterm"><b>NETs</b>Neutrophil extracellular traps</div>
+          <div class="gterm"><b>OVLT</b>บริเวณ hypothalamus ที่ไม่มี BBB รับ pyrogen</div>
+          <div class="gterm"><b>SIRS</b>Systemic inflammatory response syndrome</div>
+          <div class="gterm"><b>Sepsis-3</b>นิยามใหม่ของ sepsis เน้น organ dysfunction</div>
+          <div class="gterm"><b>qSOFA/SOFA</b>เครื่องมือประเมิน organ dysfunction</div>
+          <div class="gterm"><b>MODS</b>Multiple organ dysfunction syndrome</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="tabpanel" id="panel-t67">
+    <div class="tabhero">
+      <div class="kicker">T6-7 · Chronic Inflammation and Repair</div>
+      <h1>เมื่อการอักเสบไม่ยอมจบ และร่างกายต้องซ่อมแซมตัวเอง</h1>
+      <p>จาก granulomatous inflammation สู่กลไกโมเลกุลของการซ่อมแซมเนื้อเยื่อ — angiogenesis, ECM, wound healing จนถึง keloid และโรคทาง collagen</p>
+    </div>
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t67-overview">6-7.1 ภาพรวม Chronic Inflammation และความสัมพันธ์กับ Acute/Repair</h2><span class="slide-ref">T6-7 · slide 5-9</span></div>
+      <div class="card">
+        <h3>ความสัมพันธ์กับ Acute Inflammation และ Healing</h3>
+        <p>Chronic inflammation มักไม่ใช่เหตุการณ์ที่แยกขาดจาก acute inflammation แต่เป็น<b>ความต่อเนื่อง (continuum)</b> — เมื่อ acute inflammation ไม่สามารถกำจัดตัวการก่อโรคได้หมด หรือตัวการยังคงอยู่ต่อเนื่อง จะดำเนินเข้าสู่ chronic inflammation ซึ่งมักคาบเกี่ยวกับกระบวนการซ่อมแซม (repair process) ไปพร้อมกัน แบ่งลักษณะทางคลินิกได้เป็น 3 รูปแบบ:</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>รูปแบบ</th><th>ลักษณะ</th></tr>
+            <tr><td>Overlapping กับ acute inflammation และ healing process</td><td>พบทั้ง acute และ chronic inflammatory cell ปะปนกัน ร่วมกับ repair ที่กำลังดำเนินไป</td></tr>
+            <tr><td>Chronic active inflammation</td><td>ยังคงมีการอักเสบที่ active อยู่ต่อเนื่อง โดยไม่จำเป็นต้องมี granulation tissue ชัดเจน</td></tr>
+            <tr><td>Chronic inflammation ร่วมกับ granulation tissue หรือ fibrosis</td><td>เนื้อเยื่อเริ่มเข้าสู่กระบวนการซ่อมแซม (repair) แล้ว โดยมี granulation tissue หรือ scar (fibrosis) เกิดขึ้นแทนที่เนื้อเยื่อเดิม</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Acute vs Chronic Inflammation (มุมมองเน้น Chronic)</h3>
+        <p>ทบทวนสั้น ๆ — ดูตารางเปรียบเทียบแบบเต็มได้ที่ <b>T5 §5.3</b> ในที่นี้เน้นเฉพาะประเด็นที่สำคัญต่อความเข้าใจ chronic inflammation โดยเฉพาะ</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ประเด็น</th><th>ลักษณะเฉพาะของ Chronic Inflammation</th></tr>
+            <tr><td>Duration</td><td>สัปดาห์–เดือน–ปี (เริ่มตั้งแต่ 1 เดือนขึ้นไป หรือเร็วกว่านั้นขึ้นกับโรค)</td></tr>
+            <tr><td>Specificity</td><td>Specific เช่น Granulomatous inflammation (ต่างจาก acute ที่เป็น nonspecific)</td></tr>
+            <tr><td>Cardinal signs</td><td>มักไม่มี (−) เนื่องจากคาบเกี่ยวกับ repair process ที่ทำให้อาการทางคลินิกไม่ชัดเจนแบบ acute</td></tr>
+            <tr><td>Vascular change</td><td>เน้นที่ <b>angiogenesis</b> (การสร้างหลอดเลือดใหม่) ซึ่งเป็นส่วนหนึ่งของ granulation tissue มากกว่า vasodilation แบบ acute</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Timeline ของการอักเสบ (ทบทวน)</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <line x1="30" y1="55" x2="670" y2="55" stroke="var(--line-strong)" stroke-width="3"/>
+            <circle cx="60" cy="55" r="6" fill="var(--flame)"/>
+            <text x="60" y="35" text-anchor="middle" font-size="10" font-weight="700" fill="var(--flame)">Acute</text>
+            <text x="60" y="75" text-anchor="middle" font-size="9" fill="var(--ink-soft)">Day 1</text>
+
+            <circle cx="330" cy="55" r="6" fill="var(--amber)"/>
+            <text x="330" y="35" text-anchor="middle" font-size="10" font-weight="700" fill="var(--amber)">Chronic</text>
+            <text x="330" y="75" text-anchor="middle" font-size="9" fill="var(--ink-soft)">Day 7-14</text>
+
+            <circle cx="640" cy="55" r="6" fill="var(--moss)"/>
+            <text x="640" y="35" text-anchor="middle" font-size="10" font-weight="700" fill="var(--moss)">Resolution</text>
+            <text x="640" y="75" text-anchor="middle" font-size="9" fill="var(--ink-soft)">Months++</text>
+          </svg>
+          <div class="diagram-cap">Fig 6-7.1 — Timeline: Acute (Day 1) → Chronic (Day 7-14) → Resolution (Months++)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t67-causes">6-7.2 สาเหตุและ Histologic Hallmarks ของ Chronic Inflammation</h2><span class="slide-ref">T6-7 · slide 11-17</span></div>
+      <div class="card">
+        <h3>สาเหตุของ Chronic Inflammation</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>กลุ่มสาเหตุ</th><th>ตัวอย่าง</th></tr>
+            <tr><td>Persistent infections</td><td>Mycobacteria, ไวรัส เชื้อรา และปรสิตบางชนิด — มักนำไปสู่ <b>Granulomatous inflammation</b> ซึ่งเป็นปฏิกิริยา <b>Delayed-type hypersensitivity (Hypersensitivity type IV)</b></td></tr>
+            <tr><td>Prolonged exposure to toxic agents</td><td>ทั้ง endogenous (เช่น cholesterol crystal) และ exogenous (เช่น silica, asbestos)</td></tr>
+            <tr><td>Immune-related</td><td>Hypersensitivity, Autoimmune diseases</td></tr>
+            <tr><td>Systemic diseases</td><td>Alzheimer's disease, Diabetes mellitus type II, มะเร็งที่เกิดจาก chronic inflammation (เช่น gastric cancer จาก H. pylori-related chronic gastritis)</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Chronic inflammation ไม่ได้จำกัดอยู่แค่โรคติดเชื้อ — ปัจจุบันมีหลักฐานเชื่อมโยง <b>low-grade chronic inflammation</b> กับโรคเรื้อรังที่ไม่ใช่การติดเชื้อหลายชนิด เช่น Alzheimer's disease, Type 2 DM, และ atherosclerosis ซึ่งเป็นแนวคิดที่ข้อสอบยุคใหม่ชอบถาม</div>
+      </div>
+
+      <div class="card">
+        <h3>Histologic Hallmarks</h3>
+        <h4>Cellular Component</h4>
+        <p><b>Mononuclear cells</b> เป็นเซลล์เด่น ได้แก่ Lymphocyte, Plasma cell, Macrophage — ลักษณะที่พบเรียกว่า <b>"Lymphoplasmacytic infiltration"</b></p>
+        <h4>หากมีการซ่อมแซม (repair) เกิดขึ้นร่วมด้วย</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>องค์ประกอบ</th><th>ลักษณะ</th></tr>
+            <tr><td>Granulation tissue (เนื้อเยื่อใหม่)</td><td>Fibroblast + loose and edematous ECM + abundant new vessel (angiogenesis)</td></tr>
+            <tr><td>Scar</td><td>Mature collagen fiber โดยไม่มี fibroblast จำนวนมากเหมือน granulation tissue</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>ตัวอย่างทางคลินิก</h3>
+        <h4>Chronic Pyelonephritis (โรคกรวยไตอักเสบเรื้อรัง)</h4>
+        <p><b>สาเหตุ:</b> Ascending infection ของ <i>E. coli</i> — พบ numerous lymphocyte infiltrate ใน interstitium ของไต ร่วมกับ mucosal atrophy และ submucosal fibrosis</p>
+        <h4>Hashimoto's Thyroiditis (Chronic Lymphocytic Thyroiditis)</h4>
+        <p>โรคภูมิต้านตนเอง (autoimmune disease) ที่มี reactive thyrocyte ร่วมกับการเกิด <b>germinal center formation</b> ในต่อมไทรอยด์ — เป็นตัวอย่างคลาสสิกของ organ-specific autoimmune chronic inflammation</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t67-granulomatous">6-7.3 Granulomatous Inflammation</h2><span class="slide-ref">T6-7 · slide 18-26</span></div>
+      <div class="card">
+        <h3>นิยามและ Hallmark</h3>
+        <p><b>Granulomatous inflammation</b> คือรูปแบบเฉพาะ (specific pattern) ของ chronic inflammation ที่มี hallmark คือ <b>การรวมกลุ่มของ activated macrophage (Epithelioid cell)</b> ล้อมรอบด้วย lymphocyte</p>
+        <ul class="plain">
+          <li>Macrophage ถูกกระตุ้นโดย <b>IFN-γ</b></li>
+          <li>Activated macrophage บางส่วนอาจหลอมรวมกัน (fuse) กลายเป็นเซลล์ขนาดใหญ่หลายนิวเคลียส เรียกว่า <b>"Langhans-type giant cell"</b> — เกิดจาก <b>CD40-CD40L</b> และ <b>IFN-γ</b> โดยมีลักษณะเฉพาะคือนิวเคลียสเรียงตัวเป็นรูปเกือกม้า (<span class="eng">horseshoe-shaped nuclear arrangement</span>)</li>
+          <li>อาจมี <b>central necrosis</b> แบบ <b>caseous necrosis</b> อยู่ตรงกลาง granuloma — เกิดจาก mycolic acid และองค์ประกอบไขมันอื่น ๆ ในผนังเซลล์ของเชื้อวัณโรค (TB)</li>
+          <li>สัมพันธ์กับปฏิกิริยา <b>Hypersensitivity type IV (Delayed-type hypersensitivity)</b></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Granuloma Formation — ลำดับขั้นตอน</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 760 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="70" width="140" height="55" rx="9" fill="var(--moss-soft)" stroke="var(--moss)" stroke-width="1.5"/>
+            <text x="80" y="92" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--moss)">Circulating</text>
+            <text x="80" y="106" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--moss)">Monocyte</text>
+            <text x="80" y="119" text-anchor="middle" font-size="8" fill="var(--ink-soft)">(surveillance)</text>
+            <path d="M152 97 L180 97" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a67a)"/>
+
+            <rect x="185" y="70" width="150" height="55" rx="9" fill="var(--moss-soft)" stroke="var(--moss)" stroke-width="1.5"/>
+            <text x="260" y="92" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--moss)">Macrophage</text>
+            <text x="260" y="106" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--moss)">(Histiocyte)</text>
+            <text x="260" y="119" text-anchor="middle" font-size="8" fill="var(--ink-soft)">phagocyte ในเนื้อเยื่อ</text>
+            <path d="M337 97 L365 97" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a67a)"/>
+            <text x="350" y="87" text-anchor="middle" font-size="7.5" fill="var(--ink-soft)">IFN-γ</text>
+
+            <rect x="370" y="70" width="150" height="55" rx="9" fill="var(--flame-soft)" stroke="var(--flame)" stroke-width="1.5"/>
+            <text x="445" y="92" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--flame)">Activated Macrophage</text>
+            <text x="445" y="107" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--flame)">(Epithelioid cell)</text>
+            <text x="445" y="119" text-anchor="middle" font-size="8" fill="var(--ink-soft)">Individual activation</text>
+
+            <path d="M445 128 L445 145" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="2,2"/>
+            <path d="M300 128 L445 20 L590 128" stroke="var(--ink-faint)" stroke-width="1" fill="none" stroke-dasharray="2,2"/>
+
+            <rect x="300" y="10" width="290" height="34" rx="8" fill="var(--eosin-soft)" stroke="var(--eosin)"/>
+            <text x="445" y="32" text-anchor="middle" font-size="10" font-weight="700" fill="var(--eosin)">Aggregation of activated cells → Granuloma</text>
+
+            <line x1="445" y1="125" x2="445" y2="140" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="280" y1="140" x2="610" y2="140" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="280" y1="140" x2="280" y2="152" stroke="var(--line-strong)"/>
+            <rect x="200" y="152" width="160" height="40" rx="8" fill="#fff" stroke="var(--line-strong)"/>
+            <text x="280" y="170" text-anchor="middle" font-size="10" font-weight="700">Non-necrotizing</text>
+            <text x="280" y="184" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">granuloma</text>
+
+            <line x1="610" y1="140" x2="610" y2="152" stroke="var(--line-strong)"/>
+            <rect x="530" y="152" width="160" height="40" rx="8" fill="var(--rust-soft)" stroke="var(--rust)"/>
+            <text x="610" y="170" text-anchor="middle" font-size="10" font-weight="700" fill="var(--rust)">Necrotizing granuloma</text>
+            <text x="610" y="184" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">± Caseous necrosis</text>
+            <defs><marker id="a67a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 6-7.2 — Granuloma formation: Monocyte → Macrophage → Activated macrophage (Epithelioid cell) → Aggregation → Granuloma (Non-necrotizing / Necrotizing)</div>
+        </div>
+        <p>Macrophage/histiocyte ทำหน้าที่เป็น <b>surveillance cell</b> ในเนื้อเยื่อต่าง ๆ (phagocyte) เมื่อพบตัวการก่อโรคที่กำจัดได้ยาก (เช่น <i>Mycobacterium tuberculosis</i> ที่ทนต่อการย่อยสลายภายใน phagolysosome) จะเกิดการกระตุ้นแบบรายเซลล์ (individual activation) ก่อน แล้วจึงรวมกลุ่มกัน (aggregation of activated cells) กลายเป็น granuloma</p>
+      </div>
+
+      <div class="card">
+        <h3>Non-necrotizing vs Necrotizing Granuloma</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Non-necrotizing Granuloma</th><th>Necrotizing Granuloma</th></tr>
+            <tr><td>ลักษณะ</td><td>ไม่มี central necrosis</td><td>มี central (caseous) necrosis</td></tr>
+            <tr><td>Multinucleated giant cell</td><td>อาจพบหรือไม่พบก็ได้ (±)</td><td>มักพบร่วมด้วย (Langhans-type giant cell)</td></tr>
+            <tr><td>ตัวอย่างโรค</td><td>Sarcoidosis, Crohn's disease, Foreign body reaction</td><td>Tuberculosis, Fungal infection บางชนิด</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Tuberculosis เป็นตัวอย่างคลาสสิกที่สุดของ <b>necrotizing granulomatous inflammation with caseous necrosis</b> — พบได้ทั้งใน lymph node และปอด และมัก AFB (Acid-Fast Bacilli) stain ให้ผลบวก (AFB+ve)</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t67-foreignbody">6-7.4 Foreign Body Granuloma</h2><span class="slide-ref">T6-7 · slide 27-29</span></div>
+      <div class="card">
+        <h3>สาเหตุ (Causes)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ประเภท</th><th>ตัวอย่าง</th></tr>
+            <tr><td>Exogenous (จากภายนอกร่างกาย)</td><td>สิ่งแปลกปลอมที่ทะลุเข้าเนื้อเยื่ออ่อนผ่านบาดแผลเปิดหรือรอยฉีกขาด (open wound, laceration) เช่น แก้ว โลหะ แป้ง (starch), talc, รอยสัก (tattoo), collagen, เสี้ยนไม้ (wood splinter) — หรือเกิดจากอุบัติเหตุทางการแพทย์ (iatrogenic) เช่น ไหมเย็บแผลผ่าตัด (surgical suture), epicardial pacing wire</td></tr>
+            <tr><td>Endogenous (จากภายในร่างกายเอง)</td><td>Calcium, urate, oxalate, keratin, hair (เส้นผม)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>กลไกการหลอมรวมของ Giant Cell (Giant Cell Fusion)</h3>
+        <p>Multinucleated giant cell ที่พบใน granulomatous inflammation เกิดจากการหลอมรวมของ macrophage หลายตัว ผ่าน 2 กลไกที่แตกต่างกัน ขึ้นกับบริบท:</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Foreign Body-type Giant Cell</th><th>Langhans-type Giant Cell</th></tr>
+            <tr><td>ตัวกระตุ้นการหลอมรวม</td><td><b>CD14</b></td><td><b>CD40-CD40L และ IFN-γ</b></td></tr>
+            <tr><td>บริบทที่พบ</td><td>Foreign body reaction — nucleus กระจายทั่วเซลล์แบบไม่มีระเบียบ (haphazard arrangement)</td><td>Granulomatous inflammation จากการติดเชื้อ (เช่น TB) — nucleus เรียงตัวเป็นรูปเกือกม้าตามขอบเซลล์ (horseshoe/peripheral arrangement)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>ตัวอย่างทางคลินิก</h3>
+        <ul class="plain">
+          <li><b>Wood splinter / Suture material</b> granuloma — ร่างกายพยายามล้อมกรอบสิ่งแปลกปลอมที่กำจัดไม่ได้ด้วย granulomatous reaction</li>
+          <li><b>Epidermal inclusion cyst</b> (ซิสท์ไขมันใต้ผิวหนัง) — เมื่อแตก (ruptured epidermal inclusion cyst) keratin ที่หลุดออกมาจะกระตุ้น foreign body granulomatous reaction เนื่องจาก keratin ถูกจัดเป็น endogenous foreign material</li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="section-divider">Regeneration, Repair and Healing</div>
+    <div class="section">
+      <div class="section-head"><h2 id="t67-definitions">6-7.5 Definitions และ Cell Types</h2><span class="slide-ref">T6-7 · slide 35-48</span></div>
+
+      <div class="card">
+        <h3>Regeneration vs Repair/Healing — นิยามที่ต้องแยกให้ชัด</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Regeneration</th><th>Repair (Healing)</th></tr>
+            <tr><td>ผลลัพธ์</td><td>Complete restitution — ไม่มีแผลเป็น (<b>no scar</b>)</td><td>Incomplete restitution — ต้องใช้ <b>"collagen fiber"</b> มาเติมเต็มช่องว่าง เพื่อรักษาความมั่นคงเชิงโครงสร้างให้เนื้อเยื่อยังทำงานได้</td></tr>
+            <tr><td>ตำแหน่งการบาดเจ็บ</td><td>บาดเจ็บที่ผิว (surface) เท่านั้น ไม่เกี่ยวข้องกับ ECM</td><td>บาดเจ็บที่ลึกกว่า มีการทำลาย ECM</td></tr>
+            <tr><td>ตัวอย่าง</td><td>Mucosa (เช่น GI mucosal ulcer)</td><td>Surgical wound</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Cell Types ตามความสามารถในการแบ่งตัว (Mitotic Capacity)</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 760 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="300" y="8" width="160" height="34" rx="9" fill="var(--moss)"/>
+            <text x="380" y="30" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Cell Types</text>
+            <line x1="380" y1="42" x2="380" y2="55" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="120" y1="55" x2="640" y2="55" stroke="var(--line-strong)" stroke-width="2"/>
+            <g font-size="10.5">
+              <line x1="120" y1="55" x2="120" y2="68" stroke="var(--line-strong)"/>
+              <rect x="20" y="68" width="200" height="65" rx="9" fill="var(--moss-soft)" stroke="var(--moss)"/>
+              <text x="120" y="90" text-anchor="middle" font-weight="700" fill="var(--moss)">Labile Cells</text>
+              <text x="120" y="106" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Continuous replicating</text>
+              <text x="120" y="118" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Stem/surface epithelium</text>
+
+              <line x1="380" y1="55" x2="380" y2="68" stroke="var(--line-strong)"/>
+              <rect x="280" y="68" width="200" height="65" rx="9" fill="var(--moss-soft)" stroke="var(--moss)"/>
+              <text x="380" y="90" text-anchor="middle" font-weight="700" fill="var(--moss)">Quiescent (Stable) Cells</text>
+              <text x="380" y="106" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">G0 phase, ยังแบ่งตัวได้</text>
+              <text x="380" y="118" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Liver, kidney, pancreas</text>
+
+              <line x1="640" y1="55" x2="640" y2="68" stroke="var(--line-strong)"/>
+              <rect x="540" y="68" width="200" height="65" rx="9" fill="var(--eosin-soft)" stroke="var(--eosin)"/>
+              <text x="640" y="90" text-anchor="middle" font-weight="700" fill="var(--eosin)">Permanent Cells</text>
+              <text x="640" y="106" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Terminally differentiated</text>
+              <text x="640" y="118" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Neuron, skeletal/cardiac muscle</text>
+            </g>
+          </svg>
+          <div class="diagram-cap">Fig 6-7.3 — Classification ของเซลล์ตามความสามารถในการแบ่งตัว</div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ชนิด</th><th>ลักษณะ</th><th>ตัวอย่าง</th></tr>
+            <tr><td>Labile cells</td><td>แบ่งตัวต่อเนื่องตลอดเวลา (continuous replicating)</td><td>Stem cell: Hematopoietic stem cell, surface epithelium</td></tr>
+            <tr><td>Quiescent (Stable) cells</td><td>ส่วนใหญ่อยู่ใน <b>G0 phase</b> ของ cell cycle — ยังคงความสามารถในการแบ่งตัวไว้ได้ แต่ไม่แบ่งตัวตามปกติ (ต้องมีสิ่งกระตุ้นจึงจะกลับเข้า cell cycle)</td><td>Solid organ: liver, kidney, pancreas · เซลล์อื่น: endothelial cell, fibroblast, smooth muscle cell</td></tr>
+            <tr><td>Permanent cells</td><td>Terminally differentiated และไม่แบ่งตัวอีกเลยหลังคลอด (nonproliferative in postnatal life)</td><td>Neuron, skeletal muscle, cardiac muscle</td></tr>
+          </table>
+        </div>
+
+        <h4>Stem Cell: Pluripotent vs Multipotent</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Pluripotent</th><th>Multipotent</th></tr>
+            <tr><td>สามารถเจริญเป็นเซลล์ชนิดใดก็ได้ (could grow into any cell types)</td><td>มีศักยภาพการเจริญที่จำกัดกว่า (restricted development potentials)</td></tr>
+          </table>
+        </div>
+
+        <h4>Stem Cell Niches ในเนื้อเยื่อต่าง ๆ</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>อวัยวะ</th><th>ตำแหน่ง Stem Cell Niche</th></tr>
+            <tr><td>ผิวหนัง (Skin)</td><td>บริเวณ bulge ของ hair follicle, sebaceous gland, และชั้นล่างของ epidermis</td></tr>
+            <tr><td>ลำไส้เล็ก (Small intestine)</td><td>ใกล้ฐานของ crypt เหนือ Paneth cell (บางแหล่งข้อมูลระบุว่าอาจอยู่ที่ก้นของ crypt ด้วย) — crypt cell เป็น stem cell ที่ให้กำเนิด goblet cell, absorptive enterocyte, enteroendocrine cell</td></tr>
+            <tr><td>ตับ (Liver)</td><td>Liver progenitor cell หรือ "oval cell" อยู่ที่ <b>Canal of Hering</b> ซึ่งเป็นโครงสร้างที่เชื่อมต่อระหว่าง bile ductule กับ hepatocyte</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>ความสัมพันธ์ระหว่าง Cell Type และผลลัพธ์การซ่อมแซม</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Cell types</th><th>Resolution outcomes</th><th>Healing type</th><th>ตัวอย่าง</th></tr>
+            <tr><td>Labile cells</td><td>Complete resolution</td><td>Regeneration</td><td>Oral and GI mucosa ulcer</td></tr>
+            <tr><td rowspan="2">Quiescent cells</td><td>Complete resolution (บาดเจ็บเล็กน้อย)</td><td>Regeneration</td><td>Liver regeneration ใน partial hepatectomy</td></tr>
+            <tr><td>Scar formation/"fibrosis" (ECM framework เสียหายรุนแรง)</td><td>Repair</td><td>Kidney: cortical scar ใน chronic pyelonephritis</td></tr>
+            <tr><td>Permanent cells</td><td>Scar formation/"fibrosis"</td><td>Repair</td><td>Old lesion ใน myocardial infarction</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Quiescent cell สามารถให้ผลลัพธ์ได้<b>ทั้ง 2 แบบ</b> ขึ้นกับความรุนแรงของการบาดเจ็บ: บาดเจ็บเล็กน้อย → regeneration สมบูรณ์ (เช่น liver), บาดเจ็บรุนแรงจน ECM framework เสียหาย → กลายเป็น scar/fibrosis แทน (เช่น kidney cortical scar) — จุดนี้มักเป็นตัวลวงในข้อสอบที่ทำให้เข้าใจผิดว่า quiescent cell = regeneration เสมอ</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t67-factors">6-7.6 ปัจจัยที่มีผลต่อการซ่อมแซมเนื้อเยื่อ</h2><span class="slide-ref">T6-7 · slide 49-50</span></div>
+      <div class="card">
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ระดับ</th><th>ปัจจัย</th></tr>
+            <tr><td>Local factors</td><td>Local infection, foreign body, hematoma, necrotic tissue, mechanical stress (movement), ชนิดของเนื้อเยื่อ (labile/stable/permanent cell), ขอบเขตของการบาดเจ็บ (extent of tissue injury), ตำแหน่ง (location in tissue space, organization)</td></tr>
+            <tr><td>Systemic factors</td><td>Age, Malignancy, Obesity, Infection (sepsis), Organ failure, Vascular problems (DM, poor perfusion, anemia), Nutritional status (vitamin C deficiency, malnutrition), Drugs — <b>Glucocorticoids (steroids)</b> ยับยั้ง TGF-β ทำให้ collagen deposition ลดลง</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>Vitamin C deficiency</b> ทำให้แผลหายช้าเพราะ vitamin C เป็น cofactor ที่จำเป็นในการ hydroxylation ของ proline และ lysine ระหว่างการสร้าง collagen (เชื่อมโยงกับโรค scurvy) — <b>Glucocorticoid</b> ก็ทำให้แผลหายช้าเช่นกันแต่ผ่านกลไกยับยั้ง TGF-β โดยตรง ทั้งสองเป็นจุดที่ข้อสอบชอบถามแยกกลไก</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t67-components">6-7.7 องค์ประกอบของกระบวนการซ่อมแซม: Cytokines และ ECM</h2><span class="slide-ref">T6-7 · slide 52-68 <span style="color:var(--moss)">+ เสริมจาก Robbins</span></span></div>
+      <div class="card">
+        <h3>4 องค์ประกอบหลักของ Repair Process</h3>
+        <ul class="plain">
+          <li>Cell types ของเนื้อเยื่อที่บาดเจ็บ (mitotic capacity)</li>
+          <li>Cytokines (ซึ่งมีความซ้อนทับกันระหว่างกลุ่ม inflammatory และ reparatory)</li>
+          <li>Vessels (angiogenesis)</li>
+          <li>Extracellular Matrix — ECM (structural strengthening)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Macrophage Activation Cytokines (ทบทวนย่อจาก T5)</h3>
+        <p>ทบทวนสั้น — ดูรายละเอียดเต็มที่ <b>T5 §5.5</b></p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Proinflammatory</th><th>Anti-inflammatory (M2 macrophage)</th></tr>
+            <tr><td>IL-1, 6, 8, 12, 18, IFN-γ, TNF</td><td>IL-4, 10, 11, 13, TGF-β, Receptor antagonists ของ IL-1/TNF-α</td></tr>
+          </table>
+        </div>
+        <p><b>Macrophage M2</b> เป็นตัวขับเคลื่อนหลักของ repair phase มีฤทธิ์: <b>Mitogenic</b> (กระตุ้นการแบ่งตัวของ fibroblast), <b>Angiogenesis, wound contraction, remodeling</b> (ผ่าน growth factor และ TGF-β), และ <b>inhibit MMP</b> (ยับยั้งเอนไซม์ที่ย่อยสลาย ECM เพื่อรักษา collagen ที่สร้างใหม่ไว้)</p>
+      </div>
+
+      <div class="card">
+        <h3>Extracellular Matrix (ECM) — เสริมเชิงลึกจาก Robbins</h3>
+        <p>การมีปฏิสัมพันธ์ระหว่างเซลล์กับ ECM มีความสำคัญอย่างยิ่งต่อการรักษาโครงสร้างเนื้อเยื่อปกติ (normal tissue architecture) และกระบวนการซ่อมแซม</p>
+        <h4>หน้าที่ของ ECM</h4>
+        <ul class="plain">
+          <li><b>Mechanical support</b> — ให้ความแข็งแรงเชิงโครงสร้างแก่เนื้อเยื่อ</li>
+          <li><b>Control of cell proliferation</b> — ผ่าน growth factor และการส่งสัญญาณทาง integrin receptor</li>
+          <li><b>Basement membrane เป็น "Scaffolding"</b> สำหรับการต่ออายุเนื้อเยื่อ (tissue renewal) และสร้าง microenvironment ระหว่าง epithelium กับ connective tissue</li>
+        </ul>
+
+        <h4>2 รูปแบบพื้นฐานของ ECM</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>รูปแบบ</th><th>ลักษณะ</th></tr>
+            <tr><td>Interstitial matrix</td><td>พบใน space ระหว่างเซลล์เนื้อเยื่อเกี่ยวพัน (connective tissue) และระหว่าง epithelium กับ supporting vascular/smooth muscle structure — สังเคราะห์โดย mesenchymal cell (fibroblast)</td></tr>
+            <tr><td>Basement membrane</td><td>ชั้นโครงสร้างบางที่อยู่ใต้ epithelium ทำหน้าที่เป็นแนวกั้นและ scaffold — สังเคราะห์จากทั้ง epithelium และ mesenchymal cell ร่วมกัน</td></tr>
+          </table>
+        </div>
+
+        <h4>3 กลุ่มองค์ประกอบของ ECM (เสริมรายละเอียดจาก Robbins)</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>กลุ่ม</th><th>สมาชิก</th><th>หน้าที่</th></tr>
+            <tr><td>1. Fibrous structural protein</td><td><b>Collagen</b> — ให้ความแข็งแรงเชิงโครงสร้าง (tensile strength) มีหลายชนิด (type I-XXVIII) ตามตำแหน่งเนื้อเยื่อ · <b>Elastin</b> — ให้ความยืดหยุ่นแก่เนื้อเยื่อที่ต้องยืดหด เช่น ผนังหลอดเลือด, ปอด, ผิวหนัง, มดลูก</td><td>ให้ความแข็งแรง (tensile strength) และความยืดหยุ่น (recoil)</td></tr>
+            <tr><td>2. Water-hydrated gel</td><td><b>Proteoglycans</b> (เช่น heparan sulfate, chondroitin sulfate) และ <b>Hyaluronic acid</b></td><td>สร้างสภาพแวดล้อมคล้ายเจล (gel-like ground substance) ที่ทนต่อแรงอัด (compression), เป็นแหล่งกักเก็บ growth factor</td></tr>
+            <tr><td>3. Adhesive glycoproteins</td><td>Cell Adhesion Molecules (CAMs), Fibronectin, Laminin, Integrins</td><td>เชื่อมโยงองค์ประกอบ ECM เข้าด้วยกันและเชื่อมต่อเซลล์กับ ECM</td></tr>
+          </table>
+        </div>
+
+        <h4>Adhesive Glycoprotein และ Adhesion Receptor (รายละเอียด)</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>โมเลกุล</th><th>แหล่งสร้าง</th><th>หน้าที่</th></tr>
+            <tr><td>Fibronectin</td><td>Fibroblast, monocyte, endothelium</td><td>เป็น scaffolding สำหรับการสะสม ECM ในลำดับถัดไป, angiogenesis, และ re-epithelialization — ทำหน้าที่เป็น "ตัวนำทาง" ที่เซลล์อื่นมายึดเกาะเพื่อเริ่มสร้างเนื้อเยื่อใหม่</td></tr>
+            <tr><td>Laminin</td><td>Basement membrane</td><td>องค์ประกอบหลักของ basement membrane เชื่อมโยง epithelial cell เข้ากับ basement membrane</td></tr>
+            <tr><td>Integrins</td><td>Transmembrane receptor บนผิวเซลล์</td><td>เชื่อมโยง intracellular cytoskeleton เข้ากับ ECM ภายนอกเซลล์ (bidirectional signaling) มีบทบาทใน transmigration (diapedesis) ของ leukocyte ในกระบวนการอักเสบ, การเกาะกลุ่มของ platelet (aggregation), และ<b>กระตุ้นการเคลื่อนที่ (locomotion), การแบ่งตัว (proliferation), รูปร่าง (shape) และการเปลี่ยนสภาพ (differentiation) ของเซลล์</b></td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>Fibronectin</b> เป็นโมเลกุลตัวแรกที่ปรากฏในกระบวนการซ่อมแซม ทำหน้าที่เป็น "โครงร่างเบื้องต้น" ให้ fibroblast และเซลล์อื่นมายึดเกาะก่อนที่ collagen จะถูกสร้างตามมา — เชื่อมโยงกับบทบาทของมันในทั้ง angiogenesis และ re-epithelialization พร้อมกัน</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t67-steps">6-7.8 ขั้นตอนของ Repair Process (3 Major Steps)</h2><span class="slide-ref">T6-7 · slide 69-76 <span style="color:var(--moss)">+ เสริมจาก Robbins</span></span></div>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 700 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+          <rect x="10" y="30" width="200" height="60" rx="10" fill="var(--moss-soft)" stroke="var(--moss)" stroke-width="1.5"/>
+          <text x="110" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="var(--moss)">① Angiogenesis</text>
+          <text x="110" y="72" text-anchor="middle" font-size="9" fill="var(--ink-soft)">New branching จากหลอดเลือดเดิม</text>
+          <path d="M212 60 L245 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a67c)"/>
+
+          <rect x="250" y="30" width="200" height="60" rx="10" fill="var(--moss-soft)" stroke="var(--moss)" stroke-width="1.5"/>
+          <text x="350" y="50" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--moss)">② Deposition of</text>
+          <text x="350" y="65" text-anchor="middle" font-size="11.5" font-weight="700" fill="var(--moss)">Connective Tissue</text>
+          <text x="350" y="80" text-anchor="middle" font-size="9" fill="var(--ink-soft)">*Collagen</text>
+          <path d="M452 60 L485 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a67c)"/>
+
+          <rect x="490" y="30" width="200" height="60" rx="10" fill="var(--moss-soft)" stroke="var(--moss)" stroke-width="1.5"/>
+          <text x="590" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="var(--moss)">③ Remodeling</text>
+          <text x="590" y="72" text-anchor="middle" font-size="9" fill="var(--ink-soft)">Proteolytic enzymes (MMP)</text>
+          <defs><marker id="a67c" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+        </svg>
+        <div class="diagram-cap">Fig 6-7.4 — 3 ขั้นตอนหลักของ tissue repair</div>
+      </div>
+
+      <div class="card">
+        <h3>① Angiogenesis (การสร้างหลอดเลือดใหม่)</h3>
+        <p>เป็นการแตกกิ่งใหม่จากหลอดเลือดที่มีอยู่เดิม (new branching from existing vessels) — <b>ไม่ใช่ "neovascularization"</b> แบบที่พบในเนื้องอก (ซึ่งสร้างหลอดเลือดขึ้นใหม่โดยไม่มีต้นกำเนิดจากหลอดเลือดเดิมชัดเจน) ประกอบด้วย 4 ขั้นตอนย่อย:</p>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="20" y="15" width="200" height="40" rx="9" fill="var(--moss-soft)" stroke="var(--moss)"/>
+            <text x="120" y="33" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--moss)">① Vasodilation</text>
+            <text x="120" y="47" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">+ ↑vascular permeability</text>
+            <text x="240" y="40" font-size="9" fill="var(--ink-soft)">VEGF, FGF</text>
+            <path d="M225 35 L260 35" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a67d)"/>
+
+            <rect x="270" y="15" width="220" height="40" rx="9" fill="var(--moss-soft)" stroke="var(--moss)"/>
+            <text x="380" y="33" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--moss)">② Pericyte Migration</text>
+            <text x="380" y="47" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">แยกตัวจากหลอดเลือดเดิม</text>
+
+            <rect x="20" y="70" width="220" height="40" rx="9" fill="var(--moss-soft)" stroke="var(--moss)"/>
+            <text x="130" y="88" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--moss)">③ Endothelial</text>
+            <text x="130" y="102" text-anchor="middle" font-size="9.5" fill="var(--moss)" font-weight="700">Proliferation + Migration</text>
+            <text x="260" y="93" font-size="9" fill="var(--ink-soft)">Ang1/2, PDGF</text>
+            <path d="M245 90 L280 90" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a67d)"/>
+
+            <rect x="285" y="70" width="220" height="40" rx="9" fill="var(--moss-soft)" stroke="var(--moss)"/>
+            <text x="395" y="88" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--moss)">④ Remodeling</text>
+            <text x="395" y="102" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">+ Stabilization (TGF-β)</text>
+
+            <line x1="120" y1="55" x2="130" y2="70" stroke="var(--ink-faint)" stroke-width="1.5" stroke-dasharray="2,2"/>
+
+            <rect x="150" y="135" width="400" height="45" rx="9" fill="var(--flame-soft)" stroke="var(--flame)"/>
+            <text x="350" y="155" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--flame)">Cytokines: VEGF, FGF (early) → Ang1/2, PDGF, TGF-β (later)</text>
+            <text x="350" y="170" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Smooth muscle recruitment (PDGF) + Structural maturation (Ang1/2)</text>
+            <defs><marker id="a67d" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 6-7.5 — กลไก angiogenesis 4 ขั้นตอน พร้อม cytokine ที่ควบคุมแต่ละขั้น</div>
+        </div>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Cytokine</th><th>หน้าที่</th></tr>
+            <tr><td>VEGF (Vascular Endothelial Growth Factor)</td><td>กระตุ้น vasodilation, ↑permeability, และ endothelial proliferation — เป็นตัวเริ่มต้นกระบวนการ angiogenesis ที่สำคัญที่สุด</td></tr>
+            <tr><td>FGF (Fibroblast Growth Factor)</td><td>ร่วมกระตุ้น endothelial proliferation และ migration</td></tr>
+            <tr><td>Angiopoietin 1 และ 2 (Ang1, Ang2)</td><td>ควบคุม structural maturation ของหลอดเลือดใหม่ ให้มีความมั่นคง</td></tr>
+            <tr><td>PDGF (Platelet-Derived Growth Factor)</td><td>Smooth muscle cell recruitment มาห่อหุ้มหลอดเลือดใหม่ (pericyte/smooth muscle coverage) เพื่อความแข็งแรง</td></tr>
+            <tr><td>TGF-β</td><td>ควบคุม endothelial migration และการสะสม ECM รอบหลอดเลือดใหม่ ทำให้เกิด remodeling และ stabilization</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>② Deposition of Connective Tissue</h3>
+        <p>ขับเคลื่อนโดย <b>Macrophage M2</b> ที่หลั่ง anti-inflammatory cytokine กลุ่ม growth factor และ TGF-β ทำให้เกิด:</p>
+        <ul class="plain">
+          <li>Fibroblast migration และ proliferation เข้าสู่บริเวณบาดเจ็บ</li>
+          <li>การสังเคราะห์ Collagen และ Fibronectin</li>
+          <li>การยับยั้งการสลาย ECM (inhibit MMP) เพื่อรักษาโครงสร้างที่สร้างใหม่ไว้</li>
+        </ul>
+        <p><b>Growth factor หลักที่ขับเคลื่อน:</b> TGF-β, PDGF, FGF</p>
+      </div>
+
+      <div class="card">
+        <h3>③ Remodeling</h3>
+        <p>การปรับโครงสร้างของ scar ให้มีความแข็งแรงและเป็นระเบียบมากขึ้นตามเวลา ผ่านเอนไซม์ <b>Proteolytic enzymes</b> 2 กลุ่ม</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>กลุ่มเอนไซม์</th><th>สมาชิก</th><th>สารตั้งต้น (Substrate)</th><th>แหล่งกำเนิด</th></tr>
+            <tr><td>Matrix Metalloproteinase (MMP)</td><td>Collagenase, Gelatinase ฯลฯ</td><td rowspan="2">Collagen, Gelatin, Proteoglycan, Laminin, Fibronectin</td><td rowspan="2">Injury site, fibroblast, macrophage, PMN, synovial cell, epithelial cell บางชนิด</td></tr>
+            <tr><td>Non-MMP protease</td><td>PMN elastase, Cathepsin G, Plasmin, Serine proteinase</td></tr>
+          </table>
+        </div>
+        <p><b>TGF-β</b> ทำหน้าที่ยับยั้ง (−) การทำงานของ protease เหล่านี้ เพื่อป้องกันไม่ให้ ECM ที่สร้างใหม่ถูกย่อยสลายเร็วเกินไป — สร้างสมดุลระหว่างการสร้างและการสลาย ECM ที่เหมาะสมสำหรับการ remodeling</p>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t67-woundhealing">6-7.9 Wound Healing: Primary, Secondary และ Tertiary Intention</h2><span class="slide-ref">T6-7 · slide 90-101</span></div>
+
+      <div class="card">
+        <h3>Primary Intention (Primary Closure)</h3>
+        <p>เกิดเมื่อขอบแผลถูกนำมาชิดและตรึงเข้าด้วยกัน (approximated) ด้วยไหมเย็บ (suture), staple หรือกาวติดแผล (adhesive) — มีการสูญเสียเนื้อเยื่อน้อยมากหรือแทบไม่มีเลย</p>
+        <ul class="plain">
+          <li><b>ตัวอย่าง:</b> แผลถลอก (abrasion wound), แผลคมชัดไม่ติดเชื้อ (sharp-edged, non-infected laceration wound)</li>
+          <li>แผลจะติดกันสนิท (soundly united) ภายใน <b>2 สัปดาห์</b> — ตัดไหมได้วันที่ 7 ในบริเวณที่มีเลือดมาเลี้ยงดี (well-vascularized area) และนัดติดตามอาการวันที่ 14</li>
+          <li>Dense scar tissue จะถูกสร้างเสร็จสมบูรณ์ภายใน <b>1 เดือน</b></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Secondary Intention (Secondary Closure)</h3>
+        <p>เกิดในแผลที่ขอบแยกออกจากกัน (separated edge) และมีการสูญเสียเซลล์/เนื้อเยื่อมากกว่า — ต้องอาศัย <b>granulation tissue จำนวนมาก</b> ที่เจริญเข้ามาจากขอบแผลเพื่อเติมเต็มช่องว่าง ร่วมกับ <b>wound (collagen fiber) contraction</b> โดย <b>myofibroblast</b> เพื่อดึงขอบแผลให้แคบลงตามเวลา</p>
+        <p><b>ตัวอย่าง:</b> แผลขนาดใหญ่ (avulsion wound), abscess, ischemic necrosis ของอวัยวะ, แผลกดทับ/แผลเบาหวาน (pressure sore, diabetic ulcer)</p>
+      </div>
+
+      <div class="card">
+        <h3>Primary vs Secondary Intention (ตารางเปรียบเทียบ)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>คุณสมบัติ</th><th>Primary Intention</th><th>Secondary Intention</th></tr>
+            <tr><td>Cleanliness</td><td>สะอาด</td><td>ไม่สะอาด</td></tr>
+            <tr><td>Infection</td><td>ไม่มี</td><td>มี</td></tr>
+            <tr><td>Margin (ขอบแผล)</td><td>คมชัด (Sharp)</td><td>ไม่สม่ำเสมอ (Irregular)</td></tr>
+            <tr><td>Suture use</td><td>ใช้</td><td>ไม่ใช้</td></tr>
+            <tr><td>Granulation tissue</td><td>น้อย</td><td>มาก</td></tr>
+            <tr><td>ผลลัพธ์</td><td>Linear scar (แผลเป็นเรียบตรง)</td><td>Irregular wound (แผลเป็นไม่สม่ำเสมอ)</td></tr>
+            <tr><td>ภาวะแทรกซ้อน</td><td>พบไม่บ่อย</td><td>พบบ่อย</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Tertiary Intention (Delayed Primary Suture)</h3>
+        <p>เป็นการผสมผสานระหว่าง primary และ secondary intention — เย็บแผลแบบปิดบางส่วน (partially closed wound) ปล่อยให้แผลเปิดอยู่ 2-3 วันก่อน (เพื่อสังเกตอาการติดเชื้อหรือให้ระบายของเหลว) จากนั้นจึงเย็บปิดแผลให้สมบูรณ์ในภายหลัง (subsequent closure)</p>
+      </div>
+
+      <div class="diagram-frame">
+        <svg viewBox="0 0 760 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+          <text x="150" y="20" text-anchor="middle" font-size="12" font-weight="700" fill="var(--moss)">Primary Intention</text>
+          <path d="M50 60 L250 60" stroke="var(--ink)" stroke-width="3"/>
+          <line x1="150" y1="45" x2="150" y2="75" stroke="var(--flame)" stroke-width="2"/>
+          <line x1="140" y1="50" x2="160" y2="70" stroke="var(--flame)" stroke-width="1.5"/>
+          <line x1="160" y1="50" x2="140" y2="70" stroke="var(--flame)" stroke-width="1.5"/>
+          <text x="150" y="95" text-anchor="middle" font-size="9" fill="var(--ink-soft)">ขอบชิด + suture</text>
+          <text x="150" y="108" text-anchor="middle" font-size="9" fill="var(--ink-soft)">Granulation น้อย → Linear scar</text>
+
+          <text x="450" y="20" text-anchor="middle" font-size="12" font-weight="700" fill="var(--eosin)">Secondary Intention</text>
+          <path d="M330 55 Q390 40 420 55" stroke="var(--ink)" stroke-width="3" fill="none"/>
+          <path d="M480 55 Q510 40 570 55" stroke="var(--ink)" stroke-width="3" fill="none"/>
+          <path d="M420 55 Q450 75 480 55" fill="var(--moss-soft)" stroke="var(--moss)" stroke-width="2"/>
+          <text x="450" y="100" text-anchor="middle" font-size="9" fill="var(--ink-soft)">ขอบแยก → Granulation</text>
+          <text x="450" y="113" text-anchor="middle" font-size="9" fill="var(--ink-soft)">tissue เติมเต็ม + contraction</text>
+          <text x="450" y="126" text-anchor="middle" font-size="9" fill="var(--ink-soft)">(myofibroblast) → Irregular scar</text>
+        </svg>
+        <div class="diagram-cap">Fig 6-7.6 — เปรียบเทียบลักษณะแผล Primary vs Secondary intention</div>
+      </div>
+
+      <div class="card">
+        <h3>ชนิดของแผลผ่าตัด (Types of Surgical Wound)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ชนิด</th><th>ลักษณะ</th><th>ตัวอย่าง</th></tr>
+            <tr><td>Clean wound</td><td>ไม่มีการปนเปื้อนใด ๆ</td><td>ตา, ผิวหนัง, ระบบหลอดเลือด</td></tr>
+            <tr><td>Clean-contaminated wound</td><td>แม้ยังไม่แสดงอาการติดเชื้อ แต่มีความเสี่ยงสูงจากตำแหน่งที่ผ่าตัด</td><td>ผ่าตัดผ่านอวัยวะที่มี normal flora (เช่น GI tract, respiratory tract)</td></tr>
+            <tr><td>Contaminated wound</td><td>มีสิ่งแปลกปลอมสัมผัสผิวหนัง มีความเสี่ยงติดเชื้อสูง</td><td>บาดแผลจากกระสุนปืน (gunshot wound), บาดแผลถูกแทง (stab wound)</td></tr>
+            <tr><td>Dirty-contaminated wound</td><td>สัมผัสกับอุจจาระ (feces)</td><td>ลำไส้ทะลุ, การผ่าตัดในภาวะ perforated bowel</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Wound Strength เมื่อเวลาผ่านไป</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <line x1="50" y1="150" x2="650" y2="150" stroke="var(--ink-faint)" stroke-width="1.5"/>
+            <line x1="50" y1="150" x2="50" y2="20" stroke="var(--ink-faint)" stroke-width="1.5"/>
+            <text x="30" y="25" font-size="9" fill="var(--ink-soft)" text-anchor="end">100%</text>
+            <line x1="45" y1="25" x2="650" y2="25" stroke="var(--line-strong)" stroke-width="1" stroke-dasharray="3,3"/>
+            <text x="30" y="60" font-size="9" fill="var(--ink-soft)" text-anchor="end">70-80%</text>
+            <line x1="45" y1="60" x2="650" y2="60" stroke="var(--moss)" stroke-width="1" stroke-dasharray="3,3"/>
+            <path d="M60 148 Q150 145 250 100 Q400 65 600 60" stroke="var(--moss)" stroke-width="3" fill="none"/>
+            <circle cx="120" cy="147" r="4" fill="var(--flame)"/>
+            <text x="120" y="163" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">1 wk: ~10%</text>
+            <circle cx="600" cy="60" r="4" fill="var(--moss)"/>
+            <text x="600" y="40" text-anchor="middle" font-size="8.5" fill="var(--moss)" font-weight="700">3 mo: 70-80% (max)</text>
+          </svg>
+          <div class="diagram-cap">Fig 6-7.7 — Wound tensile strength เมื่อเวลาผ่านไป: ไม่มีวันกลับสู่ 100% ของ normal skin</div>
+        </div>
+        <ul class="plain">
+          <li><b>1 สัปดาห์:</b> ความแข็งแรงของแผลเพียง <b>~10%</b> ของผิวหนังปกติ</li>
+          <li><b>4 สัปดาห์ถัดมา:</b> Tensile strength เพิ่มขึ้นอย่างรวดเร็ว</li>
+          <li><b>3 เดือน:</b> ความแข็งแรงสูงสุดที่ทำได้มักอยู่ที่เพียง <b>70-80%</b> ของผิวหนังปกติเท่านั้น — <b>ไม่มีวันกลับไปแข็งแรง 100% เท่าผิวหนังเดิม</b></li>
+        </ul>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>ข้อเท็จจริงที่ว่า wound strength สูงสุดอยู่ที่เพียง <b>70-80%</b> ของ normal skin (ไม่ใช่ 100%) เป็นจุดที่ข้อสอบชอบถามเพื่อทดสอบความเข้าใจว่าแผลเป็น (scar) ไม่เคยแข็งแรงเท่าผิวหนังเดิมได้อย่างสมบูรณ์</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t67-abnormal">6-7.10 Abnormal Repairing</h2><span class="slide-ref">T6-7 · slide 103-109</span></div>
+
+      <div class="card">
+        <h3>Inadequate Repair (การซ่อมแซมที่ไม่เพียงพอ)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ภาวะ</th><th>คำอธิบาย</th></tr>
+            <tr><td>Wound dehiscence</td><td>แผลผ่าตัดแยกออกจากกัน มักเกิดจากแรงกดทางกล (mechanical stress) เช่น การไอ อาเจียนรุนแรงหลังผ่าตัด ร่วมกับปัจจัยเสี่ยงเช่น obesity, malnutrition, steroid use</td></tr>
+            <tr><td>Ulcer</td><td>แผลที่ไม่หายและเกิดการอักเสบซ้ำที่ชั้นตื้นของแผลเป็นระยะ ๆ (เช่น peptic ulcer) — มักเกิดจากการที่ vascular supply ไม่เพียงพอ (เช่น diabetic ulcer, venous stasis ulcer)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Extreme Repair: Hypertrophic Scar vs Keloid</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ลักษณะ</th><th>Hypertrophic Scar</th><th>Keloid</th></tr>
+            <tr><td>Definition</td><td>แผลเป็นนูนที่อยู่ภายในขอบเขตของแผลเดิม</td><td>แผลเป็นที่ขยายเลยขอบเขตของแผลเดิมออกไป</td></tr>
+            <tr><td>Epidemiology</td><td>ไม่สัมพันธ์กับเชื้อชาติ, F=M, พบในเด็ก</td><td>African &gt; Caucasian (พันธุกรรม, autosomal dominant), F&gt;M, อายุ 10-30 ปี</td></tr>
+            <tr><td>Location</td><td>ตำแหน่งใดก็ได้ พบบ่อยที่บริเวณ extensor ของข้อต่อ (สัมพันธ์กับแรงตึงและการบาดเจ็บจากความร้อน)</td><td>พบบ่อยที่ผิวหนังบริเวณกระดูกหน้าอก (sternal skin), ไหล่, ต้นแขน, ติ่งหู, แก้ม</td></tr>
+            <tr><td>Gross</td><td>นูนขึ้นเล็กน้อย</td><td>นูนขึ้นชัดเจนจากผิวหนัง</td></tr>
+            <tr><td>Matrix</td><td>Mucoid matrix เล็กน้อย</td><td>มี Mucopolysaccharide (chondroitin-4-sulfate) จำนวนมากระหว่าง collagen bundle</td></tr>
+            <tr><td>Vascularity</td><td>เห็นหลอดเลือดชัดเจนกว่า</td><td>น้อยกว่า</td></tr>
+            <tr><td>Progression</td><td>ยุบตัวลงเมื่อเวลาผ่านไป (regress with time)</td><td>โตขึ้นเรื่อย ๆ เป็นปี (grows for years)</td></tr>
+            <tr><td>Histology</td><td>Collagen bundle เรียงตัวขนานกับผิวหนัง</td><td>Collagen หนาเป็นก้อนหรือขด (nodule/whorl) ร่วมกับ fibroblast จำนวนมาก, collagen bundle กว้าง สม่ำเสมอ ติดสี eosin สดใส เรียงตัวไม่เป็นระเบียบ ("keloidal collagen")</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>จุดแยกที่ชัดเจนที่สุดของ Keloid vs Hypertrophic scar คือ<b>ขอบเขต</b> — Keloid ขยายเลยขอบเขตแผลเดิม (extend beyond original wound) ในขณะที่ Hypertrophic scar อยู่ภายในขอบเขตเดิมเสมอ นอกจากนี้ Keloid ยังมี<b>ความสัมพันธ์ทางพันธุกรรมและเชื้อชาติชัดเจน</b> (African descent, autosomal dominant) ซึ่ง Hypertrophic scar ไม่มี</div>
+      </div>
+
+      <div class="card">
+        <h3>Excessive Scar Contracture</h3>
+        <p>พบใน full-thickness burn ที่มีการบาดเจ็บลึกถึงชั้นกล้ามเนื้อ — เนื่องจาก <b>muscle เป็น permanent cell</b> (ไม่สามารถแบ่งตัวทดแทนได้) จึงต้องอาศัย collagen lay down เพื่อเติมเต็มช่องว่างเพียงอย่างเดียว การหดตัวของ collagen (contraction) เพื่อปิดแผลจึงอาจมากเกินไปจนทำให้เกิดความพิการ (deformity) ตามมาได้</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t67-clinical">6-7.11 Clinical Correlations</h2><span class="slide-ref">T6-7 · slide 78-89, 110-116</span></div>
+
+      <div class="card">
+        <h3>Liver Regeneration (Partial Hepatectomy)</h3>
+        <p>ตับมีความสามารถในการงอกใหม่สูงมาก — เนื้อตับที่ถูกตัดออกไป <b>90%</b> สามารถถูกทดแทนได้ด้วยการแบ่งตัวของ residual hepatocyte ที่เหลืออยู่ และกลับสู่ขนาดเดิม (original size) ได้ภายใน <b>6-12 เดือน</b></p>
+        <h4>Compensatory Hyperplasia (กรณีตัด lobe ทั้งหมด)</h4>
+        <p>เมื่อตัด lobe ของตับออกทั้งหมด (complete lobe resection เช่น ในกรณีบริจาคตับสำหรับปลูกถ่าย) lobe ที่เหลือจะเกิด hyperplasia เพื่อชดเชยการทำงาน — เป็นการ<b>ฟื้นฟูมวลการทำงาน (functional mass) มากกว่าการฟื้นฟูรูปร่างเดิม (original form)</b> กล่าวคือ lobe ที่ถูกตัดออกจะไม่งอกกลับมาใหม่ แต่ lobe ที่เหลือจะขยายขนาดขึ้นแทน</p>
+
+        <h4>3 Phases ของ Liver Regeneration</h4>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="20" width="200" height="60" rx="9" fill="var(--moss-soft)" stroke="var(--moss)"/>
+            <text x="110" y="42" text-anchor="middle" font-size="11" font-weight="700" fill="var(--moss)">① Priming phase</text>
+            <text x="110" y="58" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Kupffer cell → IL-6</text>
+            <text x="110" y="70" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Hepatocyte: G0 → G1</text>
+            <path d="M212 50 L245 50" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a67e)"/>
+
+            <rect x="250" y="20" width="200" height="60" rx="9" fill="var(--moss-soft)" stroke="var(--moss)"/>
+            <text x="350" y="38" text-anchor="middle" font-size="11" font-weight="700" fill="var(--moss)">② Growth factor phase</text>
+            <text x="350" y="54" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">HGF, TGF-α</text>
+            <text x="350" y="67" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Hepatocyte replication</text>
+            <path d="M452 50 L485 50" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a67e)"/>
+
+            <rect x="490" y="20" width="200" height="60" rx="9" fill="var(--moss-soft)" stroke="var(--moss)"/>
+            <text x="590" y="42" text-anchor="middle" font-size="11" font-weight="700" fill="var(--moss)">③ Termination phase</text>
+            <text x="590" y="58" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">TGF-β</text>
+            <text x="590" y="70" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Hepatocyte: G1 → G0</text>
+
+            <rect x="10" y="100" width="680" height="55" rx="9" fill="#fff" stroke="var(--line-strong)"/>
+            <text x="350" y="122" text-anchor="middle" font-size="10" font-weight="700">Parenchymal proliferation ตามมา: Kupffer cell, endothelial cell, stellate cell</text>
+            <text x="350" y="140" text-anchor="middle" font-size="9" fill="var(--ink-soft)">Almost all hepatocyte replicate (synchronous wave, G1→S transition)</text>
+            <defs><marker id="a67e" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 6-7.8 — 3 phases ของ liver regeneration หลัง partial hepatectomy</div>
+        </div>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Phase</th><th>Cytokine หลัก</th><th>เหตุการณ์</th></tr>
+            <tr><td>1. Priming</td><td>IL-6 (จาก Kupffer cell)</td><td>Sensitization ของ hepatocyte จาก G0 เข้าสู่ G1</td></tr>
+            <tr><td>2. Growth factor</td><td>HGF (Hepatocyte Growth Factor), TGF-α</td><td>Hepatocyte replication + parenchymal proliferation (Kupffer cell, endothelial cell, stellate cell)</td></tr>
+            <tr><td>3. Termination</td><td>TGF-β</td><td>Hepatocyte กลับเข้าสู่ quiescent stage (G1 → G0) เมื่อขนาดตับกลับสู่ปกติ</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>"Repair" ในตับ (เมื่อ Regeneration ทำไม่ได้)</h3>
+        <p>หากการบาดเจ็บของตับเกี่ยวข้องกับ <b>"limiting plate"</b> (ขอบเขตของ portal tract ที่ล้อมรอบ bile duct, hepatic arteriole, portal venule) การบาดเจ็บจะรุนแรงเกินกว่าที่ hepatocyte จะ regenerate ได้ตามปกติ — ผลลัพธ์จะกลายเป็น <b>fibrosis แทนการ regeneration</b></p>
+      </div>
+
+      <div class="card">
+        <h3>Clinical Correlations: Collagen Defect Diseases</h3>
+        <p>ความผิดปกติของยีนที่สร้าง collagen แต่ละชนิดนำไปสู่โรคทางพันธุกรรมที่จำเพาะต่อชนิดของ collagen นั้น</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Collagen Type</th><th>โรค</th><th>อาการ</th></tr>
+            <tr><td>Type I</td><td>Osteogenesis Imperfecta (Autosomal Dominant)</td><td>กระดูกเปราะบางและเนื้อเยื่อเกี่ยวพันผิดปกติ — บางรายมีอาการเล็กน้อยจากระดับ collagen type I ที่ต่ำ ในขณะที่รายรุนแรงมีความผิดปกติเชิงโครงสร้างของ collagen เอง (บางรายรุนแรงถึงเสียชีวิต)</td></tr>
+            <tr><td>Type II</td><td>Chondrodysplasias (เช่น Achondroplasia)</td><td>ภาวะแคระ (Dwarfism)</td></tr>
+            <tr><td>Type III</td><td>Ehlers-Danlos Syndrome Type 4 (Vascular type)</td><td>ใบหน้าลักษณะเฉพาะ (acrogeria), ผิวหนังบางใสเห็นหลอดเลือดใต้ผิวหนังชัดเจนบริเวณลำตัวและหลังส่วนล่าง, ช้ำง่าย, และภาวะแทรกซ้อนรุนแรงของหลอดเลือดแดง ระบบทางเดินอาหาร และมดลูก</td></tr>
+            <tr><td>Type IV</td><td>Alport Syndrome (X-linked Dominant, พบ AD/AR form ได้ด้วย)</td><td>ผลต่อไตและตา, สูญเสียการได้ยินที่อาจเกิดในวัยเด็กหรือวัยรุ่น</td></tr>
+            <tr><td>Type XVIII</td><td>Knobloch Syndrome</td><td>เนื้อสมองยื่นออกมา (protrusion of brain tissue) และจอตาเสื่อม (degeneration of retina)</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>Ehlers-Danlos Syndrome Type 4 (Vascular type)</b> เป็นชนิดที่อันตรายที่สุดในกลุ่ม EDS เนื่องจากมีความเสี่ยงต่อการแตกของหลอดเลือดแดงใหญ่ (arterial rupture) ที่อาจถึงแก่ชีวิตได้ทันที ต่างจาก EDS ชนิดอื่นที่เน้นความยืดหยุ่นผิดปกติของข้อ/ผิวหนังเป็นหลัก</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-divider">คำศัพท์สำคัญประจำหัวข้อ</div>
+      <div class="card">
+        <div class="glossary">
+          <div class="gterm"><b>Epithelioid cell</b>Activated macrophage ใน granuloma</div>
+          <div class="gterm"><b>Langhans giant cell</b>Multinucleated cell จาก CD40-CD40L/IFN-γ</div>
+          <div class="gterm"><b>Caseous necrosis</b>Necrosis กลางของ granuloma แบบ TB</div>
+          <div class="gterm"><b>Foreign body giant cell</b>Multinucleated cell จาก CD14</div>
+          <div class="gterm"><b>Labile/Stable/Permanent cells</b>Classification ตาม mitotic capacity</div>
+          <div class="gterm"><b>Fibronectin</b>Scaffold protein เริ่มต้นของ ECM repair</div>
+          <div class="gterm"><b>Laminin</b>Adhesive glycoprotein ของ basement membrane</div>
+          <div class="gterm"><b>Integrin</b>Receptor เชื่อม cytoskeleton กับ ECM</div>
+          <div class="gterm"><b>Angiogenesis</b>การแตกกิ่งหลอดเลือดใหม่จากหลอดเลือดเดิม</div>
+          <div class="gterm"><b>VEGF/FGF</b>Cytokine กระตุ้น angiogenesis ระยะแรก</div>
+          <div class="gterm"><b>MMP</b>Matrix metalloproteinase ย่อยสลาย ECM</div>
+          <div class="gterm"><b>Myofibroblast</b>เซลล์ทำ wound contraction</div>
+          <div class="gterm"><b>Primary/Secondary/Tertiary intention</b>3 รูปแบบการหายของแผล</div>
+          <div class="gterm"><b>Wound dehiscence</b>แผลผ่าตัดแยกออกจากกัน</div>
+          <div class="gterm"><b>Hypertrophic scar vs Keloid</b>แผลเป็นนูนในขอบเขต vs เกินขอบเขตแผล</div>
+          <div class="gterm"><b>Compensatory hyperplasia</b>ตับขยายขนาดชดเชยหลังตัด lobe</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
   <section class="tabpanel" id="panel-review">
     <div class="tabhero">
       <div class="kicker">Final Review</div>
       <h1>สรุป High-Yield ก่อนเข้าคาบ Quiz/Game</h1>
-      <p>รวมตารางเปรียบเทียบและคำศัพท์จาก T1-T4 ทั้งหมดไว้ในที่เดียว สำหรับทบทวนรอบสุดท้าย</p>
+      <p>รวมตารางเปรียบเทียบและคำศัพท์จาก T1-T7 ทั้งหมดไว้ในที่เดียว สำหรับทบทวนรอบสุดท้าย</p>
     </div>
     
     <div class="section">
-      <div class="section-head"><h2 id="rv-tables">5.1 ตารางเปรียบเทียบรวม (High-Yield Comparison)</h2></div>
-      <p class="section-lede">รวมตารางเปรียบเทียบทั้งหมดจาก T1-T4 ไว้ในที่เดียว สำหรับทบทวนรอบสุดท้ายก่อนเข้าคาบ Quiz</p>
+      <div class="section-head"><h2 id="rv-tables">7.1 ตารางเปรียบเทียบรวม (High-Yield Comparison)</h2></div>
+      <p class="section-lede">รวมตารางเปรียบเทียบทั้งหมดจาก T1-T7 ไว้ในที่เดียว สำหรับทบทวนรอบสุดท้ายก่อนเข้าคาบ Quiz</p>
 
       <div class="card">
         <h3>Reversible vs Irreversible Cell Injury</h3>
@@ -2207,10 +3835,114 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
           <tr><td>ผิวหนัง</td><td>Cool, clammy, cyanotic</td><td>Warm, flushed</td></tr>
         </table></div>
       </div>
+
+      <div class="section-divider">T5 · Acute Inflammation</div>
+
+      <div class="card">
+        <h3>Acute vs Chronic Inflammation</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Acute</th><th>Chronic</th></tr>
+          <tr><td>Cell</td><td>Neutrophil, macrophage</td><td>Lymphocyte, plasma cell, macrophage, fibroblast</td></tr>
+          <tr><td>Vascular change</td><td>Vasodilation, ↑permeability, edema</td><td>Angiogenesis</td></tr>
+          <tr><td>Cardinal signs</td><td>มี</td><td>ไม่มี</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>IL-1 vs TNF (สรุปย่อ)</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th>ร่วมกัน</th><th>เฉพาะ IL-1</th><th>เฉพาะ TNF</th></tr>
+          <tr><td>Endothelial activation, ↑permeability, procoagulant, Fever/sepsis</td><td>PMN augmentation, กระตุ้น fibroblast</td><td>กระตุ้น TH17, Cachexia, Septic shock</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Leukocyte Recruitment 4 ขั้นตอน</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th>ขั้นตอน</th><th>โมเลกุลควบคุม</th></tr>
+          <tr><td>① Margination</td><td>-</td></tr>
+          <tr><td>② Rolling</td><td>Selectin (bond อ่อน)</td></tr>
+          <tr><td>③ Adhesion</td><td>Integrin (bond แน่น)</td></tr>
+          <tr><td>④ Transmigration</td><td>PECAM-1 (CD31)</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Purulent vs Serous vs Fibrinous Inflammation</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th>ชนิด</th><th>ตัวอย่าง</th></tr>
+          <tr><td>Purulent (Suppurative)</td><td>Abscess จาก pyogenic bacteria</td></tr>
+          <tr><td>Serous</td><td>Blister, Effusion</td></tr>
+          <tr><td>Fibrinous</td><td>Fibrinous pericarditis, Hyaline membrane (ARDS)</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>SIRS → Sepsis → Septic Shock → MODS</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th>ภาวะ</th><th>เกณฑ์หลัก</th></tr>
+          <tr><td>SIRS</td><td>≥2/4: Temp, HR, RR, WBC ผิดปกติ (ไม่ต้องมีการติดเชื้อ)</td></tr>
+          <tr><td>Sepsis</td><td>Organ dysfunction + confirmed/suspected infection</td></tr>
+          <tr><td>Septic Shock</td><td>Sepsis + ต้องใช้ vasopressor (MAP≥65) + lactate&gt;2 หลัง fluid เพียงพอ</td></tr>
+          <tr><td>MODS</td><td>Organ dysfunction ≥2 ระบบพร้อมกัน</td></tr>
+        </table></div>
+      </div>
+
+      <div class="section-divider">T6-7 · Chronic Inflammation &amp; Repair</div>
+
+      <div class="card">
+        <h3>Foreign Body vs Langhans Giant Cell</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Foreign Body-type</th><th>Langhans-type</th></tr>
+          <tr><td>ตัวกระตุ้นการหลอมรวม</td><td>CD14</td><td>CD40-CD40L + IFN-γ</td></tr>
+          <tr><td>Nucleus arrangement</td><td>กระจายไม่มีระเบียบ</td><td>เรียงรูปเกือกม้าตามขอบเซลล์</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Labile vs Stable vs Permanent Cells</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th>ชนิด</th><th>ตัวอย่าง</th><th>Healing type</th></tr>
+          <tr><td>Labile</td><td>Stem cell, surface epithelium</td><td>Regeneration</td></tr>
+          <tr><td>Stable (Quiescent)</td><td>Liver, kidney, pancreas</td><td>Regeneration (เล็กน้อย) / Repair (รุนแรง)</td></tr>
+          <tr><td>Permanent</td><td>Neuron, cardiac/skeletal muscle</td><td>Repair (scar เท่านั้น)</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Primary vs Secondary Intention Wound Healing</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Primary</th><th>Secondary</th></tr>
+          <tr><td>Granulation tissue</td><td>น้อย</td><td>มาก</td></tr>
+          <tr><td>ผลลัพธ์</td><td>Linear scar</td><td>Irregular wound</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Hypertrophic Scar vs Keloid</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Hypertrophic Scar</th><th>Keloid</th></tr>
+          <tr><td>ขอบเขต</td><td>อยู่ในขอบเขตแผลเดิม</td><td>ขยายเลยขอบเขตแผลเดิม</td></tr>
+          <tr><td>เชื้อชาติ</td><td>ไม่สัมพันธ์</td><td>African &gt; Caucasian (genetic)</td></tr>
+          <tr><td>Progression</td><td>ยุบตัวเมื่อเวลาผ่านไป</td><td>โตขึ้นเรื่อย ๆ เป็นปี</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Collagen Defect Diseases (สรุป)</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th>Type</th><th>โรค</th></tr>
+          <tr><td>I</td><td>Osteogenesis Imperfecta</td></tr>
+          <tr><td>II</td><td>Achondroplasia</td></tr>
+          <tr><td>III</td><td>Ehlers-Danlos Type 4 (Vascular)</td></tr>
+          <tr><td>IV</td><td>Alport Syndrome</td></tr>
+          <tr><td>XVIII</td><td>Knobloch Syndrome</td></tr>
+        </table></div>
+      </div>
     </div>
 
     <div class="section">
-      <div class="section-head"><h2 id="rv-glossary">5.2 คำศัพท์รวมทั้งหมด (Master Glossary)</h2></div>
+      <div class="section-head"><h2 id="rv-glossary">7.2 คำศัพท์รวมทั้งหมด (Master Glossary)</h2></div>
       <div class="card">
         <div class="glossary">
           <div class="gterm"><b>Etiology</b>สาเหตุของโรค</div>
@@ -2243,12 +3975,28 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
           <div class="gterm"><b>Paradoxical embolus</b>Embolus ผ่าน ASD/VSD/PFO เข้า systemic circulation</div>
           <div class="gterm"><b>White vs Red infarct</b>Anemic vs Hemorrhagic infarct</div>
           <div class="gterm"><b>Shock</b>Systemic hypoperfusion of tissue</div>
+          <div class="gterm"><b>DAMP / PAMP</b>Damage- vs Pathogen-associated molecular pattern</div>
+          <div class="gterm"><b>Selectin / Integrin</b>ควบคุม rolling / adhesion ของ leukocyte</div>
+          <div class="gterm"><b>Diapedesis</b>การเคลื่อนผ่านผนังหลอดเลือดของ WBC</div>
+          <div class="gterm"><b>Respiratory burst</b>การสร้าง ROS อย่างรวดเร็วเพื่อฆ่าเชื้อ</div>
+          <div class="gterm"><b>OVLT</b>บริเวณ hypothalamus ที่ไม่มี BBB รับ pyrogen</div>
+          <div class="gterm"><b>SIRS / Sepsis-3 / MODS</b>Spectrum ของการอักเสบระบบที่ควบคุมไม่ได้</div>
+          <div class="gterm"><b>Epithelioid cell</b>Activated macrophage ใน granuloma</div>
+          <div class="gterm"><b>Langhans giant cell</b>Multinucleated cell จาก CD40-CD40L/IFN-γ</div>
+          <div class="gterm"><b>Caseous necrosis</b>Necrosis กลางของ granuloma แบบ TB</div>
+          <div class="gterm"><b>Labile/Stable/Permanent cells</b>Classification ตาม mitotic capacity</div>
+          <div class="gterm"><b>Fibronectin/Laminin/Integrin</b>Adhesive glycoprotein หลักของ ECM</div>
+          <div class="gterm"><b>Angiogenesis</b>การแตกกิ่งหลอดเลือดใหม่จากหลอดเลือดเดิม</div>
+          <div class="gterm"><b>MMP</b>Matrix metalloproteinase ย่อยสลาย ECM</div>
+          <div class="gterm"><b>Myofibroblast</b>เซลล์ทำ wound contraction</div>
+          <div class="gterm"><b>Hypertrophic scar vs Keloid</b>แผลเป็นนูนในขอบเขต vs เกินขอบเขตแผล</div>
+          <div class="gterm"><b>Compensatory hyperplasia</b>ตับขยายขนาดชดเชยหลังตัด lobe</div>
         </div>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-head"><h2 id="rv-checklist">5.3 Checklist ก่อนเข้าห้อง Quiz</h2></div>
+      <div class="section-head"><h2 id="rv-checklist">7.3 Checklist ก่อนเข้าห้อง Quiz</h2></div>
       <div class="card">
         <ul class="plain">
           <li>☐ แยก Sign vs Symptom, Anatomical vs Clinical pathology ได้</li>
@@ -2266,6 +4014,17 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
           <li>☐ แยก white vs red infarct, septic vs bland infarct ได้</li>
           <li>☐ จำชนิดของ shock 4 แบบ พร้อมลักษณะผิวหนังที่แยกกันได้ (cool/clammy vs warm/flushed)</li>
           <li>☐ อธิบายกลไก DIC และเชื่อมโยงกับ MAHA/schistocyte ได้</li>
+          <li>☐ จับคู่ cardinal signs กับ mediator ที่เกี่ยวข้องได้</li>
+          <li>☐ แยก DAMP vs PAMP พร้อมตัวอย่างได้</li>
+          <li>☐ อธิบาย leukocyte recruitment 4 ขั้นตอนพร้อมโมเลกุลควบคุมได้ (selectin/integrin/PECAM-1)</li>
+          <li>☐ อธิบายกลไก fever ผ่าน OVLT-PGE2-hypothalamus ได้</li>
+          <li>☐ แยก SIRS/Sepsis/Septic shock/MODS พร้อมเกณฑ์วินิจฉัยแต่ละภาวะได้</li>
+          <li>☐ แยก non-necrotizing vs necrotizing granuloma และกลไก Langhans vs foreign body giant cell ได้</li>
+          <li>☐ แยก labile/stable/permanent cell พร้อมผลลัพธ์การซ่อมแซมได้</li>
+          <li>☐ อธิบาย 3 ขั้นตอนของ repair (angiogenesis→deposition→remodeling) พร้อม cytokine ได้</li>
+          <li>☐ แยก primary/secondary/tertiary intention wound healing ได้</li>
+          <li>☐ แยก hypertrophic scar vs keloid ได้ (โดยเฉพาะเรื่องขอบเขตแผล)</li>
+          <li>☐ จับคู่ collagen type กับโรคที่เกี่ยวข้องได้ (I-XVIII)</li>
         </ul>
       </div>
     </div>
