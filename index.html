@@ -32,6 +32,8 @@
   --moss-soft:#E9EFE6;
   --burgundy:#7A2E48;
   --burgundy-soft:#F3E5EC;
+  --slate:#2E5C6E;
+  --slate-soft:#E4EDF0;
 
   --accent: var(--hema);
   --accent-soft: var(--hema-soft);
@@ -116,6 +118,7 @@ p{margin:0 0 0.9em 0;}
 .tabnav button[data-tab="t5"]{--tabcolor:var(--flame);}
 .tabnav button[data-tab="t67"]{--tabcolor:var(--moss);}
 .tabnav button[data-tab="t89"]{--tabcolor:var(--burgundy);}
+.tabnav button[data-tab="t10"]{--tabcolor:var(--slate);}
 .tabnav button[data-tab="review"]{--tabcolor:var(--amber);}
 
 .shell{max-width:1180px;margin:0 auto;padding:32px 28px 100px 28px; display:grid; grid-template-columns:240px 1fr; gap:36px;}
@@ -219,6 +222,7 @@ ul.plain li{margin-bottom:5px;}
 #panel-t5{--accent:var(--flame); --accent-soft:var(--flame-soft);}
 #panel-t67{--accent:var(--moss); --accent-soft:var(--moss-soft);}
 #panel-t89{--accent:var(--burgundy); --accent-soft:var(--burgundy-soft);}
+#panel-t10{--accent:var(--slate); --accent-soft:var(--slate-soft);}
 #panel-review{--accent:var(--amber); --accent-soft:var(--amber-soft);}
 
 footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); font-size:0.78rem; font-family:'JetBrains Mono',monospace;}
@@ -243,7 +247,8 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
       <button data-tab="t5" onclick="showTab('t5')"><span class="tab-eyebrow">Session 05</span>Acute Inflammation</button>
       <button data-tab="t67" onclick="showTab('t67')"><span class="tab-eyebrow">Session 06</span>Chronic Inflammation &amp; Repair</button>
       <button data-tab="t89" onclick="showTab('t89')"><span class="tab-eyebrow">Session 07</span>Neoplasia</button>
-      <button data-tab="review" onclick="showTab('review')"><span class="tab-eyebrow">Session 08</span>Final Review</button>
+      <button data-tab="t10" onclick="showTab('t10')"><span class="tab-eyebrow">Session 08</span>Environmental Pathology</button>
+      <button data-tab="review" onclick="showTab('review')"><span class="tab-eyebrow">Session 09</span>Final Review</button>
     </nav>
   </div>
 </header>
@@ -4519,16 +4524,733 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
 
   </section>
 
+  <section class="tabpanel" id="panel-t10">
+    <div class="tabhero">
+      <div class="kicker">T10 · Environmental and Occupational Pathology</div>
+      <h1>เมื่อสิ่งแวดล้อม สารพิษ และแรงภายนอกทำร้ายร่างกาย</h1>
+      <p>จาก climate change สู่กลไกพิษของโลหะหนัก แอลกอฮอล์ บุหรี่ จนถึงการบาดเจ็บจากแรงกล ความร้อน ไฟฟ้า รังสี และพิษจากสัตว์</p>
+    </div>
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t10-climate">10.1 Health Effects of Climate Change</h2><span class="slide-ref">T10 · slide 4-5</span></div>
+      <div class="card">
+        <h3>กลไก Greenhouse Effect</h3>
+        <p>ระดับ <b>CO2 สัมพันธ์กับอุณหภูมิที่เพิ่มขึ้น</b> — CO2 เกิดจากการเผาผลาญเชื้อเพลิงฟอสซิลและการตัดไม้ทำลายป่า (ลดความสามารถในการจับ CO2 โดยพืช) ก๊าซเรือนกระจกอื่นที่เกี่ยวข้องได้แก่ <b>Ozone</b> และ <b>Methane</b></p>
+      </div>
+
+      <div class="card">
+        <h3>ผลกระทบต่อสุขภาพจากการเปลี่ยนแปลงสภาพอากาศ (4 กลุ่มหลัก)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>กลุ่มโรค</th><th>กลไก/สาเหตุ</th></tr>
+            <tr><td>Cardiovascular, Cerebrovascular, Respiratory diseases</td><td>คลื่นความร้อน (heat wave), มลพิษทางอากาศ</td></tr>
+            <tr><td>Gastroenteritis</td><td>การปนเปื้อนหลังน้ำท่วมหรือภัยพิบัติต่าง ๆ</td></tr>
+            <tr><td>Vector-borne infectious diseases</td><td>มาลาเรีย, ไข้เลือดออก — แมลงพาหะแพร่พันธุ์มากขึ้นตามอุณหภูมิ</td></tr>
+            <tr><td>Malnutrition</td><td>ผลผลิตทางการเกษตรลดลง → โรคภัย ความยากจน ขาดสารอาหาร ความไม่สงบทางการเมือง สงคราม ความตาย</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Climate change ไม่ได้ส่งผลต่อสุขภาพทางตรงอย่างเดียว (เช่น heat stroke) แต่ยังส่งผลทางอ้อมผ่านห่วงโซ่ทางสังคม-เศรษฐกิจ (malnutrition → ความยากจน → ความไม่สงบ) ซึ่งเป็นมุมมองที่ข้อสอบยุคใหม่ชอบทดสอบ</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t10-toxicology">10.2 Toxicity of Chemical and Physical Agents</h2><span class="slide-ref">T10 · slide 6-7 <span style="color:var(--slate)">+ เสริมเต็มจาก Robbins</span></span></div>
+      <div class="card">
+        <h3>หลักการพื้นฐาน</h3>
+        <p><b>ความเป็นพิษขึ้นอยู่กับปริมาณที่ได้รับ (dose-dependent toxicity)</b> — "The dose makes the poison"</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ประเภทตัวการ</th><th>ตัวอย่าง</th></tr>
+            <tr><td>Chemical Agents</td><td>Carcinogens</td></tr>
+            <tr><td>Physical Agents</td><td>Radiation, Heat</td></tr>
+          </table>
+        </div>
+        <p>เมื่อสารแปลกปลอมเข้าสู่เซลล์ของสิ่งมีชีวิต ร่างกายจะพยายาม<b>กำจัดออก (detoxification)</b> ผ่านการเปลี่ยนเป็น <b>toxic metabolite</b> ก่อน แล้วจึงถูกขับออกทาง <b>urine, feces, expired air</b> หรือถูกเก็บสะสมไว้ใน <b>bone, fat, brain, other tissues</b></p>
+      </div>
+
+      <div class="card">
+        <h3>Detoxification Pathway — เสริมเต็มจาก Robbins (Phase I &amp; Phase II Metabolism)</h3>
+        <p>กระบวนการ metabolize สารแปลกปลอม (xenobiotic) ส่วนใหญ่เกิดที่<b>ตับ</b> ผ่าน 2 phase ที่ทำงานต่อเนื่องกัน โดยมีเป้าหมายเพื่อเปลี่ยนสารที่ไม่ละลายน้ำ (lipophilic) ให้กลายเป็นสารที่ละลายน้ำได้ (hydrophilic) เพื่อขับออกทางไตหรือน้ำดี</p>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="20" width="180" height="55" rx="9" fill="var(--slate-soft)" stroke="var(--slate)"/>
+            <text x="100" y="42" text-anchor="middle" font-size="11" font-weight="700" fill="var(--slate)">Xenobiotic</text>
+            <text x="100" y="58" text-anchor="middle" font-size="9" fill="var(--ink-soft)">(Lipophilic, ไม่ละลายน้ำ)</text>
+            <path d="M192 47 L225 47" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a10a)"/>
+
+            <rect x="230" y="10" width="220" height="75" rx="9" fill="var(--flame-soft)" stroke="var(--flame)"/>
+            <text x="340" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="var(--flame)">Phase I: Oxidation</text>
+            <text x="340" y="48" text-anchor="middle" font-size="9" fill="var(--ink-soft)">Cytochrome P450 (CYP)</text>
+            <text x="340" y="61" text-anchor="middle" font-size="9" fill="var(--ink-soft)">เพิ่ม/เผย reactive group</text>
+            <text x="340" y="74" text-anchor="middle" font-size="8.5" fill="var(--eosin)" font-weight="700">อาจสร้าง reactive intermediate ที่พิษกว่าเดิม</text>
+            <path d="M452 47 L485 47" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a10a)"/>
+
+            <rect x="490" y="10" width="200" height="75" rx="9" fill="var(--moss-soft)" stroke="var(--moss)"/>
+            <text x="590" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="var(--moss)">Phase II: Conjugation</text>
+            <text x="590" y="48" text-anchor="middle" font-size="9" fill="var(--ink-soft)">Glucuronidation, Sulfation,</text>
+            <text x="590" y="61" text-anchor="middle" font-size="9" fill="var(--ink-soft)">Glutathione conjugation</text>
+            <text x="590" y="74" text-anchor="middle" font-size="8.5" fill="var(--moss)" font-weight="700">→ Hydrophilic, ไม่มีพิษ</text>
+
+            <path d="M590 85 L590 110" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a10a)"/>
+            <rect x="440" y="115" width="300" height="45" rx="9" fill="#fff" stroke="var(--line-strong)"/>
+            <text x="590" y="135" text-anchor="middle" font-size="10.5" font-weight="700">ขับออกทาง Urine, Feces, Expired air</text>
+            <text x="590" y="150" text-anchor="middle" font-size="9" fill="var(--ink-soft)">ผ่านไตหรือน้ำดี</text>
+            <defs><marker id="a10a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 10.1 — Phase I/II detoxification pathway ของตับ</div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Phase I (Functionalization)</th><th>Phase II (Conjugation)</th></tr>
+            <tr><td>ปฏิกิริยาหลัก</td><td>Oxidation, Reduction, Hydrolysis</td><td>Conjugation กับ endogenous molecule</td></tr>
+            <tr><td>เอนไซม์หลัก</td><td><b>Cytochrome P450 (CYP450)</b> superfamily — พบมากที่ smooth endoplasmic reticulum ของ hepatocyte</td><td>Transferase enzymes: UDP-glucuronosyltransferase, Sulfotransferase, Glutathione S-transferase (GST), N-acetyltransferase</td></tr>
+            <tr><td>ผลลัพธ์</td><td>เพิ่มหรือเผย reactive functional group (เช่น -OH) บนโมเลกุล — <b>บางครั้งทำให้สารมีพิษมากขึ้นกว่าเดิม (bioactivation)</b> แทนที่จะลดพิษ</td><td>จับสารกับโมเลกุลที่ละลายน้ำได้ดี (glucuronic acid, sulfate, glutathione) ทำให้ขับออกจากร่างกายได้ง่ายขึ้น</td></tr>
+            <tr><td>ตัวอย่างสำคัญ</td><td>Paracetamol ถูก CYP2E1 เปลี่ยนเป็น <b>NAPQI</b> (สารพิษต่อตับ) เมื่อได้รับเกินขนาด</td><td>NAPQI ถูก conjugate กับ <b>glutathione</b> ให้กลายเป็นสารไม่มีพิษ — เมื่อ glutathione หมด (เกินขนาดมาก) NAPQI จะสะสมและทำลายเซลล์ตับ</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Phase I metabolism ไม่ได้ "ลดพิษ" เสมอไป — บางครั้งกลับ<b>เพิ่มความเป็นพิษ (bioactivation)</b> เช่นในกรณี paracetamol overdose ที่ NAPQI (metabolite จาก Phase I) เป็นตัวการทำลายตับจริง ไม่ใช่ paracetamol เอง — นี่คือเหตุผลที่ N-acetylcysteine (NAC) ใช้รักษาได้ เพราะเป็นสารตั้งต้นของ glutathione ที่ช่วยเสริม Phase II conjugation</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t10-airpollution">10.3 Air Pollution และ Acquired Hemoglobinopathies</h2><span class="slide-ref">T10 · slide 9-26</span></div>
+      <div class="card">
+        <h3>Particulate Matter (PM)</h3>
+        <p><b>Particles &lt; 10 µM</b> เมื่อเข้าสู่ร่างกาย จะถูกจับกินโดย <b>macrophage และ neutrophil</b> ทำให้เกิดการอักเสบ — แหล่งกำเนิด: ไอเสียจากรถ, การเผาไหม้ถ่านหิน, น้ำมันรถ, การผลิตไฟฟ้า, อุตสาหกรรม</p>
+        <p>ไอเสียจากรถ (nitrogen oxide) รวมกับ PM มีส่วนร่วมในปฏิกิริยาเคมี → สร้าง<b>อนุมูลอิสระ (free radical)</b> → cell injury (เชื่อมโยงกับกลไก ROS ใน T2 §2.3)</p>
+      </div>
+
+      <div class="card">
+        <h3>Carboxyhemoglobin — พิษจาก Carbon Monoxide (CO)</h3>
+        <p>CO เป็นก๊าซที่ได้จากการเผาไหม้ที่ไม่สมบูรณ์ — มีปริมาณสูงในบริเวณอัคคีภัย หรือกรณีติดเครื่องยนต์โดยไม่มีการถ่ายเทอากาศเพียงพอ (เช่น รถยนต์จอดปิดกระจกเปิดเครื่องทิ้งไว้)</p>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="20" width="160" height="50" rx="9" fill="var(--slate-soft)" stroke="var(--slate)"/>
+            <text x="90" y="42" text-anchor="middle" font-size="11" font-weight="700" fill="var(--slate)">CO inhaled</text>
+            <text x="90" y="58" text-anchor="middle" font-size="9" fill="var(--ink-soft)">จับ Hb ดีกว่า O2 200 เท่า</text>
+            <path d="M172 45 L205 45" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a10b)"/>
+
+            <rect x="210" y="20" width="180" height="50" rx="9" fill="var(--eosin-soft)" stroke="var(--eosin)"/>
+            <text x="300" y="42" text-anchor="middle" font-size="11" font-weight="700" fill="var(--eosin)">Carboxyhemoglobin</text>
+            <text x="300" y="58" text-anchor="middle" font-size="9" fill="var(--ink-soft)">Hypoxia + Acidosis</text>
+            <path d="M392 45 L425 45" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a10b)"/>
+
+            <rect x="430" y="10" width="260" height="70" rx="9" fill="var(--burgundy-soft)" stroke="var(--burgundy)"/>
+            <text x="560" y="30" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--burgundy)">รบกวน Mitochondrial</text>
+            <text x="560" y="45" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--burgundy)">Cytochrome Oxidase</text>
+            <text x="560" y="60" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">↓aerobic metabolism, ↓ATP synthesis</text>
+            <text x="560" y="72" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">+ Myeloperoxidase, protease, ROS</text>
+
+            <rect x="200" y="100" width="300" height="50" rx="9" fill="#fff" stroke="var(--line-strong)"/>
+            <text x="350" y="120" text-anchor="middle" font-size="10" font-weight="700">ปวดศีรษะ วิงเวียน คลื่นไส้ → หน้ามืด</text>
+            <text x="350" y="136" text-anchor="middle" font-size="10" font-weight="700">หมดสติ เสียชีวิต · Cherry red skin</text>
+            <defs><marker id="a10b" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 10.2 — กลไกพิษของ Carbon Monoxide</div>
+        </div>
+        <ul class="plain">
+          <li><b>CO จับ Hb ได้ดีกว่า O2 ถึง 200 เท่า</b> → hypoxia และ acidosis</li>
+          <li>CO รบกวนกระบวนการเมแทบอลิซึม: <b>mitochondrial cytochrome oxidase</b> (ยับยั้ง aerobic metabolism, impaired mitochondrial function และ ATP synthesis), Myeloperoxidase, proteases, reactive oxygen species (cellular damage)</li>
+          <li>อาการ: ปวดศีรษะ วิงเวียน คลื่นไส้ ในรายรุนแรง: หน้ามืด หมดสติ เสียชีวิต — ตรวจร่างกายอาจพบตัวแดง หน้าแดงแบบสี <b>cherry red</b> จากสีของ carboxyhemoglobin และการขยายตัวของเส้นเลือด</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Acquired Hemoglobinopathies — 3 ชนิด (ตารางเปรียบเทียบเต็มรูปแบบ)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Methemoglobin</th><th>Sulfhemoglobin</th><th>Carboxyhemoglobin</th></tr>
+            <tr><td>กลไก</td><td>เหล็กในฮีมถูกออกซิไดซ์จาก <b>Ferrous (Fe²⁺) → Ferric (Fe³⁺)</b></td><td>เกิดจากการจับกันของ <b>hydrogen sulfide (H₂S)</b> กับ Fe³⁺ ใน methemoglobin</td><td>Hb จับกับ <b>carbon monoxide (CO)</b></td></tr>
+            <tr><td>สาเหตุ</td><td>ยา/สารเคมีบางชนิด (nitrite, aniline dye)</td><td>รับประทานยาบางชนิดเป็นเวลานาน เช่น <b>acetanilide, phenacetin</b></td><td>การเผาไหม้ไม่สมบูรณ์ (ไฟไหม้, เครื่องยนต์)</td></tr>
+            <tr><td>คุณสมบัติ</td><td>Low oxygen affinity → tissue hypoxia</td><td>Low oxygen affinity → cyanosis</td><td>High affinity ต่อ Hb (แย่ง O2)</td></tr>
+            <tr><td>อาการ/สี</td><td><b>Cyanosis</b> (เขียวคล้ำ), หมดสติ/เสียชีวิตได้</td><td>Cyanosis</td><td><b>Cherry red</b> skin</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Methemoglobinemia — รายละเอียดตามระดับความรุนแรง</h3>
+        <p>คนปกติมี methemoglobin ในกระแสเลือด <b>&lt; 1%</b> — ความรุนแรงขึ้นกับปริมาณ methemoglobin ที่พบ</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ระดับ Methemoglobin</th><th>อาการ</th></tr>
+            <tr><td>&lt; 30%</td><td>เกิดภาวะ cyanosis</td></tr>
+            <tr><td>30-50%</td><td>เริ่มมีอาการขาดออกซิเจน (oxygen deprivation): รู้สึกไม่สบาย (malaise), เวียนศีรษะ (giddiness), อาการทางสภาพจิต</td></tr>
+            <tr><td>&gt; 50%</td><td>หมดสติ โคม่า เสียชีวิตอย่างรวดเร็ว — เลือดมีสีคล้ายช็อกโกแลต (chocolate brown)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t10-heavymetals">10.4 Heavy Metals as Environmental Pollutants</h2><span class="slide-ref">T10 · slide 32-63</span></div>
+      <div class="card">
+        <h3>สรุปโลหะหนักทั้ง 4 ชนิด</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>โลหะ</th><th>แหล่งที่มา</th><th>Pathogenesis</th></tr>
+            <tr><td>Mercury (ปรอท)</td><td>อดีต: สีทาผนัง เครื่องสำอาง ยารักษาโรค · ปัจจุบัน: ปลาบางชนิด (swordfish, shark, blue fish), เหมืองทอง</td><td>จับกับหมู่ sulfhydryl ของโปรตีนและรบกวนเมแทบอลิซึมของแคลเซียม → <b>Minamata disease</b>: สมองพิการ หูหนวก ตาบอด ระบบประสาทผิดปกติของทารกในครรภ์ (สมองไวต่อปรอทมากในช่วงเจริญเติบโต)</td></tr>
+            <tr><td>Lead (ตะกั่ว)</td><td>สเปรย์สี, โรงหล่อ, คนงานเหมือง, โรงงานแบตเตอรี่, ปนเปื้อนในดินและน้ำชนบท</td><td>กลไกเหมือนปรอท (จับ sulfhydryl group) — ความผิดปกติของระบบประสาท กระดูก ทางเดินอาหาร ไต โลหิต</td></tr>
+            <tr><td>Arsenic (สารหนู)</td><td>พบในดิน น้ำ ยาฆ่าหญ้า น้ำยารักษาเนื้อไม้</td><td>รบกวนกระบวนการ mitochondrial oxidative phosphorylation, cellular metabolism — เป็นพิษต่อระบบทางเดินอาหาร ระบบประสาท หัวใจและหลอดเลือด</td></tr>
+            <tr><td>Cadmium (แคดเมียม)</td><td>Nickel-cadmium battery, ปุ๋ยเคมี</td><td>กลไกยังไม่ชัดเจน เพิ่มการสร้างอนุมูลอิสระ ROS — เป็นพิษต่อไตและปอด</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Lead (ตะกั่ว) — เจาะลึก</h3>
+        <p><b>ช่องทางเข้าสู่ร่างกาย:</b> การกิน, ทางผิวหนัง, การหายใจ — ปนเปื้อนในดินและน้ำชนบท</p>
+        <h4>Pathogenesis: การยับยั้ง Heme Synthesis</h4>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="20" width="150" height="50" rx="9" fill="var(--slate-soft)" stroke="var(--slate)"/>
+            <text x="85" y="42" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--slate)">Lead (Pb²⁺)</text>
+            <text x="85" y="58" text-anchor="middle" font-size="9" fill="var(--ink-soft)">จับ sulfhydryl group</text>
+            <path d="M162 45 L195 45" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a10c)"/>
+
+            <rect x="200" y="10" width="290" height="70" rx="9" fill="var(--burgundy-soft)" stroke="var(--burgundy)"/>
+            <text x="345" y="30" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--burgundy)">ยับยั้ง 3 เอนไซม์สำคัญ</text>
+            <text x="345" y="46" text-anchor="middle" font-size="9" fill="var(--ink-soft)">Ferrochelatase, ALA dehydratase,</text>
+            <text x="345" y="59" text-anchor="middle" font-size="9" fill="var(--ink-soft)">Uroporphyrinogen decarboxylase</text>
+            <text x="345" y="72" text-anchor="middle" font-size="9" fill="var(--eosin)" font-weight="700">→ ↓Heme synthesis</text>
+            <path d="M492 45 L525 45" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a10c)"/>
+
+            <rect x="530" y="10" width="160" height="70" rx="9" fill="#fff" stroke="var(--line-strong)"/>
+            <text x="610" y="32" text-anchor="middle" font-size="10" font-weight="700">Anemia +</text>
+            <text x="610" y="47" text-anchor="middle" font-size="10" font-weight="700">rRNA degradation</text>
+            <text x="610" y="62" text-anchor="middle" font-size="9" fill="var(--ink-soft)">ผิดปกติ → RBC</text>
+            <text x="610" y="74" text-anchor="middle" font-size="9" fill="var(--ink-soft)">retain rRNA aggregation</text>
+
+            <rect x="380" y="100" width="220" height="30" rx="7" fill="var(--flame-soft)" stroke="var(--flame)"/>
+            <text x="490" y="120" text-anchor="middle" font-size="10" font-weight="700" fill="var(--flame)">Basophilic Stippling</text>
+            <path d="M610 80 L490 100" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#a10c)"/>
+            <defs><marker id="a10c" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 10.3 — กลไกพิษของ Lead ต่อ heme synthesis pathway</div>
+        </div>
+        <ul class="plain">
+          <li>Lead ยับยั้ง <b>ferrochelatase, ALA dehydratase, uroporphyrinogen decarboxylase</b> → ลดการสร้าง heme</li>
+          <li>Lead ยับยั้งการสลาย rRNA → RBC เก็บ rRNA ไว้จับตัวเป็นก้อน → <b>Basophilic stippling</b> (พบในภาวะที่มีการรบกวนการสร้างเม็ดเลือดแดง เช่น lead poisoning, thalassemia, hemolytic anemia)</li>
+        </ul>
+        <h4>อาการทางคลินิก</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>กลุ่ม</th><th>อาการ</th></tr>
+            <tr><td>ผู้ใหญ่</td><td>ปวดหัว ความจำเสื่อม</td></tr>
+            <tr><td>เด็ก</td><td>IQ ต่ำ การเรียนรู้บกพร่อง ปัญญาอ่อน ตาบอด โรคทางจิตเวช ชัก โคม่า</td></tr>
+            <tr><td>ทั่วไป</td><td>ภาวะโลหิตจาง, อาการทางระบบประสาท (ชา อัมพาต), โรคไตเรื้อรัง (proximal tubule), ปวดท้อง</td></tr>
+            <tr><td>ลักษณะเฉพาะ</td><td><b>Gingival lead line (Burton's line)</b> — เส้นสีดำคล้ำที่เหงือก</td></tr>
+          </table>
+        </div>
+        <p><b>Radiographic finding:</b> Impaired remodeling ของ calcified cartilage ที่ epiphyses ของข้อมือ ทำให้เห็น radiodensity เพิ่มขึ้นชัดเจน</p>
+      </div>
+
+      <div class="card">
+        <h3>Arsenic (สารหนู) — เจาะลึก</h3>
+        <p><b>Long-term exposure (&gt; 6 เดือน):</b> เกิด <b>arsenical keratosis</b> (pigment change และ hyperkeratotic lesion) สัมพันธ์กับการเกิดมะเร็งผิวหนังชนิด <b>squamous cell carcinoma และ basal cell carcinoma</b> (unknown pathophysiology) — พบมะเร็งปอด ไต กระเพาะปัสสาวะ ตับได้น้อยกว่า</p>
+      </div>
+
+      <div class="card">
+        <h3>Cadmium (แคดเมียม) — เจาะลึก</h3>
+        <p><b>ช่องทางเข้าสู่ร่างกาย:</b> การหายใจ &gt; การกิน</p>
+        <p><b>Pathogenesis:</b> เพิ่มการสร้าง ROS เป็นพิษต่อไต (<b>cadmium nephrotoxicity</b> จาก proximal tubule dysfunction), ปอด และกระดูก (กระดูกพรุน กระดูกเจริญผิดปกติ) → <b>โรคอิไตอิไต (Itai-itai disease)</b></p>
+        <ul class="plain">
+          <li><b>Metallothionein</b> — โปรตีนที่คอยจับกับแคดเมียมในกระแสเลือด ทำให้ความเป็นพิษลดลงและไม่ถูกกรองผ่าน glomerulus</li>
+          <li><b>Beta2-microglobulin (β2M)</b> — sensitive indicator ของ proximal tubule dysfunction</li>
+        </ul>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Heavy metal ทั้ง 4 ชนิดมีกลไกที่คล้ายกันคือ<b>จับกับโปรตีน/รบกวนเอนไซม์สำคัญ</b> แต่ target organ ต่างกันชัดเจน: Mercury/Lead → ระบบประสาท, Arsenic → ผิวหนัง/มะเร็ง, Cadmium → ไต/กระดูก — ข้อสอบมักถามจับคู่โลหะกับ target organ/โรคเฉพาะ (Minamata=Hg, Itai-itai=Cd)</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t10-occupational">10.5 Occupational Lung Disease: Silica และ Asbestos</h2><span class="slide-ref">T10 · slide 75-77</span></div>
+      <div class="card">
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Silica</th><th>Asbestos</th></tr>
+            <tr><td>โรค</td><td>Silicosis</td><td>Asbestosis, Pleural effusion, Diffuse fibrosis, Mesothelioma, Carcinoma ของปอดและกล่องเสียง</td></tr>
+            <tr><td>การสัมผัส</td><td>Sandblasting (พ่นทราย สำหรับทำความสะอาด/ลบคม/ขัดสีและสารเคลือบผิว), stone cutting, โรงหล่อ (foundry work), เซรามิก</td><td>ฉนวนกันความร้อน (heat insulation), กระเบื้องมุงหลังคา, ท่อซีเมนต์, ผ้าเบรกและคลัตช์, การรื้อถอนอาคาร/สิ่งก่อสร้าง, เหมืองแร่ใยหิน</td></tr>
+            <tr><td>กลไก</td><td colspan="2">Phagocytosed by macrophage → กระตุ้นการปล่อย proinflammatory factor และ fibrogenic mediator → chronic inflammation และ fibrosis</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>Asbestos</b> เป็นสารก่อมะเร็งที่เชื่อมโยงกับ <b>Mesothelioma</b> โดยเฉพาะ (มะเร็งเยื่อหุ้มปอด) ซึ่งเป็นมะเร็งที่พบได้น้อยแต่มีความจำเพาะสูงต่อ asbestos exposure — เป็นจุดเชื่อมโยงสำคัญกับหัวข้อ Neoplasia (T8-9) เรื่อง occupational carcinogen</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t10-tobacco">10.6 Effects of Tobacco</h2><span class="slide-ref">T10 · slide 84-87</span></div>
+      <div class="card">
+        <h3>Smokeless Tobacco</h3>
+        <p>Dip, Snuff, Snus, และ Chewing Tobacco → เพิ่มความเสี่ยงต่อ <b>Oral cancer</b></p>
+        <p><b>90% ของมะเร็งปอดเกิดในผู้สูบบุหรี่</b></p>
+      </div>
+
+      <div class="card">
+        <h3>Second-hand Smoke (การสูบบุหรี่มือสอง)</h3>
+        <p>การสูดดมควันบุหรี่แบบ passive ในผู้ไม่สูบบุหรี่</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>กลุ่มเสี่ยง</th><th>ผลกระทบ</th></tr>
+            <tr><td>ทั่วไป</td><td>Lung cancer</td></tr>
+            <tr><td>เด็ก</td><td>เพิ่มโรคทางเดินหายใจและหืด (respiratory illness, asthma)</td></tr>
+            <tr><td>สตรีมีครรภ์</td><td>แท้งบุตรเอง (spontaneous abortion), คลอดก่อนกำหนด (preterm birth)</td></tr>
+          </table>
+        </div>
+        <h4>Nicotine และ CO ต่อทารกในครรภ์</h4>
+        <p>น้ำหนักน้อย, คลอดก่อนกำหนด, <b>placental problem</b> (ลดการไหลเวียนเลือดของรก → ออกซิเจนและสารอาหารลดลง)</p>
+      </div>
+
+      <div class="card">
+        <h3>ความสัมพันธ์เชิงปริมาณ (Dose-Response)</h3>
+        <ul class="plain">
+          <li>จำนวนการสูบบุหรี่สัมพันธ์กับความเสี่ยงของ<b>มะเร็งปอด</b> (linear dose-response)</li>
+          <li>สูบบุหรี่ + ดื่มเหล้า สัมพันธ์กับความเสี่ยงของ<b>มะเร็งกล่องเสียง</b> (synergistic effect)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Electronic Cigarette / E-cigarette</h3>
+        <p>น้ำยาบุหรี่ไฟฟ้า (e-liquid) ถูกทำให้ร้อนจนระเหยเป็นไอละออง (vapor) — ประกอบด้วย <b>นิโคติน, สารแต่งกลิ่นรส, สารดูดความชื้น (humectant)</b> — เมื่อสารแต่งกลิ่นรสและ humectant ถูกความร้อนจะเกิด <b>Formaldehyde, Acetaldehyde, Acrolein, heavy metals, nitrosamines</b></p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ภาวะแทรกซ้อน</th><th>รายละเอียด</th></tr>
+            <tr><td>EVALI</td><td><span class="eng">E-cigarette, or Vaping, product use-Associated Lung Injury</span> — กลุ่มอาการป่วยทางปอดเกิดขึ้นเฉียบพลัน อาการตั้งแต่หายใจสั้น ๆ จนถึงไข้สูงอย่างรวดเร็ว</td></tr>
+            <tr><td>Lipoid Pneumonia</td><td>ปอดบวมจากน้ำมัน — โรคปอดอักเสบที่เกิดจากการได้รับน้ำมัน พบเม็ดเลือดขาวมีน้ำมันปนเปื้อนในทางเดินหายใจ (lipid-laden macrophage)</td></tr>
+            <tr><td>Cardiovascular effects</td><td>ผลกระทบต่อระบบหัวใจและหลอดเลือด</td></tr>
+            <tr><td>Possible cancer effects</td><td>ความเสี่ยงมะเร็งที่อาจเกิดขึ้น (ยังอยู่ระหว่างการศึกษา)</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>Lipid-laden macrophage</b> ใน bronchoalveolar lavage เป็น histologic hallmark ที่ใช้วินิจฉัย Lipoid pneumonia จาก e-cigarette use — เป็นจุดเชื่อมโยงกับพยาธิสภาพเซลล์ที่เคยเรียนใน T2 (intracellular accumulation ของไขมัน)</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t10-alcohol">10.7 Effects of Alcohol</h2><span class="slide-ref">T10 · slide 94-98</span></div>
+      <div class="card">
+        <h3>การเสียชีวิตจากแอลกอฮอล์</h3>
+        <ul class="plain">
+          <li>อุบัติเหตุจากเมาแล้วขับ, ฆาตกรรม (homicide) ที่สัมพันธ์กับแอลกอฮอล์ และฆ่าตัวตาย (suicide) รวม <b>~50%</b></li>
+          <li>ตับแข็ง <b>~15%</b></li>
+        </ul>
+        <p>แอลกอฮอล์ดูดซึมที่กระเพาะอาหารและลำไส้ กระจายไปเนื้อเยื่อและสารน้ำต่าง ๆ ทั่วร่างกายโดยสัมพันธ์กับปริมาณในเลือด — <b>น้อยกว่า 10%</b> ขับออกทางปัสสาวะ ลมหายใจ และเหงื่อ</p>
+      </div>
+
+      <div class="card">
+        <h3>Blood Alcohol Level และผลกระทบ</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ระดับ</th><th>ผลกระทบ</th></tr>
+            <tr><td>80 mg%</td><td>เมาแล้วขับ [เบียร์ 3 แก้ว (12 ออนซ์), ไวน์ 3-4 แก้ว (15 ออนซ์), 80 ดีกรี 1 แก้ว (4-5 ออนซ์)] — ประเทศไทยใช้เกณฑ์ 50 mg%</td></tr>
+            <tr><td>200 mg%</td><td>ง่วงนอน (drowsiness)</td></tr>
+            <tr><td>300 mg%</td><td>อาการมึนงง (stupor) และโคม่า (coma) ซึ่งอาจยับยั้งการทำงานของระบบทางเดินหายใจ</td></tr>
+          </table>
+        </div>
+        <p><b>Chronic alcoholics</b> พัฒนา tolerance ต่อแอลกอฮอล์ — metabolize แอลกอฮอล์ในอัตราที่สูงกว่าปกติ จึงมีระดับ peak alcohol ต่ำกว่าค่าเฉลี่ยเมื่อดื่มปริมาณเท่ากัน</p>
+      </div>
+
+      <div class="card">
+        <h3>Metabolism of Ethanol — เจาะลึกกลไก</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="20" width="140" height="50" rx="9" fill="var(--slate-soft)" stroke="var(--slate)"/>
+            <text x="80" y="42" text-anchor="middle" font-size="11" font-weight="700" fill="var(--slate)">Ethanol</text>
+            <path d="M152 45 L182 45" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a10d)"/>
+            <text x="167" y="35" text-anchor="middle" font-size="7.5" fill="var(--ink-soft)">ADH</text>
+
+            <rect x="187" y="20" width="150" height="50" rx="9" fill="var(--flame-soft)" stroke="var(--flame)"/>
+            <text x="262" y="42" text-anchor="middle" font-size="11" font-weight="700" fill="var(--flame)">Acetaldehyde</text>
+            <text x="262" y="58" text-anchor="middle" font-size="8" fill="var(--ink-soft)">(สารพิษหลักที่ทำให้แฮงค์)</text>
+            <path d="M339 45 L369 45" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a10d)"/>
+            <text x="354" y="35" text-anchor="middle" font-size="7.5" fill="var(--ink-soft)">ALDH</text>
+
+            <rect x="374" y="20" width="140" height="50" rx="9" fill="var(--moss-soft)" stroke="var(--moss)"/>
+            <text x="444" y="42" text-anchor="middle" font-size="11" font-weight="700" fill="var(--moss)">Acetate</text>
+            <text x="444" y="58" text-anchor="middle" font-size="8" fill="var(--ink-soft)">(ไม่มีพิษ)</text>
+
+            <rect x="150" y="90" width="380" height="50" rx="9" fill="var(--burgundy-soft)" stroke="var(--burgundy)"/>
+            <text x="340" y="110" text-anchor="middle" font-size="10" font-weight="700" fill="var(--burgundy)">↑NADH/NAD+ ratio (จากทั้ง 2 ปฏิกิริยา)</text>
+            <text x="340" y="126" text-anchor="middle" font-size="9" fill="var(--ink-soft)">→ Fatty liver + Lactic acidosis</text>
+            <defs><marker id="a10d" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 10.4 — เส้นทางเมแทบอลิซึมของ ethanol ผ่าน ADH/ALDH</div>
+        </div>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>เอนไซม์</th><th>บทบาท</th></tr>
+            <tr><td>Alcohol Dehydrogenase (ADH)</td><td>เปลี่ยน ethanol → acetaldehyde โดยใช้ <b>NAD⁺</b> เป็น cofactor — NAD⁺ จำเป็นต่อกระบวนการ fatty acid oxidation ในตับ หากขาด (เพราะถูกใช้ไปมาก) เป็นสาเหตุของ <b>ไขมันพอกตับ (fatty liver)</b> และ <b>lactic acidosis</b> (↑NADH/NAD⁺ ratio)</td></tr>
+            <tr><td>Aldehyde Dehydrogenase (ALDH)</td><td>เปลี่ยน acetaldehyde (พิษ) → acetate (ไม่มีพิษ) — <b>50% ของชาวเอเชียขาดเอนไซม์นี้</b> ทำให้กำจัด acetaldehyde ไม่ทัน เกิด <b>Flushing</b> (หน้าแดง ตัวแดง), <b>Tachycardia</b>, <b>Hyperventilation</b></td></tr>
+          </table>
+        </div>
+        <h4>กลไก Cell Injury จาก Alcohol เพิ่มเติม</h4>
+        <ul class="plain">
+          <li><b>Acetaldehyde toxicity</b> — สารพิษโดยตรง</li>
+          <li>Metabolism ของ ethanol → ROS → cell injury</li>
+          <li>Alcohol → รบกวน intestinal flora → endotoxin → cytokine → cell injury</li>
+        </ul>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>ALDH deficiency</b> พบมากในชาวเอเชีย (~50%) เป็นจุดที่ข้อสอบชอบเชื่อมโยงกับอาการ "หน้าแดงเมื่อดื่มแอลกอฮอล์" (Asian flush) — กลไกคือ acetaldehyde สะสมมากกว่าปกติเพราะกำจัดไม่ทัน ไม่ใช่เพราะผลของ ethanol โดยตรง</div>
+      </div>
+
+      <div class="card">
+        <h3>Acute vs Chronic Alcoholism</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Acute Alcoholism</th><th>Chronic Alcoholism</th></tr>
+            <tr><td>ผลกระทบ</td><td>ผลต่อระบบประสาท, อาจเกิดการบาดเจ็บของตับและกระเพาะอาหาร</td><td>Alcoholic hepatitis, fatty liver, cirrhosis (สัมพันธ์กับ portal hypertension และเสี่ยงมะเร็งตับ), Gastritis/gastric ulcer, Neurologic effects (Thiamine deficiency, Wernicke-Korsakoff syndrome), Cardiovascular effects (alcoholic cardiomyopathy), Pancreatitis, Carcinogenesis (oral cavity, esophagus, liver, breast), Malnutrition (vitamin B deficiency)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Fetal Alcohol Syndrome</h3>
+        <p>เกิดจาก impaired migration ของ neuronal และ glial cell ระหว่างการพัฒนาสมองของทารกในครรภ์</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ลักษณะ</th><th>รายละเอียด</th></tr>
+            <tr><td>Microcephaly</td><td>ศีรษะเล็ก</td></tr>
+            <tr><td>Growth retardation</td><td>การเจริญเติบโตล่าช้า</td></tr>
+            <tr><td>Facial abnormalities</td><td>Smooth philtrum (ร่องริมฝีปากบนเรียบ), thin upper lip, maxillary hypoplasia (ขากรรไกรบนเล็กผิดปกติ), short palpebral fissures (ช่องตาสั้น), short nose</td></tr>
+            <tr><td>Mental function</td><td>สติปัญญาต่ำลง</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Methanol Poisoning</h3>
+        <p>โดยทั่วไปใช้ methanol (wood alcohol) เป็นตัวทำละลาย — Methanol poisoning เกิดจากการดื่มสุราที่มี methanol ปนเปื้อน มักพบใน<b>สุราปลอม เหล้าเถื่อนที่ต้มกลั่นเอง</b> — ผู้ดื่มมักเข้าใจผิดคิดว่า methanol คือ ethanol</p>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Methanol poisoning เป็นภาวะฉุกเฉินทางการแพทย์ที่พบบ่อยในไทยจากสุราปลอม — methanol ถูก metabolize โดย ADH เช่นเดียวกับ ethanol แต่สร้าง <b>formaldehyde และ formic acid</b> ที่เป็นพิษต่อ<b>เส้นประสาทตา (optic nerve)</b> ทำให้ตาบอด — การรักษาเบื้องต้นใช้หลักการให้ ethanol แข่งกับ methanol ในการจับ ADH เพื่อชะลอการสร้างสารพิษ</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t10-drugs">10.8 Injury by Therapeutic Drugs and Drugs of Abuse</h2><span class="slide-ref">T10 · slide 118-119</span></div>
+      <div class="card">
+        <h3>Adverse Drug Reactions จากยารักษาโรค</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ยา</th><th>ผลข้างเคียง</th></tr>
+            <tr><td>Menopausal Hormone Therapy (MHT)</td><td>เพิ่มความเสี่ยงมะเร็งเยื่อบุโพรงมดลูก, มะเร็งเต้านม และลิ่มเลือดอุดตัน</td></tr>
+            <tr><td>Oral Contraceptives</td><td>ป้องกันมะเร็งเยื่อบุโพรงมดลูกและมะเร็งเต้านม แต่เพิ่มความเสี่ยงลิ่มเลือดอุดตันและเนื้องอกในตับ (hepatic adenoma)</td></tr>
+            <tr><td>Paracetamol overdose</td><td>Liver failure (ผ่านกลไก NAPQI ที่กล่าวถึงใน §10.2)</td></tr>
+            <tr><td>Aspirin</td><td>↓Thromboxane A2 → gastric ulceration และ bleeding</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Oral Contraceptives มีผลแบบ<b>สองด้าน</b>ที่ต้องจำแยกกัน: ป้องกันมะเร็งบางชนิด (endometrial, ovarian) แต่เพิ่มความเสี่ยงภาวะอื่น (thrombosis, hepatic adenoma) — เชื่อมโยงกับกลไก hypercoagulable state ใน Virchow's triad (T4 §4.6)</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t10-physical">10.9 Injury by Physical Agents</h2><span class="slide-ref">T10 · slide 146-187 <span style="color:var(--slate)">+ ขยายเต็มแบบ Robbins</span></span></div>
+      <p class="section-lede">ครอบคลุม Mechanical Trauma, Thermal Injury, Electrical Injury, และ Ionizing/UV Radiation — เสริมกลไกระดับโมเลกุลตามที่ตกลงไว้</p>
+
+      <div class="card">
+        <h3>Mechanical Trauma — ชนิดของบาดแผล</h3>
+        <p>ประเภทของการบาดเจ็บขึ้นอยู่กับรูปร่างของสิ่งที่ชน ความแรงเมื่อกระทบ และเนื้อเยื่อ/อวัยวะที่รับแรงกระแทก</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ชนิด</th><th>ลักษณะ</th></tr>
+            <tr><td>Abrasion (รอยขีดข่วน, ถลอก)</td><td>การขูดหรือถูทำให้ผิวหนังชั้นกำพร้า (epidermal layer) เสียหาย</td></tr>
+            <tr><td>Contusion (รอยฟกช้ำ)</td><td>แผลที่มักเกิดจากวัตถุแบบทู่ หลอดเลือดเสียหายและเลือดออกจากหลอดเลือดสู่เนื้อเยื่อ</td></tr>
+            <tr><td>Laceration (การฉีกขาด)</td><td>วัตถุทู่ที่มีการกระทำอย่างแรง ส่วนใหญ่ยังมีเส้นเลือดที่เชื่อมติดกัน ขอบแผลไม่เรียบ</td></tr>
+            <tr><td>Incised wound (บาดแผลจากของมีคม)</td><td>เส้นเลือดขาด ขอบแผลเรียบ</td></tr>
+            <tr><td>Puncture wound (บาดแผลจากการเจาะ)</td><td>เครื่องมือที่ยาวและแคบ เช่น การใช้เข็มเจาะเลือด</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>ความแตกต่างระหว่าง <b>Laceration vs Incised wound</b> เป็นจุดที่ถูกถามบ่อยในนิติเวช: Laceration จากวัตถุทู่ (blunt object) มีขอบแผลไม่เรียบและยังมีเนื้อเยื่อเชื่อมกันอยู่ ในขณะที่ Incised wound จากของมีคม (sharp object) มีขอบแผลเรียบและเส้นเลือดขาดสมบูรณ์ — ใช้แยกชนิดอาวุธที่ก่อเหตุได้ในทางนิติเวช</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="card">
+        <h3>Thermal Injury: Heat Regulation Mechanism</h3>
+        <p>ร่างกายควบคุมอุณหภูมิผ่านกลไกการระบายความร้อน 4 ทาง:</p>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="20" width="160" height="55" rx="9" fill="var(--slate-soft)" stroke="var(--slate)"/>
+            <text x="90" y="42" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--slate)">Conduction</text>
+            <text x="90" y="58" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">การนำความร้อน</text>
+            <text x="90" y="69" text-anchor="middle" font-size="8" fill="var(--ink-soft)">(solid → solid)</text>
+
+            <rect x="185" y="20" width="160" height="55" rx="9" fill="var(--slate-soft)" stroke="var(--slate)"/>
+            <text x="265" y="42" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--slate)">Convection</text>
+            <text x="265" y="58" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">การพาความร้อน</text>
+            <text x="265" y="69" text-anchor="middle" font-size="8" fill="var(--ink-soft)">ผิวหนัง → เหงื่อ/อากาศ</text>
+
+            <rect x="360" y="20" width="160" height="55" rx="9" fill="var(--slate-soft)" stroke="var(--slate)"/>
+            <text x="440" y="42" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--slate)">Radiation</text>
+            <text x="440" y="58" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">การแพร่รังสี</text>
+
+            <rect x="535" y="20" width="160" height="55" rx="9" fill="var(--slate-soft)" stroke="var(--slate)"/>
+            <text x="615" y="42" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--slate)">Evaporation</text>
+            <text x="615" y="58" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">การระเหย (เหงื่อ→gas)</text>
+            <text x="615" y="69" text-anchor="middle" font-size="8" fill="var(--ink-soft)">แปรผกผันกับความชื้น</text>
+
+            <rect x="150" y="100" width="400" height="45" rx="9" fill="var(--flame-soft)" stroke="var(--flame)"/>
+            <text x="350" y="120" text-anchor="middle" font-size="10" font-weight="700" fill="var(--flame)">Respiration — สูญเสียความร้อนและความชื้น</text>
+            <text x="350" y="135" text-anchor="middle" font-size="9" fill="var(--ink-soft)">(กลไกที่ 5)</text>
+          </svg>
+          <div class="diagram-cap">Fig 10.5 — 5 กลไกการระบายความร้อนของร่างกาย</div>
+        </div>
+        <h4>เมื่ออุณหภูมิร่างกายสูงขึ้น (↑Temperature)</h4>
+        <ol style="padding-left:20px;">
+          <li><b>Vasodilation</b> (หลอดเลือดขยายตัว) → ระบายความร้อนทางผิวหนัง</li>
+          <li><b>Sweating</b> → convection (ผิวหนัง→เหงื่อ) → evaporation (เหงื่อ→อากาศ)</li>
+        </ol>
+        <p>หากกินน้ำเพียงพอ ร่างกายรักษาสมดุลได้ แต่หากกินน้ำไม่พอ จะเกิด <b>Dehydration</b> → ↓Venous return (เลือดกลับสู่หัวใจ) → ↓Stroke volume (เลือดออกจากหัวใจห้องล่าง) → Weak pulse, hypotension, fatigue → นำไปสู่ <b>Heat syncope, Heat exhaustion, Heat stroke</b></p>
+        <p>การสูญเสียเกลือแร่ผ่านเหงื่ออย่างมากนำไปสู่ <b>Heat cramps</b></p>
+      </div>
+
+      <div class="card">
+        <h3>Hyperthermia — 3 ระดับความรุนแรง</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Heat Cramps (ตะคริวแดด)</th><th>Heat Exhaustion (เพลียแดด)</th><th>Heat Stroke (โรคลมร้อน)</th></tr>
+            <tr><td>สาเหตุ</td><td>ออกกำลังกายอย่างหนัก → สูญเสียเกลือแร่ผ่านเหงื่อ</td><td>ร่างกายขาดน้ำอย่างรุนแรง</td><td>ขาดน้ำและต่อมเหงื่อทำงานผิดปกติ สัมพันธ์กับอากาศร้อนและชื้น — กลไกควบคุมอุณหภูมิล้มเหลว</td></tr>
+            <tr><td>อาการ</td><td>กล้ามเนื้อหดตัวแบบบังคับไม่ได้</td><td>ฟุบ วูบ มึนงง อ่อนเพลีย อาเจียน เหงื่อออกมาก หัวใจเต้นเร็ว</td><td>อุณหภูมิร่างกายสูง (&gt;40°C) ไม่มีเหงื่อ ระบบประสาทผิดปกติ (เป็นลม กระวนกระวาย พูดไม่รู้เรื่อง)</td></tr>
+            <tr><td>การปฐมพยาบาล</td><td>เครื่องดื่มเกลือแร่ พักที่อากาศเย็น</td><td>ดื่มน้ำเย็น พักที่อากาศเย็น</td><td>พัก ระบายความร้อน (พัดลม ไอเย็น แช่น้ำเย็น ประคบเย็น ผ้าห่มเย็น) ให้น้ำเกลือ</td></tr>
+            <tr><td>Subtype</td><td>-</td><td>-</td><td><b>Classical (CHS)</b>: ผู้สูงอายุ เด็ก ผู้มีโรคประจำตัว (mortality 63.2%) · <b>Exertional (EHS)</b>: นักกีฬา ทหาร (mortality 26.5%)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Hypothermia และ Frostbite</h3>
+        <p><b>กลุ่มเสี่ยง:</b> คนไร้บ้านที่ติดแอลกอฮอล์และไม่มีเครื่องนุ่งห่มเหมาะสม (กินเหล้า → หลอดเลือดขยายตัว → อุณหภูมิลดอย่างรวดเร็ว), จมน้ำ, อยู่บนเขา, ทำงานเกี่ยวกับห้องเย็น, ประเทศเมืองหนาว</p>
+        <p><b>อุณหภูมิ &lt; 35°C:</b> บวม (edema), สูญเสียสติ, หัวใจเต้นช้า (bradycardia), หัวใจเต้นผิดจังหวะ</p>
+        <h4>Frostbite</h4>
+        <p>ภาวะผิวหนังถูกทำลายจากความเย็นจัด มักเกิดเมื่อร่างกายอยู่ในสภาพอากาศอุณหภูมิต่ำกว่าจุดเยือกแข็งและมีลมพัดแรงเป็นเวลานาน — เกิดอาการบวมแดงชาและมีสีซีดลง</p>
+        <p><b>การปฐมพยาบาล:</b> ถอดเสื้อที่เปียก แช่อวัยวะบริเวณนั้นในน้ำอุ่น 10-30 นาที หากเกิดการบาดเจ็บที่เท้าไม่ควรเดินเท้าเปล่า ไม่ถูบริเวณที่บาดเจ็บ และไม่ใช้อุปกรณ์เพิ่มความร้อนกับผิวหนังบริเวณนั้นโดยตรง</p>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Frostbite first aid มีข้อห้ามสำคัญคือ<b>ห้ามถูบริเวณที่บาดเจ็บ</b> เพราะเนื้อเยื่อที่แข็งตัวจากความเย็นเปราะบางมาก การถูจะทำให้เกิด mechanical tissue damage เพิ่มเติม ต่างจากการปฐมพยาบาลบาดแผลทั่วไป</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="card">
+        <h3>Electrical Injury — เจาะลึกกลไก</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Low-voltage</th><th>High-voltage</th></tr>
+            <tr><td>แหล่งกำเนิด</td><td>บ้านและสถานที่ทำงาน (home and workplace)</td><td>สายไฟฟ้าแรงสูง (power lines) หรือฟ้าผ่า (lightning)</td></tr>
+          </table>
+        </div>
+        <h4>กลไกการบาดเจ็บ (เสริมจาก Robbins)</h4>
+        <p>ความรุนแรงของการบาดเจ็บขึ้นกับ <b>amperage ของกระแสไฟฟ้าและเส้นทางที่กระแสไฟฟ้าไหลผ่านภายในร่างกาย (path within the body)</b> — กระแสไฟฟ้าที่ไหลผ่านหัวใจหรือสมองอันตรายกว่าที่ไหลผ่านแขนขาอย่างมาก</p>
+        <ul class="plain">
+          <li><b>Joule heating effect</b> — กระแสไฟฟ้าที่ไหลผ่านเนื้อเยื่อซึ่งมีความต้านทาน (resistance) จะเปลี่ยนเป็นพลังงานความร้อน ทำให้เกิด <b>thermal burn</b> ที่จุดเข้าและจุดออกของกระแสไฟฟ้า (entry/exit wound) รวมถึงตามเส้นทางที่กระแสไหลผ่าน</li>
+          <li><b>Direct membrane effect</b> — กระแสไฟฟ้าโดยตรงรบกวน electrical activity ของเซลล์กล้ามเนื้อหัวใจ ทำให้เกิด <b>ventricular fibrillation</b> ได้ทันทีแม้ไม่มี thermal burn รุนแรง</li>
+          <li><b>Respiratory center failure</b> — กระแสไฟฟ้าที่ผ่านสมองส่วนควบคุมการหายใจอาจทำให้หยุดหายใจได้โดยตรง</li>
+        </ul>
+        <p><b>ผลลัพธ์ทางคลินิก:</b> Burns และ ventricular fibrillation หรือ cardiac and respiratory center failure</p>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Alternating Current (AC) อันตรายกว่า Direct Current (DC) ที่ amperage เท่ากัน เพราะ AC ทำให้กล้ามเนื้อหดตัวซ้ำ ๆ (tetanic contraction) จนบางครั้งผู้บาดเจ็บไม่สามารถปล่อยมือจากแหล่งกำเนิดไฟฟ้าได้เอง ("let-go phenomenon") ทำให้ระยะเวลาสัมผัสนานขึ้นและเพิ่มความเสี่ยง ventricular fibrillation</div>
+      </div>
+
+      <div class="card">
+        <h3>Injury Produced by Ionizing Radiation — เจาะลึกกลไก</h3>
+        <p>ครอบคลุม <b>x-rays, gamma rays, high-energy neutrons, alpha particles, beta particles</b> — ใช้ทั้งในการรักษาและการวินิจฉัยทางการแพทย์ แต่มีคุณสมบัติ <b>mutagenic, carcinogenic, และ teratogenic</b> (ทำให้ทารก/ตัวอ่อนในครรภ์ผิดปกติหรือพิการ)</p>
+        <h4>กลไกการทำลายเซลล์ (เสริมจาก Robbins)</h4>
+        <ul class="plain">
+          <li><b>Direct effect</b> — รังสีทำลาย DNA โดยตรง (direct ionization ของโมเลกุล DNA) ทำให้เกิด strand breakage</li>
+          <li><b>Indirect effect</b> — รังสีทำให้เกิด <b>radiolysis of water</b> สร้าง free radical (โดยเฉพาะ hydroxyl radical •OH) ที่ไปทำลาย DNA, protein, และ lipid ต่อ (เชื่อมโยงกับกลไก ROS ที่เรียนใน T2 §2.3)</li>
+        </ul>
+        <p><b>ผลลัพธ์ที่เห็นในเซลล์:</b> Changes in chromosomes, nuclear swelling, apoptosis, cytoplasmic changes</p>
+        <p><b>เซลล์ที่ไวต่อการบาดเจ็บโดยรังสีเป็นพิเศษ</b> คือเซลล์ที่มีการแบ่งตัวอย่างรวดเร็ว (rapidly dividing cells) เช่น <b>germ cells, bone marrow, GI tract</b> — สอดคล้องกับหลักการที่ว่ารังสีทำลาย DNA ระหว่าง replication ได้ง่ายกว่าเซลล์ที่ไม่แบ่งตัว</p>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>เซลล์ที่แบ่งตัวเร็ว (labile cells จาก T6-7 §6-7.5) ไวต่อรังสีมากที่สุด — นี่คือเหตุผลที่ radiation therapy ใช้รักษามะเร็ง (เซลล์มะเร็งแบ่งตัวเร็ว) ได้ผล แต่ก็ทำให้เกิดผลข้างเคียงต่อ bone marrow และ GI mucosa ซึ่งเป็น labile cells เช่นกัน — เชื่อมโยงข้ามหัวข้อกับ Cell Injury (T2) และ Cellular Adaptation (T6-7)</div>
+      </div>
+
+      <div class="card">
+        <h3>UV Radiation — Acute vs Chronic Effects</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ชนิด UV</th><th>ผลกระทบ</th></tr>
+            <tr><td>UVA</td><td>Skin tanning (pigmentation), Photoaging [collagen degradation และ dermal connective tissue disorganization]</td></tr>
+            <tr><td>UVB</td><td>Sunburn [direct DNA damage — <b>thymine dimer</b>]</td></tr>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Acute Effect</th><th>Chronic Effect</th></tr>
+            <tr><td>ลักษณะ</td><td>Short-term, reversible</td><td>สะสมระยะยาว</td></tr>
+            <tr><td>ผิวหนัง</td><td>Sunburn, edema, inflammation, skin tanning (pigmentation)</td><td>Premature aging (dryness, wrinkles, sagging, loss of elastin/collagen, mottled pigmentation), DNA damage (thymine dimer) และกด immune system → <b>skin cancer</b> (SCC, BCC, melanoma)</td></tr>
+            <tr><td>ตา</td><td>-</td><td>Eye damage (corneal damage, cataracts, macular damage)</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>Thymine dimer</b> เป็นกลไกจำเพาะของ UVB ที่ทำลาย DNA โดยตรง (สร้างพันธะผิดปกติระหว่าง thymine ที่อยู่ติดกันบนสาย DNA) — เชื่อมโยงกับกลไก DNA repair defect ที่เรียนใน Hallmarks of Cancer (T8-9 §8-9.5) หากซ่อมแซมไม่ทันจะนำไปสู่ mutation และมะเร็งผิวหนัง</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t10-envenomation">10.10 Envenomation and Bites</h2><span class="slide-ref">T10 · slide 195-210</span></div>
+
+      <div class="card">
+        <h3>Snake Bite — จำแนกตามพิษที่ออกฤทธิ์</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="280" y="8" width="140" height="34" rx="9" fill="var(--slate)"/>
+            <text x="350" y="30" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Snake Venom</text>
+            <line x1="350" y1="42" x2="350" y2="55" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="100" y1="55" x2="600" y2="55" stroke="var(--line-strong)" stroke-width="2"/>
+            <g font-size="10">
+              <line x1="100" y1="55" x2="100" y2="68" stroke="var(--line-strong)"/>
+              <rect x="20" y="68" width="160" height="50" rx="8" fill="var(--burgundy-soft)" stroke="var(--burgundy)"/>
+              <text x="100" y="88" text-anchor="middle" font-weight="700" fill="var(--burgundy)">Neurotoxin</text>
+              <text x="100" y="104" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Cobra, Krait</text>
+
+              <line x1="350" y1="55" x2="350" y2="68" stroke="var(--line-strong)"/>
+              <rect x="270" y="68" width="160" height="50" rx="8" fill="var(--eosin-soft)" stroke="var(--eosin)"/>
+              <text x="350" y="88" text-anchor="middle" font-weight="700" fill="var(--eosin)">Hematotoxin</text>
+              <text x="350" y="104" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Viper, Pit viper</text>
+
+              <line x1="600" y1="55" x2="600" y2="68" stroke="var(--line-strong)"/>
+              <rect x="520" y="68" width="160" height="50" rx="8" fill="var(--teal-soft)" stroke="var(--teal)"/>
+              <text x="600" y="88" text-anchor="middle" font-weight="700" fill="var(--teal)">Myotoxin</text>
+              <text x="600" y="104" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Sea snake</text>
+            </g>
+          </svg>
+          <div class="diagram-cap">Fig 10.6 — จำแนกงูพิษตามระบบที่พิษออกฤทธิ์</div>
+        </div>
+
+        <h4>1. งูที่ผลิตพิษต่อระบบประสาท (Neurotoxin)</h4>
+        <p><b>ชนิด:</b> งูจงอาง (King cobra), งูเห่าไทย (Cobra), งูเห่าพ่นพิษ (Spitting cobra), งูสามเหลี่ยม (Banded krait), งูทับสมิงคลา (Malayan krait)</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>อาการ</th><th>งูจงอาง/งูเห่า</th><th>งูสามเหลี่ยม/งูทับสมิงคลา</th></tr>
+            <tr><td>เฉพาะที่</td><td>บวม ปวด อักเสบชัดเจน อาจมีเนื้อเยื่อตาย (tissue necrosis)</td><td>บวมเล็กน้อย</td></tr>
+            <tr><td>Systemic</td><td colspan="2">กล้ามเนื้ออ่อนแรง: หนังตาตก พูดไม่ชัด กลืนลำบาก อัมพาต หายใจเองไม่ได้</td></tr>
+          </table>
+        </div>
+        <p><b>ความรุนแรง</b>ขึ้นกับอาการกล้ามเนื้ออ่อนแรง ซึ่งส่งผลให้เกิดภาวะ<b>หายใจล้มเหลว</b></p>
+
+        <h4>2. งูที่ผลิตพิษต่อระบบเลือด (Hematotoxin)</h4>
+        <p><b>ชนิด:</b> งูแมวเซา (Russell's viper), งูกะปะ (Malayan pit viper), งูเขียวหางไหม้ (Green pit viper)</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>งูแมวเซา</th><th>งูกะปะ, งูเขียวหางไหม้</th></tr>
+            <tr><td>เฉพาะที่</td><td>บวมเล็กน้อย</td><td>ปวดบวมชัดเจน ตั้งแต่น้อยจนถึงมาก อาจพบผิวหนังพองเป็นถุงน้ำ (blister), เลือดออกภายใน (hemorrhagic bleb), เลือดออกใต้ผิวหนัง (ecchymosis), เลือดซึมจากแผลเขี้ยว, บางรายมีเนื้อตาย</td></tr>
+            <tr><td>Systemic</td><td colspan="2">เลือดออกผิดปกติ: เลือดออกตามไรฟัน ผิวหนัง กล้ามเนื้อ ทางเดินอาหาร ทางเดินปัสสาวะ</td></tr>
+            <tr><td>กลไก</td><td>กระตุ้น factor X และ V → microthrombi อุดตันหลอดเลือด (DIC) — พิษต่อไตโดยตรงทำให้ไตวายเฉียบพลัน</td><td>Thrombin-like effect (กระตุ้น fibrinogen เป็น fibrin monomer แต่ไม่เกิด cross-linked fibrin) + เพิ่ม fibrinolytic activity → ย่อยสลาย fibrinogen → fibrinogen ต่ำ + เกล็ดเลือดต่ำ</td></tr>
+            <tr><td>Lab</td><td>VCT/20WBCT, CBC, platelet, Urinalysis, BUN, creatinine, electrolyte</td><td>VCT/20WBCT, CBC, platelet</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Russell's viper venom กระตุ้น coagulation factor โดยตรง → DIC → ไตวายเฉียบพลัน เชื่อมโยงกับกลไก DIC ที่เรียนใน T4 §4.6 (Thrombosis) — เป็นตัวอย่างของ DIC ที่เกิดจากสาเหตุภายนอกร่างกาย (exogenous trigger) ต่างจาก sepsis-induced DIC</div>
+
+        <h4>3. งูที่ผลิตพิษต่อระบบกล้ามเนื้อ (Myotoxin)</h4>
+        <p><b>ชนิด:</b> งูทะเล (Sea snake) — ความรุนแรงขึ้นกับภาวะ <b>rhabdomyolysis, ไตวายเฉียบพลัน, และภาวะโปแตสเซียมในเลือดสูง (hyperkalemia)</b> — ควรตรวจระดับ BUN, creatinine, electrolyte เพื่อประเมินภาวะไตวายเฉียบพลันและ hyperkalemia</p>
+      </div>
+
+      <div class="card">
+        <h3>Insect Stings vs Bites</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Sting</th><th>Bite</th></tr>
+            <tr><td>นิยาม</td><td>แมลงฉีดพิษเข้าสู่ร่างกาย</td><td>แมลงเจาะผิวหนังเพื่อดูดเลือด</td></tr>
+            <tr><td>สาเหตุ</td><td>Bees, Wasps, Hornets, Yellowjackets, Fire ants, Spiders, Scorpions</td><td>Mosquitoes (Malaria, Dengue), Chiggers (Scrub Typhus), Bed bugs, Lice, Ticks</td></tr>
+            <tr><td>Pathophysiology</td><td>แมลงฉีดพิษผ่าน stinger → immune system ตอบสนอง → mild: local skin reaction</td><td>แมลงเจาะผิวหนังระหว่างดูดเลือด → ฉีด anticoagulant saliva เล็กน้อย → กระตุ้น immune response</td></tr>
+            <tr><td>ภาวะแทรกซ้อน</td><td colspan="2">Vector-borne disease, Anaphylaxis, Secondary bacterial infection</td></tr>
+            <tr><td>อาการ</td><td>Irritation, Pruritis, Swelling, Redness, Allergic reaction, Intense pain and swelling</td><td>Swelling น้อยกว่า, Bump/blister, Intense pruritic, Anaphylaxis (Angioedema, Respiratory symptoms)</td></tr>
+            <tr><td>การรักษา</td><td colspan="2">Supportive (Clean area, Ice, Elevate, Pain management, Calamine lotion/topical steroid, Systemic corticosteroid/oral antihistamine); Secondary infection → Antibiotic; Anaphylaxis → Medical emergency, IM epinephrine</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t10-altitude">10.11 High Altitude Sickness</h2><span class="slide-ref">T10 · slide 211-213</span></div>
+      <div class="card">
+        <h3>สรีรวิทยาการปรับตัวต่อความสูง</h3>
+        <p>ที่ระดับน้ำทะเล O2 ~21% — เมื่อขึ้นที่สูง ↓O2 → hypoxemia → กระตุ้น peripheral chemoreceptor → ↑respiratory rate (↑O2, ↓CO2) → respiratory alkalosis</p>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="15" width="140" height="40" rx="9" fill="var(--slate-soft)" stroke="var(--slate)"/>
+            <text x="80" y="33" text-anchor="middle" font-size="10" font-weight="700" fill="var(--slate)">↓O2 (High altitude)</text>
+            <text x="80" y="47" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Hypoxemia</text>
+            <path d="M152 35 L182 35" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a10h)"/>
+
+            <rect x="187" y="15" width="150" height="40" rx="9" fill="var(--slate-soft)" stroke="var(--slate)"/>
+            <text x="262" y="33" text-anchor="middle" font-size="10" font-weight="700" fill="var(--slate)">↑Respiratory rate</text>
+            <text x="262" y="47" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Respiratory alkalosis</text>
+            <path d="M339 35 L369 35" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a10h)"/>
+
+            <rect x="374" y="15" width="150" height="40" rx="9" fill="var(--flame-soft)" stroke="var(--flame)"/>
+            <text x="449" y="33" text-anchor="middle" font-size="10" font-weight="700" fill="var(--flame)">↑Glycolysis (PFK)</text>
+            <text x="449" y="47" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">↑2,3-BPG</text>
+            <path d="M526 35 L556 35" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a10h)"/>
+
+            <rect x="561" y="15" width="130" height="40" rx="9" fill="var(--moss-soft)" stroke="var(--moss)"/>
+            <text x="626" y="33" text-anchor="middle" font-size="10" font-weight="700" fill="var(--moss)">Right shift OBC</text>
+            <text x="626" y="47" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">↑O2 delivery</text>
+
+            <rect x="100" y="90" width="500" height="50" rx="9" fill="#fff" stroke="var(--line-strong)"/>
+            <text x="350" y="110" text-anchor="middle" font-size="10" font-weight="700">Chronic hypoxia: ↑Erythropoietin → ↑Hematocrit/Hb</text>
+            <text x="350" y="126" text-anchor="middle" font-size="9" fill="var(--ink-soft)">+ ↑Mitochondria + Renal HCO3⁻ excretion (compensate) + RVH</text>
+            <defs><marker id="a10h" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 10.7 — กลไกการปรับตัวทางสรีรวิทยาต่อภาวะพร่องออกซิเจนที่ความสูง</div>
+        </div>
+        <ul class="plain">
+          <li>Respiratory alkalosis → ↑glycolysis (กระตุ้น phosphofructokinase, PFK) → ↑2,3-biphosphoglycerate (2,3-BPG) → <b>right shift ของ oxygen binding curve (OBC)</b> / เพิ่มการส่ง O2 ไปสู่เนื้อเยื่อ</li>
+          <li>Chronic hypoxia → ↑Erythropoietin → ↑hematocrit และ Hb</li>
+          <li>↑Mitochondria (เพิ่มประสิทธิภาพการใช้ O2)</li>
+          <li>ไตขับ HCO3⁻ เพื่อชดเชย respiratory alkalosis</li>
+          <li>Chronic hypoxic pulmonary vasoconstriction → Right Ventricular Hypertrophy (RVH) — กลไกนี้ช่วยลดเลือดที่ไหลไปเลี้ยงถุงลมที่อากาศเข้าไม่ดี เพื่อให้เลือดไหลไปเลี้ยงถุงลมที่ลมเข้าได้ดีกว่าแทน</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>High Altitude Sickness — 3 กลุ่มโรค</h3>
+        <p>กลุ่มโรคที่เกิดจากร่างกายไม่สามารถปรับตัวได้ในภาวะที่มีออกซิเจนน้อย</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>AMS<br><span class="eng">Acute Mountain Sickness</span></th><th>HACE<br><span class="eng">High Altitude Cerebral Edema</span></th><th>HAPE<br><span class="eng">High Altitude Pulmonary Edema</span></th></tr>
+            <tr><td>ระดับความสูง</td><td>&gt; 2,500 เมตรเหนือระดับน้ำทะเล</td><td>ต่อเนื่องจาก AMS</td><td>อาจเกิดเดี่ยว ๆ หรือร่วมกับ HACE</td></tr>
+            <tr><td>กลไก</td><td>ร่างกายปรับตัวไม่ทันต่อภาวะพร่องออกซิเจน</td><td>Increase cerebral blood flow (prioritization of oxygen delivery)</td><td>Pulmonary vasoconstriction และเพิ่ม pulmonary artery pressure</td></tr>
+            <tr><td>อาการ</td><td>ปวดศีรษะ มึนศีรษะ นอนไม่หลับ เหนื่อย หายใจเร็ว — มักเกิดหลังขึ้นที่สูง 4-10 ชั่วโมง</td><td>ปวดศีรษะรุนแรง คลื่นไส้อาเจียน เดินเซ เห็นภาพซ้อน รุนแรง: ชัก หมดสติ เสียชีวิต</td><td>เหนื่อยหอบ หายใจลำบากแม้ขณะพัก</td></tr>
+            <tr><td>การดำเนินโรค</td><td>ไม่รุนแรงมาก ร่างกายค่อย ๆ ปรับตัวได้เองใน 1-2 วัน</td><td>รุนแรง ต้องรีบพบแพทย์และลงจากที่สูงทันที</td><td>รุนแรง อาจเสียชีวิตได้ ต้องรีบพบแพทย์และลงจากที่สูงทันที</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>HACE และ HAPE เป็นภาวะฉุกเฉินที่ต้อง<b>ลงจากพื้นที่สูงทันที (immediate descent)</b> เป็นการรักษาหลักที่สำคัญที่สุด — ต่างจาก AMS ที่ร่างกายมักปรับตัวได้เองภายใน 1-2 วันโดยไม่จำเป็นต้องลงจากที่สูงทันที เว้นแต่อาการแย่ลง</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-divider">คำศัพท์สำคัญประจำหัวข้อ</div>
+      <div class="card">
+        <div class="glossary">
+          <div class="gterm"><b>Phase I/II metabolism</b>CYP450 oxidation → Conjugation</div>
+          <div class="gterm"><b>NAPQI</b>Toxic metabolite ของ paracetamol</div>
+          <div class="gterm"><b>Carboxyhemoglobin</b>Hb จับ CO แทน O2</div>
+          <div class="gterm"><b>Methemoglobin</b>Fe²⁺→Fe³⁺ ใน Hb</div>
+          <div class="gterm"><b>Basophilic stippling</b>RBC เก็บ rRNA จาก lead poisoning</div>
+          <div class="gterm"><b>Burton's line</b>เส้นดำที่เหงือกจาก lead</div>
+          <div class="gterm"><b>Itai-itai disease</b>โรคจากพิษ cadmium</div>
+          <div class="gterm"><b>Metallothionein</b>โปรตีนจับแคดเมียม</div>
+          <div class="gterm"><b>ADH/ALDH</b>เอนไซม์เมแทบอลิซึม ethanol</div>
+          <div class="gterm"><b>Fetal Alcohol Syndrome</b>ความผิดปกติทารกจากแอลกอฮอล์</div>
+          <div class="gterm"><b>EVALI</b>ปอดอักเสบจาก e-cigarette</div>
+          <div class="gterm"><b>Thymine dimer</b>DNA damage จาก UVB</div>
+          <div class="gterm"><b>Neurotoxin/Hematotoxin/Myotoxin</b>ชนิดพิษงูตามระบบที่ออกฤทธิ์</div>
+          <div class="gterm"><b>AMS/HACE/HAPE</b>กลุ่มโรคจากที่สูง</div>
+          <div class="gterm"><b>2,3-BPG</b>สาร shift OBC ไปทางขวาที่ high altitude</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
   <section class="tabpanel" id="panel-review">
     <div class="tabhero">
       <div class="kicker">Final Review</div>
       <h1>สรุป High-Yield ก่อนเข้าคาบ Quiz/Game</h1>
-      <p>รวมตารางเปรียบเทียบและคำศัพท์จาก T1-T9 ทั้งหมดไว้ในที่เดียว สำหรับทบทวนรอบสุดท้าย</p>
+      <p>รวมตารางเปรียบเทียบและคำศัพท์จาก T1-T10 ทั้งหมดไว้ในที่เดียว สำหรับทบทวนรอบสุดท้าย</p>
     </div>
     
     <div class="section">
-      <div class="section-head"><h2 id="rv-tables">8.1 ตารางเปรียบเทียบรวม (High-Yield Comparison)</h2></div>
-      <p class="section-lede">รวมตารางเปรียบเทียบทั้งหมดจาก T1-T9 ไว้ในที่เดียว สำหรับทบทวนรอบสุดท้ายก่อนเข้าคาบ Quiz</p>
+      <div class="section-head"><h2 id="rv-tables">9.1 ตารางเปรียบเทียบรวม (High-Yield Comparison)</h2></div>
+      <p class="section-lede">รวมตารางเปรียบเทียบทั้งหมดจาก T1-T10 ไว้ในที่เดียว สำหรับทบทวนรอบสุดท้ายก่อนเข้าคาบ Quiz</p>
 
       <div class="card">
         <h3>Reversible vs Irreversible Cell Injury</h3>
@@ -4845,10 +5567,59 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
           <tr><td>HTLV-1</td><td>Adult T-cell Leukemia/Lymphoma</td></tr>
         </table></div>
       </div>
+
+      <div class="section-divider">T10 · Environmental Pathology</div>
+
+      <div class="card">
+        <h3>Methemoglobin vs Sulfhemoglobin vs Carboxyhemoglobin</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Methemoglobin</th><th>Sulfhemoglobin</th><th>Carboxyhemoglobin</th></tr>
+          <tr><td>กลไก</td><td>Fe²⁺→Fe³⁺</td><td>H₂S + Fe³⁺</td><td>Hb+CO (affinity 200×O2)</td></tr>
+          <tr><td>สี/อาการ</td><td>Cyanosis</td><td>Cyanosis</td><td>Cherry red</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Heavy Metals Summary</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th>โลหะ</th><th>Target organ/โรค</th></tr>
+          <tr><td>Mercury</td><td>ระบบประสาท — Minamata disease</td></tr>
+          <tr><td>Lead</td><td>Heme synthesis, ระบบประสาท — Burton's line</td></tr>
+          <tr><td>Arsenic</td><td>ผิวหนัง/มะเร็ง — Arsenical keratosis</td></tr>
+          <tr><td>Cadmium</td><td>ไต/กระดูก — Itai-itai disease</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Heat Cramps vs Exhaustion vs Stroke</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Cramps</th><th>Exhaustion</th><th>Stroke</th></tr>
+          <tr><td>ลักษณะ</td><td>กล้ามเนื้อหดเกร็ง</td><td>ขาดน้ำ อ่อนเพลีย</td><td>&gt;40°C ไม่มีเหงื่อ ระบบประสาทผิดปกติ</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Neurotoxin vs Hematotoxin vs Myotoxin Snake</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th>ชนิดพิษ</th><th>งู</th><th>อาการเด่น</th></tr>
+          <tr><td>Neurotoxin</td><td>Cobra, Krait</td><td>กล้ามเนื้ออ่อนแรง หายใจล้มเหลว</td></tr>
+          <tr><td>Hematotoxin</td><td>Viper, Pit viper</td><td>เลือดออกผิดปกติ, DIC</td></tr>
+          <tr><td>Myotoxin</td><td>Sea snake</td><td>Rhabdomyolysis, Hyperkalemia</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>AMS vs HACE vs HAPE</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>AMS</th><th>HACE</th><th>HAPE</th></tr>
+          <tr><td>ลักษณะ</td><td>ปวดหัว มึนหัว (ไม่รุนแรง)</td><td>สมองบวม (รุนแรง)</td><td>ปอดบวมน้ำ (รุนแรง)</td></tr>
+          <tr><td>รักษา</td><td>ปรับตัวเองได้ใน 1-2 วัน</td><td>ลงจากที่สูงทันที</td><td>ลงจากที่สูงทันที</td></tr>
+        </table></div>
+      </div>
     </div>
 
     <div class="section">
-      <div class="section-head"><h2 id="rv-glossary">8.2 คำศัพท์รวมทั้งหมด (Master Glossary)</h2></div>
+      <div class="section-head"><h2 id="rv-glossary">9.2 คำศัพท์รวมทั้งหมด (Master Glossary)</h2></div>
       <div class="card">
         <div class="glossary">
           <div class="gterm"><b>Etiology</b>สาเหตุของโรค</div>
@@ -4906,12 +5677,19 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
           <div class="gterm"><b>Tumor marker</b>สารบ่งชี้มะเร็งในเลือด/ปัสสาวะ</div>
           <div class="gterm"><b>Paraneoplastic syndrome</b>กลุ่มอาการจากมะเร็งที่ไม่ใช่ผลจาก mass โดยตรง</div>
           <div class="gterm"><b>TNM Staging</b>ขอบเขตทางกายวิภาคของโรคมะเร็ง</div>
+          <div class="gterm"><b>Phase I/II metabolism</b>CYP450 oxidation → Conjugation</div>
+          <div class="gterm"><b>Carboxyhemoglobin</b>Hb จับ CO แทน O2</div>
+          <div class="gterm"><b>Basophilic stippling</b>RBC เก็บ rRNA จาก lead poisoning</div>
+          <div class="gterm"><b>ADH/ALDH</b>เอนไซม์เมแทบอลิซึม ethanol</div>
+          <div class="gterm"><b>Thymine dimer</b>DNA damage จาก UVB</div>
+          <div class="gterm"><b>Neurotoxin/Hematotoxin/Myotoxin</b>ชนิดพิษงูตามระบบที่ออกฤทธิ์</div>
+          <div class="gterm"><b>AMS/HACE/HAPE</b>กลุ่มโรคจากที่สูง</div>
         </div>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-head"><h2 id="rv-checklist">8.3 Checklist ก่อนเข้าห้อง Quiz</h2></div>
+      <div class="section-head"><h2 id="rv-checklist">9.3 Checklist ก่อนเข้าห้อง Quiz</h2></div>
       <div class="card">
         <ul class="plain">
           <li>☐ แยก Sign vs Symptom, Anatomical vs Clinical pathology ได้</li>
@@ -4949,6 +5727,14 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
           <li>☐ จับคู่ oncogenic virus กับมะเร็งที่เกี่ยวข้องได้</li>
           <li>☐ แยก grading vs staging (TNM) ได้</li>
           <li>☐ อธิบาย paraneoplastic syndrome ที่พบบ่อยได้</li>
+          <li>☐ อธิบาย Phase I/II detoxification และเชื่อมโยงกับ paracetamol overdose ได้</li>
+          <li>☐ แยก Methemoglobin/Sulfhemoglobin/Carboxyhemoglobin ได้</li>
+          <li>☐ จับคู่โลหะหนักกับ target organ/โรคเฉพาะได้ (Hg=Minamata, Pb=Burton's line, Cd=Itai-itai)</li>
+          <li>☐ อธิบายกลไก ethanol metabolism (ADH/ALDH) และเชื่อมโยงกับ Asian flush ได้</li>
+          <li>☐ แยกชนิดบาดแผลจากแรงกล 5 ชนิดได้</li>
+          <li>☐ แยก heat cramps/exhaustion/stroke และ hypothermia/frostbite ได้</li>
+          <li>☐ แยกพิษงูตามระบบที่ออกฤทธิ์ (neurotoxin/hematotoxin/myotoxin) ได้</li>
+          <li>☐ แยก AMS/HACE/HAPE ได้</li>
         </ul>
       </div>
     </div>
