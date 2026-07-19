@@ -34,6 +34,8 @@
   --burgundy-soft:#F3E5EC;
   --slate:#2E5C6E;
   --slate-soft:#E4EDF0;
+  --cyan:#1B6E7A;
+  --cyan-soft:#E2F0F1;
 
   --accent: var(--hema);
   --accent-soft: var(--hema-soft);
@@ -119,6 +121,7 @@ p{margin:0 0 0.9em 0;}
 .tabnav button[data-tab="t67"]{--tabcolor:var(--moss);}
 .tabnav button[data-tab="t89"]{--tabcolor:var(--burgundy);}
 .tabnav button[data-tab="t10"]{--tabcolor:var(--slate);}
+.tabnav button[data-tab="t11"]{--tabcolor:var(--cyan);}
 .tabnav button[data-tab="review"]{--tabcolor:var(--amber);}
 
 .shell{max-width:1180px;margin:0 auto;padding:32px 28px 100px 28px; display:grid; grid-template-columns:240px 1fr; gap:36px;}
@@ -223,6 +226,7 @@ ul.plain li{margin-bottom:5px;}
 #panel-t67{--accent:var(--moss); --accent-soft:var(--moss-soft);}
 #panel-t89{--accent:var(--burgundy); --accent-soft:var(--burgundy-soft);}
 #panel-t10{--accent:var(--slate); --accent-soft:var(--slate-soft);}
+#panel-t11{--accent:var(--cyan); --accent-soft:var(--cyan-soft);}
 #panel-review{--accent:var(--amber); --accent-soft:var(--amber-soft);}
 
 footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); font-size:0.78rem; font-family:'JetBrains Mono',monospace;}
@@ -248,7 +252,8 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
       <button data-tab="t67" onclick="showTab('t67')"><span class="tab-eyebrow">Session 06</span>Chronic Inflammation &amp; Repair</button>
       <button data-tab="t89" onclick="showTab('t89')"><span class="tab-eyebrow">Session 07</span>Neoplasia</button>
       <button data-tab="t10" onclick="showTab('t10')"><span class="tab-eyebrow">Session 08</span>Environmental Pathology</button>
-      <button data-tab="review" onclick="showTab('review')"><span class="tab-eyebrow">Session 09</span>Final Review</button>
+      <button data-tab="t11" onclick="showTab('t11')"><span class="tab-eyebrow">Session 09</span>Principle of Diagnosis</button>
+      <button data-tab="review" onclick="showTab('review')"><span class="tab-eyebrow">Session 10</span>Final Review</button>
     </nav>
   </div>
 </header>
@@ -5241,16 +5246,598 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
 
   </section>
 
+  <section class="tabpanel" id="panel-t11">
+    <div class="tabhero">
+      <div class="kicker">T11 · Principle of Pathological Diagnosis</div>
+      <h1>จากชิ้นเนื้อสู่การวินิจฉัย: กระบวนการเบื้องหลังรายงานผลพยาธิวิทยา</h1>
+      <p>Specimen handling, special stains, IHC, cytology, frozen section, molecular pathology จนถึง AI — เครื่องมือทั้งหมดที่พยาธิแพทย์ใช้ในการวินิจฉัยโรค</p>
+    </div>
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t11-pathologist">11.1 Pathologist: Who am I?</h2><span class="slide-ref">T11 · slide 4-10</span></div>
+      <div class="card">
+        <h3>นิยาม</h3>
+        <p><b>Pathologist</b> = แพทย์ผู้ได้รับใบอนุญาตประกอบวิชาชีพเวชกรรม ที่ผ่านการฝึกอบรมเฉพาะทางด้านการวินิจฉัยโรค (<span class="eng">licensed medical doctor who specialized in diagnosing diseases</span>)</p>
+        <h4>บทบาทหน้าที่ (Roles)</h4>
+        <ul class="plain">
+          <li>ตรวจชิ้นเนื้อ สารน้ำ และอวัยวะของร่างกาย (examining body tissues, fluids and organs)</li>
+          <li>วินิจฉัยและจัดหมวดหมู่เนื้องอก/สาเหตุของโรค (diagnose and categorize tumor/cause of diseases)</li>
+          <li>จัดระเบียบและควบคุมมาตรฐานห้องปฏิบัติการ (organize and control laboratory standard)</li>
+          <li>ทำงานร่วมกับสหสาขาวิชาชีพในคณะกรรมการ tumor board (multidisciplinary team)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>สาขาพยาธิแพทย์ในประเทศไทย (4 แขนงหลัก)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>สาขา</th><th>ชื่อไทย</th></tr>
+            <tr><td>Anatomical Pathology</td><td>พยาธิวิทยากายวิภาค</td></tr>
+            <tr><td>Clinical Pathology</td><td>พยาธิวิทยาคลินิก</td></tr>
+            <tr><td>Forensic Medicine</td><td>นิติเวชศาสตร์</td></tr>
+            <tr><td>Transfusion Medicine</td><td>เวชศาสตร์บริการโลหิต</td></tr>
+          </table>
+        </div>
+        <p>พยาธิแพทย์ในประเทศไทยเป็นสมาชิกของ <b>ราชวิทยาลัยพยาธิแพทย์แห่งประเทศไทย (Royal College of Pathologists of Thailand)</b></p>
+      </div>
+
+      <div class="card">
+        <h3>Pathology: Past → Present → Future</h3>
+        <p>วิวัฒนาการของพยาธิวิทยาเปลี่ยนจากการตรวจด้วยกล้องจุลทรรศน์แบบดั้งเดิม (traditional microscopy) ไปสู่ <b>Digital and Computational Pathology</b> ซึ่งเป็นการปฏิวัติวงการที่นำเทคโนโลยี whole slide imaging และ AI เข้ามาช่วยในการวินิจฉัย (รายละเอียดในหัวข้อ 11.10)</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t11-surgical">11.2 Surgical Pathology</h2><span class="slide-ref">T11 · slide 15-21</span></div>
+      <div class="card">
+        <h3>นิยาม</h3>
+        <p>การศึกษาชิ้นเนื้อ/อวัยวะที่ได้จากการผ่าตัด (<span class="eng">study of tissue samples/organs removed during surgery</span>) ครอบคลุมทั้ง biopsy และ resection specimen ถือเป็น <b>Gold standard</b> ของการวินิจฉัยโรคทางเนื้อเยื่อแบบชัดเจนถาวร (routine definite tissue diagnosis)</p>
+      </div>
+
+      <div class="card">
+        <h3>Specimen Handling — ขั้นตอนสำคัญ</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="30" width="140" height="55" rx="9" fill="var(--cyan-soft)" stroke="var(--cyan)"/>
+            <text x="80" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="var(--cyan)">Fresh specimen</text>
+            <text x="80" y="68" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">จากห้องผ่าตัด</text>
+            <path d="M152 57 L182 57" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a11a)"/>
+
+            <rect x="187" y="30" width="150" height="55" rx="9" fill="var(--cyan-soft)" stroke="var(--cyan)"/>
+            <text x="262" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="var(--cyan)">Fixation</text>
+            <text x="262" y="68" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">10% NBF</text>
+            <path d="M339 57 L369 57" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a11a)"/>
+
+            <rect x="374" y="30" width="150" height="55" rx="9" fill="var(--cyan-soft)" stroke="var(--cyan)"/>
+            <text x="449" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="var(--cyan)">Processing</text>
+            <text x="449" y="68" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">FFPE Block</text>
+            <path d="M526 57 L556 57" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a11a)"/>
+
+            <rect x="561" y="30" width="130" height="55" rx="9" fill="var(--cyan-soft)" stroke="var(--cyan)"/>
+            <text x="626" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="var(--cyan)">H&amp;E Slide</text>
+            <text x="626" y="68" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">อ่านผลโดยพยาธิแพทย์</text>
+            <defs><marker id="a11a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 11.1 — Surgical pathology workflow จาก specimen สู่ H&amp;E slide</div>
+        </div>
+
+        <h4>Fixation (การคงสภาพชิ้นเนื้อ)</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>รายการ</th><th>รายละเอียด</th></tr>
+            <tr><td>สารคงสภาพ (Preservative)</td><td><b>10% Neutral Buffer Formalin (NBF)</b> — ที่ SDVH เตรียม 10% formalin เอง</td></tr>
+            <tr><td>อัตราส่วนที่เหมาะสม</td><td>Formalin ต่อชิ้นเนื้อ <b>10-20 เท่า</b> โดยปริมาตร (10-20:1) — หากน้อยกว่านี้ (น้อยไป) เนื้อเยื่อตรงกลางจะ underfixed และเน่าเสียได้ (central area shows underfixative tissue)</td></tr>
+            <tr><td>อัตราการซึมผ่านของ Formalin</td><td><b>1 mm/hour</b> — เป็นตัวกำหนดระยะเวลาที่ต้องแช่ก่อนนำไป process (ชิ้นเนื้อหนายิ่งต้องแช่นานขึ้นตามสัดส่วน)</td></tr>
+          </table>
+        </div>
+        <p>หลัง fixation แล้ว เนื้อเยื่อจะถูกฝังใน paraffin wax กลายเป็น <b>FFPE Block (Formalin-Fixed Paraffin-Embedded block)</b> ซึ่งสามารถตัดเป็นแผ่นบางย้อมสีด้วยวิธีมาตรฐาน <b>Hematoxylin-Eosin (H&amp;E)</b> เพื่อดูใต้กล้องจุลทรรศน์</p>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>ถ้าปริมาณ formalin น้อยเกินไปเทียบกับขนาดชิ้นเนื้อ (ต่ำกว่า 10:1) จะทำให้ fixation ไม่ทั่วถึง (underfixation) โดยเฉพาะบริเวณกลางก้อนเนื้อเยื่อขนาดใหญ่ — ส่งผลให้เนื้อเยื่อเน่าเสียก่อนจะถูก fix อย่างสมบูรณ์ กระทบต่อคุณภาพการอ่านผลทางพยาธิวิทยา เป็นจุดสำคัญที่ influence คุณภาพรายงานผล</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t11-stains">11.3 Histochemical Studies (Special Stains)</h2><span class="slide-ref">T11 · slide 23-30</span></div>
+      <p class="section-lede">เมื่อ H&amp;E stain มาตรฐานไม่เพียงพอต่อการระบุองค์ประกอบเฉพาะในเนื้อเยื่อ พยาธิแพทย์จะสั่ง special stain เพิ่มเติมเพื่อเน้นให้เห็นโครงสร้างหรือสารเฉพาะ — ต้องจำคู่ stain-target ให้แม่นเพราะข้อสอบชอบถามแบบจับคู่</p>
+
+      <div class="card">
+        <h3>Special Stains — ตารางเต็มรูปแบบ</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Special Stain</th><th>ใช้ตรวจหา (Study for)</th></tr>
+            <tr><td>PAS<br><span class="eng">Periodic Acid-Schiff</span></td><td>ความหนาของ basement membrane, Glycogen, Fungal organisms</td></tr>
+            <tr><td>GMS<br><span class="eng">Gomori's Methenamine Silver</span></td><td>Fungal organisms, Cutaneous <i>Pneumocystis carinii</i></td></tr>
+            <tr><td>Ziehl-Neelsen &amp; Fite stains</td><td>Acid-Fast organisms (AFB) — เชื้อวัณโรคและเชื้อกลุ่ม mycobacteria</td></tr>
+            <tr><td>Gram stain</td><td>แบคทีเรีย (Bacteria)</td></tr>
+            <tr><td>Steiner &amp; Warthin-Starry stains</td><td>Bacillary angiomatosis, Spirochete</td></tr>
+            <tr><td>Giemsa</td><td>Mast cells, Protozoa (เช่น <i>Leishmania</i>)</td></tr>
+            <tr><td>Mucicarmine</td><td>Mucin</td></tr>
+            <tr><td>Alcian blue</td><td>pH 2.5: acid mucopolysaccharides · pH 0.5: sulfate mucopolysaccharides</td></tr>
+            <tr><td>Congo red</td><td>Amyloid</td></tr>
+            <tr><td>Elastic van Gieson (EVG)</td><td>Elastic fibers</td></tr>
+            <tr><td>Fontana-Masson</td><td>Melanin</td></tr>
+            <tr><td>von Kossa</td><td>Calcium</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>จัดกลุ่ม Special Stains ตามประเภทเป้าหมาย</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 760 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="300" y="8" width="160" height="34" rx="9" fill="var(--cyan)"/>
+            <text x="380" y="30" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Special Stains</text>
+            <line x1="380" y1="42" x2="380" y2="55" stroke="var(--line-strong)" stroke-width="2"/>
+            <line x1="80" y1="55" x2="680" y2="55" stroke="var(--line-strong)" stroke-width="2"/>
+            <g font-size="9.5">
+              <line x1="80" y1="55" x2="80" y2="68" stroke="var(--line-strong)"/>
+              <rect x="15" y="68" width="130" height="55" rx="8" fill="var(--cyan-soft)" stroke="var(--cyan)"/>
+              <text x="80" y="88" text-anchor="middle" font-weight="700" fill="var(--cyan)">Microorganism</text>
+              <text x="80" y="103" text-anchor="middle" font-size="8" fill="var(--ink-soft)">GMS, AFB, Gram,</text>
+              <text x="80" y="114" text-anchor="middle" font-size="8" fill="var(--ink-soft)">Steiner, Giemsa</text>
+
+              <line x1="230" y1="55" x2="230" y2="68" stroke="var(--line-strong)"/>
+              <rect x="165" y="68" width="130" height="55" rx="8" fill="var(--cyan-soft)" stroke="var(--cyan)"/>
+              <text x="230" y="88" text-anchor="middle" font-weight="700" fill="var(--cyan)">Carbohydrate</text>
+              <text x="230" y="103" text-anchor="middle" font-size="8" fill="var(--ink-soft)">PAS, Mucicarmine,</text>
+              <text x="230" y="114" text-anchor="middle" font-size="8" fill="var(--ink-soft)">Alcian blue</text>
+
+              <line x1="380" y1="55" x2="380" y2="68" stroke="var(--line-strong)"/>
+              <rect x="315" y="68" width="130" height="55" rx="8" fill="var(--cyan-soft)" stroke="var(--cyan)"/>
+              <text x="380" y="88" text-anchor="middle" font-weight="700" fill="var(--cyan)">Connective</text>
+              <text x="380" y="103" text-anchor="middle" font-size="8" fill="var(--ink-soft)">EVG (elastic),</text>
+              <text x="380" y="114" text-anchor="middle" font-size="8" fill="var(--ink-soft)">Congo red (amyloid)</text>
+
+              <line x1="530" y1="55" x2="530" y2="68" stroke="var(--line-strong)"/>
+              <rect x="465" y="68" width="130" height="55" rx="8" fill="var(--cyan-soft)" stroke="var(--cyan)"/>
+              <text x="530" y="88" text-anchor="middle" font-weight="700" fill="var(--cyan)">Pigment</text>
+              <text x="530" y="103" text-anchor="middle" font-size="8" fill="var(--ink-soft)">Fontana-Masson</text>
+              <text x="530" y="114" text-anchor="middle" font-size="8" fill="var(--ink-soft)">(melanin)</text>
+
+              <line x1="680" y1="55" x2="680" y2="68" stroke="var(--line-strong)"/>
+              <rect x="615" y="68" width="130" height="55" rx="8" fill="var(--cyan-soft)" stroke="var(--cyan)"/>
+              <text x="680" y="88" text-anchor="middle" font-weight="700" fill="var(--cyan)">Mineral</text>
+              <text x="680" y="103" text-anchor="middle" font-size="8" fill="var(--ink-soft)">von Kossa</text>
+              <text x="680" y="114" text-anchor="middle" font-size="8" fill="var(--ink-soft)">(calcium)</text>
+            </g>
+          </svg>
+          <div class="diagram-cap">Fig 11.2 — จัดกลุ่ม special stains ตามประเภทเป้าหมายที่ต้องการตรวจ</div>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>PAS และ GMS ทั้งคู่ตรวจ fungal organisms ได้</b> แต่ PAS ยังใช้ตรวจ basement membrane thickness และ glycogen ได้ด้วย (ใช้กว้างกว่า) ในขณะที่ GMS ใช้เฉพาะทาง fungal และ <i>Pneumocystis</i> — ข้อสอบมักถามแยกว่า stain ใดใช้ตรวจ <i>Pneumocystis carinii</i> โดยเฉพาะ (คำตอบคือ GMS)</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t11-ihc">11.4 Immunohistochemical (IHC) Studies</h2><span class="slide-ref">T11 · slide 32-40</span></div>
+      <div class="card">
+        <h3>หลักการพื้นฐาน</h3>
+        <p>IHC เป็นเทคนิคที่ใช้ <b>antibody</b> ไปจับกับ <b>antigen (โปรตีนเป้าหมาย)</b> บนเนื้อเยื่อ เพื่อให้พยาธิแพทย์สามารถมองเห็นและระบุตำแหน่งของโปรตีนนั้นในเซลล์ได้ใต้กล้องจุลทรรศน์ — ใช้เพื่อ<b>สนับสนุนการวินิจฉัย</b> โดยเฉพาะเมื่อ morphology จาก H&amp;E เพียงอย่างเดียวไม่เพียงพอต่อการระบุชนิดของเนื้องอก</p>
+        <p>ปฏิกิริยา antibody-antigen จะถูกตรวจจับผ่านระบบ <b>chromogenic</b> (เปลี่ยนสี มองเห็นได้ด้วยกล้องจุลทรรศน์แบบใช้แสงทั่วไป) หรือ <b>fluorescent</b> (เรืองแสง ต้องใช้กล้องจุลทรรศน์ฟลูออเรสเซนต์)</p>
+      </div>
+
+      <div class="card">
+        <h3>ตัวอย่าง IHC Panel สำหรับ Lymphoma Workup</h3>
+        <p>ในทางปฏิบัติ พยาธิแพทย์มักสั่ง IHC เป็น <b>panel</b> (ชุดหลายตัว) เพื่อจำแนกชนิดของ lymphoid neoplasm ให้แม่นยำ ตัวอย่าง panel ที่ใช้บ่อย:</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Marker</th><th>ใช้ระบุ</th></tr>
+            <tr><td>CD3</td><td>T-lymphocyte</td></tr>
+            <tr><td>CD20</td><td>B-lymphocyte</td></tr>
+            <tr><td>CD10, BCL6</td><td>Germinal center B-cell marker</td></tr>
+            <tr><td>MUM1</td><td>Post-germinal center/plasmacytic differentiation marker</td></tr>
+            <tr><td>MYC, BCL2</td><td>Oncoprotein ที่เกี่ยวข้องกับ aggressive lymphoma (double-expressor lymphoma)</td></tr>
+            <tr><td>Ki-67</td><td>Proliferation index (สัดส่วนเซลล์ที่กำลังแบ่งตัว)</td></tr>
+            <tr><td>Cyclin D1</td><td>Mantle cell lymphoma marker</td></tr>
+            <tr><td>SOX11</td><td>Mantle cell lymphoma marker (จำเพาะสูง)</td></tr>
+            <tr><td>EBER</td><td>In-situ hybridization ตรวจหา EBV-encoded RNA</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>Ki-67</b> เป็น proliferation marker ที่ใช้ประเมิน <b>grading</b> ของเนื้องอกหลายชนิด (เชื่อมโยงกับ Grading ใน T8-9 §8-9.11) ยิ่งเปอร์เซ็นต์ Ki-67 สูง ยิ่งบ่งชี้ว่าเนื้องอกแบ่งตัวเร็วและมีแนวโน้มรุนแรงกว่า</div>
+      </div>
+
+      <div class="card">
+        <h3>Whole Slide Imaging (WSI)</h3>
+        <p>เทคโนโลยีที่แปลงสไลด์แก้วให้เป็นภาพดิจิทัลความละเอียดสูง ทำให้สามารถดูภาพ H&amp;E และ IHC (เช่น CD3, CD20) ผ่านหน้าจอคอมพิวเตอร์ได้ — เป็นรากฐานสำคัญของ Digital Pathology และ AI ในงานพยาธิวิทยา (เชื่อมโยงกับหัวข้อ 11.10)</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t11-cytology">11.5 Cytology</h2><span class="slide-ref">T11 · slide 43-68</span></div>
+      <div class="card">
+        <h3>บทบาทของ Cytology</h3>
+        <ul class="plain">
+          <li>ตรวจหาและ mapping โรคอักเสบที่เกิดจากเชื้อโรคในตำแหน่งต่าง ๆ</li>
+          <li>ตรวจหาเลือดออกเฉียบพลันและเลือดออกในอดีตในน้ำไขสันหลัง (CSF)</li>
+          <li>ระบุและจำแนกชนิดเซลล์มะเร็งเบื้องต้นตามแหล่งกำเนิด</li>
+          <li>แยกมะเร็งที่แพร่กระจาย (metastatic) จากมะเร็งปฐมภูมิ (primary)</li>
+          <li>ประเมิน staging ของมะเร็งทางโลหิตวิทยา</li>
+          <li>คัดกรองมะเร็งปากมดลูก (Cervical cancer screening)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Gynecologic Specimen</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>วิธี</th><th>รายละเอียด</th></tr>
+            <tr><td>Conventional Pap Smear</td><td>ตรวจคัดกรองมะเร็งปากมดลูก ย้อมด้วยวิธี <b>Papanicolaou stain</b> เก็บตัวอย่างผ่าน PV examination โดยใช้ Coplin jar ในการย้อมสี</td></tr>
+            <tr><td>Liquid-Based Cytology (LBC)</td><td>วิธีใหม่กว่าสำหรับ cervical smear — สามารถทำร่วมกับ <b>Cytology &amp; HPV DNA test (Cotest)</b> ได้ในตัวอย่างเดียวกัน</td></tr>
+          </table>
+        </div>
+        <h4>Staining Methods ใน Cytology</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Stain</th><th>ใช้กับ</th></tr>
+            <tr><td>Diff-Quik stain</td><td>ย้อมเร็ว ใช้บ่อยในการประเมินความเพียงพอของตัวอย่างระหว่างทำหัตถการ (rapid on-site evaluation)</td></tr>
+            <tr><td>Papanicolaou (Pap) stain</td><td>มาตรฐานสำหรับ gynecologic specimen — ให้รายละเอียดของ nuclear feature ชัดเจน</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Non-Gynecologic Specimen: Body Cavity Fluid</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ชนิดของเหลว</th><th>ตัวอย่าง</th></tr>
+            <tr><td colspan="2">Pleural effusion, Pericardial effusion, Ascites/Peritoneal washing, Cerebrospinal fluid (CSF), Synovial fluid, Vitreous fluid, Bronchoalveolar lavage (BAL) fluid</td></tr>
+          </table>
+        </div>
+        <h4>หลักการเก็บและนำส่งตัวอย่าง</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ประเด็น</th><th>ข้อกำหนด</th></tr>
+            <tr><td>ปริมาตรที่เหมาะสม</td><td>โดยทั่วไป <b>50-100 mL หรือมากกว่า</b> · CSF: อย่างน้อย 1 mL (แนะนำ 3-10 mL) · Vitreous fluid: ปริมาณเท่าใดก็ได้</td></tr>
+            <tr><td>ระยะเวลา</td><td>ควรนำส่งและประมวลผลทันทีหรือภายใน 1 ชั่วโมงหลังเก็บ</td></tr>
+            <tr><td>สารกันเสีย</td><td><b>ห้ามใส่สารกันเสีย (No fixative!)</b></td></tr>
+            <tr><td>การขนส่ง</td><td>นำส่งที่อุณหภูมิห้อง (room temperature)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Non-Gynecologic Specimen: Fine Needle Aspiration (FNA)</h3>
+        <p>วิธีเก็บตัวอย่างเซลล์จากก้อนเนื้อโดยใช้เข็มขนาดเล็กเจาะดูด — พบบ่อยที่: เต้านม, ต่อมไทรอยด์, ต่อมน้ำเหลือง</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Alcohol-Fixed Smear</th><th>Air-Dried Smear</th></tr>
+            <tr><td>วิธีเตรียม</td><td>แช่ใน 95% alcohol ทันทีหลัง smear บนแผ่นสไลด์</td><td>ปล่อยให้แห้งในอากาศ</td></tr>
+            <tr><td>ใช้สำหรับ</td><td>การย้อมสีมาตรฐาน (Pap stain) เพื่อประเมิน nuclear detail</td><td><b>Rapid On-Site Evaluation (ROSE)</b> — ย้อมด้วย <b>Wright stain</b> เพื่อประเมินความเพียงพอของตัวอย่างทันทีขณะทำหัตถการ</td></tr>
+            <tr><td>การขนส่ง</td><td colspan="2">นำส่งที่อุณหภูมิห้อง</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>ขั้นตอนการเตรียม Cytology Specimen</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 90" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="5" y="25" width="100" height="40" rx="7" fill="var(--cyan-soft)" stroke="var(--cyan)"/><text x="55" y="49" text-anchor="middle" font-size="9.5">Registration</text>
+            <path d="M107 45 L128 45" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#a11c)"/>
+            <rect x="132" y="25" width="100" height="40" rx="7" fill="var(--cyan-soft)" stroke="var(--cyan)"/><text x="182" y="49" text-anchor="middle" font-size="9.5">Processing</text>
+            <path d="M234 45 L255 45" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#a11c)"/>
+            <rect x="259" y="25" width="110" height="40" rx="7" fill="var(--cyan-soft)" stroke="var(--cyan)"/><text x="314" y="49" text-anchor="middle" font-size="9.5">Slide Making</text>
+            <path d="M371 45 L392 45" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#a11c)"/>
+            <rect x="396" y="25" width="100" height="40" rx="7" fill="var(--cyan-soft)" stroke="var(--cyan)"/><text x="446" y="49" text-anchor="middle" font-size="9.5">Staining</text>
+            <path d="M498 45 L519 45" stroke="var(--ink-faint)" stroke-width="1.5" marker-end="url(#a11c)"/>
+            <rect x="523" y="25" width="90" height="40" rx="7" fill="var(--eosin-soft)" stroke="var(--eosin)"/><text x="568" y="49" text-anchor="middle" font-size="9.5" fill="var(--eosin)">Diagnosis</text>
+            <defs><marker id="a11c" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 11.3 — ขั้นตอนการเตรียม cytology specimen</div>
+        </div>
+        <ul class="plain">
+          <li><b>Registration</b> — บันทึกข้อมูลระบุตัวตน (identification data)</li>
+          <li><b>Processing</b> — ตรวจสอบลักษณะ gross ของตัวอย่าง</li>
+          <li><b>Slide Making</b> — เทคนิค <b>Cytocentrifugation</b> หรือ <b>Membrane filtration</b></li>
+          <li><b>Staining</b> — Papanicolaou, Giemsa-Wright, Diff-Quik ± <b>Cell block</b> (การนำเซลล์ที่เหลือจากตัวอย่างของเหลวมาทำเป็นก้อนคล้าย tissue block เพื่อทำ IHC เพิ่มเติมได้)</li>
+          <li><b>Diagnosis</b> — อ่านผลโดย Cytotechnologist ก่อน แล้วส่งต่อให้ Pathologist ยืนยัน</li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t11-frozen">11.6 Intraoperative Consultation (Frozen Section)</h2><span class="slide-ref">T11 · slide 70-73</span></div>
+      <div class="card">
+        <h3>นิยามและหลักการ</h3>
+        <p>การวินิจฉัยแบบเร่งด่วน (urgent diagnosis) ระหว่างการผ่าตัด — ชิ้นเนื้อสดถูกส่งจากห้องผ่าตัดทันที (fresh tissue immediately sent from operative room) แล้วนำไปฝังใน mounting media และแช่แข็งในไนโตรเจนเหลว (freeze in liquid nitrogen) จากนั้นตัดแผ่นบางภายใต้อุณหภูมิ <b>-20°C</b> ด้วยเครื่อง <b>cryostat</b> แล้วย้อมด้วย H&amp;E stain</p>
+        <p><b>Turnaround time: 30 นาที</b> — เร็วกว่ากระบวนการ FFPE แบบมาตรฐานมาก เพราะไม่ผ่านขั้นตอน fixation/processing ที่ใช้เวลานาน</p>
+      </div>
+
+      <div class="card">
+        <h3>ตัวอย่างการใช้งานทางคลินิก</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>สถานการณ์</th><th>วัตถุประสงค์</th></tr>
+            <tr><td>Sentinel axillary lymph node ในมะเร็งเต้านม</td><td>ประเมินการแพร่กระจายของมะเร็ง ณ ขณะผ่าตัด</td></tr>
+            <tr><td>ประเมิน margin status ในมะเร็งศีรษะและคอ</td><td>ตรวจสอบว่าตัดเนื้องอกออกหมดหรือไม่</td></tr>
+            <tr><td>เนื้อเยื่อสมอง</td><td>แยก lymphoma จาก solid tumor</td></tr>
+            <tr><td>ประเมิน ganglion ในการผ่าตัด Hirschsprung's disease</td><td>ยืนยันว่ามี ganglion cell อยู่ในตำแหน่งที่ตัดต่อลำไส้</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Frozen Section vs Permanent Section</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Frozen Section</th><th>Permanent Section</th></tr>
+            <tr><td>เวลา</td><td>~30 นาที</td><td>1-3 วัน (ต้องผ่าน fixation/processing เต็มรูปแบบ)</td></tr>
+            <tr><td>คุณภาพภาพ</td><td>ต่ำกว่า มี artifact จากการแช่แข็ง (freezing artifact)</td><td>คุณภาพสูงสุด เป็นมาตรฐานสุดท้าย</td></tr>
+            <tr><td>วัตถุประสงค์</td><td>ตัดสินใจระหว่างผ่าตัด (intraoperative decision)</td><td>วินิจฉัยขั้นสุดท้าย (definitive diagnosis)</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>Frozen section ให้ผลเร็วแต่<b>คุณภาพภาพด้อยกว่า permanent section เสมอ</b> เนื่องจาก freezing artifact — จึงใช้เฉพาะเพื่อการตัดสินใจเฉพาะหน้าระหว่างผ่าตัด (เช่น ตัดเนื้อเยื่อเพิ่มหรือไม่) ไม่ใช่การวินิจฉัยขั้นสุดท้าย ซึ่งยังต้องรอผล permanent section ที่ผ่าน FFPE ตามปกติเสมอ</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t11-autopsy">11.7 Autopsy</h2><span class="slide-ref">T11 · slide 75-77</span></div>
+      <div class="card">
+        <h3>นิยาม</h3>
+        <p>การตรวจศพหลังการเสียชีวิตเพื่อวัตถุประสงค์ทางวิชาการ (<span class="eng">postmortem examination for academic purpose</span>)</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Autopsy</th><th>Necropsy</th></tr>
+            <tr><td>ขอบเขต</td><td>ผ่าศพทั้งร่าง (ผ่าศพทั้งร่าง แช่ตู้เย็นแช่ศพ ไม่ต้องฉีดฟอร์มาลีน)</td><td>ตรวจชิ้นเนื้อบางส่วนของอวัยวะหลังผู้ป่วยเสียชีวิต (biopsy อวัยวะบางส่วนหลังผู้ป่วยเสียชีวิต)</td></tr>
+            <tr><td>การจัดเก็บ specimen</td><td colspan="2">ใส่ specimen ใน 10% NBF เหมือน routine surgical pathology</td></tr>
+          </table>
+        </div>
+        <p><b>ข้อห้ามสำคัญ:</b> ไม่ผ่าศพที่ตายผิดธรรมชาติหรือมีแนวโน้มจะเป็นคดีความ (ต้องส่งต่อแพทย์นิติเวชแทน)</p>
+      </div>
+
+      <div class="card">
+        <h3>การตายผิดธรรมชาติที่ต้องผ่าชันสูตร (ตามกฎหมายไทย ป.วิ.อ. มาตรา 148, 150)</h3>
+        <ul class="plain">
+          <li>ตายโดยอุบัติเหตุ ภัยพิบัติ</li>
+          <li>ฆ่าตัวตาย</li>
+          <li>ถูกสัตว์ทำร้าย</li>
+          <li>ถูกผู้อื่นทำให้ตาย (ฆาตกรรม)</li>
+          <li>ตายโดยมิปรากฏเหตุ</li>
+          <li><b>รวมถึง</b> ตายในระหว่างการควบคุมของเจ้าหน้าที่</li>
+        </ul>
+        <p>กรณีข้างต้นทั้งหมด <b>ต้องส่งแพทย์นิติเวช</b> ไม่ใช่พยาธิแพทย์ทั่วไป</p>
+      </div>
+
+      <div class="card">
+        <h3>Specimen Collection Time (ระยะเวลาการเก็บรักษาตัวอย่าง)</h3>
+        <p>กำหนดโดย Royal College of Pathologists of Thailand — ข้อสอบมักถามจับคู่ชนิด specimen กับระยะเวลาเก็บ</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ชนิด Specimen</th><th>ระยะเวลาเก็บ (Duration)</th></tr>
+            <tr><td>Surgical pathology specimen</td><td>2 สัปดาห์หลังออกผล (sign out)</td></tr>
+            <tr><td>Fluid cytology specimen</td><td>2 สัปดาห์หลังออกผล</td></tr>
+            <tr><td>Organs from autopsy</td><td>3 เดือนหลังออกผล</td></tr>
+            <tr><td>Glass slide</td><td><b>5 ปี</b></td></tr>
+            <tr><td>FFPE block</td><td><b>5 ปี</b></td></tr>
+            <tr><td>Pathological report</td><td><b>10 ปี</b></td></tr>
+            <tr><td>Request form</td><td><b>10 ปี</b></td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>สังเกตรูปแบบ: <b>เอกสาร/บันทึกถาวร (report, request form) เก็บนานที่สุด (10 ปี)</b> ตามด้วย <b>slide/block ที่ใช้อ้างอิงย้อนหลังได้ (5 ปี)</b> และ<b>ตัวอย่างสด/ของเหลวที่เสื่อมสภาพเร็ว เก็บสั้นที่สุด (2 สัปดาห์-3 เดือน)</b> — จำ pattern นี้แทนการท่องจำตัวเลขแยกทีละรายการจะง่ายกว่า</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t11-report">11.8 How to Read a Pathological Report</h2><span class="slide-ref">T11 · slide 79-82</span></div>
+      <div class="card">
+        <h3>องค์ประกอบของรายงานผลพยาธิวิทยา (เรียงตามลำดับที่ควรอ่าน)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>องค์ประกอบ</th><th>รายละเอียด</th></tr>
+            <tr><td>Identification data</td><td><b>ต้องเช็คเป็นอันดับแรกเสมอ (**first**)</b> — ชื่อ นามสกุล HN ให้ตรงกับผู้ป่วย</td></tr>
+            <tr><td>Clinical information</td><td>ประวัติทางคลินิกที่แพทย์ผู้ส่งตรวจให้มา</td></tr>
+            <tr><td>Gross description</td><td>ลักษณะที่เห็นด้วยตาเปล่าขณะตัดชิ้นเนื้อ · สำหรับ cytology: ปริมาณและคุณภาพของตัวอย่าง (specimen quantity &amp; quality)</td></tr>
+            <tr><td>Microscopic description</td><td>ลักษณะที่เห็นใต้กล้องจุลทรรศน์</td></tr>
+            <tr><td>Diagnosis</td><td>การวินิจฉัย — อาจเป็น Provisional (ชั่วคราว) หรือ Final diagnosis (สุดท้าย) · สำหรับ cytology: การจัดหมวดหมู่ตามระบบอวัยวะ</td></tr>
+            <tr><td>Comment, note</td><td>ข้อสังเกตเพิ่มเติมจากพยาธิแพทย์</td></tr>
+            <tr><td>Signature</td><td>ลายเซ็นของพยาธิแพทย์ผู้รับผิดชอบ (attending pathologist)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>การจัดหมวดหมู่ผลในรายงาน Cytology</h3>
+        <p>สำหรับตัวอย่าง cytology ผลจะถูกจัดกลุ่มเป็นระดับความเสี่ยง แทนการให้ diagnosis ที่แน่นอนแบบ histology เนื่องจาก cytology ให้ข้อมูลเซลล์เดี่ยว ไม่เห็นโครงสร้างเนื้อเยื่อทั้งหมด:</p>
+        <ul class="plain">
+          <li><b>Nondiagnostic</b> — ตัวอย่างไม่เพียงพอต่อการวินิจฉัย</li>
+          <li><b>Negative for malignancy</b> — ไม่พบเซลล์มะเร็ง</li>
+          <li><b>AUS (Atypical of Undetermined Significance)</b> — พบเซลล์ผิดปกติแต่ยังสรุปไม่ได้</li>
+          <li><b>Suspicious for malignancy</b> — สงสัยมะเร็งแต่ยังไม่ฟันธง</li>
+          <li><b>Positive for malignancy</b> — พบเซลล์มะเร็งชัดเจน</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>วันที่สำคัญ 4 วันที่ปรากฏในรายงาน</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>วันที่</th><th>ความหมาย</th></tr>
+            <tr><td>วันที่ทำ procedure</td><td>วันที่เก็บตัวอย่างจากผู้ป่วย</td></tr>
+            <tr><td>วันรับลงทะเบียนที่หน่วย</td><td>วันที่ห้องปฏิบัติการรับตัวอย่างเข้าระบบ</td></tr>
+            <tr><td>วันตัด gross specimen</td><td>วันที่พยาธิแพทย์/ผู้ช่วยตัดชิ้นเนื้อเพื่อเตรียม processing</td></tr>
+            <tr><td>วันที่พยาธิแพทย์ออกรายงานผล</td><td>วันที่ final report เสร็จสมบูรณ์</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>เมื่อได้รับผลตรวจ ต้องเช็ค <b>Identification data ก่อนเป็นอันดับแรกเสมอ</b> เพื่อป้องกันความผิดพลาดในการนำผลไปใช้กับผู้ป่วยผิดคน (patient identification error) — เป็นหลัก patient safety พื้นฐานที่สุดของการอ่านผลทางห้องปฏิบัติการทุกชนิด ไม่ใช่แค่พยาธิวิทยา</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t11-molecular">11.9 Molecular Pathology</h2><span class="slide-ref">T11 · slide 85-97 <span style="color:var(--cyan)">+ เสริมหลักการเต็มจาก Robbins</span></span></div>
+      <div class="card">
+        <h3>นิยาม</h3>
+        <p>สาขาที่กำลังเติบโตอย่างรวดเร็ว (emerging discipline) ที่วินิจฉัยโรคโดยการตรวจโมเลกุล: <b>DNA, RNA และโปรตีน</b> ในเนื้อเยื่อและสารน้ำร่างกาย — วิเคราะห์การเปลี่ยนแปลงทางพันธุกรรม/โมเลกุลระดับ submicroscopic เพื่อจำแนกมะเร็งหรือเชื้อก่อโรคได้อย่างแม่นยำ และนำไปสู่ <b>Personalized/Precision Medicine</b></p>
+      </div>
+
+      <div class="card">
+        <h3>เทคนิคหลักและกลไกการทำงาน (เสริมเต็มจาก Robbins)</h3>
+
+        <h4>1. PCR (Polymerase Chain Reaction) และ Real-time PCR</h4>
+        <p>เทคนิคขยายสำเนา (amplify) DNA ชิ้นส่วนเป้าหมายจำนวนมากในเวลาสั้น โดยใช้วงจรความร้อน 3 ขั้นตอนซ้ำ ๆ:</p>
+        <ul class="plain">
+          <li><b>Denaturation</b> (~95°C) — แยกสาย DNA คู่ให้เป็นสายเดี่ยว</li>
+          <li><b>Annealing</b> (~50-65°C) — primer จับกับตำแหน่งเป้าหมายบนสาย DNA</li>
+          <li><b>Extension</b> (~72°C) — DNA polymerase (Taq polymerase) สังเคราะห์สายใหม่ต่อจาก primer</li>
+        </ul>
+        <p>วนซ้ำ 25-35 รอบ ทำให้ DNA เป้าหมายเพิ่มจำนวนแบบทวีคูณ (exponential amplification) — <b>Real-time PCR</b> เพิ่มการติดตามปริมาณ DNA แบบ real-time ผ่าน fluorescent probe ทำให้สามารถวัดปริมาณเชื้อ/สารพันธุกรรมเชิงปริมาณได้ (quantitative) เช่น การตรวจ <b>MTB/NTM (Mycobacterium tuberculosis/Non-tuberculous mycobacteria)</b> อย่างรวดเร็ว</p>
+
+        <h4>2. FISH (Fluorescent In-Situ Hybridization)</h4>
+        <p>เทคนิคที่ใช้ <b>DNA probe ติดฉลากสารเรืองแสง (fluorescent-labeled probe)</b> ไปจับกับลำดับ DNA เป้าหมายบนโครโมโซมโดยตรงบนสไลด์เนื้อเยื่อ (in-situ) — เมื่อ probe จับกับตำแหน่งเป้าหมาย จะเห็นสัญญาณเรืองแสงใต้กล้องจุลทรรศน์ฟลูออเรสเซนต์ ใช้ตรวจ:</p>
+        <ul class="plain">
+          <li><b>Gene amplification</b> — เช่น HER2 amplification ในมะเร็งเต้านม (นับจำนวนสัญญาณสีของยีน HER2 เทียบกับ centromere ของโครโมโซม 17)</li>
+          <li><b>Chromosomal translocation</b> — เช่น BCR-ABL ใน CML (t(9;22), เชื่อมโยงกับ T8-9 §8-9.6), t(14;18) ใน follicular lymphoma</li>
+          <li><b>Gene deletion</b></li>
+        </ul>
+
+        <h4>3. HER2 DISH (Dual-color In-Situ Hybridization)</h4>
+        <p>เทคนิคคล้าย FISH แต่ใช้ <b>chromogenic detection</b> (ให้สีที่มองเห็นได้ด้วยกล้องจุลทรรศน์แสงทั่วไป) แทนการเรืองแสง — ตรวจนับสัญญาณของยีน HER2 เทียบกับ centromere ของโครโมโซม 17 (CEP17) เพื่อประเมิน <b>HER2 amplification status</b> ในมะเร็งเต้านม ซึ่งเป็นตัวกำหนดการใช้ยา targeted therapy (เช่น trastuzumab — เชื่อมโยงกับ T8-9 §8-9.12 Cancer Therapy)</p>
+
+        <h4>4. RNA Sequencing (RNA-seq) และ NGS (Next-Generation Sequencing)</h4>
+        <p><b>NGS</b> เป็นเทคโนโลยีการหาลำดับเบส DNA/RNA แบบขนาน (massively parallel sequencing) ที่สามารถอ่านลำดับพันธุกรรมได้จำนวนมากพร้อมกันในเวลาอันสั้น ต่างจาก Sanger sequencing แบบดั้งเดิมที่อ่านทีละสาย — ทำให้สามารถตรวจ mutation panel ขนาดใหญ่ (multi-gene panel) หรือแม้แต่ทั้ง genome/exome ได้ในการทดสอบครั้งเดียว</p>
+        <p><b>RNA sequencing</b> ใช้หลักการเดียวกันแต่วิเคราะห์ RNA transcript เพื่อดู gene expression pattern และหา fusion gene ที่เกิดจาก RNA level</p>
+
+        <h4>5. DNA Methylation Analysis</h4>
+        <p>ตรวจการติดหมู่ methyl (-CH3) บน DNA โดยเฉพาะที่ตำแหน่ง <b>CpG island</b> ในบริเวณ promoter ของยีน — <b>hypermethylation ของ promoter ทำให้ยีนถูกปิดการทำงาน (gene silencing)</b> พบบ่อยในการปิดการทำงานของ tumor suppressor gene ในมะเร็งหลายชนิด (epigenetic mechanism ของ carcinogenesis ที่เสริมจากกลไก mutation ใน T8-9)</p>
+      </div>
+
+      <div class="card">
+        <h3>Gene Mutations ที่ตรวจบ่อยในทางคลินิก</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ยีน</th><th>ความสำคัญทางคลินิก</th></tr>
+            <tr><td>EGFR mutation (primary, secondary)</td><td>มะเร็งปอด — กำหนดการใช้ยา EGFR tyrosine kinase inhibitor; secondary mutation (เช่น T790M) บ่งชี้ acquired resistance ต่อยารุ่นแรก</td></tr>
+            <tr><td>BRAF mutation</td><td>Melanoma — กำหนดการใช้ยา BRAF inhibitor (เชื่อมโยงกับ oncogene table T8-9 §8-9.6)</td></tr>
+            <tr><td>KRAS/NRAS mutation</td><td>มะเร็งลำไส้ใหญ่ — หาก mutated จะไม่ตอบสนองต่อยากลุ่ม anti-EGFR (เช่น cetuximab)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>ชนิดของ Specimen สำหรับ Molecular Test</h3>
+        <ul class="plain">
+          <li><b>FFPE block</b> — จาก surgical tissue หรือ cell block ของ cytology</li>
+          <li><b>Cytologic slide</b></li>
+          <li><b>Liquid biopsy</b> — เช่น blood, saliva, urine (ตรวจหา circulating tumor DNA, ctDNA)</li>
+        </ul>
+        <h4>Liquid Biopsy — ข้อดีสำคัญ</h4>
+        <p>เป็นวิธีที่ <b>ไม่รุกล้ำร่างกาย (minimally invasive)</b> เมื่อเทียบกับการตัดชิ้นเนื้อ — สามารถติดตามการเปลี่ยนแปลงทางพันธุกรรมของมะเร็งแบบต่อเนื่อง (dynamic monitoring) และตรวจพบ resistance mutation ที่เกิดขึ้นระหว่างการรักษาได้โดยไม่ต้องตัดชิ้นเนื้อซ้ำ</p>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>ข้อแตกต่างสำคัญระหว่าง <b>FISH กับ HER2 DISH</b>: ทั้งคู่ตรวจหลักการเดียวกัน (นับสัญญาณยีนเทียบ centromere) แต่ต่างกันที่วิธีตรวจจับสัญญาณ — FISH ใช้ fluorescent (ต้องใช้กล้องจุลทรรศน์พิเศษ) ส่วน DISH ใช้ chromogenic (ดูด้วยกล้องจุลทรรศน์แสงทั่วไปได้ สะดวกกว่าในทางปฏิบัติ)</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t11-ai">11.10 AI in Pathology</h2><span class="slide-ref">T11 · slide 99-110 <span style="color:var(--cyan)">+ ข้อมูลล่าสุด 2026</span></span></div>
+      <div class="card">
+        <h3>นิยาม</h3>
+        <p>Artificial Intelligence (AI) สามารถวิเคราะห์และสรุปตัวแปรทางคลินิกจำนวนมหาศาลที่เก็บรวบรวมในห้องปฏิบัติการพยาธิวิทยายุคใหม่ ทั้งในรูปแบบ <b>knowledge/rules-based</b> (ใช้กฎที่กำหนดไว้ล่วงหน้า) หรือ <b>data-driven</b> (เรียนรู้จากข้อมูลจำนวนมาก) เพื่อ<b>เสริม (augment)</b> การตัดสินใจทางคลินิก — ไม่ใช่มาแทนที่พยาธิแพทย์</p>
+      </div>
+
+      <div class="card">
+        <h3>AI Application ในพยาธิวิทยา</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="30" width="150" height="60" rx="9" fill="var(--cyan-soft)" stroke="var(--cyan)"/>
+            <text x="85" y="52" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--cyan)">Whole Slide</text>
+            <text x="85" y="67" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--cyan)">Imaging (WSI)</text>
+            <path d="M162 60 L192 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a11f)"/>
+
+            <rect x="197" y="30" width="150" height="60" rx="9" fill="var(--cyan-soft)" stroke="var(--cyan)"/>
+            <text x="272" y="52" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--cyan)">AI Algorithm</text>
+            <text x="272" y="67" text-anchor="middle" font-size="9" fill="var(--ink-soft)">Deep learning model</text>
+            <path d="M349 60 L379 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a11f)"/>
+
+            <rect x="384" y="30" width="150" height="60" rx="9" fill="var(--cyan-soft)" stroke="var(--cyan)"/>
+            <text x="459" y="52" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--cyan)">Diagnostic</text>
+            <text x="459" y="67" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--cyan)">Support</text>
+            <path d="M536 60 L566 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a11f)"/>
+
+            <rect x="571" y="30" width="120" height="60" rx="9" fill="var(--eosin-soft)" stroke="var(--eosin)"/>
+            <text x="631" y="52" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--eosin)">Pathologist</text>
+            <text x="631" y="67" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--eosin)">Decision</text>
+            <defs><marker id="a11f" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 11.4 — AI ทำหน้าที่ augment (เสริม) การตัดสินใจของพยาธิแพทย์ ไม่ใช่แทนที่</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Advantages (ข้อดี)</h3>
+        <ul class="plain">
+          <li>เพิ่มประสิทธิภาพและความแม่นยำในการวินิจฉัยของพยาธิแพทย์ (increased efficiency and precision)</li>
+          <li>ประหยัดค่าใช้จ่ายในการปรึกษาผู้เชี่ยวชาญภายนอก (saving in external consultation)</li>
+          <li>ลดต้นทุนการจัดการสไลด์แก้วภายในห้องปฏิบัติการ (reduced cost of internal handling glass slides)</li>
+          <li>ประหยัดต้นทุนการลงทุนสำหรับห้องปฏิบัติการพยาธิวิทยาขนาดใหญ่</li>
+        </ul>
+
+        <h3>Challenges and Limitations (ข้อจำกัด)</h3>
+        <ul class="plain">
+          <li>คุณภาพและความละเอียดของภาพที่ไม่ดี (poor image quality and resolution)</li>
+          <li>ต้องการชุดข้อมูลที่มี annotation ทาง histology จำนวนมาก (large histologically annotated datasets)</li>
+          <li>ขาดแคลนผู้เชี่ยวชาญทางคลินิกและเทคนิค</li>
+          <li>ข้อจำกัดด้านมิติข้อมูลและฮาร์ดแวร์ (data dimensionality and hardware constraints)</li>
+          <li>ความสามารถในการ generalize ของ model (model generalizability) — โมเดลที่ train จากข้อมูลชุดหนึ่งอาจใช้ไม่ได้ผลดีกับข้อมูลจากแหล่งอื่น</li>
+        </ul>
+        <p><i>"Not every clinical problem can be effectively solved with AI"</i></p>
+      </div>
+
+      <div class="card">
+        <h3>บทบาทใหม่ของพยาธิแพทย์ในยุค AI</h3>
+        <ul class="plain">
+          <li>พยาธิแพทย์<b>ไม่ใช่ "oracle" (ผู้ทำนายที่อยู่ห่างไกลจากการปฏิบัติงานทางคลินิก)</b> อีกต่อไป</li>
+          <li>พยาธิแพทย์คือ <b>clinician ที่ให้การตีความลักษณะทาง morphological (และ molecular)</b> ที่สอดคล้องกับข้อมูลทางคลินิก รังสีวิทยา การรักษา และห้องปฏิบัติการ</li>
+          <li>ความเป็นอัตวิสัยในการประเมิน (subjective evaluation), ความซ้อนทับของลักษณะทางพยาธิวิทยาระหว่างโรคต่าง ๆ, และการเก็บตัวอย่างเนื้อเยื่อที่ไม่เพียงพอ อาจทำให้ไม่สามารถวินิจฉัยได้ชัดเจน → จึงส่งเสริมให้พยาธิแพทย์เข้าร่วม<b>การประชุมสหสาขาวิชาชีพ (multidisciplinary meeting)</b> มากขึ้น</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>ความคืบหน้าล่าสุดของ AI ในพยาธิวิทยา (2026)</h3>
+        <p>วงการ digital pathology และ AI มีความก้าวหน้าอย่างรวดเร็วในช่วงปี 2025-2026:</p>
+        <ul class="plain">
+          <li><b>FDA Breakthrough Device Designation</b> — เดือนมีนาคม 2026 องค์การอาหารและยาสหรัฐฯ (FDA) ได้ให้สถานะ breakthrough device แก่เครื่องมือ AI ที่ชื่อ <b>Path Assist Derm</b> ซึ่งช่วยวิเคราะห์ whole slide image (WSI) ของรอยโรคผิวหนัง สะท้อนการเปลี่ยนผ่านของ AI จากขั้นทดลองสู่เครื่องมือที่มีความสำคัญทางคลินิกจริง</li>
+          <li><b>Foundation Models และ Multimodal AI</b> — เกิดการพัฒนา foundation model ขนาดใหญ่ที่เรียนรู้โครงสร้างเนื้อเยื่อจากภาพ histology จำนวนมหาศาลโดยไม่ต้องมี manual annotation ทุกภาพ ร่วมกับระบบ <b>LLM-based copilot</b> ที่ช่วยสนับสนุนการวินิจฉัย พยากรณ์โรค และเพิ่มประสิทธิภาพ workflow</li>
+          <li><b>การขยายตัวของการใช้งานทั่วโลก</b> — อัตราการใช้ digital pathology เร่งตัวขึ้นอย่างชัดเจนในประเทศรายได้สูง ในขณะที่ประเทศกำลังพัฒนายังเผชิญความท้าทายด้านเทคนิค การเงิน และบุคลากร</li>
+          <li><b>Companion Diagnostics (CDx)</b> — AI algorithm เริ่มถูกออกแบบให้เป็นส่วนหนึ่งของการพัฒนายาตั้งแต่ต้น (built into companion diagnostic program design) แทนที่จะเป็นเครื่องมือเสริมที่เพิ่มเข้ามาทีหลัง</li>
+        </ul>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>แนวโน้มสำคัญคือ AI ในพยาธิวิทยากำลังเปลี่ยนจาก "เครื่องมือช่วยแยกประเภทภาพ (image classification tool)" ธรรมดา ไปสู่ <b>foundation model ที่เข้าใจโครงสร้างทางชีววิทยาของเนื้อเยื่อโดยตรง</b> และผนวกเข้ากับกระบวนการพัฒนายาและ precision medicine อย่างเป็นระบบมากขึ้น — สะท้อนหลักการที่ว่า AI "augment" ไม่ใช่ "replace" พยาธิแพทย์ตามที่ระบุไว้ในหลักการพื้นฐาน</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-divider">คำศัพท์สำคัญประจำหัวข้อ</div>
+      <div class="card">
+        <div class="glossary">
+          <div class="gterm"><b>FFPE block</b>Formalin-Fixed Paraffin-Embedded block</div>
+          <div class="gterm"><b>10% NBF</b>10% Neutral Buffer Formalin</div>
+          <div class="gterm"><b>PAS/GMS/AFB</b>Special stains ตรวจ fungal/mycobacteria</div>
+          <div class="gterm"><b>IHC</b>Immunohistochemistry — antibody-antigen detection</div>
+          <div class="gterm"><b>Ki-67</b>Proliferation marker</div>
+          <div class="gterm"><b>ROSE</b>Rapid On-Site Evaluation</div>
+          <div class="gterm"><b>Cell block</b>ก้อนเซลล์จาก cytology specimen สำหรับทำ IHC</div>
+          <div class="gterm"><b>Frozen section</b>การวินิจฉัยเร่งด่วนระหว่างผ่าตัด (~30 นาที)</div>
+          <div class="gterm"><b>Autopsy vs Necropsy</b>ผ่าศพทั้งร่าง vs ตรวจชิ้นเนื้อบางส่วน</div>
+          <div class="gterm"><b>PCR</b>ขยายสำเนา DNA ด้วยความร้อน</div>
+          <div class="gterm"><b>FISH</b>Fluorescent probe ตรวจยีน/โครโมโซม</div>
+          <div class="gterm"><b>HER2 DISH</b>Chromogenic detection ของ HER2 amplification</div>
+          <div class="gterm"><b>NGS</b>Next-Generation Sequencing แบบขนาน</div>
+          <div class="gterm"><b>Liquid biopsy</b>ตรวจ ctDNA จากเลือด/สารน้ำ</div>
+          <div class="gterm"><b>Foundation model</b>AI model ขนาดใหญ่เรียนรู้จาก WSI จำนวนมาก</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
   <section class="tabpanel" id="panel-review">
     <div class="tabhero">
       <div class="kicker">Final Review</div>
       <h1>สรุป High-Yield ก่อนเข้าคาบ Quiz/Game</h1>
-      <p>รวมตารางเปรียบเทียบและคำศัพท์จาก T1-T10 ทั้งหมดไว้ในที่เดียว สำหรับทบทวนรอบสุดท้าย</p>
+      <p>รวมตารางเปรียบเทียบและคำศัพท์จาก T1-T11 ทั้งหมดไว้ในที่เดียว สำหรับทบทวนรอบสุดท้าย</p>
     </div>
     
     <div class="section">
-      <div class="section-head"><h2 id="rv-tables">9.1 ตารางเปรียบเทียบรวม (High-Yield Comparison)</h2></div>
-      <p class="section-lede">รวมตารางเปรียบเทียบทั้งหมดจาก T1-T10 ไว้ในที่เดียว สำหรับทบทวนรอบสุดท้ายก่อนเข้าคาบ Quiz</p>
+      <div class="section-head"><h2 id="rv-tables">10.1 ตารางเปรียบเทียบรวม (High-Yield Comparison)</h2></div>
+      <p class="section-lede">รวมตารางเปรียบเทียบทั้งหมดจาก T1-T11 ไว้ในที่เดียว สำหรับทบทวนรอบสุดท้ายก่อนเข้าคาบ Quiz</p>
 
       <div class="card">
         <h3>Reversible vs Irreversible Cell Injury</h3>
@@ -5616,10 +6203,63 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
           <tr><td>รักษา</td><td>ปรับตัวเองได้ใน 1-2 วัน</td><td>ลงจากที่สูงทันที</td><td>ลงจากที่สูงทันที</td></tr>
         </table></div>
       </div>
+
+      <div class="section-divider">T11 · Principle of Pathological Diagnosis</div>
+
+      <div class="card">
+        <h3>Special Stains (สรุปย่อ)</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th>Stain</th><th>ใช้ตรวจ</th></tr>
+          <tr><td>PAS / GMS</td><td>Fungal organisms (PAS ยังตรวจ glycogen/BM ได้ด้วย)</td></tr>
+          <tr><td>Ziehl-Neelsen/Fite</td><td>AFB (Mycobacteria)</td></tr>
+          <tr><td>Congo red</td><td>Amyloid</td></tr>
+          <tr><td>von Kossa</td><td>Calcium</td></tr>
+          <tr><td>Fontana-Masson</td><td>Melanin</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Frozen Section vs Permanent Section</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Frozen</th><th>Permanent</th></tr>
+          <tr><td>เวลา</td><td>~30 นาที</td><td>1-3 วัน</td></tr>
+          <tr><td>วัตถุประสงค์</td><td>ตัดสินใจระหว่างผ่าตัด</td><td>วินิจฉัยขั้นสุดท้าย</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Autopsy vs Necropsy</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Autopsy</th><th>Necropsy</th></tr>
+          <tr><td>ขอบเขต</td><td>ผ่าศพทั้งร่าง</td><td>ตรวจชิ้นเนื้อบางส่วน</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>PCR vs FISH vs NGS vs HER2 DISH</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th>เทคนิค</th><th>หลักการ</th></tr>
+          <tr><td>PCR</td><td>ขยายสำเนา DNA ด้วยวงจรความร้อน</td></tr>
+          <tr><td>FISH</td><td>Fluorescent probe จับยีน/โครโมโซมบนสไลด์</td></tr>
+          <tr><td>HER2 DISH</td><td>เหมือน FISH แต่ใช้ chromogenic detection</td></tr>
+          <tr><td>NGS</td><td>หาลำดับ DNA/RNA แบบขนานจำนวนมาก</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Specimen Retention Period</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th>ชนิด</th><th>ระยะเวลา</th></tr>
+          <tr><td>Surgical/Fluid cytology specimen</td><td>2 สัปดาห์</td></tr>
+          <tr><td>Autopsy organs</td><td>3 เดือน</td></tr>
+          <tr><td>Glass slide / FFPE block</td><td>5 ปี</td></tr>
+          <tr><td>Report / Request form</td><td>10 ปี</td></tr>
+        </table></div>
+      </div>
     </div>
 
     <div class="section">
-      <div class="section-head"><h2 id="rv-glossary">9.2 คำศัพท์รวมทั้งหมด (Master Glossary)</h2></div>
+      <div class="section-head"><h2 id="rv-glossary">10.2 คำศัพท์รวมทั้งหมด (Master Glossary)</h2></div>
       <div class="card">
         <div class="glossary">
           <div class="gterm"><b>Etiology</b>สาเหตุของโรค</div>
@@ -5684,12 +6324,19 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
           <div class="gterm"><b>Thymine dimer</b>DNA damage จาก UVB</div>
           <div class="gterm"><b>Neurotoxin/Hematotoxin/Myotoxin</b>ชนิดพิษงูตามระบบที่ออกฤทธิ์</div>
           <div class="gterm"><b>AMS/HACE/HAPE</b>กลุ่มโรคจากที่สูง</div>
+          <div class="gterm"><b>FFPE block</b>Formalin-Fixed Paraffin-Embedded block</div>
+          <div class="gterm"><b>IHC</b>Immunohistochemistry — antibody-antigen detection</div>
+          <div class="gterm"><b>Frozen section</b>วินิจฉัยเร่งด่วนระหว่างผ่าตัด (~30 นาที)</div>
+          <div class="gterm"><b>Autopsy vs Necropsy</b>ผ่าศพทั้งร่าง vs ตรวจชิ้นเนื้อบางส่วน</div>
+          <div class="gterm"><b>PCR/FISH/NGS</b>เทคนิคตรวจโมเลกุลหลักทางพยาธิวิทยา</div>
+          <div class="gterm"><b>Liquid biopsy</b>ตรวจ ctDNA จากเลือด/สารน้ำ</div>
+          <div class="gterm"><b>Foundation model</b>AI model ขนาดใหญ่เรียนรู้จาก WSI จำนวนมาก</div>
         </div>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-head"><h2 id="rv-checklist">9.3 Checklist ก่อนเข้าห้อง Quiz</h2></div>
+      <div class="section-head"><h2 id="rv-checklist">10.3 Checklist ก่อนเข้าห้อง Quiz</h2></div>
       <div class="card">
         <ul class="plain">
           <li>☐ แยก Sign vs Symptom, Anatomical vs Clinical pathology ได้</li>
@@ -5735,6 +6382,13 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
           <li>☐ แยก heat cramps/exhaustion/stroke และ hypothermia/frostbite ได้</li>
           <li>☐ แยกพิษงูตามระบบที่ออกฤทธิ์ (neurotoxin/hematotoxin/myotoxin) ได้</li>
           <li>☐ แยก AMS/HACE/HAPE ได้</li>
+          <li>☐ จำ formalin ratio (10-20:1) และ infiltration rate (1mm/hr) ได้</li>
+          <li>☐ จับคู่ special stain กับเป้าหมายที่ตรวจได้ (PAS/GMS/AFB/Congo red/von Kossa ฯลฯ)</li>
+          <li>☐ แยก frozen section vs permanent section ได้</li>
+          <li>☐ แยก autopsy vs necropsy และรู้กฎหมายไทยเรื่องการตายผิดธรรมชาติ</li>
+          <li>☐ จำ specimen retention period แต่ละชนิดได้</li>
+          <li>☐ อธิบายหลักการ PCR/FISH/NGS/HER2 DISH ได้</li>
+          <li>☐ เข้าใจบทบาทของ AI ในพยาธิวิทยาว่า augment ไม่ replace พยาธิแพทย์</li>
         </ul>
       </div>
     </div>
