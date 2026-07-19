@@ -30,6 +30,8 @@
   --flame-soft:#FBEBDC;
   --moss:#4A6741;
   --moss-soft:#E9EFE6;
+  --burgundy:#7A2E48;
+  --burgundy-soft:#F3E5EC;
 
   --accent: var(--hema);
   --accent-soft: var(--hema-soft);
@@ -113,6 +115,7 @@ p{margin:0 0 0.9em 0;}
 .tabnav button[data-tab="t4"]{--tabcolor:var(--rust);}
 .tabnav button[data-tab="t5"]{--tabcolor:var(--flame);}
 .tabnav button[data-tab="t67"]{--tabcolor:var(--moss);}
+.tabnav button[data-tab="t89"]{--tabcolor:var(--burgundy);}
 .tabnav button[data-tab="review"]{--tabcolor:var(--amber);}
 
 .shell{max-width:1180px;margin:0 auto;padding:32px 28px 100px 28px; display:grid; grid-template-columns:240px 1fr; gap:36px;}
@@ -215,6 +218,7 @@ ul.plain li{margin-bottom:5px;}
 #panel-t4{--accent:var(--rust); --accent-soft:var(--rust-soft);}
 #panel-t5{--accent:var(--flame); --accent-soft:var(--flame-soft);}
 #panel-t67{--accent:var(--moss); --accent-soft:var(--moss-soft);}
+#panel-t89{--accent:var(--burgundy); --accent-soft:var(--burgundy-soft);}
 #panel-review{--accent:var(--amber); --accent-soft:var(--amber-soft);}
 
 footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); font-size:0.78rem; font-family:'JetBrains Mono',monospace;}
@@ -238,7 +242,8 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
       <button data-tab="t4" onclick="showTab('t4')"><span class="tab-eyebrow">Session 04</span>Hemodynamic Disorders</button>
       <button data-tab="t5" onclick="showTab('t5')"><span class="tab-eyebrow">Session 05</span>Acute Inflammation</button>
       <button data-tab="t67" onclick="showTab('t67')"><span class="tab-eyebrow">Session 06</span>Chronic Inflammation &amp; Repair</button>
-      <button data-tab="review" onclick="showTab('review')"><span class="tab-eyebrow">Session 07</span>Final Review</button>
+      <button data-tab="t89" onclick="showTab('t89')"><span class="tab-eyebrow">Session 07</span>Neoplasia</button>
+      <button data-tab="review" onclick="showTab('review')"><span class="tab-eyebrow">Session 08</span>Final Review</button>
     </nav>
   </div>
 </header>
@@ -3664,16 +3669,866 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
 
   </section>
 
+  <section class="tabpanel" id="panel-t89">
+    <div class="tabhero">
+      <div class="kicker">T8-9 · Neoplasia</div>
+      <h1>เมื่อเซลล์เติบโตโดยไม่ฟังคำสั่งร่างกาย</h1>
+      <p>จาก classification และ nomenclature สู่กลไกโมเลกุลของ carcinogenesis, hallmarks of cancer, grading/staging จนถึงแนวทางการรักษามะเร็ง</p>
+    </div>
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t89-intro">8-9.1 Introduction to Neoplasia</h2><span class="slide-ref">T8-9 · slide 6-8</span></div>
+      <div class="card">
+        <h3>นิยาม (Sir Rupert Willis, 1952)</h3>
+        <p><i>"Neoplasm is an abnormal mass of tissue, the growth of which exceeds and is uncoordinated with that of normal tissue and whose growth persists in the same excessive manner after cessation of the stimuli which evoked the change."</i></p>
+        <p>กล่าวโดยสรุป: Neoplasm คือก้อนเนื้อเยื่อผิดปกติที่<b>สูญเสียการตอบสนองต่อกลไกควบคุมการเจริญเติบโตปกติ</b> (loss of responsiveness to normal growth control) และยังคงเติบโตต่อไปแม้สิ่งกระตุ้นเดิมจะหายไปแล้ว</p>
+      </div>
+
+      <div class="card">
+        <h3>ลักษณะ 3 ประการของ Proliferation of Neoplastic Cells</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="30" width="210" height="65" rx="10" fill="var(--burgundy-soft)" stroke="var(--burgundy)" stroke-width="1.5"/>
+            <text x="115" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="var(--burgundy)">Autonomous</text>
+            <text x="115" y="72" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">ไม่ต้องอาศัย growth</text>
+            <text x="115" y="84" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">factor หรือสิ่งเร้าใด ๆ</text>
+
+            <rect x="245" y="30" width="210" height="65" rx="10" fill="var(--burgundy-soft)" stroke="var(--burgundy)" stroke-width="1.5"/>
+            <text x="350" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="var(--burgundy)">Excessive</text>
+            <text x="350" y="72" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">เกิดได้ตลอดเวลา</text>
+            <text x="350" y="84" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">มากเกินขอบเขต ควบคุมไม่ได้</text>
+
+            <rect x="480" y="30" width="210" height="65" rx="10" fill="var(--burgundy-soft)" stroke="var(--burgundy)" stroke-width="1.5"/>
+            <text x="585" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="var(--burgundy)">Disorganized</text>
+            <text x="585" y="72" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">การเรียงตัวของเซลล์</text>
+            <text x="585" y="84" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">ไม่เป็นระเบียบ</text>
+          </svg>
+          <div class="diagram-cap">Fig 8-9.1 — 3 ลักษณะเฉพาะของ neoplastic cell proliferation</div>
+        </div>
+        <h4>กลไกควบคุม Proliferation ของเซลล์ปกติ (เปรียบเทียบ)</h4>
+        <ul class="plain">
+          <li><b>Genetic program</b> เฉพาะของแต่ละเซลล์</li>
+          <li><b>Signal</b> ที่ส่งผ่านจากเซลล์หนึ่งไปยังอีกเซลล์หนึ่ง</li>
+          <li><b>Soluble substances</b> ที่อาจมีฤทธิ์ growth-promoting หรือ growth-inhibiting</li>
+        </ul>
+        <p>เมื่อเซลล์ปกติหยุดแบ่งตัวและเจริญเต็มที่ (differentiation) จะมี specialized function โดยกระตุ้นกลุ่มยีนที่จำเพาะต่อชนิดเซลล์นั้น ผ่านกระบวนการ <b>selective activation</b> ของกลุ่มยีนหนึ่งพร้อมกับ <b>suppression</b> ของกลุ่มยีนอื่น — ในเซลล์เนื้องอก กระบวนการ differentiation นี้จะเสียไป ทำให้เซลล์ไม่สามารถพัฒนาไปเป็นเซลล์ปกติที่โตเต็มวัยได้</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t89-classification">8-9.2 Classification ของเนื้องอก</h2><span class="slide-ref">T8-9 · slide 9-20</span></div>
+      <div class="card">
+        <h3>2 ระบบการจำแนก</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ระบบ</th><th>การแบ่งย่อย</th></tr>
+            <tr><td>2.1 Clinical Classification</td><td>Benign vs Malignant (แบ่งตาม clinical behavior)</td></tr>
+            <tr><td>2.2 Histological Classification</td><td>แบ่งตาม histological feature ของเนื้อเยื่อต้นกำเนิด: Epithelial cells, Mesenchymal (connective tissue) cells, Lymphoid cells, หรือ Other cell types</td></tr>
+          </table>
+        </div>
+        <p>การวินิจฉัยใช้ <b>clinical และ anatomical criteria</b> ร่วมกัน สามารถทำนายล่วงหน้าได้จากการตรวจชิ้นเนื้อทางพยาธิวิทยาด้วยตาเปล่าและกล้องจุลทรรศน์ ร่วมกับเทคนิคเสริม เช่น electron microscopy, immunohistochemistry, chromosomal analysis, และ molecular biologic study ของ tumor DNA</p>
+      </div>
+
+      <div class="card">
+        <h3>Benign vs Malignant Tumor — Macroscopic Features</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ลักษณะ</th><th>Benign</th><th>Malignant</th></tr>
+            <tr><td>ขนาดและการขยายตัว</td><td>ขยายตัวโตขึ้นช้า ๆ มีขอบเขตชัดเจน</td><td>ขยายตัวเร็ว ไม่มีขอบเขตชัดเจน</td></tr>
+            <tr><td>Capsule</td><td>มีแคปซูลหุ้ม</td><td>มักไม่มีแคปซูล แยกจากเนื้อเยื่อใกล้เคียงได้ยาก</td></tr>
+            <tr><td>ผลต่อเนื้อเยื่อข้างเคียง</td><td>กดเนื้อเยื่อข้างเคียง ทำให้เกิด atrophy และ fibrosis</td><td>Invade เนื้อเยื่อใกล้เคียงโดย infiltrate แทรกเข้าไปคล้ายรากต้นไม้ (infiltrative growth)</td></tr>
+            <tr><td>การผ่าตัด</td><td>ทำได้ง่าย ("shell out")</td><td>ยากกว่า benign tumor มาก</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Benign vs Malignant Tumor — Microscopic และ Cellular Features</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ลักษณะ</th><th>Benign</th><th>Malignant</th></tr>
+            <tr><td>ความคล้ายเนื้อเยื่อต้นกำเนิด</td><td>เซลล์คล้ายกับเนื้อเยื่อต้นกำเนิดมาก (well differentiated)</td><td>แตกต่างจากเซลล์ปกติมาก เรียกว่า <b>"Anaplasia"</b> — เนื่องจากมี differentiation ที่ไม่สมบูรณ์หรือผิดปกติมาก (undifferentiated)</td></tr>
+            <tr><td>Cell population</td><td>Uniform cell population</td><td><b>Pleomorphism</b> (ขนาดและรูปร่างหลากหลายปะปนกัน)</td></tr>
+            <tr><td>Nuclear staining</td><td>ปกติ</td><td>Tumor cell nuclei ย้อมสีผิดปกติไป (hyperchromatic — anaplasia)</td></tr>
+            <tr><td>Function</td><td>อาจมี function คล้ายคลึงกับ normal cell ได้ (retain complex function)</td><td>ไม่มีสัญญาณของ differentiation, ไม่มี specialized function, ปรับเปลี่ยน basic metabolism เพื่อสนับสนุนการเติบโตและแบ่งตัวอย่างรวดเร็ว</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Benign vs Malignant Tumor — Chromosomal Studies</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Benign</th><th>Malignant</th></tr>
+            <tr><td>Chromosome number</td><td>มักปกติ (usually normal)</td><td>มักเป็น <b>Aneuploidy</b> (จำนวนโครโมโซมผิดปกติ)</td></tr>
+            <tr><td>Chromosome structure</td><td>ปกติ</td><td>อาจผิดปกติเชิงโครงสร้างจาก deletion หรือ translocation</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>Anaplasia</b> ไม่ได้หมายถึงแค่ "เซลล์ดูแปลก" แต่หมายถึงการ<b>สูญเสีย differentiation</b> อย่างจำเพาะเจาะจง — เป็นศัพท์ที่ใช้อธิบายเซลล์มะเร็งที่ไม่สามารถระบุที่มาของเนื้อเยื่อต้นกำเนิดได้จากลักษณะเซลล์เพียงอย่างเดียว มักพบร่วมกับ pleomorphism และ hyperchromatic nuclei เสมอ</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t89-nomenclature">8-9.3 Nomenclature — การเรียกชื่อเนื้องอก</h2><span class="slide-ref">T8-9 · slide 21-41</span></div>
+
+      <div class="card">
+        <h3>2 องค์ประกอบพื้นฐานของเนื้องอกทุกชนิด</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>องค์ประกอบ</th><th>คำอธิบาย</th></tr>
+            <tr><td>1. Parenchyma</td><td>เซลล์ที่ transformed หรือ neoplastic cell — เป็นตัว<b>กำหนด biologic behavior</b> ของเนื้องอก และเป็นฐานของการตั้งชื่อเนื้องอก (tumor nomenclature is based on "parenchyma")</td></tr>
+            <tr><td>2. Supporting Stroma</td><td>เนื้อเยื่อสนับสนุนที่ไม่ใช่ neoplastic — ให้เลือดมาเลี้ยงและโครงสร้างรองรับการเติบโตของ parenchymal cell มีความสำคัญอย่างยิ่งต่อการเติบโตของเนื้องอก (crucial for tumor growth)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>กฎการตั้งชื่อพื้นฐาน (Benign vs Malignant Suffix)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ต้นกำเนิดของเนื้องอก</th><th>Benign</th><th>Malignant</th></tr>
+            <tr><td>Mesenchymal origin</td><td>ลงท้ายด้วย <b>-oma</b></td><td>ลงท้ายด้วย <b>-sarcoma</b></td></tr>
+            <tr><td>Epithelial origin</td><td><b>Adenoma</b> (gland pattern) · <b>Papilloma</b> (finger-like projection) · <b>Polyp</b> (mass projecting เหนือผิว mucosa)</td><td><b>Carcinoma</b></td></tr>
+            <tr><td>Blood cell origin</td><td>-</td><td>ลงท้ายด้วย <b>-emia</b></td></tr>
+            <tr><td>Exceptional rule</td><td colspan="2">คำว่า "<b>Anaplastic</b>" นำหน้าชื่อ = malignant เสมอ</td></tr>
+          </table>
+        </div>
+
+        <h4>ตัวอย่างการ Qualify ชื่อมะเร็งเพิ่มเติม</h4>
+        <ul class="plain">
+          <li><b>Carcinoma</b> อาจถูกระบุชนิดย่อยเพิ่มเติม เช่น squamous cell carcinoma, adenocarcinoma</li>
+          <li>บางครั้งระบุอวัยวะ/เนื้อเยื่อต้นกำเนิดได้ เช่น renal cell adenocarcinoma, cholangiocarcinoma, poorly differentiated carcinoma</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Exceptional Rules ของการตั้งชื่อ (ต้องจำแม่น — เป็นข้อสอบยอดฮิต)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>กลุ่ม</th><th>ตัวอย่าง</th><th>ความจริง</th></tr>
+            <tr><td>ลงท้าย -oma แต่<b>ไม่ใช่เนื้องอก</b></td><td>Granuloma, Tuberculoma, Atheroma, Mycetoma</td><td>เป็น inflammatory/reactive lesion ไม่ใช่ neoplasm</td></tr>
+            <tr><td>ลงท้าย -oma แต่เป็น<b>มะเร็ง (malignant)</b></td><td>Lymphoma, Melanoma, Hepatoma, Myeloma</td><td>แม้ลงท้าย -oma (ซึ่งปกติแปลว่า benign) แต่ทั้งหมดนี้คือมะเร็ง</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>คำว่า <b>"Hepatoma"</b> เป็นชื่อเก่าที่ทำให้เข้าใจผิดได้ง่าย เพราะฟังดูเหมือน benign แต่จริง ๆ หมายถึง <b>Hepatocellular carcinoma</b> ซึ่งเป็นมะเร็งร้ายแรง — ปัจจุบันจึงนิยมใช้คำว่า hepatocellular carcinoma แทนเพื่อความชัดเจน</div>
+      </div>
+
+      <div class="card">
+        <h3>Summary กฎการตั้งชื่อ</h3>
+        <ul class="plain">
+          <li>เนื้องอกทุกชนิดมี suffix <b>"-oma"</b> (ยกเว้นบางกรณีข้างต้น)</li>
+          <li>Benign epithelial tumor: papilloma หรือ adenoma</li>
+          <li>Benign connective tissue tumor: มี prefix บอกชนิดเซลล์ต้นกำเนิด (เช่น fibroma, lipoma, chondroma)</li>
+          <li>Malignant epithelial tumor: carcinoma</li>
+          <li>Malignant connective tissue tumor: sarcoma</li>
+        </ul>
+      </div>
+
+      <div class="section-divider">Miscellaneous Tumors</div>
+
+      <div class="card">
+        <h3>1. Teratoma</h3>
+        <p>เนื้องอกที่มีกำเนิดจาก <b>germ cell</b> ประกอบด้วยเซลล์จาก germ layer ทั้งสามชั้น: <b>Ectoderm, Mesoderm, Endoderm</b></p>
+        <p>ในรูปแบบ benign สามารถเห็นลักษณะของเซลล์ที่แยกชนิดได้ชัดเจน เช่น ฟัน ผม หรือต่อมไทรอยด์ (จาก endoderm) — พบได้บ่อยที่ <b>ovary, testes</b> และตำแหน่งกึ่งกลางลำตัว (midline)</p>
+      </div>
+
+      <div class="card">
+        <h3>2. Embryonal Tumors ("Blastomas")</h3>
+        <p>เนื้องอกที่พบใน<b>เด็กอายุน้อยกว่า 5 ปี</b> — เซลล์ของเนื้องอกมีลักษณะคล้ายกับ embryonal cell ของอวัยวะนั้น ๆ</p>
+        <p><b>ตัวอย่าง:</b> Retinoblastoma, Neuroblastoma, Hepatoblastoma</p>
+      </div>
+
+      <div class="card">
+        <h3>3. Neuroendocrine Tumor (NET): APUDoma และ Carcinoid Tumor</h3>
+        <p><b>APUD</b> = <span class="eng">Amine content and/or Precursor Uptake and Decarboxylation</span></p>
+        <ul class="plain">
+          <li>อาจเรียกชื่อตามฮอร์โมนที่สร้าง เช่น <b>insulinoma</b></li>
+          <li>เนื้องอกในทางเดินอาหารหรือทางเดินหายใจที่ไม่ทราบว่าสร้างฮอร์โมนใด (functionally silent) เรียกว่า <b>Carcinoid tumor</b> ส่วนมากไม่ค่อยแสดงอาการ</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>4. Mixed Tumor (Pleomorphic Adenoma)</h3>
+        <p>เนื้องอกที่มีต้นกำเนิดจาก germ layer เดียว แต่พัฒนาเป็น tumor cell ได้หลายชนิด — <b>ตัวอย่างคลาสสิก: Mixed tumor of salivary gland</b> (ต่อม parotid) ซึ่งมีทั้ง epithelial cell ที่สร้าง duct และ myxoid stroma ที่คล้าย cartilage</p>
+      </div>
+
+      <div class="card">
+        <h3>5. Hamartoma</h3>
+        <p>เป็น <b>tumor-like lesion</b> (ไม่ใช่เนื้องอกแท้จริง) การเจริญเติบโตสัมพันธ์กับเนื้อเยื่อปกติที่อยู่รอบข้าง (growth related to normal tissue) และ<b>ไม่มีลักษณะของ autonomy</b></p>
+      </div>
+
+      <div class="card">
+        <h3>6. Cyst</h3>
+        <p>ถุงน้ำที่บุด้วย epithelium — ส่วนใหญ่<b>ไม่ใช่เนื้องอก</b> แต่ก็มี <b>neoplastic cyst</b> ที่พบได้ เช่น ovarian cyst บางชนิด</p>
+      </div>
+
+      <div class="card">
+        <h3>Confusing Terminology: Hamartoma vs Choristoma</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Hamartoma</th><th>Choristoma</th></tr>
+            <tr><td>นิยาม</td><td>ความผิดปกติของการพัฒนา (malformation) ที่แสดงเป็นการเรียงตัวไม่เป็นระเบียบของเนื้อเยื่อที่เหมาะสม/ปกติสำหรับตำแหน่งนั้น (indigenous tissue disorganization)</td><td>เนื้อเยื่อปกติที่ไปอยู่ผิดตำแหน่ง (ectopic rest of normal tissue)</td></tr>
+            <tr><td>ตัวอย่าง</td><td>Pulmonary hamartoma (เนื้อเยื่อกระดูกอ่อน/ไขมัน/หลอดลมในปอด แต่เรียงตัวผิดปกติ)</td><td>Pancreatic tissue ที่พบใน gastric wall (เนื้อเยื่อตับอ่อนปกติ แต่ไปอยู่ผิดที่)</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>ตัวช่วยจำ: <b>Hamartoma</b> = เนื้อเยื่อ<b>ถูกที่ แต่ผิดสัดส่วน/ไม่เป็นระเบียบ</b> ในขณะที่ <b>Choristoma</b> = เนื้อเยื่อ<b>ปกติสมบูรณ์ แต่ผิดที่</b> — ทั้งสองไม่ใช่ neoplasm แท้จริง เพราะไม่มี autonomous growth</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t89-characteristics">8-9.4 Characteristics ของ Benign และ Malignant Tumor</h2><span class="slide-ref">T8-9 · slide 42-72</span></div>
+      <div class="card">
+        <p>ลักษณะสำคัญที่ใช้จำแนกระหว่าง Benign กับ Malignant tumor มี 3 ด้านหลัก (อาจรวม rapid growth ด้วย): <b>Differentiation and Anaplasia, Local Invasion, Metastasis</b> — การวินิจฉัยว่าเป็นมะเร็งต้องใช้ทั้ง clinical และ anatomical criteria ร่วมกันด้วยความแม่นยำ</p>
+      </div>
+
+      <div class="card">
+        <h3>Differentiation and Anaplasia</h3>
+        <p><b>"Differentiation"</b> หมายถึงระดับที่เซลล์เนื้องอกมีลักษณะคล้ายเซลล์ปกติที่เทียบเคียงได้ ทั้งในเชิง morphology และ function</p>
+        <p><b>"Anaplasia"</b> = การขาด differentiation (lack of differentiation)</p>
+        <ul class="plain">
+          <li>Differentiation เป็นตัวกำหนด <b>tumor grade</b></li>
+          <li>Benign tumor: well-differentiated เสมอ คล้ายเนื้อเยื่อต้นกำเนิดมาก</li>
+          <li>Malignant tumor: มีช่วงความหลากหลายของ differentiation กว้างมาก ตั้งแต่ "well differentiated" จนถึง "completely undifferentiated"</li>
+          <li>ระดับ differentiation ของ malignant tumor มีประโยชน์ทางคลินิกมาก — <b>Grading ของ malignant tumor สัมพันธ์อย่างมากกับ prognosis</b></li>
+        </ul>
+
+        <h4>Morphologic Changes ของ Anaplasia (ต้องจำครบ)</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ลักษณะ</th><th>รายละเอียด</th></tr>
+            <tr><td>Pleomorphism</td><td>ความหลากหลายของขนาดและรูปร่างเซลล์</td></tr>
+            <tr><td>Abnormal nuclear morphology</td><td>Hyperchromatic nuclei, เพิ่ม Nuclear-Cytoplasmic (N/C) ratio, รูปร่าง nucleus แปรผัน, chromatin จับตัวเป็นก้อนหยาบ (coarsely clumped), nucleoli ขนาดใหญ่</td></tr>
+            <tr><td>Mitosis</td><td>จำนวน mitosis เพิ่มขึ้นในเนื้องอกที่ undifferentiated, พบ atypical bizarre mitotic figure (tripolar, quadripolar, multipolar, spindle)</td></tr>
+            <tr><td>Loss of polarization</td><td>การเรียงตัวของเซลล์ผิดทิศทาง (disturbed orientation)</td></tr>
+            <tr><td>Tumor giant cells</td><td>เซลล์ขนาดใหญ่ที่เกิดจากความผิดปกติของการแบ่งตัว</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Dysplasia และ Carcinoma in situ</h3>
+        <p><b>"Dysplasia"</b> แปลตรงตัวว่า "ความผิดปกติของการเจริญเติบโต" (disorder of growth) มีลักษณะ: สูญเสียความสม่ำเสมอของเซลล์เยื่อบุแต่ละเซลล์ (loss of uniformity), สูญเสียการเรียงตัวเชิงโครงสร้าง (loss in architectural orientation) — <b>อาจเปลี่ยนกลับเป็นปกติได้ (reverse change may occur)</b> พบมากที่สุดใน epithelium</p>
+        <p><b>Carcinoma in situ (CIS):</b> การเปลี่ยนแปลงแบบ dysplastic มีความรุนแรงมากและครอบคลุมความหนาทั้งหมดของ epithelium (entire thickness) แต่รอยโรคยังคงจำกัดอยู่ภายในเนื้อเยื่อปกติ (ยังไม่ผ่าน basement membrane)</p>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 150" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="30" width="150" height="60" rx="9" fill="var(--teal-soft)" stroke="var(--teal)"/>
+            <text x="85" y="55" text-anchor="middle" font-size="11" font-weight="700" fill="var(--teal)">Normal</text>
+            <text x="85" y="70" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Epithelium</text>
+            <path d="M162 60 L192 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a89a)"/>
+
+            <rect x="197" y="30" width="150" height="60" rx="9" fill="var(--amber-soft)" stroke="var(--amber)"/>
+            <text x="272" y="55" text-anchor="middle" font-size="11" font-weight="700" fill="var(--amber)">Dysplasia</text>
+            <text x="272" y="70" text-anchor="middle" font-size="8.5" fill="var(--ink-soft)">Reversible ได้</text>
+            <path d="M349 60 L379 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a89a)"/>
+
+            <rect x="384" y="30" width="150" height="60" rx="9" fill="var(--flame-soft)" stroke="var(--flame)"/>
+            <text x="459" y="50" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--flame)">Carcinoma</text>
+            <text x="459" y="65" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--flame)">in situ</text>
+            <text x="459" y="80" text-anchor="middle" font-size="8" fill="var(--ink-soft)">Basement membrane intact</text>
+            <path d="M536 60 L566 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a89a)"/>
+
+            <rect x="571" y="30" width="120" height="60" rx="9" fill="var(--burgundy-soft)" stroke="var(--burgundy)"/>
+            <text x="631" y="50" text-anchor="middle" font-size="10" font-weight="700" fill="var(--burgundy)">Invasive</text>
+            <text x="631" y="65" text-anchor="middle" font-size="10" font-weight="700" fill="var(--burgundy)">Carcinoma</text>
+            <text x="631" y="80" text-anchor="middle" font-size="8" fill="var(--ink-soft)">ผ่าน BM แล้ว</text>
+            <defs><marker id="a89a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 8-9.2 — ลำดับการดำเนินโรค: Normal → Dysplasia → Carcinoma in situ → Invasive carcinoma</div>
+        </div>
+        <h4>Pre-cancerous Conditions</h4>
+        <ul class="plain">
+          <li>Chronic atrophic gastritis ของ pernicious anemia</li>
+          <li>Solar keratosis ของผิวหนัง</li>
+          <li>Chronic ulcerative colitis</li>
+          <li>Leukoplakia ของช่องปาก, vulva, และ penis</li>
+          <li>Benign tumor บางชนิด เช่น villous adenoma ของลำไส้ใหญ่</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Local Invasion</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Benign Tumor</th><th>Malignant Tumor (Cancer)</th></tr>
+            <tr><td>การเติบโต</td><td>โตช้า มักมี fibrous capsule</td><td>Progressive infiltration, invasive, และทำลายเนื้อเยื่อรอบข้าง</td></tr>
+            <tr><td>Capsule</td><td>Encapsulation ทำให้ก้อนเคลื่อนไหวได้ (discrete, movable/nonfixed) และผ่าตัดออกง่าย (shell-out) — <b>ข้อยกเว้น:</b> leiomyoma ในมดลูก, hemangioma</td><td>ขาด well-defined capsule ถูกล้อมด้วย stroma ของเนื้อเยื่อรอบข้าง</td></tr>
+            <tr><td>ลักษณะขอบ</td><td>ชัดเจน</td><td>มี "tiny crablike feet" แทรกเข้าไปตามขอบและโครงสร้างข้างเคียง</td></tr>
+            <tr><td>การผ่าตัด</td><td>ง่าย</td><td>ต้อง wide surgical excision (clean margin)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Metastasis</h3>
+        <p>กระบวนการที่เซลล์มะเร็งหลุดออกจากตำแหน่งต้นกำเนิดและไปตั้งอาณานิคมใหม่ที่ตำแหน่งไกลออกไป — เชื่อว่าเกี่ยวข้องกับการสูญเสีย cell-to-cell adhesion และการจับกับ laminin receptor ใน matrix ตามด้วยการปล่อยเอนไซม์ย่อยสลาย basement membrane แล้วเซลล์มะเร็งจึงเคลื่อนที่ผ่านช่องว่างด้วย ameboid movement — <b>เซลล์มะเร็งที่ differentiate น้อยกว่ามีความสามารถปรับตัวเข้ากับเนื้อเยื่อแปลกถิ่นและอยู่รอดได้ดีกว่า</b></p>
+        <h4>สถิติสำคัญ</h4>
+        <ul class="plain">
+          <li>~30% ของ solid tumor มี clinically evident metastasis</li>
+          <li>เนื้องอกที่ anaplastic มากกว่าและมีขนาดใหญ่กว่ามีแนวโน้ม metastatic spread มากกว่า — แต่มีข้อยกเว้น: มะเร็งขนาดเล็กมากบางชนิดสามารถ metastasize ได้ ในขณะที่เนื้องอกขนาดใหญ่บางชนิดอาจไม่ (เช่น Choriocarcinoma, Melanoma บางชนิด)</li>
+        </ul>
+        <h4>3 เส้นทางของ Metastasis</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>เส้นทาง</th><th>รายละเอียด</th></tr>
+            <tr><td>1. Seeding of body cavities</td><td>เช่น pseudomyxoma peritonei</td></tr>
+            <tr><td>2. Lymphatic spread</td><td>พบบ่อยที่สุด เช่น Ca breast — อาจเกิด <b>Skip metastasis</b> ได้ (ข้ามต่อมน้ำเหลืองที่ใกล้กว่า) ผ่าน venous-lymphatic anastomoses ที่เกิดจาก inflammation หรือ radiation — <b>Sentinel lymph node</b> คือต่อมน้ำเหลืองแรกในระบบน้ำเหลืองส่วนภูมิภาคที่รับน้ำเหลืองจากตำแหน่งเนื้องอกต้นกำเนิด</td></tr>
+            <tr><td>3. Hematogenous (blood-borne) spread</td><td>ผ่านกระแสเลือด</td></tr>
+          </table>
+        </div>
+        <h4>Target Organs in Metastasis: "Seed and Soil" Concept</h4>
+        <p>ตำแหน่งที่มะเร็งไปแพร่กระจายขึ้นกับความเข้ากันได้ (compatibility) ระหว่างเซลล์มะเร็ง ("the seed") และ microenvironment ที่เอื้ออำนวย ("the soil") รวมถึงปัจจัยทางกายวิภาคและการไหลเวียนเลือดของอวัยวะนั้น ๆ</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>มะเร็งต้นกำเนิด</th><th>Target organ ("Soil")</th></tr>
+            <tr><td>Breast, Prostate, Thyroid</td><td>Bone (กระดูก)</td></tr>
+            <tr><td>GI tract</td><td>Liver (ตับ) — เพราะเป็น first capillary bed ที่เลือดจากทางเดินอาหารไหลผ่าน (ผ่าน portal circulation)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t89-molecular">8-9.5 Molecular Basis of Cancer</h2><span class="slide-ref">T8-9 · slide 73-74</span></div>
+      <div class="card">
+        <h3>หลักการพื้นฐาน</h3>
+        <ul class="plain">
+          <li>มะเร็งเกิดจาก <b>non-lethal genetic damage</b> (ความเสียหายทางพันธุกรรมที่ไม่ทำให้เซลล์ตายทันที)</li>
+          <li>เนื้องอกหนึ่งก้อนเกิดจากการขยายตัวแบบโคลน (<b>clonal expansion</b>) ของเซลล์ตั้งต้นเพียงเซลล์เดียว (<b>monoclonal</b>)</li>
+          <li>Carcinogenesis เป็น <b>multistep process</b> — ไม่ได้เกิดจาก mutation เพียงจุดเดียว</li>
+        </ul>
+        <h4>4 กลุ่มยีนควบคุมปกติที่เกี่ยวข้องกับมะเร็ง</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>กลุ่มยีน</th><th>บทบาท</th></tr>
+            <tr><td>Proto-oncogenes</td><td>ยีนปกติที่ควบคุมการเติบโต เมื่อกลายพันธุ์จะกลายเป็น oncogene</td></tr>
+            <tr><td>Oncogenes</td><td>สร้าง Oncoprotein ที่กระตุ้นการเติบโตแบบไม่มีการควบคุม</td></tr>
+            <tr><td>DNA repair genes</td><td>ซ่อมแซม DNA ที่เสียหาย</td></tr>
+            <tr><td>Apoptosis genes</td><td>ควบคุมการตายของเซลล์ที่ผิดปกติ</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Hallmarks of Cancer — Transformation &amp; Progression</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <circle cx="350" cy="130" r="55" fill="var(--burgundy)"/>
+            <text x="350" y="126" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">CANCER</text>
+            <text x="350" y="142" text-anchor="middle" fill="#fff" font-size="9">CELL</text>
+
+            <g font-size="9.5" font-weight="700" fill="var(--burgundy)">
+              <text x="350" y="20" text-anchor="middle">Self-sufficiency in</text>
+              <text x="350" y="32" text-anchor="middle">growth signals</text>
+
+              <text x="590" y="55" text-anchor="middle">Insensitivity to</text>
+              <text x="590" y="67" text-anchor="middle">growth-inhibit signal</text>
+
+              <text x="640" y="140" text-anchor="middle">Evasion of</text>
+              <text x="640" y="152" text-anchor="middle">apoptosis</text>
+
+              <text x="590" y="220" text-anchor="middle">Limitless replicative</text>
+              <text x="590" y="232" text-anchor="middle">potential (Telomerase)</text>
+
+              <text x="350" y="248" text-anchor="middle">Angiogenesis</text>
+
+              <text x="110" y="220" text-anchor="middle">Invasive ability</text>
+
+              <text x="60" y="140" text-anchor="middle">Metastatic</text>
+              <text x="60" y="152" text-anchor="middle">ability</text>
+
+              <text x="110" y="55" text-anchor="middle">Defect in DNA repair</text>
+              <text x="110" y="67" text-anchor="middle">("spell checker")</text>
+            </g>
+          </svg>
+          <div class="diagram-cap">Fig 8-9.3 — Hallmarks of Cancer: 8 คุณสมบัติที่เซลล์มะเร็งต้องได้มาเพื่อเกิด transformation และ progression</div>
+        </div>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Hallmark</th><th>ความหมาย</th></tr>
+            <tr><td>Self-sufficiency in growth signals</td><td>ไม่ต้องพึ่ง external growth factor ในการแบ่งตัว (autonomous)</td></tr>
+            <tr><td>Insensitivity to growth-inhibitory signal</td><td>ไม่ตอบสนองต่อสัญญาณที่ควรยับยั้งการเติบโต</td></tr>
+            <tr><td>Evasion of apoptosis</td><td>หลบเลี่ยงกลไกการตายของเซลล์ตามปกติ</td></tr>
+            <tr><td>Defect in DNA repair ("spell checker")</td><td>ไม่สามารถซ่อมแซม DNA ที่เสียหายได้อย่างมีประสิทธิภาพ ทำให้ mutation สะสม</td></tr>
+            <tr><td>Limitless replicative potential (Telomerase)</td><td>หลีกเลี่ยงข้อจำกัดจำนวนรอบการแบ่งตัว (Hayflick limit) ผ่านการกระตุ้นเอนไซม์ telomerase</td></tr>
+            <tr><td>Angiogenesis</td><td>กระตุ้นการสร้างหลอดเลือดใหม่มาเลี้ยงก้อนเนื้องอก</td></tr>
+            <tr><td>Invasive ability</td><td>สามารถบุกรุกเนื้อเยื่อข้างเคียงได้</td></tr>
+            <tr><td>Metastatic ability</td><td>สามารถแพร่กระจายไปยังอวัยวะไกลออกไปได้</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t89-genetics">8-9.6 Carcinogenesis: Genetics of Cancer</h2><span class="slide-ref">T8-9 · slide 77-79</span></div>
+
+      <div class="card">
+        <h3>Oncogenes — "Gain of Function" (ต้องการความเสียหายเพียง 1 allele)</h3>
+        <p>Oncogene เกิดจาก proto-oncogene ที่กลายพันธุ์แบบ <b>gain-of-function</b> — เพียง allele เดียวที่ผิดปกติก็เพียงพอที่จะเพิ่มความเสี่ยงมะเร็ง (dominant fashion)</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Gene</th><th>Associated Cancer</th><th>Gene Product</th></tr>
+            <tr><td>BCR-ABL</td><td>CML, ALL</td><td>Tyrosine kinase</td></tr>
+            <tr><td>Bcl-2</td><td>Follicular และ undifferentiated lymphoma</td><td>Antiapoptotic molecule (inhibits apoptosis)</td></tr>
+            <tr><td>BRAF</td><td>Melanoma</td><td>Serine/threonine kinase</td></tr>
+            <tr><td>C-kit</td><td>Gastrointestinal Stromal Tumor (GIST)</td><td>Tyrosine kinase</td></tr>
+            <tr><td>C-myc</td><td>Burkitt lymphoma</td><td>Transcription factor</td></tr>
+            <tr><td>HER2/neu (c-erbB2)</td><td>Breast, ovarian, gastric carcinoma</td><td>Tyrosine kinase</td></tr>
+            <tr><td>L-myc</td><td>Lung tumor</td><td>Transcription factor</td></tr>
+            <tr><td>N-myc</td><td>Neuroblastoma</td><td>Transcription factor</td></tr>
+            <tr><td>Ras</td><td>Colon, lung, pancreatic cancer</td><td>GTPase</td></tr>
+            <tr><td>Ret</td><td>MEN 2A และ 2B</td><td>Tyrosine kinase</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Tumor Suppressor Genes — "Loss of Function" (ต้องเสียทั้ง 2 alleles)</h3>
+        <p>ต่างจาก oncogene ตรงที่ tumor suppressor gene ต้อง<b>เสียการทำงานทั้งสอง allele</b> จึงจะแสดงผลของโรค (recessive fashion ในระดับเซลล์ — ตาม "two-hit hypothesis" ของ Knudson)</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Gene</th><th>Associated Cancer</th><th>Gene Product/หน้าที่</th></tr>
+            <tr><td>APC</td><td>Colorectal cancer (associated with FAP)</td><td>-</td></tr>
+            <tr><td>BRCA1</td><td>Breast, ovarian cancer</td><td>DNA repair protein</td></tr>
+            <tr><td>BRCA2</td><td>Breast, ovarian cancer</td><td>DNA repair protein</td></tr>
+            <tr><td>CDP4/SMAD4</td><td>Pancreatic cancer</td><td>DPC — Deleted in Pancreas Cancer</td></tr>
+            <tr><td>DCC</td><td>Colon cancer</td><td>DPC — Deleted in Colon Cancer</td></tr>
+            <tr><td>MEN1</td><td>MEN type 1</td><td>-</td></tr>
+            <tr><td>NF1</td><td>Neurofibromatosis type 1</td><td>RAS GTPase-activating protein</td></tr>
+            <tr><td>NF2</td><td>Neurofibromatosis type 2</td><td>Merlin (Schwannomin)</td></tr>
+            <tr><td>P16</td><td>Melanoma</td><td>Cyclin-dependent kinase inhibitor 2A</td></tr>
+            <tr><td>P53</td><td>มะเร็งมนุษย์ส่วนใหญ่, Li-Fraumeni syndrome</td><td>-</td></tr>
+            <tr><td>RB</td><td>Retinoblastoma, Osteosarcoma</td><td>Inhibits E2F; G1-S phase checkpoint</td></tr>
+            <tr><td>TSC1</td><td>Tuberous sclerosis</td><td>Hamartin protein</td></tr>
+            <tr><td>TSC2</td><td>Tuberous sclerosis</td><td>Tuberin protein</td></tr>
+            <tr><td>VHL</td><td>Von Hippel-Lindau disease</td><td>Inhibits Hypoxia Inducible Factor 1α</td></tr>
+            <tr><td>WT1, WT2</td><td>Wilms tumor (nephroblastoma)</td><td>-</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Chromosomal Translocations ที่สำคัญ</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Translocation</th><th>โรคที่เกี่ยวข้อง</th></tr>
+            <tr><td>t(9;22)</td><td><b>Philadelphia chromosome</b> — CML (BCR-ABL hybrid gene)</td></tr>
+            <tr><td>t(8;14)</td><td>Burkitt lymphoma (c-myc activation)</td></tr>
+            <tr><td>t(11;14)</td><td>Mantle cell lymphoma (Cyclin D1 activation)</td></tr>
+            <tr><td>t(14;18)</td><td>Follicular lymphoma (bcl-2 activation)</td></tr>
+            <tr><td>t(15;17)</td><td>M3 type ของ AML (responsive ต่อ all-trans retinoic acid)</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>Oncogene vs Tumor suppressor gene</b> เป็นจุดสับสนสำคัญ: Oncogene ทำงานแบบ "gain of function" ต้องการเพียง 1 allele ผิดปกติ (เปรียบเหมือนคันเร่งที่ติดค้าง) ในขณะที่ Tumor suppressor gene ทำงานแบบ "loss of function" ต้องเสียทั้ง 2 allele (เปรียบเหมือนเบรกที่เสียทั้งคู่) — Philadelphia chromosome t(9;22) เป็นตัวอย่าง translocation ที่ถูกถามบ่อยที่สุดในข้อสอบ เชื่อมโยงกับ CML โดยตรง</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t89-multistep">8-9.7 Multistep Nature of Carcinogenesis</h2><span class="slide-ref">T8-9 · slide 75-76, 81-85</span></div>
+      <div class="card">
+        <h3>หลักการพื้นฐาน</h3>
+        <ul class="plain">
+          <li><b>Carcinogenesis</b> คือกระบวนการที่ทำให้ normal cell เปลี่ยนแปลงเป็น transformed cell — เกิดจาก single cell ที่มี cumulative mutation สะสมขณะมี DNA replication หรือระหว่าง repair mechanism</li>
+          <li><b>Neoplastic transformation</b> เพิ่มขึ้นเมื่อเซลล์มีรอบการแบ่งตัวมากขึ้น</li>
+          <li>การได้รับสารก่อมะเร็งจะเพิ่ม mutation ของเซลล์ — <b>Carcinogenesis อาจเรียกว่า Oncogenesis ได้เช่นกัน</b></li>
+          <li>การเกิดมะเร็งเป็น <b>multistep hypothesis</b> มีลักษณะแบบ <b>"hit-and-run"</b> — genetic alteration เป็นพื้นฐานสำคัญที่สุดของกระบวนการก่อมะเร็ง</li>
+          <li>เนื้องอกส่วนใหญ่เกิดจาก <b>environmental cause</b> ในขณะที่มะเร็งบางชนิดเป็น <b>inherited risk</b></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>3 ขั้นตอนของ Carcinogenesis: Initiation, Promotion, Progression</h3>
+        <div class="diagram-frame">
+          <svg viewBox="0 0 700 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif;">
+            <rect x="10" y="30" width="200" height="60" rx="10" fill="var(--burgundy-soft)" stroke="var(--burgundy)" stroke-width="1.5"/>
+            <text x="110" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="var(--burgundy)">DNA damage (mutation)</text>
+            <text x="110" y="70" text-anchor="middle" font-size="10" font-weight="700" fill="var(--burgundy)">→ Initiation</text>
+            <path d="M212 60 L245 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a89e)"/>
+
+            <rect x="250" y="30" width="200" height="60" rx="10" fill="var(--burgundy-soft)" stroke="var(--burgundy)" stroke-width="1.5"/>
+            <text x="350" y="52" text-anchor="middle" font-size="11" font-weight="700" fill="var(--burgundy)">Proliferation</text>
+            <text x="350" y="70" text-anchor="middle" font-size="10" font-weight="700" fill="var(--burgundy)">→ Promotion</text>
+            <path d="M452 60 L485 60" stroke="var(--ink-faint)" stroke-width="2" marker-end="url(#a89e)"/>
+
+            <rect x="490" y="30" width="200" height="60" rx="10" fill="var(--burgundy-soft)" stroke="var(--burgundy)" stroke-width="1.5"/>
+            <text x="590" y="45" text-anchor="middle" font-size="10" font-weight="700" fill="var(--burgundy)">Development of</text>
+            <text x="590" y="58" text-anchor="middle" font-size="10" font-weight="700" fill="var(--burgundy)">cancerous phenotype</text>
+            <text x="590" y="76" text-anchor="middle" font-size="10" font-weight="700" fill="var(--burgundy)">→ Progression</text>
+            <defs><marker id="a89e" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--ink-faint)"/></marker></defs>
+          </svg>
+          <div class="diagram-cap">Fig 8-9.4 — 3 ขั้นตอนของ carcinogenesis</div>
+        </div>
+        <p><b>ตัวอย่างการสะสม mutation แบบ multistep ใน colon cancer:</b> Mutation ของ tumor suppressor gene (APC 5q21, MMR genes) → Protooncogene mutation (K-ras 12p12) → Mutation/loss ของ p53 → Mutation/loss ของ tumor suppressor gene อื่นเพิ่มเติม → มะเร็งลุกลาม</p>
+      </div>
+
+      <div class="card">
+        <h3>Rate of Growth และ Clonal Evolution</h3>
+        <p>เมื่อตรวจพบก้อนมะเร็งที่คลำได้ทางคลินิก (clinically detectable) แสดงว่าเนื้องอกได้ผ่านช่วงชีวิตส่วนใหญ่มาแล้วเมื่อวัดจาก cell doubling — กล่าวคือ <b>กว่าจะตรวจพบได้ เนื้องอกได้เติบโตผ่าน tumor cell doubling มาแล้วหลายรอบ</b></p>
+        <p><b>Clonal evolution:</b> เมื่อเนื้องอกเติบโตต่อเนื่อง จะเกิด subclone ใหม่จากเซลล์ลูกหลานของเซลล์ transformed ดั้งเดิม และเมื่อเวลาผ่านไป เนื้องอกจะถูกคัดเลือก (enriched) ด้วย variant ที่ปรับตัวหลบเลี่ยงการป้องกันของร่างกาย (evading host defense) ได้ดีกว่าและมีความรุนแรง (aggressive) มากกว่า</p>
+      </div>
+
+      <div class="card">
+        <h3>Pathological Basis of Cancer Screening</h3>
+        <p>ใช้ breast cancer เป็นตัวอย่าง: การตรวจพบมะเร็งในระยะ <b>pre-invasive (ductal carcinoma in situ)</b> ให้โอกาสรักษาหายขาดสูง เพราะยังไม่มีความเสี่ยงต่อ metastasis — เมื่อเนื้องอกลุกลามและเข้าถึงหลอดเลือดและหลอดน้ำเหลืองแล้ว <b>โอกาสรักษาหายขาดจะลดลงเรื่อย ๆ</b></p>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>หลักการ screening มะเร็งทั้งหมดตั้งอยู่บนแนวคิดว่า<b>ยิ่งตรวจพบเร็ว (ก่อนเข้าสู่ invasive stage) ยิ่งมีโอกาสรักษาหายขาดสูง</b> — นี่คือเหตุผลที่ Pap smear (ตรวจ cervical dysplasia/CIS) และ mammogram (ตรวจ DCIS) มีความสำคัญในการลดอัตราตายจากมะเร็ง</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t89-epidemiology">8-9.8 Cancer Epidemiology และ Carcinogens</h2><span class="slide-ref">T8-9 · slide 87-114</span></div>
+      <div class="card">
+        <h3>วิธีการระบุ Carcinogen</h3>
+        <ol style="padding-left:20px;">
+          <li>Epidemiological studies</li>
+          <li>Assessment of occupational risks</li>
+          <li>Direct accidental exposures</li>
+          <li>Carcinogenic effects ในสัตว์ทดลอง</li>
+          <li>Transforming effects บน cell culture</li>
+          <li>Mutagenicity testing ในแบคทีเรีย</li>
+        </ol>
+        <p>ข้อมูลทางระบาดวิทยาช่วยค้นพบสาเหตุของมะเร็งผ่านการศึกษา tumor incidence — มะเร็งบางชนิดพบได้บ่อยในบางชุมชนหรือบางประเทศ ประเทศที่มีระบบสาธารณสุขดีจะมี cancer registries ที่ช่วยให้เห็น environmental factor ที่อาจส่งผลต่อ tumor incidence เช่น hepatocellular และ esophageal carcinoma</p>
+      </div>
+
+      <div class="card">
+        <h3>ตัวอย่างมะเร็งที่เชื่อมโยงกับสิ่งแวดล้อม/ภูมิภาค</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>มะเร็ง</th><th>ปัจจัยที่เกี่ยวข้อง</th></tr>
+            <tr><td>Hepatocellular Carcinoma</td><td>ใน UK/USA พบน้อยและมักเกิดร่วมกับ cirrhosis แต่ทั่วโลกพบบ่อยกว่ามาก สัมพันธ์กับ <b>Mycotoxin</b> (aflatoxin จาก <i>Aspergillus flavus</i> ปนเปื้อนในอาหาร — พบมากใน Uganda) และ <b>Hepatitis B/C virus</b></td></tr>
+            <tr><td>Esophageal Cancer</td><td>พบมากในจีนและแถบทะเลสาบแคสเปียนในอิหร่าน สัมพันธ์กับ dyes ที่ใช้ในการทำพรม, nitrate ในดิน, อาหารหยาบ (abrasive food), และ opium dross</td></tr>
+            <tr><td>Scrotal Carcinoma</td><td>Sir Percival Pott (1775) พบ high risk ในกลุ่มอาชีพ <b>Chimney Sweeps</b> (คนกวาดปล่องไฟ) — เป็นตัวอย่างแรกในประวัติศาสตร์ของ occupational carcinogen</td></tr>
+            <tr><td>Lung Carcinoma</td><td>Major public health problem ทั่วโลก สัมพันธ์กับ cigarette smoking ร่วมกับปัจจัยเสี่ยงอื่น เช่น atmospheric pollutants, alcoholic drinks — มี <b>linear dose-response relationship</b> กับจำนวนบุหรี่ที่สูบ</td></tr>
+            <tr><td>Cervical Carcinoma</td><td>พบบ่อยที่สุดในกลุ่มโสเภณี และพบน้อยมากในแม่ชี (celibate nuns) — บ่งชี้ว่าเกิดจาก venereal transmitted agent พบมากในผู้หญิงที่มีคู่นอนหลายคนและเริ่มมีเพศสัมพันธ์ตั้งแต่อายุน้อย เดิมคาดว่าเกิดจาก HSV-2 แต่ปัจจุบันมีหลักฐานชัดเจนว่าเกิดจาก <b>HPV</b> (พบ DNA จาก cervical carcinoma) — Co-factor คือการสูบบุหรี่</td></tr>
+            <tr><td>Bladder Carcinoma</td><td>ทศวรรษ 1890s พบอุบัติการณ์สูงในคนงานโรงงาน aniline dye และ rubber industry ต่อมาพบว่า <b>β-naphthylamine</b> เป็น causative agent — ปัจจุบันมีมาตรการคัดกรองด้วย cytological examination ในปัสสาวะ</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Direct Evidence ของสารก่อมะเร็ง</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ตัวอย่าง</th><th>รายละเอียด</th></tr>
+            <tr><td>Thorotrast</td><td>Thorium dioxide ที่เคยใช้เป็น contrast medium ทางรังสีวิทยา เป็น radioactive substance ที่ปล่อย alpha radiation (half-life 1.39×10¹⁰ ปี) สะสมใน phagocytic cell ของ vascular sinusoid ในตับและม้าม — ปี 1947 มีรายงาน <b>angiosarcoma</b> ของตับหลังใช้ thorotrast ปัจจุบันเลิกใช้แล้ว</td></tr>
+            <tr><td>Thyroid Carcinoma และรังสีในเด็ก</td><td>External radiation และ radioactive isotope อาจทำให้เกิดมะเร็งต่อมไทรอยด์ เช่น เหตุการณ์ระเบิดโรงไฟฟ้านิวเคลียร์ Chernobyl (1986) ในยูเครน — หลัง latent interval 4 ปี พบ incidence ของมะเร็งต่อมไทรอยด์เพิ่มสูงขึ้นในเด็ก</td></tr>
+          </table>
+        </div>
+        <h4>Experimental Testing Systems</h4>
+        <p>มีข้อกำหนดให้ screen ยาใหม่ food additive และ environmental pollutant ก่อนใช้จริง ผ่าน 3 ระบบ: <b>(1) laboratory animals</b> (วัด incidence), <b>(2) cell/tissue culture</b> (วัด transformation), <b>(3) bacterial culture</b> (วัด mutagenic effect, Ames test) — แต่ละระบบยังไม่ใช่ perfect test system เนื่องจาก metabolism ของสัตว์ทดลองและ cell culture ไม่เหมือนร่างกายมนุษย์ และ cancer เป็น chronic process</p>
+      </div>
+
+      <div class="card">
+        <h3>Known/Suspected Carcinogens — 6 กลุ่มหลัก</h3>
+        <ol style="padding-left:20px;">
+          <li>Chemical</li>
+          <li>Viruses</li>
+          <li>Ionizing และ non-ionizing radiation</li>
+          <li>Hormones</li>
+          <li>Bacterial, fungal, และ parasitic</li>
+          <li>Miscellaneous agents</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h3>Chemical Carcinogens — 4 Major Classes</h3>
+        <p>สารก่อมะเร็งกลุ่มเคมีไม่มี common structural feature ที่ชัดเจน ส่วนใหญ่ต้องถูก metabolize ก่อนจึงจะออกฤทธิ์ (procarcinogen → ultimate carcinogen)</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>กลุ่ม</th><th>รายละเอียดและตัวอย่าง</th></tr>
+            <tr><td>1. Polycyclic Aromatic Hydrocarbon</td><td>กลุ่มแรกที่มีการศึกษา — Yamagiwa and Ichikawa (1917) พบ skin tumor ในกระต่ายจากน้ำมันดิน (coal tar) — Cook and Kennaway (London, 1930) แยก polycyclic aromatic hydrocarbon จากน้ำมันดินได้ พบสัมพันธ์กับ lung cancer ในคนสูบบุหรี่ — Carcinogen สำคัญในควันบุหรี่คือ <b>3,4-benzpyrene</b></td></tr>
+            <tr><td>2. Aromatic Amines</td><td>High incidence ของมะเร็งกระเพาะปัสสาวะในคนงานโรงงานสีทาและ rubber industry เกิดจาก naphthylamine ซึ่งถูก hydroxylation ในตับเป็น 1-hydroxy-2-naphthylamine แล้วขับออกทางปัสสาวะ — หากจับกับ glucuronic acid ในตับจะ inactive แต่ในกระเพาะปัสสาวะจะถูก deconjugate โดย glucuronidase กลับมาออกฤทธิ์ก่อมะเร็งได้</td></tr>
+            <tr><td>Nitrosamines</td><td>มีหลักฐานทางระบาดวิทยาเชื่อมโยงมะเร็งกระเพาะอาหารกับ nitrate/nitrite ในอาหาร — Nitrate ใช้เป็นปุ๋ยและซึมลงน้ำใต้ดิน ปนเปื้อนในน้ำดื่ม และใช้เป็น food additive ด้วย โดยถูก metabolize โดยแบคทีเรียในกระเพาะอาหารกลายเป็น nitrosamine ซึ่งเป็น potent carcinogen ในสัตว์ทดลอง</td></tr>
+            <tr><td>3. Azo Dyes</td><td>เป็น derivative ของ aromatic amine ตัวอย่าง: dimethylaminoazobenzene ("butter yellow") ที่เคยใช้ในการทำ margarine ทำให้เกิด liver cancer ในสัตว์ทดลอง ปัจจุบันการใช้ azo dye ถูกควบคุมอย่างเข้มงวด</td></tr>
+            <tr><td>4. Alkylating Agents</td><td>จับกับ DNA โดยตรง (bind directly to DNA) — ใช้เป็นยารักษามะเร็งได้เช่นกัน เช่น nitrogen mustard (เป็นทั้ง carcinogen และ chemotherapeutic agent ในเวลาเดียวกัน — double-edged sword)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Oncogenic Viruses</h3>
+        <p>มะเร็งบางชนิดมีสาเหตุจากไวรัส ส่วนใหญ่พบในคนอายุน้อย — ภาวะ Immunosuppression สนับสนุนการเกิด viral oncogenesis</p>
+        <ul class="plain">
+          <li><b>DNA virus</b> — ถูก incorporate เข้าสู่ host cell DNA โดยตรง</li>
+          <li><b>RNA virus (Retrovirus)</b> — ถูกเปลี่ยนเป็น DNA ก่อนโดยเอนไซม์ reverse transcriptase</li>
+        </ul>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ไวรัส</th><th>มะเร็งที่เกี่ยวข้อง</th></tr>
+            <tr><td>Human Papillomavirus (HPV)</td><td>Common warts (squamous papilloma), Cervical cancer — มีหลาย subtype: <b>Low risk 6, 11</b> (wart, benign) vs <b>High risk 16, 18</b> (cancer, malignant)</td></tr>
+            <tr><td>Epstein-Barr Virus (EBV)</td><td>Burkitt's lymphoma (B-cell neoplasm ที่ endemic ในบางพื้นที่ของแอฟริกา, co-factor คือ malaria), Nasopharyngeal carcinoma (พบมากในแถบตะวันออกไกล) — เป็นกลุ่ม human herpes virus ที่ชอบ infect B-cell</td></tr>
+            <tr><td>Hepatitis B และ C virus</td><td>Hepatocellular, penile, anal cancer — เป็น double-stranded DNA virus ที่ transmit ผ่านทางเลือด พบ high incidence ของการติดเชื้อร่วมกับ high incidence ของ liver cancer ในญี่ปุ่น จีน และเอเชียตะวันออกเฉียงใต้</td></tr>
+            <tr><td>Human Herpesvirus (HHV-8)</td><td>Kaposi's sarcoma, Pleural effusion lymphoma</td></tr>
+            <tr><td>Human T-cell Lymphotropic Virus-1 (HTLV-1)</td><td>Adult T-cell Leukemia/Lymphoma — เป็น RNA virus กลุ่ม Retrovirus สามารถ transform T-lymphocyte ให้เป็นเซลล์มะเร็งในหลอดทดลองได้</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Oncogenic Microbes อื่น ๆ (Non-viral)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>เชื้อ</th><th>มะเร็งที่เกี่ยวข้อง</th></tr>
+            <tr><td><i>Helicobacter pylori</i></td><td>Gastrointestinal cancer</td></tr>
+            <tr><td>Liver fluke (<i>Opisthorchis viverrini</i>, <i>Clonorchis sinensis</i>)</td><td>Cholangiocarcinoma, Hepatocellular carcinoma</td></tr>
+            <tr><td><i>Schistosoma haematobium</i></td><td>Bladder cancer</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>ไทยมีความเกี่ยวข้องโดยตรงกับ <i>Opisthorchis viverrini</i> (พยาธิใบไม้ตับ) ที่พบมากในภาคอีสาน สัมพันธ์กับ Cholangiocarcinoma — เป็นจุดที่ข้อสอบในไทยมักถามเน้นเป็นพิเศษ เนื่องจากเป็นปัญหาสาธารณสุขสำคัญของประเทศ</div>
+      </div>
+
+      <div class="card">
+        <h3>Hormones ในบทบาท Carcinogenesis</h3>
+        <p>ฮอร์โมนอาจเป็นทั้งต้นเหตุและ co-factor ของการเกิดมะเร็ง</p>
+        <ul class="plain">
+          <li><b>Estrogen</b> — จากการทดลองพบว่า promote mammary และ endometrial carcinoma พบความสัมพันธ์ระหว่าง oral contraceptive และ breast carcinoma</li>
+          <li><b>Androgen และ anabolic steroid</b> — สามารถกระตุ้นให้เกิด Hepatocellular carcinoma</li>
+          <li><b>Estrogen steroid</b> — อาจทำให้เกิด precancerous lesion เช่น adenoma, focal nodular hyperplasia รวมถึงความผิดปกติของหลอดเลือด</li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t89-biology">8-9.9 Biology of Tumor Cells</h2><span class="slide-ref">T8-9 · slide 115-127</span></div>
+
+      <div class="card">
+        <h3>1. Cellular Immortalization</h3>
+        <p>Neoplastic transforming cell มีคุณสมบัติเฉพาะคือ <b>immortalization</b> (ไม่มีข้อจำกัดของช่วงชีวิต) สามารถแบ่งตัวเพิ่มจำนวนได้ตลอดเวลาจากการกระตุ้นของ growth factor ผ่าน 3 กลไก:</p>
+        <ul class="plain">
+          <li><b>Autocrine growth stimulation</b> — จาก abnormal expression ของยีน เช่น oncogene</li>
+          <li><b>Reduced apoptosis</b> — จาก abnormal expression ของยีนต้านการตาย</li>
+          <li><b>Telomerase</b> — เอนไซม์ที่ไม่พบในเซลล์ปกติ ช่วยป้องกัน telomeric shortening ซึ่งเป็นตัวกำหนดจำนวนรอบการแบ่งตัวของเซลล์ (cell replication cycle)</li>
+        </ul>
+
+        <h3>2. DNA of Tumor Cells</h3>
+        <ul class="plain">
+          <li>มี abnormal หรือ damaged DNA ทำให้เกิด gene mutation</li>
+          <li>ปริมาณ DNA เพิ่มมากขึ้น ทำให้เห็น <b>nuclear hyperchromasis</b></li>
+          <li>ในระดับโครโมโซมมี <b>karyotypic abnormality</b> จากการเพิ่มจำนวนโครโมโซมหรือ chromosomal translocation ซึ่งอาจมีความจำเพาะในมะเร็งบางชนิด เช่น <b>Philadelphia chromosome</b> ใน CML</li>
+          <li>Genetic abnormality พบมากขึ้นเรื่อย ๆ ส่วนใหญ่เป็นความผิดปกติของ oncogene และ tumor suppressor gene</li>
+        </ul>
+
+        <h3>3. Mitotic และ Apoptotic Activity</h3>
+        <ul class="plain">
+          <li>Mitotic activity เพิ่มขึ้นในมะเร็งมากกว่า normal tissue พบได้จากการตรวจใต้กล้องจุลทรรศน์ (mitotic figures) บางครั้งมีโครงสร้างผิดปกติเป็น tripolar หรืออื่น ๆ</li>
+          <li>สามารถประเมิน cellular proliferation ได้จาก <b>mitosis counting, DNA measurement</b> และ cell cycle associated protein เช่น <b>Ki-67 antigen</b> — ช่วยบอก prognostic information</li>
+          <li>ประเมินจาก <b>rate of cell loss</b> ได้จาก ischemic necrosis หรือ apoptosis cell death</li>
+          <li>เซลล์มะเร็งอาจมีกลไกต่อต้านการเกิด apoptosis เช่น ใน lymphoma จาก abnormal expression ของ <b>Bcl-2 apoptotic-inhibiting gene</b></li>
+        </ul>
+
+        <h3>4. Metabolic Abnormalities</h3>
+        <ul class="plain">
+          <li>ไม่มี specific metabolic abnormality ที่จำเพาะสำหรับ neoplastic process แต่พบว่า tumor มักใช้ <b>anaerobic glycolysis (Warburg effect)</b></li>
+          <li>ผิวของ tumor cell มักมี negative surface charge มากกว่าปกติ ทำให้ less cohesive — การที่ epithelial tumor มี cohesion ลดลงเพราะ intercellular junction บกพร่อง ทำให้ malignant cell สามารถแพร่กระจายและ metastasis ได้</li>
+          <li>Tumor cell มีความผิดปกติในการ synthesize และ secrete product ของ cell origin (excessive หรือ uncontrolled) มักมีหลักฐานว่ามี gene depression — somatic cell มี genetic information เหมือนกัน แต่จะ selectively expressed เฉพาะยีนที่จำเป็นสำหรับชนิดของเซลล์นั้น</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Tumor Markers — ประเภทและตัวอย่าง</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ประเภท</th><th>คำอธิบาย</th></tr>
+            <tr><td>1. Substance เหมือนที่มีอยู่ใน cell origin</td><td>เช่น Keratin จาก squamous cell carcinoma, Steroid hormone จาก adrenocortical adenoma</td></tr>
+            <tr><td>2. Substance ที่ต่างจาก cell origin</td><td>เช่น ACTH และ ADH จาก small cell carcinoma ของปอด</td></tr>
+            <tr><td>3. Fetal reversion substance</td><td>เช่น CEA (Carcinoembryonic Antigen) จาก adenocarcinoma ของ GI tract, Alpha-fetoprotein จาก liver cell</td></tr>
+            <tr><td>4. Substance สำหรับ growth factor/angiogenic factor</td><td>เช่น Collagenase — สารเหล่านี้ใช้เป็น tumor marker สำหรับวินิจฉัยหรือ follow up หลังการรักษา</td></tr>
+          </table>
+        </div>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Tumor</th><th>Marker</th><th>หมายเหตุ</th></tr>
+            <tr><td>Myeloma</td><td>Monoclonal immunoglobulin, Bence Jones protein</td><td>Immunoglobulin light chain (kappa หรือ lambda) พบในเลือด</td></tr>
+            <tr><td>Hepatocellular carcinoma</td><td>Alpha-fetoprotein (AFP)</td><td>สัมพันธ์กับ testicular teratoma ด้วย</td></tr>
+            <tr><td>GI adenocarcinoma</td><td>Carcinoembryonic Antigen (CEA)</td><td>อาจให้ false positive ในภาวะ non-neoplastic บางอย่าง</td></tr>
+            <tr><td>Neuroendocrine tumor</td><td>Peptide hormone (insulin, gastrin)</td><td>การผลิตฮอร์โมนมากเกินอาจมีผลทางคลินิก</td></tr>
+            <tr><td>Pheochromocytoma</td><td>Vanillylmandelic acid (VMA)</td><td>Metabolite ของ catecholamine ในปัสสาวะ</td></tr>
+            <tr><td>Carcinoid</td><td>5-Hydroxyindoleacetic acid (5-HIAA)</td><td>Metabolite ของ serotonin</td></tr>
+            <tr><td>Choriocarcinoma</td><td>Human Chorionic Gonadotrophin (hCG)</td><td>พบในเลือดหรือปัสสาวะ</td></tr>
+            <tr><td>Malignant teratoma</td><td>AFP, hCG</td><td>พบในเลือด (และปัสสาวะสำหรับ hCG)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t89-effects">8-9.10 Effects of Cancer on the Body</h2><span class="slide-ref">T8-9 · slide 129-138</span></div>
+
+      <div class="card">
+        <p>ความรุนแรงของอาการขึ้นกับตำแหน่งและขอบเขตของ metastasis เป็นหลัก ระยะแรกของเนื้องอกอาจไม่มีอาการเลย (asymptomatic) แต่เมื่อขนาดและการแพร่กระจายเพิ่มขึ้น อาการจะเริ่มชัดเจน รวมถึง pain, cachexia, immune suppression, และ infection</p>
+
+        <h3>Pain</h3>
+        <p>เกิดจากการ invasion ของ metastatic cell เข้าสู่อวัยวะหรือกระดูก และการกระตุ้น pain/pressure receptor ในเนื้อเยื่อ — อาจเกิดจาก tissue destruction และ inflammation ร่วมด้วย การรักษามะเร็งเองก็อาจทำให้ pain มากขึ้น มักควบคุมด้วย analgesic</p>
+
+        <h3>Cachexia</h3>
+        <p>ภาวะน้ำหนักลดและอ่อนแรงทั่วร่างกาย รวมถึงเบื่ออาหาร (anorexia) และเพิ่ม metabolic rate — Anorexia อาจเกิดจาก toxin ที่ปล่อยจาก cancer cell หรือ immune cell, คลื่นไส้อาเจียนเป็นภาวะแทรกซ้อนที่พบบ่อยของการรักษามะเร็งและลดการรับสารอาหาร — <b>TNF</b> และ immune cytokine อื่นก่อให้เกิด hypermetabolism</p>
+
+        <h3>Immune Suppression</h3>
+        <p>Cancer cell หลั่งสารที่กด immune system — prognosis จะแย่ลงเมื่อ immune system ถูกกดการทำงาน มะเร็งบางชนิดพัฒนาวิธีการหลบเลี่ยงระบบภูมิคุ้มกัน (elude immune system)</p>
+
+        <h3>Bone Marrow Suppression</h3>
+        <p>ส่งผลให้เกิด anemia, leukopenia, และ thrombocytopenia — อาจเกิดจากการ invasion และทำลาย bone marrow, ภาวะโภชนาการไม่ดี หรือยาเคมีบำบัด เมื่อหยุดเคมีบำบัด stem cell สามารถฟื้นตัวและกลับมาผลิตเม็ดเลือดต่อได้ บางกรณีใช้ growth factor เฉพาะช่วยรักษา เช่น erythropoietic (Epogen) และ granulocyte-stimulating factor (Neupogen)</p>
+
+        <h3>ผลข้างเคียงจากการรักษา</h3>
+        <p>Radiation หรือ chemotherapy อาจทำให้ผมร่วงและเยื่อบุ (mucosal membrane) หลุดลอก</p>
+      </div>
+
+      <div class="card">
+        <h3>Paraneoplastic Syndrome</h3>
+        <p>กลุ่มอาการที่เกิดขึ้นใน <b>10-15%</b> ของผู้ป่วยมะเร็ง — หลายกลุ่มอาการสัมพันธ์กับการผลิตฮอร์โมนหรือ cytokine มากเกินไปโดยเนื้องอกเอง</p>
+        <h4>Paraneoplastic Syndrome ที่พบบ่อย</h4>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Syndrome</th><th>กลไก</th></tr>
+            <tr><td>Hypercalcemia</td><td>สัมพันธ์กับการผลิต Parathyroid Hormone-related Protein (PTHrP) ที่ผิดปกติ</td></tr>
+            <tr><td>Cushing Syndrome</td><td>Small cell carcinoma ของปอดหลั่ง ACTH และ ADH-related protein — เป็นสาเหตุที่พบบ่อย</td></tr>
+            <tr><td>Hypernatremia (SIADH)</td><td><span class="eng">Syndrome of Inappropriate ADH secretion</span></td></tr>
+          </table>
+        </div>
+        <p>หากไม่ได้รับการรักษา มะเร็งมีศักยภาพที่จะทำให้ผู้ป่วยเสียชีวิตได้ สาเหตุการตายมักเป็น multifactorial รวมถึง infection, hemorrhage, และ organ failure</p>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>Small cell carcinoma of lung</b> เป็นตัวอย่างคลาสสิกที่เชื่อมโยงกับ paraneoplastic syndrome หลายชนิดพร้อมกัน (ทั้ง Cushing syndrome จาก ectopic ACTH และ SIADH จาก ectopic ADH) — เป็นจุดที่ข้อสอบมักใช้ทดสอบความเข้าใจเรื่อง ectopic hormone production</div>
+      </div>
+    </div>
+
+    
+    <div class="section">
+      <div class="section-head"><h2 id="t89-grading">8-9.11 Grading and Staging of Tumors</h2><span class="slide-ref">T8-9 · slide 139-140 <span style="color:var(--burgundy)">+ เสริมเต็มจาก Robbins</span></span></div>
+      <div class="card">
+        <h3>วัตถุประสงค์</h3>
+        <p>ใช้เพื่อ<b>ทำนาย clinical behavior ของ malignant tumor</b> และเป็นแนวทางในการวางแผนการรักษา (guide therapy) — ประกอบด้วย 2 ระบบที่แตกต่างกันแต่ใช้ร่วมกันเสมอในทางคลินิก</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th></th><th>Grading</th><th>Staging</th></tr>
+            <tr><td>นิยาม</td><td>Histological characterization ของ tumor cell โดยพิจารณาจากระดับของ anaplasia</td><td>อธิบายตำแหน่งและรูปแบบการแพร่กระจาย (location and pattern of spread) ภายในร่างกาย</td></tr>
+            <tr><td>สะท้อนอะไร</td><td>ความรุนแรงทางชีววิทยา (biologic aggressiveness) ของเซลล์เนื้องอกเอง</td><td>ขอบเขตทางกายวิภาคของโรค ณ เวลาที่วินิจฉัย</td></tr>
+            <tr><td>ระบบที่ใช้</td><td>แบ่งเป็น 3-4 classes ตามระดับความรุนแรงที่เพิ่มขึ้น (increasing degree of malignancy)</td><td>ระบบสากล <b>TNM (Tumor, Node, Metastasis)</b> ซึ่งใช้กันอย่างแพร่หลาย</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Grading System (G1-G4) — เสริมเต็มจาก Robbins</h3>
+        <p>Grading ประเมินจากลักษณะทาง histology ของเซลล์เนื้องอก โดยทั่วไปใช้เกณฑ์ระดับ differentiation, จำนวน mitosis, และลักษณะ nuclear features เป็นหลัก แบ่งเป็น 4 ระดับความรุนแรงที่เพิ่มขึ้น:</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Grade</th><th>ความหมาย</th><th>ลักษณะ Histology</th></tr>
+            <tr><td>Grade 1 (G1)</td><td>Well differentiated</td><td>เซลล์คล้ายเนื้อเยื่อต้นกำเนิดมาก, mitosis น้อย, nuclear atypia น้อย — ความรุนแรงต่ำสุด</td></tr>
+            <tr><td>Grade 2 (G2)</td><td>Moderately differentiated</td><td>ลักษณะกึ่งกลางระหว่าง G1 และ G3</td></tr>
+            <tr><td>Grade 3 (G3)</td><td>Poorly differentiated</td><td>เซลล์แตกต่างจากเนื้อเยื่อต้นกำเนิดมาก, mitosis มาก, nuclear atypia ชัดเจน</td></tr>
+            <tr><td>Grade 4 (G4)</td><td>Undifferentiated (Anaplastic)</td><td>ไม่สามารถระบุเนื้อเยื่อต้นกำเนิดได้จากลักษณะเซลล์ — ความรุนแรงสูงสุด</td></tr>
+          </table>
+        </div>
+        <p>ระบบ grading บางชนิดใช้เกณฑ์เฉพาะทาง เช่น <b>Gleason score</b> สำหรับ prostate cancer, <b>Nottingham grading system</b> สำหรับ breast cancer, <b>Fuhrman grade</b> สำหรับ renal cell carcinoma — แต่ละระบบมีเกณฑ์ที่ปรับให้เหมาะกับ biology ของอวัยวะนั้น ๆ</p>
+      </div>
+
+      <div class="card">
+        <h3>TNM Staging System — เสริมเต็มจาก Robbins</h3>
+        <p>พัฒนาและดูแลโดย <b>American Joint Committee on Cancer (AJCC)</b> ร่วมกับ Union for International Cancer Control (UICC) — ประเมิน 3 องค์ประกอบหลักที่เป็นอิสระต่อกัน แล้วนำมารวมกันเป็น Stage สุดท้าย</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>องค์ประกอบ</th><th>ความหมาย</th><th>ระดับ (โดยทั่วไป)</th></tr>
+            <tr><td><b>T</b> — Tumor</td><td>ขนาดและ/หรือขอบเขตการลุกลามเฉพาะที่ของ primary tumor</td><td><b>T0</b> = ไม่พบ primary tumor · <b>Tis</b> = Carcinoma in situ · <b>T1-T4</b> = ขนาดใหญ่ขึ้น/ลุกลามลึกขึ้นตามลำดับ (เกณฑ์ที่แน่นอนแตกต่างกันไปตามอวัยวะ)</td></tr>
+            <tr><td><b>N</b> — Node</td><td>การแพร่กระจายไปยัง regional lymph node</td><td><b>N0</b> = ไม่มี lymph node metastasis · <b>N1-N3</b> = จำนวน/ตำแหน่งของต่อมน้ำเหลืองที่มี metastasis เพิ่มขึ้นตามลำดับ</td></tr>
+            <tr><td><b>M</b> — Metastasis</td><td>การแพร่กระจายไปยังอวัยวะไกล (distant metastasis)</td><td><b>M0</b> = ไม่มี distant metastasis · <b>M1</b> = มี distant metastasis</td></tr>
+          </table>
+        </div>
+        <h4>จาก TNM สู่ Stage Grouping (I-IV)</h4>
+        <p>ค่า T, N, M แต่ละตัวจะถูกนำมารวมกันเป็น <b>Overall Stage Grouping</b> ตั้งแต่ Stage 0 ถึง Stage IV ซึ่งเป็นรูปแบบที่ใช้สื่อสารง่ายที่สุดในทางคลินิก:</p>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>Stage</th><th>ความหมายโดยทั่วไป</th></tr>
+            <tr><td>Stage 0</td><td>Carcinoma in situ (Tis, N0, M0)</td></tr>
+            <tr><td>Stage I</td><td>Tumor ขนาดเล็ก จำกัดอยู่เฉพาะที่ ไม่มี lymph node หรือ distant metastasis</td></tr>
+            <tr><td>Stage II-III</td><td>Tumor ขนาดใหญ่ขึ้นและ/หรือมี regional lymph node involvement เพิ่มขึ้นตามลำดับ</td></tr>
+            <tr><td>Stage IV</td><td>มี distant metastasis (M1) — ไม่ว่า T หรือ N จะเป็นเท่าใด</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div><b>Staging มีความสำคัญต่อ prognosis มากกว่า Grading</b> ในกรณีส่วนใหญ่ — เนื้องอกที่ grade ต่ำ (well differentiated) แต่ staging สูง (มี distant metastasis) ยังคงมี prognosis แย่กว่าเนื้องอกที่ grade สูงแต่ staging ต่ำ เพราะ staging สะท้อนขอบเขตการแพร่กระจายจริงของโรค ในขณะที่ grading เป็นเพียงการทำนายพฤติกรรมทางชีววิทยา</div>
+      </div>
+
+      <div class="card">
+        <h3>Grading vs Staging (สรุปเปรียบเทียบ)</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>ประเด็น</th><th>Grading</th><th>Staging</th></tr>
+            <tr><td>วัดอะไร</td><td>Biologic aggressiveness (histologic)</td><td>Anatomic extent of disease</td></tr>
+            <tr><td>Criteria</td><td>Differentiation, mitosis, nuclear atypia</td><td>ขนาด primary tumor (T), lymph node (N), distant metastasis (M)</td></tr>
+            <tr><td>ระบบ</td><td>G1-G4 (แตกต่างตามชนิดเนื้องอก)</td><td>TNM → Stage 0-IV (AJCC/UICC)</td></tr>
+            <tr><td>ผลต่อ Prognosis</td><td>สัมพันธ์กับ prognosis แต่มีความแปรปรวนสูงกว่า</td><td>เป็นตัวทำนาย prognosis ที่แม่นยำและสำคัญที่สุดในทางคลินิก</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-head"><h2 id="t89-therapy">8-9.12 Cancer Therapy</h2><span class="slide-ref">T8-9 · slide 141-144 <span style="color:var(--burgundy)">+ ขยายเนื้อหาเต็ม</span></span></div>
+      <div class="card">
+        <h3>ภาพรวมทางระบาดวิทยาของการรักษามะเร็ง</h3>
+        <ul class="plain">
+          <li><b>5-year survival rate</b> ของมะเร็งโดยรวมอยู่ที่ประมาณ <b>66%</b></li>
+          <li>การตรวจพบตั้งแต่ระยะแรก (early detection) สัมพันธ์กับ prognosis ที่ดีที่สุด</li>
+          <li><b>"Cure"</b> หมายถึงการกำจัดเซลล์มะเร็งออกจากร่างกายได้หมดสิ้น (eradication of all cancer cells)</li>
+          <li>ผู้ป่วยที่มี lymph node metastasis ยังคงมีโอกาสรักษาหายขาดได้ดีหากได้รับการรักษาที่เหมาะสม</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>6 แนวทางหลักของการรักษามะเร็ง</h3>
+        <div class="table-wrap">
+          <table class="cmp">
+            <tr><th>วิธีการรักษา</th><th>กลไก/หลักการ</th><th>ข้อควรทราบ</th></tr>
+            <tr><td>1. Surgery</td><td>ตัดก้อนเนื้องอกออกโดยตรง มักใช้ร่วมกับการตัด regional lymph node เพื่อประเมิน staging (sentinel lymph node biopsy)</td><td>เป็นการรักษาหลักสำหรับ solid tumor ระยะต้น โดยเฉพาะเมื่อยังไม่มี distant metastasis — ต้องการ "clean margin" เพื่อลดโอกาส recurrence</td></tr>
+            <tr><td>2. Radiation Therapy</td><td>ใช้รังสีไอออไนซ์ (ionizing radiation) ทำลาย DNA ของเซลล์มะเร็งโดยตรงหรือผ่านการสร้าง free radical ทำให้เซลล์ไม่สามารถแบ่งตัวได้และเข้าสู่ apoptosis</td><td>เซลล์ที่แบ่งตัวเร็ว (rapidly dividing) ไวต่อรังสีมากกว่าเซลล์ปกติที่แบ่งตัวช้า — อาจใช้ร่วมกับ surgery (neoadjuvant/adjuvant) หรือใช้เดี่ยว ๆ ในบางมะเร็ง</td></tr>
+            <tr><td>3. Chemotherapy (Drug Therapy)</td><td>ยาที่ออกฤทธิ์ทำลายเซลล์ที่แบ่งตัวเร็ว ผ่านกลไกหลากหลาย เช่น alkylating agent (จับ DNA โดยตรง), antimetabolite (ยับยั้ง DNA/RNA synthesis), topoisomerase inhibitor, mitotic inhibitor (ยับยั้ง microtubule)</td><td>ออกฤทธิ์เป็นระบบ (systemic) จึงเหมาะกับมะเร็งที่แพร่กระจายแล้ว — ผลข้างเคียงเกิดจากการทำลายเซลล์ปกติที่แบ่งตัวเร็วด้วย เช่น bone marrow, GI mucosa, hair follicle (อธิบาย cytopenia, mucositis, alopecia ที่พบบ่อย)</td></tr>
+            <tr><td>4. Immunotherapy</td><td>กระตุ้นหรือปรับระบบภูมิคุ้มกันของผู้ป่วยเองให้จดจำและทำลายเซลล์มะเร็ง เช่น <b>Immune checkpoint inhibitor</b> (anti-PD-1, anti-PD-L1, anti-CTLA-4) ที่ปลดล็อกการยับยั้ง T-cell ที่เซลล์มะเร็งใช้หลบเลี่ยงระบบภูมิคุ้มกัน</td><td>เป็นแนวทางที่พัฒนาอย่างรวดเร็วในช่วงทศวรรษที่ผ่านมา ให้ผลตอบสนองยาวนานในผู้ป่วยบางราย แต่ก็มีผลข้างเคียงจาก autoimmune-like reaction ได้ (immune-related adverse events)</td></tr>
+            <tr><td>5. Gene and Molecular (Targeted) Therapy</td><td>ยาที่ออกแบบมาเจาะจงต่อ molecular target ที่ผิดปกติในเซลล์มะเร็งโดยเฉพาะ เช่น Tyrosine kinase inhibitor (imatinib ต่อ BCR-ABL ใน CML), Monoclonal antibody (trastuzumab ต่อ HER2 ใน breast cancer)</td><td>ผลข้างเคียงน้อยกว่า chemotherapy แบบดั้งเดิม เพราะจำเพาะต่อเซลล์มะเร็งมากกว่า — ต้องอาศัยการตรวจ molecular marker ของผู้ป่วยก่อนเลือกใช้ยา (precision medicine)</td></tr>
+            <tr><td>6. Stem Cell Transplantation</td><td>ปลูกถ่ายเซลล์ต้นกำเนิดเม็ดเลือด (hematopoietic stem cell) เพื่อฟื้นฟู bone marrow หลังได้รับ high-dose chemotherapy/radiation ที่ทำลาย bone marrow เดิมจนหมด</td><td>ใช้หลักในมะเร็งทางโลหิตวิทยา เช่น leukemia, lymphoma, multiple myeloma — แบ่งเป็น autologous (จากตัวผู้ป่วยเอง) และ allogeneic (จากผู้บริจาค)</td></tr>
+          </table>
+        </div>
+        <div class="examtip"><div class="tip-title">⚡ จุดที่ข้อสอบชอบออก</div>หลักการเลือกวิธีรักษาขึ้นกับ <b>staging</b> เป็นหลัก: มะเร็งระยะต้น (localized) เน้น surgery ± radiation, มะเร็งที่แพร่กระจายแล้ว (metastatic) เน้น systemic therapy (chemotherapy/immunotherapy/targeted therapy) — ในทางปฏิบัติมักใช้หลายวิธีร่วมกัน (multimodality therapy) เพื่อเพิ่มโอกาสรักษาหายขาด</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-divider">คำศัพท์สำคัญประจำหัวข้อ</div>
+      <div class="card">
+        <div class="glossary">
+          <div class="gterm"><b>Neoplasm</b>ก้อนเนื้อเยื่อผิดปกติที่โตเกินควบคุม</div>
+          <div class="gterm"><b>Anaplasia</b>การสูญเสีย differentiation</div>
+          <div class="gterm"><b>Pleomorphism</b>ความหลากหลายของขนาด/รูปร่างเซลล์</div>
+          <div class="gterm"><b>Parenchyma vs Stroma</b>เซลล์เนื้องอก vs เนื้อเยื่อสนับสนุน</div>
+          <div class="gterm"><b>Hamartoma vs Choristoma</b>เนื้อเยื่อถูกที่ผิดสัดส่วน vs ผิดที่</div>
+          <div class="gterm"><b>Dysplasia</b>ความผิดปกติของการเจริญเติบโตของเซลล์</div>
+          <div class="gterm"><b>Carcinoma in situ</b>Dysplasia รุนแรงที่ยัง confined อยู่</div>
+          <div class="gterm"><b>Seed and soil</b>แนวคิดความเข้ากันได้ของ metastasis</div>
+          <div class="gterm"><b>Oncogene</b>ยีน gain-of-function ก่อมะเร็ง</div>
+          <div class="gterm"><b>Tumor suppressor gene</b>ยีน loss-of-function ก่อมะเร็ง</div>
+          <div class="gterm"><b>Philadelphia chromosome</b>t(9;22) BCR-ABL ใน CML</div>
+          <div class="gterm"><b>Hallmarks of Cancer</b>8 คุณสมบัติของเซลล์มะเร็ง</div>
+          <div class="gterm"><b>Telomerase</b>เอนไซม์ป้องกัน telomeric shortening</div>
+          <div class="gterm"><b>Warburg effect</b>Tumor ใช้ anaerobic glycolysis</div>
+          <div class="gterm"><b>Tumor marker</b>สารบ่งชี้มะเร็งในเลือด/ปัสสาวะ</div>
+          <div class="gterm"><b>Paraneoplastic syndrome</b>กลุ่มอาการจากมะเร็งที่ไม่ใช่ผลจาก mass โดยตรง</div>
+          <div class="gterm"><b>Grading</b>Histologic characterization ตามระดับ anaplasia</div>
+          <div class="gterm"><b>Staging (TNM)</b>ขอบเขตทางกายวิภาคของโรค</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
   <section class="tabpanel" id="panel-review">
     <div class="tabhero">
       <div class="kicker">Final Review</div>
       <h1>สรุป High-Yield ก่อนเข้าคาบ Quiz/Game</h1>
-      <p>รวมตารางเปรียบเทียบและคำศัพท์จาก T1-T7 ทั้งหมดไว้ในที่เดียว สำหรับทบทวนรอบสุดท้าย</p>
+      <p>รวมตารางเปรียบเทียบและคำศัพท์จาก T1-T9 ทั้งหมดไว้ในที่เดียว สำหรับทบทวนรอบสุดท้าย</p>
     </div>
     
     <div class="section">
-      <div class="section-head"><h2 id="rv-tables">7.1 ตารางเปรียบเทียบรวม (High-Yield Comparison)</h2></div>
-      <p class="section-lede">รวมตารางเปรียบเทียบทั้งหมดจาก T1-T7 ไว้ในที่เดียว สำหรับทบทวนรอบสุดท้ายก่อนเข้าคาบ Quiz</p>
+      <div class="section-head"><h2 id="rv-tables">8.1 ตารางเปรียบเทียบรวม (High-Yield Comparison)</h2></div>
+      <p class="section-lede">รวมตารางเปรียบเทียบทั้งหมดจาก T1-T9 ไว้ในที่เดียว สำหรับทบทวนรอบสุดท้ายก่อนเข้าคาบ Quiz</p>
 
       <div class="card">
         <h3>Reversible vs Irreversible Cell Injury</h3>
@@ -3939,10 +4794,61 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
           <tr><td>XVIII</td><td>Knobloch Syndrome</td></tr>
         </table></div>
       </div>
+
+      <div class="section-divider">T8-9 · Neoplasia</div>
+
+      <div class="card">
+        <h3>Benign vs Malignant Tumor</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Benign</th><th>Malignant</th></tr>
+          <tr><td>Capsule</td><td>มี</td><td>มักไม่มี</td></tr>
+          <tr><td>Cell</td><td>Uniform, well differentiated</td><td>Pleomorphism, anaplasia</td></tr>
+          <tr><td>Chromosome</td><td>ปกติ</td><td>Aneuploidy</td></tr>
+          <tr><td>Growth</td><td>ช้า มีขอบเขต</td><td>เร็ว infiltrative</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Oncogene vs Tumor Suppressor Gene</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Oncogene</th><th>Tumor Suppressor Gene</th></tr>
+          <tr><td>กลไก</td><td>Gain of function</td><td>Loss of function</td></tr>
+          <tr><td>Allele ที่ต้องเสีย</td><td>1 allele</td><td>ทั้ง 2 alleles</td></tr>
+          <tr><td>ตัวอย่าง</td><td>BCR-ABL, Ras, C-myc</td><td>P53, RB, BRCA1/2, APC</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Hamartoma vs Choristoma</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Hamartoma</th><th>Choristoma</th></tr>
+          <tr><td>ลักษณะ</td><td>เนื้อเยื่อถูกที่ แต่ผิดสัดส่วน/ไม่เป็นระเบียบ</td><td>เนื้อเยื่อปกติสมบูรณ์ แต่ผิดที่</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Grading vs Staging (TNM)</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th></th><th>Grading</th><th>Staging</th></tr>
+          <tr><td>วัด</td><td>Biologic aggressiveness (histology)</td><td>Anatomic extent (T/N/M)</td></tr>
+          <tr><td>ผลต่อ prognosis</td><td>สัมพันธ์ แต่แปรปรวนกว่า</td><td>แม่นยำและสำคัญที่สุด</td></tr>
+        </table></div>
+      </div>
+
+      <div class="card">
+        <h3>Oncogenic Virus – Cancer Association</h3>
+        <div class="table-wrap"><table class="cmp">
+          <tr><th>ไวรัส</th><th>มะเร็ง</th></tr>
+          <tr><td>HPV 16, 18</td><td>Cervical cancer</td></tr>
+          <tr><td>EBV</td><td>Burkitt lymphoma, Nasopharyngeal carcinoma</td></tr>
+          <tr><td>HBV/HCV</td><td>Hepatocellular carcinoma</td></tr>
+          <tr><td>HTLV-1</td><td>Adult T-cell Leukemia/Lymphoma</td></tr>
+        </table></div>
+      </div>
     </div>
 
     <div class="section">
-      <div class="section-head"><h2 id="rv-glossary">7.2 คำศัพท์รวมทั้งหมด (Master Glossary)</h2></div>
+      <div class="section-head"><h2 id="rv-glossary">8.2 คำศัพท์รวมทั้งหมด (Master Glossary)</h2></div>
       <div class="card">
         <div class="glossary">
           <div class="gterm"><b>Etiology</b>สาเหตุของโรค</div>
@@ -3991,12 +4897,21 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
           <div class="gterm"><b>Myofibroblast</b>เซลล์ทำ wound contraction</div>
           <div class="gterm"><b>Hypertrophic scar vs Keloid</b>แผลเป็นนูนในขอบเขต vs เกินขอบเขตแผล</div>
           <div class="gterm"><b>Compensatory hyperplasia</b>ตับขยายขนาดชดเชยหลังตัด lobe</div>
+          <div class="gterm"><b>Anaplasia</b>การสูญเสีย differentiation ของเซลล์มะเร็ง</div>
+          <div class="gterm"><b>Dysplasia / CIS</b>ความผิดปกติ growth ก่อนเป็น invasive cancer</div>
+          <div class="gterm"><b>Oncogene / Tumor suppressor gene</b>ยีน gain- vs loss-of-function ก่อมะเร็ง</div>
+          <div class="gterm"><b>Philadelphia chromosome</b>t(9;22) BCR-ABL ใน CML</div>
+          <div class="gterm"><b>Hallmarks of Cancer</b>8 คุณสมบัติของเซลล์มะเร็ง</div>
+          <div class="gterm"><b>Telomerase</b>เอนไซม์ป้องกัน telomeric shortening</div>
+          <div class="gterm"><b>Tumor marker</b>สารบ่งชี้มะเร็งในเลือด/ปัสสาวะ</div>
+          <div class="gterm"><b>Paraneoplastic syndrome</b>กลุ่มอาการจากมะเร็งที่ไม่ใช่ผลจาก mass โดยตรง</div>
+          <div class="gterm"><b>TNM Staging</b>ขอบเขตทางกายวิภาคของโรคมะเร็ง</div>
         </div>
       </div>
     </div>
 
     <div class="section">
-      <div class="section-head"><h2 id="rv-checklist">7.3 Checklist ก่อนเข้าห้อง Quiz</h2></div>
+      <div class="section-head"><h2 id="rv-checklist">8.3 Checklist ก่อนเข้าห้อง Quiz</h2></div>
       <div class="card">
         <ul class="plain">
           <li>☐ แยก Sign vs Symptom, Anatomical vs Clinical pathology ได้</li>
@@ -4025,6 +4940,15 @@ footer.credit{text-align:center; padding:40px 0 10px 0; color:var(--ink-faint); 
           <li>☐ แยก primary/secondary/tertiary intention wound healing ได้</li>
           <li>☐ แยก hypertrophic scar vs keloid ได้ (โดยเฉพาะเรื่องขอบเขตแผล)</li>
           <li>☐ จับคู่ collagen type กับโรคที่เกี่ยวข้องได้ (I-XVIII)</li>
+          <li>☐ แยก benign vs malignant tumor ได้ทั้ง 3 มิติ (macroscopic, microscopic, chromosomal)</li>
+          <li>☐ จำ exceptional nomenclature rules ได้ (granuloma ไม่ใช่ tumor, lymphoma/melanoma/hepatoma/myeloma เป็น malignant)</li>
+          <li>☐ แยก hamartoma vs choristoma ได้</li>
+          <li>☐ อธิบายลำดับ dysplasia → CIS → invasive carcinoma ได้</li>
+          <li>☐ แยก oncogene vs tumor suppressor gene (gain vs loss of function) พร้อมตัวอย่างได้</li>
+          <li>☐ ท่อง hallmarks of cancer 8 ข้อได้</li>
+          <li>☐ จับคู่ oncogenic virus กับมะเร็งที่เกี่ยวข้องได้</li>
+          <li>☐ แยก grading vs staging (TNM) ได้</li>
+          <li>☐ อธิบาย paraneoplastic syndrome ที่พบบ่อยได้</li>
         </ul>
       </div>
     </div>
